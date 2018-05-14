@@ -14,7 +14,7 @@ pygame.init()
 screen = pygame.display.set_mode((720, 720), 0, 32)
 
 class chess_piece:
-    __image_path="timg.jpg"               #当前棋子图片的路径 - 暂时的
+    __image_path="./image/Rook-W.png"               #当前棋子图片的路径 - 暂时的
     __piece_image=pygame.image.load(__image_path).convert_alpha()
 
     #定义构造函数
