@@ -1,5 +1,11 @@
 import chess
 import numpy as np
+import sys
+
+f = open("out.txt", "w")
+
+def eprint(*args, **kwargs):
+    print(*args, file=f, **kwargs)
 
 #原始版的局面评估，需要后续优化
 def evaluateBoard (board):
@@ -16,7 +22,6 @@ def evaluateBoard (board):
                 count+=1
     return value
 
-
 # 价值相同时候的取值依赖于访问顺序，需要后续优化#
 # alpha-beta 剪枝  ，board为棋盘状态， depth 为搜索深度
 def calculateBestMove(board, alpha , beta , depth):
@@ -26,6 +31,7 @@ def calculateBestMove(board, alpha , beta , depth):
     newGameMoves = list(newGameMoves)
 
     np.random.shuffle(newGameMoves)
+    [eprint(x) for x in newGameMoves]
     bestMove =None
     nextStep = None
     if(board.turn): #white
@@ -56,9 +62,9 @@ def calculateBestMove(board, alpha , beta , depth):
 def getBestMove(board , len = 4):
     ALPHA = -99999
     BETA = 99999
-    if (board.is_game_over()):
-        print('Game over !')
-        return None
+#    if (board.is_game_over()):
+#        eprint('Game over !')
+#        return None
     bestMove = calculateBestMove(board,ALPHA,BETA,len)[1]
     return bestMove
 
@@ -67,11 +73,11 @@ def test() :
     evaluateBoard(board)
     for i in range(70):
         if(i%2==0):
-            print(board.turn)
+            eprint(board.turn)
             BestMove= getBestMove(board,4)
         else :
-            print(board.turn)
+            eprint(board.turn)
             BestMove=getBestMove(board,2)
         board.push(BestMove)
-        print(board)
-        print('----------------')
+        eprint(board)
+        eprint('----------------')

@@ -5,11 +5,12 @@ import sys
 import chess
 import cut
 
+from cut import eprint
+
 from pygame.locals import *
 from sys import exit
 
-def eprint(*args, **kwargs):
-    print(*args, file=sys.stderr, **kwargs)
+
 
 
 #初始化pygame,为使用硬件做准备
