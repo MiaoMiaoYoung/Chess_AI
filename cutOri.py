@@ -28,10 +28,7 @@ def calculateBestMove(board, alpha , beta , depth):
     if(depth==0):
         return evaluateBoard(board),None
     newGameMoves = board.legal_moves
-    newGameMoves = list(newGameMoves)
 
-    np.random.shuffle(newGameMoves)
-    [eprint(x) for x in newGameMoves]
     bestMove =None
     nextStep = None
     if(board.turn): #white
@@ -59,7 +56,7 @@ def calculateBestMove(board, alpha , beta , depth):
     return bestMove , nextStep
 
 
-def getBestMove(board , len = 4):
+def getBestMove(board , len = 5):
     ALPHA = -99999
     BETA = 99999
 #    if (board.is_game_over()):
