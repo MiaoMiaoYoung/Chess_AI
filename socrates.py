@@ -1,22 +1,25 @@
+# coding=utf-8
+from __future__ import print_function
 import chessmod as chess
 import chessmod.polyglot as polyglot
 import random
 from utils import eprint, fprint
 import enum
-import numpy
+# import numpy
 import time
 import itertools
+
 
 INFINITY = 999999
 
 class NodeType(enum.Enum):
-    EXACT = enum.auto()
-    LOWER_BOUND = enum.auto()   # 意味着这个节点里存的值经过了 Beta-剪枝，值等于现行 Beta，只是一个下界，实际值可能要更大
-    UPPER_BOUND = enum.auto()   # 意味着这个节点遍历了所有的 Move 之后，没有一个是超过现行 Alpha 的，值等于现行 Alpha，只是一个上界，实际值可能更小
+    EXACT = 0
+    LOWER_BOUND = 1   # 意味着这个节点里存的值经过了 Beta-剪枝，值等于现行 Beta，只是一个下界，实际值可能要更大
+    UPPER_BOUND = 2   # 意味着这个节点遍历了所有的 Move 之后，没有一个是超过现行 Alpha 的，值等于现行 Alpha，只是一个上界，实际值可能更小
 
 class FailType(enum.Enum):
-    FAILSOFT = enum.auto()
-    FAILHARD = enum.auto()
+    FAILSOFT = 0
+    FAILHARD = 1
 
 class Transposition(object):
     def __init__(self, thisHash, game, depthLeft, score, nodeType, bestMove):
@@ -84,57 +87,33 @@ pst = {
             17,  30,  -3, -14,   6,  -1,  40,  18),
 }
 
+reversePst = {}
+for pi, val in pst.iteritems():
+    val = list(val)
+    newVal = []
+    for i in range(0, 8):
+        newVal += val[(7-i)*8 : (7-i)*8+8]
+    reversePst[pi] = tuple(newVal)
 
-
-def quiescenceEval(game):    # 静态评估（实际上是二次搜索吃子走子）
-    return staticEval(game)
 
 def staticEval(game):    # 在静态评估中作为静态评估函数（Standing Pat）
     # 注意，我们的 Alpha-beta 搜索采用了 Negamax（取反极大）的框架，所以在静态评估的时必须知道是对哪一方评估的
     currTurn = game.board.turn
-    fen = game.board.fen()
-    count = 0
+    pieceMap = game.board.piece_map()
     score = 0
-    if currTurn == chess.WHITE:
-        for pi in fen:
-            if (count < 64):
 
-                if (pi <= '8' and pi >= '1'):
-                    count += int(pi) - int('0')
-                elif (pi == '/'):
-                    continue
-                else:
-                
-                    if pi.islower():
-                        pi = pi.upper()
-                        score -= piece[pi]
-                        i = int(count / 8)
-                        j = count - 8 * i
-                        score -= pst[pi][(7 - i) * 8 + j]
-                    else:
-                        score += piece[pi]
-                        score += pst[pi][count]
-                    count += 1
-    else:
-        for pi in fen:
-            if (count < 64):
+    for i, pi in pieceMap.iteritems():
+        pi = pi.symbol()
+        if pi > 'a' and pi < 'z':
+            pi = pi.upper()
+            score -= piece[pi]
+            score -= pst[pi][i]
+        else:
+            score += piece[pi]
+            score += reversePst[pi][i]
 
-                if (pi <= '8' and pi >= '1'):
-                    count += int(pi) - int('0')
-                elif (pi == '/'):
-                    continue
-                else:
-                
-                    if pi.islower():
-                        pi = pi.upper()
-                        score += piece[pi]
-                        i = int(count / 8)
-                        j = count - 8 * i
-                        score += pst[pi][(7 - i) * 8 + j]
-                    else:
-                        score -= piece[pi]
-                        score -= pst[pi][count]
-                    count += 1
+    if currTurn == chess.BLACK:
+        score = -score
     return score
 
 
@@ -146,6 +125,7 @@ class CheckmatedException(Exception):
 WINNING_SCORE = 50000
 NOMOVESTHRESHOLD = 0
 MAX_MOVES = 200
+
 
 class Searcher(object):
     def __init__(self, game):
@@ -163,16 +143,62 @@ class Searcher(object):
     def hash(self):
         return polyglot.zobrist_hash(self.game.board, self.hasher)
 
+    def mvvLva(self, move):
+        pieceAtTo = self.game.board.piece_at(move.to_square)
+        if pieceAtTo == None:
+            pieceAtTo = chess.Piece.from_symbol('P')
+        return (piece[pieceAtTo.symbol().upper()] << 3) - piece[self.game.board.piece_at(move.from_square).symbol().upper()]
+
+    def quiescenceEval(self, alpha, beta):
+        bestScore = -INFINITY
+        if self.game.board.is_check():
+            legalMoves = list(self.game.board.legal_moves)
+            legalMoves.sort(key = lambda m: self.moveRatings.get(m, 0), reverse = True)
+        else:
+            score = staticEval(self.game)
+            if score >= beta:
+                if self.failType == FailType.FAILHARD:
+                    return beta
+                else:
+                    return score
+            elif score > alpha:
+                alpha = score
+            bestScore = score
+            legalMoves = list(self.game.board.generate_legal_captures())
+            legalMoves.sort(key = self.mvvLva, reverse = True)
+
+        for move in legalMoves:
+            self.game.board.push(move)
+            score = -self.quiescenceEval(-beta, -alpha)
+            self.game.board.pop()
+
+            if score > bestScore:
+                bestScore = score
+                if score >= beta:
+                    if self.failType == FailType.FAILHARD:
+                        return beta
+                    else:
+                        return score
+                if score > alpha:
+                    alpha = score
+
+        if bestScore == -INFINITY:
+            # 我方被將死
+            return len(self.game.board.move_stack) - INFINITY
+        return bestScore
+
     def getBestMove(self):
         self.moveRatings = dict()
         self.transpositionTable = dict()
         self.killerMoves = [[None, None]] * MAX_MOVES
         self.currTime = time.time()
-        self.futureTime = self.currTime + 10
+        timeGap = 12
+        self.futureTime = self.currTime + timeGap
         
         depth = 0;
         bestMove = None
         bestScore = -INFINITY
+
         while time.time() <= self.futureTime:
             depth += 1
             thisMove, bestScore = self.pvSearch(-INFINITY + 1, INFINITY - 1, depth * 10, True)
@@ -181,6 +207,12 @@ class Searcher(object):
             else:
                 break
             eprint(str(time.time() - self.currTime) + " - Depth : " + str(depth) , "Best Move", str(bestMove), "Best Score", str(bestScore))
+            if time.time() - self.currTime > timeGap * 1 / 5:
+                break
+            #self.futureTime = self.currTime + 8 - staticEval(self.game) / 100
+            #if self.futureTime - self.currTime > 25:
+            #    self.futureTime = self.currTime + 25
+            #eprint("Future Time", self.futureTime - self.currTime)
 
         return bestMove
 
@@ -261,7 +293,7 @@ class Searcher(object):
 
     def pvSearch(self, alpha, beta, depthLeft, root = False):
         if depthLeft <= 0:
-            return quiescenceEval(self.game)
+            return self.quiescenceEval(alpha, beta)
 
         ply = len(self.game.board.move_stack)
 
@@ -309,11 +341,11 @@ class Searcher(object):
         #logPrint(depthLeft, "开始遍历走子", "alpha", alpha, "beta", beta)
         for move in moves:
             if time.time() > self.futureTime:
-                #logPrint("时间到了。")
                 if root:
-                    return chess.Move.null(), 0
+                    eprint("[INTERRUPT]")
+                    return chess.Move.null(), -INFINITY - 1
                 else:
-                    return 0
+                    return - INFINITY - 1
 
             #logPrint(depthLeft, "处理走子：", move)
             if not self.game.board.is_legal(move):
@@ -337,6 +369,17 @@ class Searcher(object):
             # 现在已经得出了一个分数
             self.game.board.pop()
             
+            if score == INFINITY + 1 or score == INFINITY - 1:
+                if root:
+                    if thisBestMove != None:
+                        eprint("[INTERRUPT] %s %d" % (thisBestMove, thisBestScore))
+                        return thisBestMove, thisBestScore
+                    else:
+                        eprint("[INTERRUPT]")
+                        return chess.Move.null(), -INFINITY - 1
+                else:
+                    return -INFINITY - 1
+
             #logPrint(depthLeft, move, "最终分数为", score)
             if score > beta:
                 # 这个走子是引起了 Beta-裁切的好走子
@@ -426,12 +469,12 @@ class SocratesGame(object):
         return sanOutStr
 
     def readInAndReturnsSAN(self):
-        sanInStr = input()
+        sanInStr = raw_input().strip()
         self.board.push_san(sanInStr)
         return sanInStr
 
     def run(self):
-        myPlayer = input()
+        myPlayer = raw_input().strip()
         if(myPlayer == "white"):
             sanOutStr = self.moveAndReturnsSAN()
             eprint("Write to output : " + sanOutStr)
@@ -440,7 +483,7 @@ class SocratesGame(object):
         elif myPlayer == "black":
             pass
         else:
-            raise ValueError("The player string must be `white` or `black`")
+            raise ValueError("The player string must be `white` or `black`", myPlayer, "received")
 
         while True:
             try:
