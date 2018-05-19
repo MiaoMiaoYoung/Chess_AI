@@ -1,18 +1,18 @@
 import chess
 import numpy as np
-import sys
+import sunfish
 
-f = open("out.txt", "w")
 
-def eprint(*args, **kwargs):
-    print(*args, file=f, **kwargs)
+numTotal =[0]
 
-#原始版的局面评估，需要后续优化
 def evaluateBoard (board):
+    numTotal[0]+=1
+
     str_fen=board.fen()
     dic={'P':10, 'R':50,'N':30,'B':30,'Q':90,'K':900 ,'p':-10,'r':-50,'n':-30,'b':-30,'q':-90,'k':-900}
     value = 0
     count = 0
+
     for i in str_fen:
         if(count<64):
             if(i<='8' and i>='1'):
@@ -22,8 +22,6 @@ def evaluateBoard (board):
                 count+=1
     return value
 
-# 价值相同时候的取值依赖于访问顺序，需要后续优化#
-# alpha-beta 剪枝  ，board为棋盘状态， depth 为搜索深度
 def calculateBestMove(board, alpha , beta , depth):
     if(depth==0):
         return evaluateBoard(board),None
@@ -31,9 +29,10 @@ def calculateBestMove(board, alpha , beta , depth):
     newGameMoves = list(newGameMoves)
 
     np.random.shuffle(newGameMoves)
-    [eprint(x) for x in newGameMoves]
     bestMove =None
-    nextStep = None
+    nextStep =None
+    if(len(newGameMoves)!=0):
+        nextStep = newGameMoves[0]
     if(board.turn): #white
         bestMove=-99999
         for move in newGameMoves:
@@ -58,26 +57,35 @@ def calculateBestMove(board, alpha , beta , depth):
                 return bestMove , nextStep
     return bestMove , nextStep
 
-
 def getBestMove(board , len = 4):
+    numTotal[0]=0
+
     ALPHA = -99999
     BETA = 99999
-#    if (board.is_game_over()):
-#        eprint('Game over !')
-#        return None
-    bestMove = calculateBestMove(board,ALPHA,BETA,len)[1]
+    bestMove = calculateBestMove(board, ALPHA, BETA, len)[1]
+    #print('Total =',numTotal[0])
     return bestMove
 
 def test() :
     board= chess.Board()
     evaluateBoard(board)
-    for i in range(70):
-        if(i%2==0):
-            eprint(board.turn)
-            BestMove= getBestMove(board,4)
+    ss = sunfish.Sunfish(board)
+    for i in range(150):
+        if(board.is_game_over()):
+            print('Game over !')
+            break
+        print('step', i, board.turn)
+        if(i%2):
+            BestMove = getBestMove(board,2)
+            board.push(BestMove)
+            print(BestMove)
         else :
-            eprint(board.turn)
-            BestMove=getBestMove(board,2)
-        board.push(BestMove)
-        eprint(board)
-        eprint('----------------')
+            #BestMove = sunfish.Sunfish(board).NextMove(2)
+            BestMove = getBestMove(board, 1)
+            print(BestMove)
+            board.push(BestMove)
+
+        print(board)
+        print('----------------')
+
+test()
