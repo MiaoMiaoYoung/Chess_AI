@@ -1,5 +1,5 @@
 # Chess_AI
-This project aims at automatically Chess AI.
+This project aims at automatic Chess AI.
 
 We implemented two versions of AI:
 
