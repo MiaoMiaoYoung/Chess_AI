@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{a00c441a-6af6-4e0c-8d8c-aa2ce12fd87e}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>socrates.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId>Global|PythonCore|3.6-32</InterpreterId>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+    <IsWindowsApplication>False</IsWindowsApplication>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="image\bishop-B.png" />
+    <Content Include="image\bishop-W.png" />
+    <Content Include="image\chess_board-1.jpg" />
+    <Content Include="image\chess_board.jpg" />
+    <Content Include="image\king-B.png" />
+    <Content Include="image\king-W.png" />
+    <Content Include="image\knight-B.png" />
+    <Content Include="image\knight-W.png" />
+    <Content Include="image\Pawn-B.png" />
+    <Content Include="image\Pawn-W.png" />
+    <Content Include="image\queen-B.png" />
+    <Content Include="image\queen-W.png" />
+    <Content Include="image\Rook-B.png" />
+    <Content Include="image\Rook-W.png" />
+    <Content Include="out.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include=".vscode\.ropeproject\config.py" />
+    <Compile Include="chessmod\engine.py" />
+    <Compile Include="chessmod\gaviota.py" />
+    <Compile Include="chessmod\pgn.py" />
+    <Compile Include="chessmod\polyglot.py" />
+    <Compile Include="chessmod\svg.py" />
+    <Compile Include="chessmod\syzygy.py" />
+    <Compile Include="chessmod\uci.py" />
+    <Compile Include="chessmod\variant.py" />
+    <Compile Include="chessmod\xboard.py" />
+    <Compile Include="chessmod\__init__.py" />
+    <Compile Include="chess_Auto.1.py" />
+    <Compile Include="chess_Auto.py" />
+    <Compile Include="chess_GUI.py" />
+    <Compile Include="cut.py" />
+    <Compile Include="cutOri.py" />
+    <Compile Include="socrates.py" />
+    <Compile Include="sunfish.py" />
+    <Compile Include="utils.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".vscode\" />
+    <Folder Include=".vscode\.ropeproject" />
+    <Folder Include="chessmod" />
+    <Folder Include="image" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.6-32" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
