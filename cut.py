@@ -88,4 +88,5 @@ def test() :
         print(board)
         print('----------------')
 
-test()
+if __name__ == "__main__":
+    test()

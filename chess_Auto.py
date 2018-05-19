@@ -26,6 +26,9 @@ whoseTurn = input()
 
 if whoseTurn == "white":
     myMove = cut.getBestMove(board)
+    if myMove is None:
+        eprint("I'm dead.")
+        input()
     sanOutString = board.san(myMove)
     board.push(myMove)
 
@@ -46,6 +49,9 @@ while True:
     eprint("Current board\n" + str(board))
 
     myMove = cut.getBestMove(board)
+    if myMove is None:
+        eprint("I'm dead.")
+        input()
     sanOutString = board.san(myMove)
     board.push(myMove)
 
