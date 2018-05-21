@@ -150,42 +150,7 @@ class Searcher(object):
         return (piece[pieceAtTo.symbol().upper()] << 3) - piece[self.game.board.piece_at(move.from_square).symbol().upper()]
 
     def quiescenceEval(self, alpha, beta):
-        bestScore = -INFINITY
-        if self.game.board.is_check():
-            legalMoves = list(self.game.board.legal_moves)
-            legalMoves.sort(key = lambda m: self.moveRatings.get(m, 0), reverse = True)
-        else:
-            score = staticEval(self.game)
-            if score >= beta:
-                if self.failType == FailType.FAILHARD:
-                    return beta
-                else:
-                    return score
-            elif score > alpha:
-                alpha = score
-            bestScore = score
-            legalMoves = list(self.game.board.generate_legal_captures())
-            legalMoves.sort(key = self.mvvLva, reverse = True)
-
-        for move in legalMoves:
-            self.game.board.push(move)
-            score = -self.quiescenceEval(-beta, -alpha)
-            self.game.board.pop()
-
-            if score > bestScore:
-                bestScore = score
-                if score >= beta:
-                    if self.failType == FailType.FAILHARD:
-                        return beta
-                    else:
-                        return score
-                if score > alpha:
-                    alpha = score
-
-        if bestScore == -INFINITY:
-            # 我方被將死
-            return len(self.game.board.move_stack) - INFINITY
-        return bestScore
+        return staticEval(self.game)
 
     def getBestMove(self):
         self.moveRatings = dict()

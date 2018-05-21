@@ -5,7 +5,7 @@ import sys
 import chess
 import cut
 
-from cut import eprint
+from utils import eprint
 
 from pygame.locals import *
 from sys import exit
