@@ -124,7 +124,7 @@ class CheckmatedException(Exception):
 
 WINNING_SCORE = 50000
 NOMOVESTHRESHOLD = 0
-MAX_MOVES = 500
+MAX_MOVES = 200
 
 
 class Searcher(object):
@@ -190,9 +190,9 @@ class Searcher(object):
     def getBestMove(self):
         self.moveRatings = dict()
         self.transpositionTable = dict()
-        self.killerMoves = [[None, None]] * MAX_MOVES
+        # self.killerMoves = [[None, None]] * MAX_MOVES
         self.currTime = time.time()
-        timeGap = 12
+        timeGap = 15
         self.futureTime = self.currTime + timeGap
         
         depth = 0;
@@ -207,7 +207,7 @@ class Searcher(object):
             else:
                 break
             eprint(str(time.time() - self.currTime) + " - Depth : " + str(depth) , "Best Move", str(bestMove), "Best Score", str(bestScore))
-            if time.time() - self.currTime > timeGap * 1 / 5:
+            if time.time() - self.currTime > timeGap * 3 / 11:
                 break
             #self.futureTime = self.currTime + 8 - staticEval(self.game) / 100
             #if self.futureTime - self.currTime > 25:
@@ -279,14 +279,20 @@ class Searcher(object):
             yield currKillerMoves[0]
 
         legalMoves = list(legalMoves)
-        if transpositionBestMove in legalMoves:
+        try:
             legalMoves.remove(transpositionBestMove)
-        if currKillerMoves[1] in legalMoves:
+        except:
+            pass
+        try:
             legalMoves.remove(currKillerMoves[1])
-        if currKillerMoves[0] in legalMoves:
+        except:
+            pass
+        try:
             legalMoves.remove(currKillerMoves[0])
+        except:
+            pass
 
-        legalMoves.sort(key = lambda m: self.moveRatings.get(m, 0), reverse = True)
+        legalMoves.sort(key = lambda m: self.moveRatings.get(m, 0) + self.mvvLva(m), reverse = True)
         legalMoves = iter(legalMoves)
         while True:
             yield next(legalMoves)
@@ -341,10 +347,7 @@ class Searcher(object):
         #logPrint(depthLeft, "开始遍历走子", "alpha", alpha, "beta", beta)
         for move in moves:
             if time.time() > self.futureTime:
-                if root:
-                    eprint("[INTERRUPT]")
-                    return chess.Move.null(), -INFINITY - 1
-                else:
+                if not root:
                     return - INFINITY - 1
 
             #logPrint(depthLeft, "处理走子：", move)
@@ -353,6 +356,11 @@ class Searcher(object):
                 continue
             
             self.game.board.push(move)
+            
+            if self.game.board.is_check():
+                nextDepth = depthLeft - 2
+            else:
+                nextDepth = depthLeft - 10
             if thisNodeType == NodeType.EXACT:
                 #logPrint(depthLeft, "之前已有PVMove，故对", move, "采取空窗口搜索", -alpha - 1, -alpha)
                 score = -self.pvSearch(-alpha - 1, -alpha, depthLeft - 10)
