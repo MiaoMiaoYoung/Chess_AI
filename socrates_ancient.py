@@ -268,6 +268,9 @@ class Searcher(object):
             # 未找到
             return None, None, iCanReplaceThisTransposition
 
+    def sortKey(self, m):
+        return self.moveRatings.get(m, 0)
+
     def moveIter(self, transpositionBestMove, transpositionScore, legalMoves, ply):
         if transpositionBestMove is not None:
             yield transpositionBestMove
@@ -279,20 +282,20 @@ class Searcher(object):
             yield currKillerMoves[0]
 
         legalMoves = list(legalMoves)
-        try:
-            legalMoves.remove(transpositionBestMove)
-        except:
-            pass
-        try:
-            legalMoves.remove(currKillerMoves[1])
-        except:
-            pass
-        try:
-            legalMoves.remove(currKillerMoves[0])
-        except:
-            pass
+        # try:
+        #     legalMoves.remove(transpositionBestMove)
+        # except:
+        #     pass
+        # try:
+        #     legalMoves.remove(currKillerMoves[1])
+        # except:
+        #     pass
+        # try:
+        #     legalMoves.remove(currKillerMoves[0])
+        # except:
+        #     pass
 
-        legalMoves.sort(key = lambda m: self.moveRatings.get(m, 0) + self.mvvLva(m), reverse = True)
+        legalMoves.sort(key = self.sortKey, reverse = True)
         legalMoves = iter(legalMoves)
         while True:
             yield next(legalMoves)
