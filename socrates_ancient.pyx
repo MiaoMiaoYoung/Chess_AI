@@ -5,10 +5,9 @@ import polyglot as polyglot
 import random
 from utils import eprint, fprint
 import enum
-# import numpy
 import time
 import itertools
-
+import os
 
 INFINITY = 999999
 
@@ -32,6 +31,9 @@ class Transposition(object):
 def logPrint(*args, **kwargs):
     return
     fprint(*args, **kwargs)
+
+def cut(string):
+    return [string[i*8:i*8+8] for i in range(8)]
 
         
 piece = { 'P': 100, 'N': 280, 'B': 320, 'R': 479, 'Q': 929, 'K': 60000 }
@@ -99,18 +101,22 @@ for pi, val in pst.iteritems():
 def staticEval(game):    # 在静态评估中作为静态评估函数（Standing Pat）
     # 注意，我们的 Alpha-beta 搜索采用了 Negamax（取反极大）的框架，所以在静态评估的时必须知道是对哪一方评估的
     currTurn = game.board.turn
-    pieceMap = game.board.piece_map()
+    whiteMap = game.board.occupied_co[chess.WHITE]
+    blackMap = game.board.occupied_co[chess.BLACK]
+    pawnMap = game.board.pawns
+    knightMap = game.board.knights
+    bishopMap = game.board.bishops
+    rookMap = game.board.rooks
+    queenMap = game.board.queens
+    kingMap = game.board.kings
+    counter = 0
     score = 0
-
-    for i, pi in pieceMap.iteritems():
-        pi = pi.symbol()
-        if pi > 'a' and pi < 'z':
-            pi = pi.upper()
-            score -= piece[pi]
-            score -= pst[pi][i]
-        else:
-            score += piece[pi]
-            score += reversePst[pi][i]
+    for sq in chess.BB_SQUARES:
+        if whiteMap & sq:
+            score += (reversePst['P'][counter] + piece['P'] if pawnMap & sq else 0) | (reversePst['N'][counter] + piece['N'] if knightMap & sq else 0)  | (reversePst['B'][counter] + piece['B'] if bishopMap & sq else 0) | (reversePst['R'][counter] + piece['R'] if rookMap & sq else 0) | (reversePst['Q'][counter] + piece['Q'] if queenMap & sq else 0) | (reversePst['K'][counter] + piece['K'] if kingMap & sq else 0)
+        elif blackMap & sq:
+            score -= (pst['P'][counter] + piece['P'] if pawnMap & sq else 0) | (pst['N'][counter] + piece['N'] if knightMap & sq else 0)  | (pst['B'][counter] + piece['B'] if bishopMap & sq else 0) | (pst['R'][counter] + piece['R'] if rookMap & sq else 0) | (pst['Q'][counter] + piece['Q'] if queenMap & sq else 0) | (pst['K'][counter] + piece['K'] if kingMap & sq else 0)
+        counter += 1
 
     if currTurn == chess.BLACK:
         score = -score
@@ -134,14 +140,12 @@ class Searcher(object):
         self.failType = FailType.FAILHARD
         # 跨局面表
         self.transpositionTable = dict()
-        self.hasher = polyglot.ZobristHasher(polyglot.POLYGLOT_RANDOM_ARRAY)
         # 杀手表，以 Ply 数做索引，每个 Ply 存两个杀手操作
         self.killerMoves = [[None, None]] * MAX_MOVES
         # 历史表，以 Move 做索引，每个 Move 有一个评分
         self.moveRatings = dict()
         self.currTime = None
-    def hash(self):
-        return polyglot.zobrist_hash(self.game.board, self.hasher)
+        self.totalTime = 0
 
     def mvvLva(self, move):
         pieceAtTo = self.game.board.piece_at(move.to_square)
@@ -149,18 +153,15 @@ class Searcher(object):
             pieceAtTo = chess.Piece.from_symbol('P')
         return (piece[pieceAtTo.symbol().upper()] << 3) - piece[self.game.board.piece_at(move.from_square).symbol().upper()]
 
-    def quiescenceEval(self, alpha, beta):
+    def quiescenceEval(self, alpha, beta, ply, important=False):
         bestScore = -INFINITY
-        if self.game.board.is_check():
+        if important or self.game.board.is_check():
             legalMoves = list(self.game.board.legal_moves)
-            legalMoves.sort(key = lambda m: self.moveRatings.get(m, 0), reverse = True)
+            legalMoves.sort(key = self.sortKey, reverse = True)
         else:
             score = staticEval(self.game)
             if score >= beta:
-                if self.failType == FailType.FAILHARD:
-                    return beta
-                else:
-                    return score
+                return beta if self.failType == FailType.FAILHARD else score
             elif score > alpha:
                 alpha = score
             bestScore = score
@@ -169,7 +170,7 @@ class Searcher(object):
 
         for move in legalMoves:
             self.game.board.push(move)
-            score = -self.quiescenceEval(-beta, -alpha)
+            score = -self.quiescenceEval(-beta, -alpha, not(move.promotion is None))
             self.game.board.pop()
 
             if score > bestScore:
@@ -184,36 +185,42 @@ class Searcher(object):
 
         if bestScore == -INFINITY:
             # 我方被將死
-            return len(self.game.board.move_stack) - INFINITY
+            return ply - INFINITY
         return bestScore
 
     def getBestMove(self):
+        eprint("<Socrates Ancient %s> " % ("BLACK", "WHITE")[self.game.board.turn] + os.path.basename(__file__))
         self.moveRatings = dict()
+        self.moveSequence = []
         self.transpositionTable = dict()
         # self.killerMoves = [[None, None]] * MAX_MOVES
         self.currTime = time.time()
-        timeGap = 15
+        if(self.totalTime < 300):
+            timeGap = 15
+        elif (self.totalTime < 500):
+            timeGap = 12
+        elif (self.totalTime < 570):
+            timeGap = 7
+        else:
+            timeGap = 2
         self.futureTime = self.currTime + timeGap
         
-        depth = 0;
+        depth = 0
         bestMove = None
         bestScore = -INFINITY
 
         while time.time() <= self.futureTime:
             depth += 1
-            thisMove, bestScore = self.pvSearch(-INFINITY + 1, INFINITY - 1, depth * 10, True)
+            thisMove, bestScore = self.pvSearch(-INFINITY + 1, INFINITY - 1, depth << 3, True)
             if thisMove != chess.Move.null():
                 bestMove = thisMove
             else:
                 break
-            eprint(str(time.time() - self.currTime) + " - Depth : " + str(depth) , "Best Move", str(bestMove), "Best Score", str(bestScore))
-            if time.time() - self.currTime > timeGap * 3 / 11:
+            eprint(str(time.time() - self.currTime) + " - Depth : " + str(depth) , "Best Move", str(bestMove), ", Best Score", str(bestScore))
+            if time.time() - self.currTime > timeGap * 1 / 12:
                 break
-            #self.futureTime = self.currTime + 8 - staticEval(self.game) / 100
-            #if self.futureTime - self.currTime > 25:
-            #    self.futureTime = self.currTime + 25
-            #eprint("Future Time", self.futureTime - self.currTime)
-
+        self.totalTime += time.time() - self.currTime
+        eprint("Total time :",self.totalTime)
         return bestMove
 
     def storeTranspositionTable(self, thisHash, depthLeft, score, nodeType, bestMove):
@@ -223,77 +230,66 @@ class Searcher(object):
     def lookupTranspositionTable(self, thisHash, alpha, beta, depthLeft):
         iCanReplaceThisTransposition = True
 
-        if thisHash in self.transpositionTable:
-            thisTransposition = self.transpositionTable[thisHash]
+        thisTransposition = self.transpositionTable.get(thisHash)
+
+        if thisTransposition is not None:
             iCanReplaceThisTransposition = thisTransposition.depthLeft <= depthLeft
-            isCheckmateMove = False
-            if thisTransposition.score >= WINNING_SCORE or thisTransposition.score <= -WINNING_SCORE:
-                isCheckmateMove = True
-            transpositionBestMove = thisTransposition.bestMove
+            isCheckmateMove = thisTransposition.score >= WINNING_SCORE or thisTransposition.score <= -WINNING_SCORE
 
             # 当跨局面表中之前记录的局面满足深度要求，或者能保证将死（杀棋，很快游戏就结束，所以不需要考虑深度）
             if thisTransposition.depthLeft >= depthLeft or isCheckmateMove:
                 if thisTransposition.nodeType == NodeType.EXACT:
                     # 非常好，这是一个之前搜索时在窗口内的分数，因此是准确的分数
-                    return transpositionBestMove, thisTransposition.score, iCanReplaceThisTransposition
+                    return thisTransposition.score, iCanReplaceThisTransposition, thisTransposition
                 elif thisTransposition.nodeType == NodeType.LOWER_BOUND:
                     # 之前搜索时，这个节点的子节点经过了 Beta-裁切，强制返回了 Beta，所以该分数是一个下界
                     if thisTransposition.score >= beta:
                         # 若该下界仍然大过现行 Beta（仍旧太大了），返回现行 Beta（硬）或是该下界（软）
-                        if self.failType == FailType.FAILHARD:
-                            return transpositionBestMove, beta, iCanReplaceThisTransposition
-                        else:
-                            return transpositionBestMove, thisTransposition.score, iCanReplaceThisTransposition
+                        return beta if self.failType == FailType.FAILHARD else thisTransposition.score, iCanReplaceThisTransposition, thisTransposition
                     else:
                         # 这个下界还没有大过现行 Beta，所以说不好实际值到底是多少，有待重新搜索
-                        return transpositionBestMove, None, iCanReplaceThisTransposition
+                        return None, iCanReplaceThisTransposition, None
                 else: # thisTransposition.nodeType == NodeType.UPPER_BOUND:
                     # 之前搜索时，所有的 Move 都没有超过那时的 Alpha（都是弱鸡局面），所以该分数是一个上界
                     if thisTransposition.score <= alpha:
                         # 若该上界在现在来看还是弱鸡，返回现行 Alpha（硬）或是该上界（软）
-                        if self.failType == FailType.FAILHARD:
-                            return transpositionBestMove, alpha, iCanReplaceThisTransposition
-                        else:
-                            return transpositionBestMove, thisTransposition.score, iCanReplaceThisTransposition
+                        return alpha if self.failType == FailType.FAILHARD else thisTransposition.score, iCanReplaceThisTransposition, thisTransposition
                     else:
                         # 该上界不那么弱鸡了
-                        if self.failType == FailType.FAILHARD:
-                            return transpositionBestMove, None, iCanReplaceThisTransposition
-                        else:
-                            return transpositionBestMove, thisTransposition.score, iCanReplaceThisTransposition
+                        return None if self.failType == FailType.FAILHARD else thisTransposition.score, iCanReplaceThisTransposition, thisTransposition
             else:
                 # 该估值是不可信的
-                return transpositionBestMove, None, iCanReplaceThisTransposition
+                return None, iCanReplaceThisTransposition, thisTransposition
         else:
             # 未找到
-            return None, None, iCanReplaceThisTransposition
+            return None, iCanReplaceThisTransposition, None
 
     def sortKey(self, m):
         return self.moveRatings.get(m, 0)
 
-    def moveIter(self, transpositionBestMove, transpositionScore, legalMoves, ply):
-        if transpositionBestMove is not None:
-            yield transpositionBestMove
+    def moveIter(self, transposition, legalMoves, ply):
+        if transposition is not None and self.game.board.is_legal(transposition.bestMove):
+            yield transposition.bestMove
         currKillerMoves = self.killerMoves[ply]
-        if currKillerMoves[1] is not None:
+        if currKillerMoves[1] is not None and self.game.board.is_legal(currKillerMoves[1]):
             yield currKillerMoves[1]
 
-        if currKillerMoves[0] is not None:
+        if currKillerMoves[0] is not None and self.game.board.is_legal(currKillerMoves[0]):
             yield currKillerMoves[0]
 
         legalMoves = list(legalMoves)
-        # try:
-        #     legalMoves.remove(transpositionBestMove)
-        # except:
-        #     pass
-        # try:
-        #     legalMoves.remove(currKillerMoves[1])
-        # except:
-        #     pass
-        # try:
-        #     legalMoves.remove(currKillerMoves[0])
-        # except:
-        #     pass
+#       try:
+#           legalMoves.remove(transpositionBestMove)
+#       except:
+#           pass
+#       try:
+#           legalMoves.remove(currKillerMoves[1])
+#       except:
+#           pass
+#       try:
+#           legalMoves.remove(currKillerMoves[0])
+#       except:
+#           pass
 
         legalMoves.sort(key = self.sortKey, reverse = True)
         legalMoves = iter(legalMoves)
@@ -301,95 +297,106 @@ class Searcher(object):
             yield next(legalMoves)
 
     def pvSearch(self, alpha, beta, depthLeft, root = False):
-        if depthLeft <= 0:
-            return self.quiescenceEval(alpha, beta)
-
         ply = len(self.game.board.move_stack)
+        if depthLeft <= 0:
+            return self.quiescenceEval(alpha, beta, ply)
 
-        if self.game.board.is_checkmate():
-            # 遭将死，返回分数加上一个杀棋步数修正（对我方来说越晚越好）
-            score = ply - INFINITY
-            if root:
-                return None, score
-            else:
-                return score
-
-        thisHash = self.hash()
+        thisHash = self.game.hash()
         
-        transpositionBestMove, transpositionScore, iCanReplaceThisTransposition = self.lookupTranspositionTable(thisHash, alpha, beta, depthLeft)
-        # transpositionBestMove, transpositionScore, iCanReplaceThisTransposition = None, None, False
+        if not root:
+            history = self.game.historyBoard.get(thisHash)
+            if history is not None:
+                if len(history) >= 2:
+                    return INFINITY
+
+        transpositionScore, iCanReplaceThisTransposition, transposition = self.lookupTranspositionTable(thisHash, alpha, beta, depthLeft)
+
 
         if transpositionScore != None:
             if root:
-                return transpositionBestMove, transpositionScore
+                return transposition.bestMove, transpositionScore
             else:
                 return transpositionScore
 
         legalMoves = iter(self.game.board.legal_moves)
         legalMoves, legalMoves_check = itertools.tee(legalMoves)
+
         if next(legalMoves_check, None) == None:
+            if self.game.board.is_checkmate():
+                # 遭将死，返回分数加上一个杀棋步数修正（对我方来说越晚越好）
+                score = ply - INFINITY
+                if root:
+                    return None, score
+                else:
+                    return score
             # 为和，看看局势是否对我不利。如不利，则为和是最好结果；否则是最差结果
             val = staticEval(self.game)
             if root:
                 if val > NOMOVESTHRESHOLD:
-                    return None, ply - INFINITY
+                    score = ply - INFINITY
+                    return None, score
                 else:
-                    return None, -ply + INFINITY
+                    score = -ply + INFINITY
+                    return None, score
             else:
                 if val > NOMOVESTHRESHOLD:
-                    return ply - INFINITY
+                    score = ply - INFINITY
+                    return score
                 else:
-                    return -ply + INFINITY
+                    score = -ply + INFINITY
+                    return score
             
             
-        moves = self.moveIter(transpositionBestMove, transpositionScore, legalMoves, ply)
+        moves = self.moveIter(transposition, legalMoves, ply)
 
         thisNodeType = NodeType.UPPER_BOUND
         thisBestScore = -INFINITY
+        
         thisBestMove = None
+        counter = 0
+
         #logPrint(depthLeft, "开始遍历走子", "alpha", alpha, "beta", beta)
         for move in moves:
-            if time.time() > self.futureTime:
-                if not root:
-                    return - INFINITY - 1
-
+            counter += 1
             #logPrint(depthLeft, "处理走子：", move)
-            if not self.game.board.is_legal(move):
-                #logPrint("不合法")
-                continue
             
             self.game.board.push(move)
             
             if self.game.board.is_check():
                 nextDepth = depthLeft - 2
             else:
-                nextDepth = depthLeft - 10
+                nextDepth = depthLeft - 8
             if thisNodeType == NodeType.EXACT:
                 #logPrint(depthLeft, "之前已有PVMove，故对", move, "采取空窗口搜索", -alpha - 1, -alpha)
-                score = -self.pvSearch(-alpha - 1, -alpha, depthLeft - 10)
+                score = -self.pvSearch(-alpha - 1, -alpha, depthLeft - 8)
                 if score > alpha and score < beta:
                     #logPrint(depthLeft, move, "的分数为", score, "重新搜索", -beta, -alpha)
                     # score 在 Alpha 和 Beta 之间，截断失败，窗口设小了，重搜
-                    score = -self.pvSearch(-beta, -alpha, depthLeft - 10)
+                    score = -self.pvSearch(-beta, -alpha, depthLeft - 8)
+                    
                 elif score >= beta:
                     pass
             else:
                 #logPrint(depthLeft, "之前没PVMove，故对", move, "采取全窗口搜索", -beta, -alpha)
                 score = -self.pvSearch(-beta, -alpha, depthLeft - 10)
-            
+
             # 现在已经得出了一个分数
             self.game.board.pop()
             
             if score == INFINITY + 1 or score == INFINITY - 1:
                 if root:
                     if thisBestMove != None:
-                        eprint("[INTERRUPT] %s %d" % (thisBestMove, thisBestScore))
+                        eprint("[INTERRUPT ROOT] %s %d @ Move %d" % (thisBestMove, thisBestScore, counter))
                         return thisBestMove, thisBestScore
                     else:
-                        eprint("[INTERRUPT]")
+                        eprint("[INTERRUPT ROOT] %s %d @ Move %d" % (thisBestMove, thisBestScore, counter))
                         return chess.Move.null(), -INFINITY - 1
                 else:
+                    eprint("[INTERRUPT] %s %d @ Move %d" % (thisBestMove, thisBestScore, counter))
                     return -INFINITY - 1
+
+            if not root and time.time() > self.futureTime:
+                return - INFINITY - 1
 
             #logPrint(depthLeft, move, "最终分数为", score)
             if score > beta:
@@ -415,43 +422,31 @@ class Searcher(object):
                 alpha = score
 
         #logPrint(depthLeft, "thisBestScore", thisBestScore, "thisBestMove", thisBestMove)
-        assert(thisBestScore != -INFINITY)
+        #assert(thisBestScore != -INFINITY)
 
         if iCanReplaceThisTransposition:
-            if self.failType == FailType.FAILHARD:
-                if thisNodeType == NodeType.LOWER_BOUND:
-                    self.storeTranspositionTable(thisHash, depthLeft, beta, thisNodeType, thisBestMove)
-                else:
-                    self.storeTranspositionTable(thisHash, depthLeft, alpha, thisNodeType, thisBestMove)
-            else:
-                self.storeTranspositionTable(thisHash, depthLeft, thisBestScore, thisNodeType, thisBestMove)
+            self.storeTranspositionTable(thisHash, depthLeft, thisBestScore if self.failType == FailType.FAILSOFT else (beta if thisNodeType == NodeType.LOWER_BOUND else alpha), thisNodeType, thisBestMove)
                 
         if thisNodeType == NodeType.LOWER_BOUND:
             if thisBestMove in self.moveRatings:
-                self.moveRatings[thisBestMove] += depthLeft * depthLeft / 100
+                self.moveRatings[thisBestMove] += 2 << (depthLeft >> 3)
             else:
-                self.moveRatings[thisBestMove] = depthLeft * depthLeft / 100
+                self.moveRatings[thisBestMove] = 2 << (depthLeft >> 3)
             
             if self.killerMoves[ply][0] != thisBestMove and self.killerMoves[ply][1] != thisBestMove:
                 self.killerMoves[ply][0] = self.killerMoves[ply][1]
                 self.killerMoves[ply][1] = thisBestMove
 
             if root:
-                if self.failType == FailType.FAILHARD:
-                    return thisBestMove, beta
-                else:
-                    return thisBestMove, thisBestScore
+                return thisBestMove, beta if self.failType == FailType.FAILHARD else thisBestScore
             else:
-                if self.failType == FailType.FAILHARD:
-                    return beta
-                else:
-                    return thisBestScore
+                return beta if self.failType == FailType.FAILHARD else thisBestScore
 
         elif thisNodeType == NodeType.EXACT:
             if thisBestMove in self.moveRatings:
-                self.moveRatings[thisBestMove] += depthLeft * depthLeft / 100
+                self.moveRatings[thisBestMove] += 2 << (depthLeft >> 3)
             else:
-                self.moveRatings[thisBestMove] = depthLeft * depthLeft / 100
+                self.moveRatings[thisBestMove] = 2 << (depthLeft >> 3)
 
             if self.killerMoves[ply][0] != thisBestMove and self.killerMoves[ply][1] != thisBestMove:
                 self.killerMoves[ply][0] = self.killerMoves[ply][1]
@@ -461,8 +456,6 @@ class Searcher(object):
             return thisBestMove, alpha
         else:
             return alpha
-                
-
 
 
 class SocratesGame(object):
@@ -472,16 +465,30 @@ class SocratesGame(object):
         else:
             self.board = chess.Board()
         self.searcher = Searcher(self)
+        self.historyBoard = dict()
+
+    def hash(self):
+        return (self.board.pawns, self.board.knights, self.board.bishops, self.board.rooks, self.board.queens, self.board.kings, self.board.occupied_co[True])
 
     def moveAndReturnsSAN(self):
         myMove = self.searcher.getBestMove()
         sanOutStr = self.board.san(myMove)
         self.board.push(myMove)
+        thisHash = self.hash()
+        if thisHash in self.historyBoard:
+            self.historyBoard[self.hash()] += [len(self.board.move_stack)]
+        else:
+            self.historyBoard[self.hash()] = [len(self.board.move_stack)]
         return sanOutStr
 
     def readInAndReturnsSAN(self):
         sanInStr = raw_input().strip()
         self.board.push_san(sanInStr)
+        thisHash = self.hash()
+        if thisHash in self.historyBoard:
+            self.historyBoard[self.hash()] += [len(self.board.move_stack)]
+        else:
+            self.historyBoard[self.hash()] = [len(self.board.move_stack)]
         return sanInStr
 
     def run(self):

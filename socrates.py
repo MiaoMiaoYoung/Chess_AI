@@ -8,7 +8,7 @@ import enum
 # import numpy
 import time
 import itertools
-
+import os
 
 INFINITY = 999999
 
@@ -188,6 +188,7 @@ class Searcher(object):
         return bestScore
 
     def getBestMove(self):
+        eprint("<Socrates %s> " % ["BLACK", "WHITE"][self.game.board.turn] + os.path.basename(__file__))
         self.moveRatings = dict()
         self.transpositionTable = dict()
         # self.killerMoves = [[None, None]] * MAX_MOVES
@@ -195,7 +196,7 @@ class Searcher(object):
         timeGap = 15
         self.futureTime = self.currTime + timeGap
         
-        depth = 0;
+        depth = 0
         bestMove = None
         bestScore = -INFINITY
 
@@ -390,6 +391,8 @@ class Searcher(object):
                         return chess.Move.null(), -INFINITY - 1
                 else:
                     return -INFINITY - 1
+
+                    
 
             #logPrint(depthLeft, move, "最终分数为", score)
             if score > beta:
