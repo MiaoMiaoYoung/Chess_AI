@@ -134,7 +134,7 @@ MAX_MOVES = 200
 
 
 class Searcher(object):
-    def __init__(self, game):
+    def __init__(self, game, usualTime, stopRatio):
         self.game = game
         # 采用 Fail-Hard （硬超限，也就是说估值超过 [Alpha, Beta] 窗口时，返回 Alpha（上界）或者 Beta（下界）而不是估值本身）
         self.failType = FailType.FAILHARD
@@ -146,6 +146,8 @@ class Searcher(object):
         self.moveRatings = dict()
         self.currTime = None
         self.totalTime = 0
+        self.usualTime = usualTime
+        self.stopRatio = stopRatio
 
     def mvvLva(self, move):
         pieceAtTo = self.game.board.piece_at(move.to_square)
@@ -196,7 +198,7 @@ class Searcher(object):
         # self.killerMoves = [[None, None]] * MAX_MOVES
         self.currTime = time.time()
         if(self.totalTime < 300):
-            timeGap = 15
+            timeGap = self.usualTime
         elif (self.totalTime < 500):
             timeGap = 12
         elif (self.totalTime < 570):
@@ -217,7 +219,7 @@ class Searcher(object):
             else:
                 break
             eprint(str(time.time() - self.currTime) + " - Depth : " + str(depth) , "Best Move", str(bestMove), ", Best Score", str(bestScore))
-            if time.time() - self.currTime > timeGap * 1 / 12:
+            if time.time() - self.currTime > timeGap * self.stopRatio:
                 break
         self.totalTime += time.time() - self.currTime
         eprint("Total time :",self.totalTime)
@@ -459,12 +461,12 @@ class Searcher(object):
 
 
 class SocratesGame(object):
-    def __init__(self, fenStr = ""):
+    def __init__(self, usualTime, stopRatio, fenStr = ""):
         if fenStr != "":
             self.board = chess.Board(fenStr)
         else:
             self.board = chess.Board()
-        self.searcher = Searcher(self)
+        self.searcher = Searcher(self, usualTime, stopRatio)
         self.historyBoard = dict()
 
     def hash(self):
