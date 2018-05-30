@@ -5,6 +5,7 @@ We implemented two versions of AI:
 
  - `Cut`, which can be launched by `python3 chess_Auto.py`.
  - `Socrates`, a little bit stronger AI, which can be launched by `python2 socrates.py`.
+ - `Socrates Ancient`, a faster but much more stupid AI, which can be launched by `python2 socretes_ancient.py`.
 
 # Requirement
 1. Python 2

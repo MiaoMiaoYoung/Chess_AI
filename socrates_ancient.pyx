@@ -1,7 +1,6 @@
 # coding=utf-8
 from __future__ import print_function
 import chessmodc as chess
-import polyglot as polyglot
 import random
 from utils import eprint, fprint
 import enum
