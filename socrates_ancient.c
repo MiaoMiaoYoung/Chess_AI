@@ -765,13 +765,13 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "socrates_ancient.pyx",
+  "socrates_ancient.py",
 };
 
 /*--- Type declarations ---*/
 struct __pyx_obj_17socrates_ancientc___pyx_scope_struct__moveIter;
 
-/* "socrates_ancient.pyx":271
+/* "socrates_ancient.py":269
  *         return self.moveRatings.get(m, 0)
  * 
  *     def moveIter(self, transposition, legalMoves, ply):             # <<<<<<<<<<<<<<
@@ -1565,14 +1565,12 @@ static const char __pyx_k_bestScore[] = "bestScore";
 static const char __pyx_k_bishopMap[] = "bishopMap";
 static const char __pyx_k_chessmodc[] = "chessmodc";
 static const char __pyx_k_depthLeft[] = "depthLeft";
-static const char __pyx_k_important[] = "important";
 static const char __pyx_k_iteritems[] = "iteritems";
 static const char __pyx_k_itertools[] = "itertools";
 static const char __pyx_k_knightMap[] = "knightMap";
 static const char __pyx_k_metaclass[] = "__metaclass__";
 static const char __pyx_k_nextDepth[] = "nextDepth";
 static const char __pyx_k_pieceAtTo[] = "pieceAtTo";
-static const char __pyx_k_promotion[] = "promotion";
 static const char __pyx_k_raw_input[] = "raw_input";
 static const char __pyx_k_sanOutStr[] = "sanOutStr";
 static const char __pyx_k_stopRatio[] = "stopRatio";
@@ -1597,6 +1595,7 @@ static const char __pyx_k_killerMoves[] = "killerMoves";
 static const char __pyx_k_legal_moves[] = "legal_moves";
 static const char __pyx_k_moveRatings[] = "moveRatings";
 static const char __pyx_k_occupied_co[] = "occupied_co";
+static const char __pyx_k_staticScore[] = "staticScore";
 static const char __pyx_k_SocratesGame[] = "SocratesGame";
 static const char __pyx_k_historyBoard[] = "historyBoard";
 static const char __pyx_k_is_checkmate[] = "is_checkmate";
@@ -1632,10 +1631,10 @@ static const char __pyx_k_transpositionTable[] = "transpositionTable";
 static const char __pyx_k_CheckmatedException[] = "CheckmatedException";
 static const char __pyx_k_SocratesGame___init[] = "SocratesGame.__init__";
 static const char __pyx_k_readInAndReturnsSAN[] = "readInAndReturnsSAN";
+static const char __pyx_k_socrates_ancient_py[] = "socrates_ancient.py";
 static const char __pyx_k_INTERRUPT_s_d_Move_d[] = "[INTERRUPT] %s %d @ Move %d";
 static const char __pyx_k_Searcher_getBestMove[] = "Searcher.getBestMove";
 static const char __pyx_k_Transposition___init[] = "Transposition.__init__";
-static const char __pyx_k_socrates_ancient_pyx[] = "socrates_ancient.pyx";
 static const char __pyx_k_Searcher_quiescenceEval[] = "Searcher.quiescenceEval";
 static const char __pyx_k_generate_legal_captures[] = "generate_legal_captures";
 static const char __pyx_k_storeTranspositionTable[] = "storeTranspositionTable";
@@ -1747,7 +1746,6 @@ static PyObject *__pyx_n_s_historyBoard;
 static PyObject *__pyx_n_s_i;
 static PyObject *__pyx_n_s_iCanReplaceThisTransposition;
 static PyObject *__pyx_n_s_import;
-static PyObject *__pyx_n_s_important;
 static PyObject *__pyx_n_s_init;
 static PyObject *__pyx_n_s_input;
 static PyObject *__pyx_n_s_isCheckmateMove;
@@ -1802,7 +1800,6 @@ static PyObject *__pyx_n_s_ply;
 static PyObject *__pyx_n_s_pop;
 static PyObject *__pyx_n_s_prepare;
 static PyObject *__pyx_n_s_print;
-static PyObject *__pyx_n_s_promotion;
 static PyObject *__pyx_n_s_pst;
 static PyObject *__pyx_n_s_push;
 static PyObject *__pyx_n_s_push_san;
@@ -1829,12 +1826,13 @@ static PyObject *__pyx_n_s_score;
 static PyObject *__pyx_n_s_searcher;
 static PyObject *__pyx_n_s_self;
 static PyObject *__pyx_n_s_send;
-static PyObject *__pyx_kp_s_socrates_ancient_pyx;
+static PyObject *__pyx_kp_s_socrates_ancient_py;
 static PyObject *__pyx_n_s_socrates_ancientc;
 static PyObject *__pyx_n_s_sort;
 static PyObject *__pyx_n_s_sortKey;
 static PyObject *__pyx_n_s_sq;
 static PyObject *__pyx_n_s_staticEval;
+static PyObject *__pyx_n_s_staticScore;
 static PyObject *__pyx_n_s_stopRatio;
 static PyObject *__pyx_n_s_storeTranspositionTable;
 static PyObject *__pyx_n_s_string;
@@ -1872,7 +1870,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
 static PyObject *__pyx_pf_17socrates_ancientc_19CheckmatedException___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_message); /* proto */
 static PyObject *__pyx_pf_17socrates_ancientc_8Searcher___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_game, PyObject *__pyx_v_usualTime, PyObject *__pyx_v_stopRatio); /* proto */
 static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_2mvvLva(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_move); /* proto */
-static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_4quiescenceEval(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_alpha, PyObject *__pyx_v_beta, PyObject *__pyx_v_ply, PyObject *__pyx_v_important); /* proto */
+static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_4quiescenceEval(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_alpha, PyObject *__pyx_v_beta, PyObject *__pyx_v_ply); /* proto */
 static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_8storeTranspositionTable(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_thisHash, PyObject *__pyx_v_depthLeft, PyObject *__pyx_v_score, PyObject *__pyx_v_nodeType, PyObject *__pyx_v_bestMove); /* proto */
 static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTable(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_thisHash, PyObject *__pyx_v_alpha, PyObject *__pyx_v_beta, PyObject *__pyx_v_depthLeft); /* proto */
@@ -1954,7 +1952,6 @@ static PyObject *__pyx_int_88;
 static PyObject *__pyx_int_90;
 static PyObject *__pyx_int_100;
 static PyObject *__pyx_int_102;
-static PyObject *__pyx_int_200;
 static PyObject *__pyx_int_280;
 static PyObject *__pyx_int_300;
 static PyObject *__pyx_int_320;
@@ -2052,20 +2049,19 @@ static PyObject *__pyx_tuple__24;
 static PyObject *__pyx_tuple__26;
 static PyObject *__pyx_tuple__28;
 static PyObject *__pyx_tuple__30;
-static PyObject *__pyx_tuple__31;
-static PyObject *__pyx_tuple__33;
-static PyObject *__pyx_tuple__35;
-static PyObject *__pyx_tuple__37;
+static PyObject *__pyx_tuple__32;
+static PyObject *__pyx_tuple__34;
+static PyObject *__pyx_tuple__36;
+static PyObject *__pyx_tuple__38;
 static PyObject *__pyx_tuple__39;
-static PyObject *__pyx_tuple__40;
+static PyObject *__pyx_tuple__41;
 static PyObject *__pyx_tuple__42;
 static PyObject *__pyx_tuple__43;
-static PyObject *__pyx_tuple__44;
+static PyObject *__pyx_tuple__45;
 static PyObject *__pyx_tuple__46;
-static PyObject *__pyx_tuple__47;
-static PyObject *__pyx_tuple__49;
-static PyObject *__pyx_tuple__51;
-static PyObject *__pyx_tuple__53;
+static PyObject *__pyx_tuple__48;
+static PyObject *__pyx_tuple__50;
+static PyObject *__pyx_tuple__52;
 static PyObject *__pyx_codeobj__4;
 static PyObject *__pyx_codeobj__7;
 static PyObject *__pyx_codeobj__9;
@@ -2075,19 +2071,19 @@ static PyObject *__pyx_codeobj__21;
 static PyObject *__pyx_codeobj__25;
 static PyObject *__pyx_codeobj__27;
 static PyObject *__pyx_codeobj__29;
-static PyObject *__pyx_codeobj__32;
-static PyObject *__pyx_codeobj__34;
-static PyObject *__pyx_codeobj__36;
-static PyObject *__pyx_codeobj__38;
-static PyObject *__pyx_codeobj__41;
-static PyObject *__pyx_codeobj__45;
-static PyObject *__pyx_codeobj__48;
-static PyObject *__pyx_codeobj__50;
-static PyObject *__pyx_codeobj__52;
-static PyObject *__pyx_codeobj__54;
+static PyObject *__pyx_codeobj__31;
+static PyObject *__pyx_codeobj__33;
+static PyObject *__pyx_codeobj__35;
+static PyObject *__pyx_codeobj__37;
+static PyObject *__pyx_codeobj__40;
+static PyObject *__pyx_codeobj__44;
+static PyObject *__pyx_codeobj__47;
+static PyObject *__pyx_codeobj__49;
+static PyObject *__pyx_codeobj__51;
+static PyObject *__pyx_codeobj__53;
 /* Late includes */
 
-/* "socrates_ancient.pyx":23
+/* "socrates_ancient.py":23
  * 
  * class Transposition(object):
  *     def __init__(self, thisHash, game, depthLeft, score, nodeType, bestMove):             # <<<<<<<<<<<<<<
@@ -2217,7 +2213,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_13Transposition___init__(CYTHON_UN
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "socrates_ancient.pyx":24
+  /* "socrates_ancient.py":24
  * class Transposition(object):
  *     def __init__(self, thisHash, game, depthLeft, score, nodeType, bestMove):
  *         self.key = thisHash             # <<<<<<<<<<<<<<
@@ -2226,7 +2222,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_13Transposition___init__(CYTHON_UN
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_key, __pyx_v_thisHash) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":25
+  /* "socrates_ancient.py":25
  *     def __init__(self, thisHash, game, depthLeft, score, nodeType, bestMove):
  *         self.key = thisHash
  *         self.depthLeft = depthLeft             # <<<<<<<<<<<<<<
@@ -2235,7 +2231,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_13Transposition___init__(CYTHON_UN
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_depthLeft, __pyx_v_depthLeft) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":26
+  /* "socrates_ancient.py":26
  *         self.key = thisHash
  *         self.depthLeft = depthLeft
  *         self.nodeType = nodeType             # <<<<<<<<<<<<<<
@@ -2244,7 +2240,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_13Transposition___init__(CYTHON_UN
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_nodeType, __pyx_v_nodeType) < 0) __PYX_ERR(0, 26, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":27
+  /* "socrates_ancient.py":27
  *         self.depthLeft = depthLeft
  *         self.nodeType = nodeType
  *         self.score = score             # <<<<<<<<<<<<<<
@@ -2253,7 +2249,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_13Transposition___init__(CYTHON_UN
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_score, __pyx_v_score) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":28
+  /* "socrates_ancient.py":28
  *         self.nodeType = nodeType
  *         self.score = score
  *         self.bestMove = bestMove             # <<<<<<<<<<<<<<
@@ -2262,7 +2258,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_13Transposition___init__(CYTHON_UN
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_bestMove, __pyx_v_bestMove) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":23
+  /* "socrates_ancient.py":23
  * 
  * class Transposition(object):
  *     def __init__(self, thisHash, game, depthLeft, score, nodeType, bestMove):             # <<<<<<<<<<<<<<
@@ -2282,7 +2278,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_13Transposition___init__(CYTHON_UN
   return __pyx_r;
 }
 
-/* "socrates_ancient.pyx":30
+/* "socrates_ancient.py":30
  *         self.bestMove = bestMove
  * 
  * def logPrint(*args, **kwargs):             # <<<<<<<<<<<<<<
@@ -2316,7 +2312,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_logPrint(CYTHON_UNUSED PyObject *_
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("logPrint", 0);
 
-  /* "socrates_ancient.pyx":31
+  /* "socrates_ancient.py":31
  * 
  * def logPrint(*args, **kwargs):
  *     return             # <<<<<<<<<<<<<<
@@ -2327,7 +2323,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_logPrint(CYTHON_UNUSED PyObject *_
   __pyx_r = Py_None; __Pyx_INCREF(Py_None);
   goto __pyx_L0;
 
-  /* "socrates_ancient.pyx":30
+  /* "socrates_ancient.py":30
  *         self.bestMove = bestMove
  * 
  * def logPrint(*args, **kwargs):             # <<<<<<<<<<<<<<
@@ -2342,7 +2338,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_logPrint(CYTHON_UNUSED PyObject *_
   return __pyx_r;
 }
 
-/* "socrates_ancient.pyx":34
+/* "socrates_ancient.py":34
  *     fprint(*args, **kwargs)
  * 
  * def cut(string):             # <<<<<<<<<<<<<<
@@ -2375,7 +2371,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_2cut(CYTHON_UNUSED PyObject *__pyx
   PyObject *__pyx_t_5 = NULL;
   __Pyx_RefNannySetupContext("cut", 0);
 
-  /* "socrates_ancient.pyx":35
+  /* "socrates_ancient.py":35
  * 
  * def cut(string):
  *     return [string[i*8:i*8+8] for i in range(8)]             # <<<<<<<<<<<<<<
@@ -2408,7 +2404,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_2cut(CYTHON_UNUSED PyObject *__pyx
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "socrates_ancient.pyx":34
+  /* "socrates_ancient.py":34
  *     fprint(*args, **kwargs)
  * 
  * def cut(string):             # <<<<<<<<<<<<<<
@@ -2431,7 +2427,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_2cut(CYTHON_UNUSED PyObject *__pyx
   return __pyx_r;
 }
 
-/* "socrates_ancient.pyx":100
+/* "socrates_ancient.py":100
  * 
  * 
  * def staticEval(game):    # Standing Pat             # <<<<<<<<<<<<<<
@@ -2476,10 +2472,19 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
   int __pyx_t_6;
   PyObject *__pyx_t_7 = NULL;
   PyObject *__pyx_t_8 = NULL;
-  PyObject *__pyx_t_9 = NULL;
+  int __pyx_t_9;
+  PyObject *__pyx_t_10 = NULL;
+  int __pyx_t_11;
+  PyObject *__pyx_t_12 = NULL;
+  int __pyx_t_13;
+  PyObject *__pyx_t_14 = NULL;
+  int __pyx_t_15;
+  PyObject *__pyx_t_16 = NULL;
+  int __pyx_t_17;
+  PyObject *__pyx_t_18 = NULL;
   __Pyx_RefNannySetupContext("staticEval", 0);
 
-  /* "socrates_ancient.pyx":102
+  /* "socrates_ancient.py":102
  * def staticEval(game):    # Standing Pat
  *     #  Alpha-beta  Negamax
  *     currTurn = game.board.turn             # <<<<<<<<<<<<<<
@@ -2494,7 +2499,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
   __pyx_v_currTurn = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":103
+  /* "socrates_ancient.py":103
  *     #  Alpha-beta  Negamax
  *     currTurn = game.board.turn
  *     whiteMap = game.board.occupied_co[chess.WHITE]             # <<<<<<<<<<<<<<
@@ -2518,7 +2523,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
   __pyx_v_whiteMap = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":104
+  /* "socrates_ancient.py":104
  *     currTurn = game.board.turn
  *     whiteMap = game.board.occupied_co[chess.WHITE]
  *     blackMap = game.board.occupied_co[chess.BLACK]             # <<<<<<<<<<<<<<
@@ -2542,7 +2547,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
   __pyx_v_blackMap = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":105
+  /* "socrates_ancient.py":105
  *     whiteMap = game.board.occupied_co[chess.WHITE]
  *     blackMap = game.board.occupied_co[chess.BLACK]
  *     pawnMap = game.board.pawns             # <<<<<<<<<<<<<<
@@ -2557,7 +2562,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
   __pyx_v_pawnMap = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":106
+  /* "socrates_ancient.py":106
  *     blackMap = game.board.occupied_co[chess.BLACK]
  *     pawnMap = game.board.pawns
  *     knightMap = game.board.knights             # <<<<<<<<<<<<<<
@@ -2572,7 +2577,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
   __pyx_v_knightMap = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":107
+  /* "socrates_ancient.py":107
  *     pawnMap = game.board.pawns
  *     knightMap = game.board.knights
  *     bishopMap = game.board.bishops             # <<<<<<<<<<<<<<
@@ -2587,7 +2592,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
   __pyx_v_bishopMap = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":108
+  /* "socrates_ancient.py":108
  *     knightMap = game.board.knights
  *     bishopMap = game.board.bishops
  *     rookMap = game.board.rooks             # <<<<<<<<<<<<<<
@@ -2602,7 +2607,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
   __pyx_v_rookMap = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":109
+  /* "socrates_ancient.py":109
  *     bishopMap = game.board.bishops
  *     rookMap = game.board.rooks
  *     queenMap = game.board.queens             # <<<<<<<<<<<<<<
@@ -2617,7 +2622,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
   __pyx_v_queenMap = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":110
+  /* "socrates_ancient.py":110
  *     rookMap = game.board.rooks
  *     queenMap = game.board.queens
  *     kingMap = game.board.kings             # <<<<<<<<<<<<<<
@@ -2632,7 +2637,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
   __pyx_v_kingMap = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":111
+  /* "socrates_ancient.py":111
  *     queenMap = game.board.queens
  *     kingMap = game.board.kings
  *     counter = 0             # <<<<<<<<<<<<<<
@@ -2642,7 +2647,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
   __Pyx_INCREF(__pyx_int_0);
   __pyx_v_counter = __pyx_int_0;
 
-  /* "socrates_ancient.pyx":112
+  /* "socrates_ancient.py":112
  *     kingMap = game.board.kings
  *     counter = 0
  *     score = 0             # <<<<<<<<<<<<<<
@@ -2652,12 +2657,12 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
   __Pyx_INCREF(__pyx_int_0);
   __pyx_v_score = __pyx_int_0;
 
-  /* "socrates_ancient.pyx":113
+  /* "socrates_ancient.py":113
  *     counter = 0
  *     score = 0
  *     for sq in chess.BB_SQUARES:             # <<<<<<<<<<<<<<
  *         if whiteMap & sq:
- *             score += (reversePst['P'][counter] + piece['P'] if pawnMap & sq else 0) | (reversePst['N'][counter] + piece['N'] if knightMap & sq else 0)  | (reversePst['B'][counter] + piece['B'] if bishopMap & sq else 0) | (reversePst['R'][counter] + piece['R'] if rookMap & sq else 0) | (reversePst['Q'][counter] + piece['Q'] if queenMap & sq else 0) | (reversePst['K'][counter] + piece['K'] if kingMap & sq else 0)
+ *             score += reversePst['P'][counter] + piece['P'] if pawnMap & sq else ((reversePst['N'][counter] + piece['N'] if knightMap & sq else ((reversePst['B'][counter] + piece['B'] if bishopMap & sq else ((reversePst['R'][counter] + piece['R'] if rookMap & sq else ((reversePst['Q'][counter] + piece['Q'] if queenMap & sq else ((reversePst['K'][counter] + piece['K'] if kingMap & sq else 0))))))))))
  */
   __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_chess); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 113, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -2707,11 +2712,11 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
     __Pyx_XDECREF_SET(__pyx_v_sq, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "socrates_ancient.pyx":114
+    /* "socrates_ancient.py":114
  *     score = 0
  *     for sq in chess.BB_SQUARES:
  *         if whiteMap & sq:             # <<<<<<<<<<<<<<
- *             score += (reversePst['P'][counter] + piece['P'] if pawnMap & sq else 0) | (reversePst['N'][counter] + piece['N'] if knightMap & sq else 0)  | (reversePst['B'][counter] + piece['B'] if bishopMap & sq else 0) | (reversePst['R'][counter] + piece['R'] if rookMap & sq else 0) | (reversePst['Q'][counter] + piece['Q'] if queenMap & sq else 0) | (reversePst['K'][counter] + piece['K'] if kingMap & sq else 0)
+ *             score += reversePst['P'][counter] + piece['P'] if pawnMap & sq else ((reversePst['N'][counter] + piece['N'] if knightMap & sq else ((reversePst['B'][counter] + piece['B'] if bishopMap & sq else ((reversePst['R'][counter] + piece['R'] if rookMap & sq else ((reversePst['Q'][counter] + piece['Q'] if queenMap & sq else ((reversePst['K'][counter] + piece['K'] if kingMap & sq else 0))))))))))
  *         elif blackMap & sq:
  */
     __pyx_t_1 = PyNumber_And(__pyx_v_whiteMap, __pyx_v_sq); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 114, __pyx_L1_error)
@@ -2720,12 +2725,12 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (__pyx_t_6) {
 
-      /* "socrates_ancient.pyx":115
+      /* "socrates_ancient.py":115
  *     for sq in chess.BB_SQUARES:
  *         if whiteMap & sq:
- *             score += (reversePst['P'][counter] + piece['P'] if pawnMap & sq else 0) | (reversePst['N'][counter] + piece['N'] if knightMap & sq else 0)  | (reversePst['B'][counter] + piece['B'] if bishopMap & sq else 0) | (reversePst['R'][counter] + piece['R'] if rookMap & sq else 0) | (reversePst['Q'][counter] + piece['Q'] if queenMap & sq else 0) | (reversePst['K'][counter] + piece['K'] if kingMap & sq else 0)             # <<<<<<<<<<<<<<
+ *             score += reversePst['P'][counter] + piece['P'] if pawnMap & sq else ((reversePst['N'][counter] + piece['N'] if knightMap & sq else ((reversePst['B'][counter] + piece['B'] if bishopMap & sq else ((reversePst['R'][counter] + piece['R'] if rookMap & sq else ((reversePst['Q'][counter] + piece['Q'] if queenMap & sq else ((reversePst['K'][counter] + piece['K'] if kingMap & sq else 0))))))))))             # <<<<<<<<<<<<<<
  *         elif blackMap & sq:
- *             score -= (pst['P'][counter] + piece['P'] if pawnMap & sq else 0) | (pst['N'][counter] + piece['N'] if knightMap & sq else 0)  | (pst['B'][counter] + piece['B'] if bishopMap & sq else 0) | (pst['R'][counter] + piece['R'] if rookMap & sq else 0) | (pst['Q'][counter] + piece['Q'] if queenMap & sq else 0) | (pst['K'][counter] + piece['K'] if kingMap & sq else 0)
+ *             score -= pst['P'][counter] + piece['P'] if pawnMap & sq else ((pst['N'][counter] + piece['N'] if knightMap & sq else ((pst['B'][counter] + piece['B'] if bishopMap & sq else ((pst['R'][counter] + piece['R'] if rookMap & sq else ((pst['Q'][counter] + piece['Q'] if queenMap & sq else ((pst['K'][counter] + piece['K'] if kingMap & sq else 0))))))))))
  */
       __pyx_t_3 = PyNumber_And(__pyx_v_pawnMap, __pyx_v_sq); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
@@ -2752,190 +2757,170 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
         __pyx_t_1 = __pyx_t_7;
         __pyx_t_7 = 0;
       } else {
-        __Pyx_INCREF(__pyx_int_0);
-        __pyx_t_1 = __pyx_int_0;
+        __pyx_t_8 = PyNumber_And(__pyx_v_knightMap, __pyx_v_sq); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 115, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_8);
+        __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 115, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+        if (__pyx_t_9) {
+          __pyx_t_8 = __Pyx_GetModuleGlobalName(__pyx_n_s_reversePst); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 115, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_8);
+          __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_t_8, __pyx_n_s_N); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_3);
+          __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+          __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_v_counter); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 115, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_8);
+          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+          __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_3);
+          __pyx_t_10 = __Pyx_PyObject_Dict_GetItem(__pyx_t_3, __pyx_n_s_N); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 115, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_10);
+          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+          __pyx_t_3 = PyNumber_Add(__pyx_t_8, __pyx_t_10); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_3);
+          __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+          __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+          __pyx_t_7 = __pyx_t_3;
+          __pyx_t_3 = 0;
+        } else {
+          __pyx_t_10 = PyNumber_And(__pyx_v_bishopMap, __pyx_v_sq); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 115, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_10);
+          __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 115, __pyx_L1_error)
+          __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+          if (__pyx_t_11) {
+            __pyx_t_10 = __Pyx_GetModuleGlobalName(__pyx_n_s_reversePst); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 115, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_10);
+            __pyx_t_8 = __Pyx_PyObject_Dict_GetItem(__pyx_t_10, __pyx_n_s_B); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 115, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_8);
+            __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+            __pyx_t_10 = __Pyx_PyObject_GetItem(__pyx_t_8, __pyx_v_counter); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 115, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_10);
+            __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+            __pyx_t_8 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 115, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_8);
+            __pyx_t_12 = __Pyx_PyObject_Dict_GetItem(__pyx_t_8, __pyx_n_s_B); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 115, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_12);
+            __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+            __pyx_t_8 = PyNumber_Add(__pyx_t_10, __pyx_t_12); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 115, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_8);
+            __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+            __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+            __pyx_t_3 = __pyx_t_8;
+            __pyx_t_8 = 0;
+          } else {
+            __pyx_t_12 = PyNumber_And(__pyx_v_rookMap, __pyx_v_sq); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 115, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_12);
+            __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 115, __pyx_L1_error)
+            __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+            if (__pyx_t_13) {
+              __pyx_t_12 = __Pyx_GetModuleGlobalName(__pyx_n_s_reversePst); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 115, __pyx_L1_error)
+              __Pyx_GOTREF(__pyx_t_12);
+              __pyx_t_10 = __Pyx_PyObject_Dict_GetItem(__pyx_t_12, __pyx_n_s_R); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 115, __pyx_L1_error)
+              __Pyx_GOTREF(__pyx_t_10);
+              __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+              __pyx_t_12 = __Pyx_PyObject_GetItem(__pyx_t_10, __pyx_v_counter); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 115, __pyx_L1_error)
+              __Pyx_GOTREF(__pyx_t_12);
+              __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+              __pyx_t_10 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 115, __pyx_L1_error)
+              __Pyx_GOTREF(__pyx_t_10);
+              __pyx_t_14 = __Pyx_PyObject_Dict_GetItem(__pyx_t_10, __pyx_n_s_R); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 115, __pyx_L1_error)
+              __Pyx_GOTREF(__pyx_t_14);
+              __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+              __pyx_t_10 = PyNumber_Add(__pyx_t_12, __pyx_t_14); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 115, __pyx_L1_error)
+              __Pyx_GOTREF(__pyx_t_10);
+              __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+              __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+              __pyx_t_8 = __pyx_t_10;
+              __pyx_t_10 = 0;
+            } else {
+              __pyx_t_14 = PyNumber_And(__pyx_v_queenMap, __pyx_v_sq); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 115, __pyx_L1_error)
+              __Pyx_GOTREF(__pyx_t_14);
+              __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_t_14); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 115, __pyx_L1_error)
+              __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+              if (__pyx_t_15) {
+                __pyx_t_14 = __Pyx_GetModuleGlobalName(__pyx_n_s_reversePst); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 115, __pyx_L1_error)
+                __Pyx_GOTREF(__pyx_t_14);
+                __pyx_t_12 = __Pyx_PyObject_Dict_GetItem(__pyx_t_14, __pyx_n_s_Q); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 115, __pyx_L1_error)
+                __Pyx_GOTREF(__pyx_t_12);
+                __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+                __pyx_t_14 = __Pyx_PyObject_GetItem(__pyx_t_12, __pyx_v_counter); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 115, __pyx_L1_error)
+                __Pyx_GOTREF(__pyx_t_14);
+                __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+                __pyx_t_12 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 115, __pyx_L1_error)
+                __Pyx_GOTREF(__pyx_t_12);
+                __pyx_t_16 = __Pyx_PyObject_Dict_GetItem(__pyx_t_12, __pyx_n_s_Q); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 115, __pyx_L1_error)
+                __Pyx_GOTREF(__pyx_t_16);
+                __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+                __pyx_t_12 = PyNumber_Add(__pyx_t_14, __pyx_t_16); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 115, __pyx_L1_error)
+                __Pyx_GOTREF(__pyx_t_12);
+                __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+                __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+                __pyx_t_10 = __pyx_t_12;
+                __pyx_t_12 = 0;
+              } else {
+                __pyx_t_16 = PyNumber_And(__pyx_v_kingMap, __pyx_v_sq); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 115, __pyx_L1_error)
+                __Pyx_GOTREF(__pyx_t_16);
+                __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_16); if (unlikely(__pyx_t_17 < 0)) __PYX_ERR(0, 115, __pyx_L1_error)
+                __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+                if (__pyx_t_17) {
+                  __pyx_t_16 = __Pyx_GetModuleGlobalName(__pyx_n_s_reversePst); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 115, __pyx_L1_error)
+                  __Pyx_GOTREF(__pyx_t_16);
+                  __pyx_t_14 = __Pyx_PyObject_Dict_GetItem(__pyx_t_16, __pyx_n_s_K); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 115, __pyx_L1_error)
+                  __Pyx_GOTREF(__pyx_t_14);
+                  __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+                  __pyx_t_16 = __Pyx_PyObject_GetItem(__pyx_t_14, __pyx_v_counter); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 115, __pyx_L1_error)
+                  __Pyx_GOTREF(__pyx_t_16);
+                  __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+                  __pyx_t_14 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 115, __pyx_L1_error)
+                  __Pyx_GOTREF(__pyx_t_14);
+                  __pyx_t_18 = __Pyx_PyObject_Dict_GetItem(__pyx_t_14, __pyx_n_s_K); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 115, __pyx_L1_error)
+                  __Pyx_GOTREF(__pyx_t_18);
+                  __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+                  __pyx_t_14 = PyNumber_Add(__pyx_t_16, __pyx_t_18); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 115, __pyx_L1_error)
+                  __Pyx_GOTREF(__pyx_t_14);
+                  __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+                  __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
+                  __pyx_t_12 = __pyx_t_14;
+                  __pyx_t_14 = 0;
+                } else {
+                  __Pyx_INCREF(__pyx_int_0);
+                  __pyx_t_12 = __pyx_int_0;
+                }
+                __pyx_t_10 = __pyx_t_12;
+                __pyx_t_12 = 0;
+              }
+              __pyx_t_8 = __pyx_t_10;
+              __pyx_t_10 = 0;
+            }
+            __pyx_t_3 = __pyx_t_8;
+            __pyx_t_8 = 0;
+          }
+          __pyx_t_7 = __pyx_t_3;
+          __pyx_t_3 = 0;
+        }
+        __pyx_t_1 = __pyx_t_7;
+        __pyx_t_7 = 0;
       }
-      __pyx_t_8 = PyNumber_And(__pyx_v_knightMap, __pyx_v_sq); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 115, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 115, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      if (__pyx_t_6) {
-        __pyx_t_8 = __Pyx_GetModuleGlobalName(__pyx_n_s_reversePst); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_8);
-        __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_t_8, __pyx_n_s_N); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_v_counter); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_8);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_9 = __Pyx_PyObject_Dict_GetItem(__pyx_t_3, __pyx_n_s_N); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_9);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = PyNumber_Add(__pyx_t_8, __pyx_t_9); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_7 = __pyx_t_3;
-        __pyx_t_3 = 0;
-      } else {
-        __Pyx_INCREF(__pyx_int_0);
-        __pyx_t_7 = __pyx_int_0;
-      }
-      __pyx_t_3 = PyNumber_Or(__pyx_t_1, __pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_1 = PyNumber_And(__pyx_v_bishopMap, __pyx_v_sq); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 115, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 115, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      if (__pyx_t_6) {
-        __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_reversePst); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_9 = __Pyx_PyObject_Dict_GetItem(__pyx_t_1, __pyx_n_s_B); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_9);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_9, __pyx_v_counter); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_9 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_9);
-        __pyx_t_8 = __Pyx_PyObject_Dict_GetItem(__pyx_t_9, __pyx_n_s_B); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_8);
-        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_9 = PyNumber_Add(__pyx_t_1, __pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_9);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        __pyx_t_7 = __pyx_t_9;
-        __pyx_t_9 = 0;
-      } else {
-        __Pyx_INCREF(__pyx_int_0);
-        __pyx_t_7 = __pyx_int_0;
-      }
-      __pyx_t_9 = PyNumber_Or(__pyx_t_3, __pyx_t_7); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 115, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_3 = PyNumber_And(__pyx_v_rookMap, __pyx_v_sq); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 115, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (__pyx_t_6) {
-        __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_reversePst); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_8 = __Pyx_PyObject_Dict_GetItem(__pyx_t_3, __pyx_n_s_R); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_8);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_8, __pyx_v_counter); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        __pyx_t_8 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_8);
-        __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_t_8, __pyx_n_s_R); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        __pyx_t_8 = PyNumber_Add(__pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_8);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_7 = __pyx_t_8;
-        __pyx_t_8 = 0;
-      } else {
-        __Pyx_INCREF(__pyx_int_0);
-        __pyx_t_7 = __pyx_int_0;
-      }
-      __pyx_t_8 = PyNumber_Or(__pyx_t_9, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 115, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_9 = PyNumber_And(__pyx_v_queenMap, __pyx_v_sq); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 115, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_9); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 115, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      if (__pyx_t_6) {
-        __pyx_t_9 = __Pyx_GetModuleGlobalName(__pyx_n_s_reversePst); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_9);
-        __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_t_9, __pyx_n_s_Q); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_9 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_counter); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_9);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_t_1, __pyx_n_s_Q); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = PyNumber_Add(__pyx_t_9, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_7 = __pyx_t_1;
-        __pyx_t_1 = 0;
-      } else {
-        __Pyx_INCREF(__pyx_int_0);
-        __pyx_t_7 = __pyx_int_0;
-      }
-      __pyx_t_1 = PyNumber_Or(__pyx_t_8, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 115, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_8 = PyNumber_And(__pyx_v_kingMap, __pyx_v_sq); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 115, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 115, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      if (__pyx_t_6) {
-        __pyx_t_8 = __Pyx_GetModuleGlobalName(__pyx_n_s_reversePst); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_8);
-        __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_t_8, __pyx_n_s_K); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_v_counter); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_8);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_9 = __Pyx_PyObject_Dict_GetItem(__pyx_t_3, __pyx_n_s_K); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_9);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = PyNumber_Add(__pyx_t_8, __pyx_t_9); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_7 = __pyx_t_3;
-        __pyx_t_3 = 0;
-      } else {
-        __Pyx_INCREF(__pyx_int_0);
-        __pyx_t_7 = __pyx_int_0;
-      }
-      __pyx_t_3 = PyNumber_Or(__pyx_t_1, __pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_7 = PyNumber_InPlaceAdd(__pyx_v_score, __pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 115, __pyx_L1_error)
+      __pyx_t_7 = PyNumber_InPlaceAdd(__pyx_v_score, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 115, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF_SET(__pyx_v_score, __pyx_t_7);
       __pyx_t_7 = 0;
 
-      /* "socrates_ancient.pyx":114
+      /* "socrates_ancient.py":114
  *     score = 0
  *     for sq in chess.BB_SQUARES:
  *         if whiteMap & sq:             # <<<<<<<<<<<<<<
- *             score += (reversePst['P'][counter] + piece['P'] if pawnMap & sq else 0) | (reversePst['N'][counter] + piece['N'] if knightMap & sq else 0)  | (reversePst['B'][counter] + piece['B'] if bishopMap & sq else 0) | (reversePst['R'][counter] + piece['R'] if rookMap & sq else 0) | (reversePst['Q'][counter] + piece['Q'] if queenMap & sq else 0) | (reversePst['K'][counter] + piece['K'] if kingMap & sq else 0)
+ *             score += reversePst['P'][counter] + piece['P'] if pawnMap & sq else ((reversePst['N'][counter] + piece['N'] if knightMap & sq else ((reversePst['B'][counter] + piece['B'] if bishopMap & sq else ((reversePst['R'][counter] + piece['R'] if rookMap & sq else ((reversePst['Q'][counter] + piece['Q'] if queenMap & sq else ((reversePst['K'][counter] + piece['K'] if kingMap & sq else 0))))))))))
  *         elif blackMap & sq:
  */
       goto __pyx_L5;
     }
 
-    /* "socrates_ancient.pyx":116
+    /* "socrates_ancient.py":116
  *         if whiteMap & sq:
- *             score += (reversePst['P'][counter] + piece['P'] if pawnMap & sq else 0) | (reversePst['N'][counter] + piece['N'] if knightMap & sq else 0)  | (reversePst['B'][counter] + piece['B'] if bishopMap & sq else 0) | (reversePst['R'][counter] + piece['R'] if rookMap & sq else 0) | (reversePst['Q'][counter] + piece['Q'] if queenMap & sq else 0) | (reversePst['K'][counter] + piece['K'] if kingMap & sq else 0)
+ *             score += reversePst['P'][counter] + piece['P'] if pawnMap & sq else ((reversePst['N'][counter] + piece['N'] if knightMap & sq else ((reversePst['B'][counter] + piece['B'] if bishopMap & sq else ((reversePst['R'][counter] + piece['R'] if rookMap & sq else ((reversePst['Q'][counter] + piece['Q'] if queenMap & sq else ((reversePst['K'][counter] + piece['K'] if kingMap & sq else 0))))))))))
  *         elif blackMap & sq:             # <<<<<<<<<<<<<<
- *             score -= (pst['P'][counter] + piece['P'] if pawnMap & sq else 0) | (pst['N'][counter] + piece['N'] if knightMap & sq else 0)  | (pst['B'][counter] + piece['B'] if bishopMap & sq else 0) | (pst['R'][counter] + piece['R'] if rookMap & sq else 0) | (pst['Q'][counter] + piece['Q'] if queenMap & sq else 0) | (pst['K'][counter] + piece['K'] if kingMap & sq else 0)
+ *             score -= pst['P'][counter] + piece['P'] if pawnMap & sq else ((pst['N'][counter] + piece['N'] if knightMap & sq else ((pst['B'][counter] + piece['B'] if bishopMap & sq else ((pst['R'][counter] + piece['R'] if rookMap & sq else ((pst['Q'][counter] + piece['Q'] if queenMap & sq else ((pst['K'][counter] + piece['K'] if kingMap & sq else 0))))))))))
  *         counter += 1
  */
     __pyx_t_7 = PyNumber_And(__pyx_v_blackMap, __pyx_v_sq); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 116, __pyx_L1_error)
@@ -2944,240 +2929,220 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     if (__pyx_t_6) {
 
-      /* "socrates_ancient.pyx":117
- *             score += (reversePst['P'][counter] + piece['P'] if pawnMap & sq else 0) | (reversePst['N'][counter] + piece['N'] if knightMap & sq else 0)  | (reversePst['B'][counter] + piece['B'] if bishopMap & sq else 0) | (reversePst['R'][counter] + piece['R'] if rookMap & sq else 0) | (reversePst['Q'][counter] + piece['Q'] if queenMap & sq else 0) | (reversePst['K'][counter] + piece['K'] if kingMap & sq else 0)
+      /* "socrates_ancient.py":117
+ *             score += reversePst['P'][counter] + piece['P'] if pawnMap & sq else ((reversePst['N'][counter] + piece['N'] if knightMap & sq else ((reversePst['B'][counter] + piece['B'] if bishopMap & sq else ((reversePst['R'][counter] + piece['R'] if rookMap & sq else ((reversePst['Q'][counter] + piece['Q'] if queenMap & sq else ((reversePst['K'][counter] + piece['K'] if kingMap & sq else 0))))))))))
  *         elif blackMap & sq:
- *             score -= (pst['P'][counter] + piece['P'] if pawnMap & sq else 0) | (pst['N'][counter] + piece['N'] if knightMap & sq else 0)  | (pst['B'][counter] + piece['B'] if bishopMap & sq else 0) | (pst['R'][counter] + piece['R'] if rookMap & sq else 0) | (pst['Q'][counter] + piece['Q'] if queenMap & sq else 0) | (pst['K'][counter] + piece['K'] if kingMap & sq else 0)             # <<<<<<<<<<<<<<
+ *             score -= pst['P'][counter] + piece['P'] if pawnMap & sq else ((pst['N'][counter] + piece['N'] if knightMap & sq else ((pst['B'][counter] + piece['B'] if bishopMap & sq else ((pst['R'][counter] + piece['R'] if rookMap & sq else ((pst['Q'][counter] + piece['Q'] if queenMap & sq else ((pst['K'][counter] + piece['K'] if kingMap & sq else 0))))))))))             # <<<<<<<<<<<<<<
  *         counter += 1
  * 
  */
-      __pyx_t_3 = PyNumber_And(__pyx_v_pawnMap, __pyx_v_sq); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (__pyx_t_6) {
-        __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_pst); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_t_3, __pyx_n_s_P); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_counter); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_9 = __Pyx_PyObject_Dict_GetItem(__pyx_t_1, __pyx_n_s_P); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_9);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = PyNumber_Add(__pyx_t_3, __pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_7 = __pyx_t_1;
-        __pyx_t_1 = 0;
-      } else {
-        __Pyx_INCREF(__pyx_int_0);
-        __pyx_t_7 = __pyx_int_0;
-      }
-      __pyx_t_9 = PyNumber_And(__pyx_v_knightMap, __pyx_v_sq); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 117, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_9); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      if (__pyx_t_6) {
-        __pyx_t_9 = __Pyx_GetModuleGlobalName(__pyx_n_s_pst); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_9);
-        __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_t_9, __pyx_n_s_N); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_9 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_v_counter); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_9);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_8 = __Pyx_PyObject_Dict_GetItem(__pyx_t_3, __pyx_n_s_N); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_8);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = PyNumber_Add(__pyx_t_9, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        __pyx_t_1 = __pyx_t_3;
-        __pyx_t_3 = 0;
-      } else {
-        __Pyx_INCREF(__pyx_int_0);
-        __pyx_t_1 = __pyx_int_0;
-      }
-      __pyx_t_3 = PyNumber_Or(__pyx_t_7, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_7 = PyNumber_And(__pyx_v_bishopMap, __pyx_v_sq); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 117, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      if (__pyx_t_6) {
-        __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_pst); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_8 = __Pyx_PyObject_Dict_GetItem(__pyx_t_7, __pyx_n_s_B); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_8);
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_8, __pyx_v_counter); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
-        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        __pyx_t_8 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_8);
-        __pyx_t_9 = __Pyx_PyObject_Dict_GetItem(__pyx_t_8, __pyx_n_s_B); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_9);
-        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        __pyx_t_8 = PyNumber_Add(__pyx_t_7, __pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_8);
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_1 = __pyx_t_8;
-        __pyx_t_8 = 0;
-      } else {
-        __Pyx_INCREF(__pyx_int_0);
-        __pyx_t_1 = __pyx_int_0;
-      }
-      __pyx_t_8 = PyNumber_Or(__pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 117, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_3 = PyNumber_And(__pyx_v_rookMap, __pyx_v_sq); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (__pyx_t_6) {
-        __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_pst); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_9 = __Pyx_PyObject_Dict_GetItem(__pyx_t_3, __pyx_n_s_R); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_9);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_9, __pyx_v_counter); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_9 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_9);
-        __pyx_t_7 = __Pyx_PyObject_Dict_GetItem(__pyx_t_9, __pyx_n_s_R); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
-        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_9 = PyNumber_Add(__pyx_t_3, __pyx_t_7); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_9);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        __pyx_t_1 = __pyx_t_9;
-        __pyx_t_9 = 0;
-      } else {
-        __Pyx_INCREF(__pyx_int_0);
-        __pyx_t_1 = __pyx_int_0;
-      }
-      __pyx_t_9 = PyNumber_Or(__pyx_t_8, __pyx_t_1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 117, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_8 = PyNumber_And(__pyx_v_queenMap, __pyx_v_sq); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 117, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      if (__pyx_t_6) {
-        __pyx_t_8 = __Pyx_GetModuleGlobalName(__pyx_n_s_pst); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_8);
-        __pyx_t_7 = __Pyx_PyObject_Dict_GetItem(__pyx_t_8, __pyx_n_s_Q); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
-        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_7, __pyx_v_counter); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_8);
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_t_7, __pyx_n_s_Q); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        __pyx_t_7 = PyNumber_Add(__pyx_t_8, __pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
-        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_1 = __pyx_t_7;
-        __pyx_t_7 = 0;
-      } else {
-        __Pyx_INCREF(__pyx_int_0);
-        __pyx_t_1 = __pyx_int_0;
-      }
-      __pyx_t_7 = PyNumber_Or(__pyx_t_9, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 117, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_9 = PyNumber_And(__pyx_v_kingMap, __pyx_v_sq); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 117, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_9); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      if (__pyx_t_6) {
-        __pyx_t_9 = __Pyx_GetModuleGlobalName(__pyx_n_s_pst); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_9);
-        __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_t_9, __pyx_n_s_K); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_9 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_v_counter); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_9);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_8 = __Pyx_PyObject_Dict_GetItem(__pyx_t_3, __pyx_n_s_K); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_8);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = PyNumber_Add(__pyx_t_9, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        __pyx_t_1 = __pyx_t_3;
-        __pyx_t_3 = 0;
-      } else {
-        __Pyx_INCREF(__pyx_int_0);
-        __pyx_t_1 = __pyx_int_0;
-      }
-      __pyx_t_3 = PyNumber_Or(__pyx_t_7, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = PyNumber_InPlaceSubtract(__pyx_v_score, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
+      __pyx_t_1 = PyNumber_And(__pyx_v_pawnMap, __pyx_v_sq); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __Pyx_DECREF_SET(__pyx_v_score, __pyx_t_1);
-      __pyx_t_1 = 0;
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      if (__pyx_t_6) {
+        __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_pst); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_t_1, __pyx_n_s_P); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_v_counter); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __pyx_t_8 = __Pyx_PyObject_Dict_GetItem(__pyx_t_3, __pyx_n_s_P); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 117, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_8);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __pyx_t_3 = PyNumber_Add(__pyx_t_1, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+        __pyx_t_7 = __pyx_t_3;
+        __pyx_t_3 = 0;
+      } else {
+        __pyx_t_8 = PyNumber_And(__pyx_v_knightMap, __pyx_v_sq); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 117, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_8);
+        __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+        if (__pyx_t_9) {
+          __pyx_t_8 = __Pyx_GetModuleGlobalName(__pyx_n_s_pst); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 117, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_8);
+          __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_t_8, __pyx_n_s_N); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_1);
+          __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+          __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_counter); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 117, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_8);
+          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+          __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_1);
+          __pyx_t_10 = __Pyx_PyObject_Dict_GetItem(__pyx_t_1, __pyx_n_s_N); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 117, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_10);
+          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+          __pyx_t_1 = PyNumber_Add(__pyx_t_8, __pyx_t_10); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_1);
+          __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+          __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+          __pyx_t_3 = __pyx_t_1;
+          __pyx_t_1 = 0;
+        } else {
+          __pyx_t_10 = PyNumber_And(__pyx_v_bishopMap, __pyx_v_sq); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 117, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_10);
+          __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
+          __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+          if (__pyx_t_11) {
+            __pyx_t_10 = __Pyx_GetModuleGlobalName(__pyx_n_s_pst); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 117, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_10);
+            __pyx_t_8 = __Pyx_PyObject_Dict_GetItem(__pyx_t_10, __pyx_n_s_B); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 117, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_8);
+            __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+            __pyx_t_10 = __Pyx_PyObject_GetItem(__pyx_t_8, __pyx_v_counter); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 117, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_10);
+            __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+            __pyx_t_8 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 117, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_8);
+            __pyx_t_12 = __Pyx_PyObject_Dict_GetItem(__pyx_t_8, __pyx_n_s_B); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 117, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_12);
+            __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+            __pyx_t_8 = PyNumber_Add(__pyx_t_10, __pyx_t_12); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 117, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_8);
+            __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+            __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+            __pyx_t_1 = __pyx_t_8;
+            __pyx_t_8 = 0;
+          } else {
+            __pyx_t_12 = PyNumber_And(__pyx_v_rookMap, __pyx_v_sq); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 117, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_12);
+            __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
+            __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+            if (__pyx_t_13) {
+              __pyx_t_12 = __Pyx_GetModuleGlobalName(__pyx_n_s_pst); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 117, __pyx_L1_error)
+              __Pyx_GOTREF(__pyx_t_12);
+              __pyx_t_10 = __Pyx_PyObject_Dict_GetItem(__pyx_t_12, __pyx_n_s_R); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 117, __pyx_L1_error)
+              __Pyx_GOTREF(__pyx_t_10);
+              __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+              __pyx_t_12 = __Pyx_PyObject_GetItem(__pyx_t_10, __pyx_v_counter); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 117, __pyx_L1_error)
+              __Pyx_GOTREF(__pyx_t_12);
+              __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+              __pyx_t_10 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 117, __pyx_L1_error)
+              __Pyx_GOTREF(__pyx_t_10);
+              __pyx_t_14 = __Pyx_PyObject_Dict_GetItem(__pyx_t_10, __pyx_n_s_R); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 117, __pyx_L1_error)
+              __Pyx_GOTREF(__pyx_t_14);
+              __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+              __pyx_t_10 = PyNumber_Add(__pyx_t_12, __pyx_t_14); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 117, __pyx_L1_error)
+              __Pyx_GOTREF(__pyx_t_10);
+              __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+              __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+              __pyx_t_8 = __pyx_t_10;
+              __pyx_t_10 = 0;
+            } else {
+              __pyx_t_14 = PyNumber_And(__pyx_v_queenMap, __pyx_v_sq); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 117, __pyx_L1_error)
+              __Pyx_GOTREF(__pyx_t_14);
+              __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_t_14); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
+              __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+              if (__pyx_t_15) {
+                __pyx_t_14 = __Pyx_GetModuleGlobalName(__pyx_n_s_pst); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 117, __pyx_L1_error)
+                __Pyx_GOTREF(__pyx_t_14);
+                __pyx_t_12 = __Pyx_PyObject_Dict_GetItem(__pyx_t_14, __pyx_n_s_Q); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 117, __pyx_L1_error)
+                __Pyx_GOTREF(__pyx_t_12);
+                __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+                __pyx_t_14 = __Pyx_PyObject_GetItem(__pyx_t_12, __pyx_v_counter); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 117, __pyx_L1_error)
+                __Pyx_GOTREF(__pyx_t_14);
+                __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+                __pyx_t_12 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 117, __pyx_L1_error)
+                __Pyx_GOTREF(__pyx_t_12);
+                __pyx_t_18 = __Pyx_PyObject_Dict_GetItem(__pyx_t_12, __pyx_n_s_Q); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 117, __pyx_L1_error)
+                __Pyx_GOTREF(__pyx_t_18);
+                __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+                __pyx_t_12 = PyNumber_Add(__pyx_t_14, __pyx_t_18); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 117, __pyx_L1_error)
+                __Pyx_GOTREF(__pyx_t_12);
+                __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+                __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
+                __pyx_t_10 = __pyx_t_12;
+                __pyx_t_12 = 0;
+              } else {
+                __pyx_t_18 = PyNumber_And(__pyx_v_kingMap, __pyx_v_sq); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 117, __pyx_L1_error)
+                __Pyx_GOTREF(__pyx_t_18);
+                __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_18); if (unlikely(__pyx_t_17 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
+                __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
+                if (__pyx_t_17) {
+                  __pyx_t_18 = __Pyx_GetModuleGlobalName(__pyx_n_s_pst); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 117, __pyx_L1_error)
+                  __Pyx_GOTREF(__pyx_t_18);
+                  __pyx_t_14 = __Pyx_PyObject_Dict_GetItem(__pyx_t_18, __pyx_n_s_K); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 117, __pyx_L1_error)
+                  __Pyx_GOTREF(__pyx_t_14);
+                  __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
+                  __pyx_t_18 = __Pyx_PyObject_GetItem(__pyx_t_14, __pyx_v_counter); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 117, __pyx_L1_error)
+                  __Pyx_GOTREF(__pyx_t_18);
+                  __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+                  __pyx_t_14 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 117, __pyx_L1_error)
+                  __Pyx_GOTREF(__pyx_t_14);
+                  __pyx_t_16 = __Pyx_PyObject_Dict_GetItem(__pyx_t_14, __pyx_n_s_K); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 117, __pyx_L1_error)
+                  __Pyx_GOTREF(__pyx_t_16);
+                  __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+                  __pyx_t_14 = PyNumber_Add(__pyx_t_18, __pyx_t_16); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 117, __pyx_L1_error)
+                  __Pyx_GOTREF(__pyx_t_14);
+                  __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
+                  __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+                  __pyx_t_12 = __pyx_t_14;
+                  __pyx_t_14 = 0;
+                } else {
+                  __Pyx_INCREF(__pyx_int_0);
+                  __pyx_t_12 = __pyx_int_0;
+                }
+                __pyx_t_10 = __pyx_t_12;
+                __pyx_t_12 = 0;
+              }
+              __pyx_t_8 = __pyx_t_10;
+              __pyx_t_10 = 0;
+            }
+            __pyx_t_1 = __pyx_t_8;
+            __pyx_t_8 = 0;
+          }
+          __pyx_t_3 = __pyx_t_1;
+          __pyx_t_1 = 0;
+        }
+        __pyx_t_7 = __pyx_t_3;
+        __pyx_t_3 = 0;
+      }
+      __pyx_t_3 = PyNumber_InPlaceSubtract(__pyx_v_score, __pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __Pyx_DECREF_SET(__pyx_v_score, __pyx_t_3);
+      __pyx_t_3 = 0;
 
-      /* "socrates_ancient.pyx":116
+      /* "socrates_ancient.py":116
  *         if whiteMap & sq:
- *             score += (reversePst['P'][counter] + piece['P'] if pawnMap & sq else 0) | (reversePst['N'][counter] + piece['N'] if knightMap & sq else 0)  | (reversePst['B'][counter] + piece['B'] if bishopMap & sq else 0) | (reversePst['R'][counter] + piece['R'] if rookMap & sq else 0) | (reversePst['Q'][counter] + piece['Q'] if queenMap & sq else 0) | (reversePst['K'][counter] + piece['K'] if kingMap & sq else 0)
+ *             score += reversePst['P'][counter] + piece['P'] if pawnMap & sq else ((reversePst['N'][counter] + piece['N'] if knightMap & sq else ((reversePst['B'][counter] + piece['B'] if bishopMap & sq else ((reversePst['R'][counter] + piece['R'] if rookMap & sq else ((reversePst['Q'][counter] + piece['Q'] if queenMap & sq else ((reversePst['K'][counter] + piece['K'] if kingMap & sq else 0))))))))))
  *         elif blackMap & sq:             # <<<<<<<<<<<<<<
- *             score -= (pst['P'][counter] + piece['P'] if pawnMap & sq else 0) | (pst['N'][counter] + piece['N'] if knightMap & sq else 0)  | (pst['B'][counter] + piece['B'] if bishopMap & sq else 0) | (pst['R'][counter] + piece['R'] if rookMap & sq else 0) | (pst['Q'][counter] + piece['Q'] if queenMap & sq else 0) | (pst['K'][counter] + piece['K'] if kingMap & sq else 0)
+ *             score -= pst['P'][counter] + piece['P'] if pawnMap & sq else ((pst['N'][counter] + piece['N'] if knightMap & sq else ((pst['B'][counter] + piece['B'] if bishopMap & sq else ((pst['R'][counter] + piece['R'] if rookMap & sq else ((pst['Q'][counter] + piece['Q'] if queenMap & sq else ((pst['K'][counter] + piece['K'] if kingMap & sq else 0))))))))))
  *         counter += 1
  */
     }
     __pyx_L5:;
 
-    /* "socrates_ancient.pyx":118
+    /* "socrates_ancient.py":118
  *         elif blackMap & sq:
- *             score -= (pst['P'][counter] + piece['P'] if pawnMap & sq else 0) | (pst['N'][counter] + piece['N'] if knightMap & sq else 0)  | (pst['B'][counter] + piece['B'] if bishopMap & sq else 0) | (pst['R'][counter] + piece['R'] if rookMap & sq else 0) | (pst['Q'][counter] + piece['Q'] if queenMap & sq else 0) | (pst['K'][counter] + piece['K'] if kingMap & sq else 0)
+ *             score -= pst['P'][counter] + piece['P'] if pawnMap & sq else ((pst['N'][counter] + piece['N'] if knightMap & sq else ((pst['B'][counter] + piece['B'] if bishopMap & sq else ((pst['R'][counter] + piece['R'] if rookMap & sq else ((pst['Q'][counter] + piece['Q'] if queenMap & sq else ((pst['K'][counter] + piece['K'] if kingMap & sq else 0))))))))))
  *         counter += 1             # <<<<<<<<<<<<<<
  * 
  *     if currTurn == chess.BLACK:
  */
-    __pyx_t_1 = __Pyx_PyInt_AddObjC(__pyx_v_counter, __pyx_int_1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 118, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF_SET(__pyx_v_counter, __pyx_t_1);
-    __pyx_t_1 = 0;
+    __pyx_t_3 = __Pyx_PyInt_AddObjC(__pyx_v_counter, __pyx_int_1, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 118, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF_SET(__pyx_v_counter, __pyx_t_3);
+    __pyx_t_3 = 0;
 
-    /* "socrates_ancient.pyx":113
+    /* "socrates_ancient.py":113
  *     counter = 0
  *     score = 0
  *     for sq in chess.BB_SQUARES:             # <<<<<<<<<<<<<<
  *         if whiteMap & sq:
- *             score += (reversePst['P'][counter] + piece['P'] if pawnMap & sq else 0) | (reversePst['N'][counter] + piece['N'] if knightMap & sq else 0)  | (reversePst['B'][counter] + piece['B'] if bishopMap & sq else 0) | (reversePst['R'][counter] + piece['R'] if rookMap & sq else 0) | (reversePst['Q'][counter] + piece['Q'] if queenMap & sq else 0) | (reversePst['K'][counter] + piece['K'] if kingMap & sq else 0)
+ *             score += reversePst['P'][counter] + piece['P'] if pawnMap & sq else ((reversePst['N'][counter] + piece['N'] if knightMap & sq else ((reversePst['B'][counter] + piece['B'] if bishopMap & sq else ((reversePst['R'][counter] + piece['R'] if rookMap & sq else ((reversePst['Q'][counter] + piece['Q'] if queenMap & sq else ((reversePst['K'][counter] + piece['K'] if kingMap & sq else 0))))))))))
  */
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":120
+  /* "socrates_ancient.py":120
  *         counter += 1
  * 
  *     if currTurn == chess.BLACK:             # <<<<<<<<<<<<<<
@@ -3186,16 +3151,16 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
  */
   __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_chess); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_BLACK); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_BLACK); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyObject_RichCompare(__pyx_v_currTurn, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_2 = PyObject_RichCompare(__pyx_v_currTurn, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_6) {
 
-    /* "socrates_ancient.pyx":121
+    /* "socrates_ancient.py":121
  * 
  *     if currTurn == chess.BLACK:
  *         score = -score             # <<<<<<<<<<<<<<
@@ -3207,7 +3172,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
     __Pyx_DECREF_SET(__pyx_v_score, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "socrates_ancient.pyx":120
+    /* "socrates_ancient.py":120
  *         counter += 1
  * 
  *     if currTurn == chess.BLACK:             # <<<<<<<<<<<<<<
@@ -3216,7 +3181,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
  */
   }
 
-  /* "socrates_ancient.pyx":122
+  /* "socrates_ancient.py":122
  *     if currTurn == chess.BLACK:
  *         score = -score
  *     return score             # <<<<<<<<<<<<<<
@@ -3228,7 +3193,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
   __pyx_r = __pyx_v_score;
   goto __pyx_L0;
 
-  /* "socrates_ancient.pyx":100
+  /* "socrates_ancient.py":100
  * 
  * 
  * def staticEval(game):    # Standing Pat             # <<<<<<<<<<<<<<
@@ -3243,7 +3208,11 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_XDECREF(__pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_10);
+  __Pyx_XDECREF(__pyx_t_12);
+  __Pyx_XDECREF(__pyx_t_14);
+  __Pyx_XDECREF(__pyx_t_16);
+  __Pyx_XDECREF(__pyx_t_18);
   __Pyx_AddTraceback("socrates_ancientc.staticEval", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -3264,7 +3233,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_4staticEval(CYTHON_UNUSED PyObject
   return __pyx_r;
 }
 
-/* "socrates_ancient.pyx":126
+/* "socrates_ancient.py":126
  * 
  * class CheckmatedException(Exception):
  *     def __init__(self, message = ""):             # <<<<<<<<<<<<<<
@@ -3347,7 +3316,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_19CheckmatedException___init__(CYT
   PyObject *__pyx_t_4 = NULL;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "socrates_ancient.pyx":127
+  /* "socrates_ancient.py":127
  * class CheckmatedException(Exception):
  *     def __init__(self, message = ""):
  *         super().__init__(message)             # <<<<<<<<<<<<<<
@@ -3416,7 +3385,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_19CheckmatedException___init__(CYT
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":126
+  /* "socrates_ancient.py":126
  * 
  * class CheckmatedException(Exception):
  *     def __init__(self, message = ""):             # <<<<<<<<<<<<<<
@@ -3440,7 +3409,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_19CheckmatedException___init__(CYT
   return __pyx_r;
 }
 
-/* "socrates_ancient.pyx":136
+/* "socrates_ancient.py":136
  * 
  * class Searcher(object):
  *     def __init__(self, game, usualTime, stopRatio):             # <<<<<<<<<<<<<<
@@ -3540,7 +3509,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher___init__(CYTHON_UNUSED P
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "socrates_ancient.pyx":137
+  /* "socrates_ancient.py":137
  * class Searcher(object):
  *     def __init__(self, game, usualTime, stopRatio):
  *         self.game = game             # <<<<<<<<<<<<<<
@@ -3549,7 +3518,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher___init__(CYTHON_UNUSED P
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_game, __pyx_v_game) < 0) __PYX_ERR(0, 137, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":139
+  /* "socrates_ancient.py":139
  *         self.game = game
  *         #  Fail-Hard  [Alpha, Beta]  Alpha Beta
  *         self.failType = FailType.FAILHARD             # <<<<<<<<<<<<<<
@@ -3564,7 +3533,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher___init__(CYTHON_UNUSED P
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_failType, __pyx_t_2) < 0) __PYX_ERR(0, 139, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":141
+  /* "socrates_ancient.py":141
  *         self.failType = FailType.FAILHARD
  *         #
  *         self.transpositionTable = dict()             # <<<<<<<<<<<<<<
@@ -3576,7 +3545,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher___init__(CYTHON_UNUSED P
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_transpositionTable, __pyx_t_2) < 0) __PYX_ERR(0, 141, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":143
+  /* "socrates_ancient.py":143
  *         self.transpositionTable = dict()
  *         #  Ply  Ply
  *         self.killerMoves = [[None, None]] * MAX_MOVES             # <<<<<<<<<<<<<<
@@ -3607,7 +3576,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher___init__(CYTHON_UNUSED P
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_killerMoves, __pyx_t_3) < 0) __PYX_ERR(0, 143, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "socrates_ancient.pyx":145
+  /* "socrates_ancient.py":145
  *         self.killerMoves = [[None, None]] * MAX_MOVES
  *         #  Move  Move
  *         self.moveRatings = dict()             # <<<<<<<<<<<<<<
@@ -3619,7 +3588,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher___init__(CYTHON_UNUSED P
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_moveRatings, __pyx_t_3) < 0) __PYX_ERR(0, 145, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "socrates_ancient.pyx":146
+  /* "socrates_ancient.py":146
  *         #  Move  Move
  *         self.moveRatings = dict()
  *         self.currTime = None             # <<<<<<<<<<<<<<
@@ -3628,7 +3597,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher___init__(CYTHON_UNUSED P
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_currTime, Py_None) < 0) __PYX_ERR(0, 146, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":147
+  /* "socrates_ancient.py":147
  *         self.moveRatings = dict()
  *         self.currTime = None
  *         self.totalTime = 0             # <<<<<<<<<<<<<<
@@ -3637,7 +3606,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher___init__(CYTHON_UNUSED P
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_totalTime, __pyx_int_0) < 0) __PYX_ERR(0, 147, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":148
+  /* "socrates_ancient.py":148
  *         self.currTime = None
  *         self.totalTime = 0
  *         self.usualTime = usualTime             # <<<<<<<<<<<<<<
@@ -3646,7 +3615,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher___init__(CYTHON_UNUSED P
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_usualTime, __pyx_v_usualTime) < 0) __PYX_ERR(0, 148, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":149
+  /* "socrates_ancient.py":149
  *         self.totalTime = 0
  *         self.usualTime = usualTime
  *         self.stopRatio = stopRatio             # <<<<<<<<<<<<<<
@@ -3655,7 +3624,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher___init__(CYTHON_UNUSED P
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_stopRatio, __pyx_v_stopRatio) < 0) __PYX_ERR(0, 149, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":136
+  /* "socrates_ancient.py":136
  * 
  * class Searcher(object):
  *     def __init__(self, game, usualTime, stopRatio):             # <<<<<<<<<<<<<<
@@ -3678,7 +3647,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher___init__(CYTHON_UNUSED P
   return __pyx_r;
 }
 
-/* "socrates_ancient.pyx":151
+/* "socrates_ancient.py":151
  *         self.stopRatio = stopRatio
  * 
  *     def mvvLva(self, move):             # <<<<<<<<<<<<<<
@@ -3764,7 +3733,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_2mvvLva(CYTHON_UNUSED Py
   PyObject *__pyx_t_10 = NULL;
   __Pyx_RefNannySetupContext("mvvLva", 0);
 
-  /* "socrates_ancient.pyx":152
+  /* "socrates_ancient.py":152
  * 
  *     def mvvLva(self, move):
  *         pieceAtTo = self.game.board.piece_at(move.to_square)             # <<<<<<<<<<<<<<
@@ -3830,7 +3799,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_2mvvLva(CYTHON_UNUSED Py
   __pyx_v_pieceAtTo = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":153
+  /* "socrates_ancient.py":153
  *     def mvvLva(self, move):
  *         pieceAtTo = self.game.board.piece_at(move.to_square)
  *         if pieceAtTo == None:             # <<<<<<<<<<<<<<
@@ -3842,7 +3811,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_2mvvLva(CYTHON_UNUSED Py
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_6) {
 
-    /* "socrates_ancient.pyx":154
+    /* "socrates_ancient.py":154
  *         pieceAtTo = self.game.board.piece_at(move.to_square)
  *         if pieceAtTo == None:
  *             pieceAtTo = chess.Piece.from_symbol('P')             # <<<<<<<<<<<<<<
@@ -3863,7 +3832,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_2mvvLva(CYTHON_UNUSED Py
     __Pyx_DECREF_SET(__pyx_v_pieceAtTo, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "socrates_ancient.pyx":153
+    /* "socrates_ancient.py":153
  *     def mvvLva(self, move):
  *         pieceAtTo = self.game.board.piece_at(move.to_square)
  *         if pieceAtTo == None:             # <<<<<<<<<<<<<<
@@ -3872,12 +3841,12 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_2mvvLva(CYTHON_UNUSED Py
  */
   }
 
-  /* "socrates_ancient.pyx":155
+  /* "socrates_ancient.py":155
  *         if pieceAtTo == None:
  *             pieceAtTo = chess.Piece.from_symbol('P')
  *         return (piece[pieceAtTo.symbol().upper()] << 3) - piece[self.game.board.piece_at(move.from_square).symbol().upper()]             # <<<<<<<<<<<<<<
  * 
- *     def quiescenceEval(self, alpha, beta, ply, important=False):
+ *     def quiescenceEval(self, alpha, beta, ply):
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_piece); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 155, __pyx_L1_error)
@@ -4042,7 +4011,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_2mvvLva(CYTHON_UNUSED Py
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "socrates_ancient.pyx":151
+  /* "socrates_ancient.py":151
  *         self.stopRatio = stopRatio
  * 
  *     def mvvLva(self, move):             # <<<<<<<<<<<<<<
@@ -4070,12 +4039,12 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_2mvvLva(CYTHON_UNUSED Py
   return __pyx_r;
 }
 
-/* "socrates_ancient.pyx":157
+/* "socrates_ancient.py":157
  *         return (piece[pieceAtTo.symbol().upper()] << 3) - piece[self.game.board.piece_at(move.from_square).symbol().upper()]
  * 
- *     def quiescenceEval(self, alpha, beta, ply, important=False):             # <<<<<<<<<<<<<<
+ *     def quiescenceEval(self, alpha, beta, ply):             # <<<<<<<<<<<<<<
  *         bestScore = -INFINITY
- *         if important or self.game.board.is_check():
+ *         if self.game.board.is_check():
  */
 
 /* Python wrapper */
@@ -4086,20 +4055,16 @@ static PyObject *__pyx_pw_17socrates_ancientc_8Searcher_5quiescenceEval(PyObject
   PyObject *__pyx_v_alpha = 0;
   PyObject *__pyx_v_beta = 0;
   PyObject *__pyx_v_ply = 0;
-  PyObject *__pyx_v_important = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("quiescenceEval (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_self,&__pyx_n_s_alpha,&__pyx_n_s_beta,&__pyx_n_s_ply,&__pyx_n_s_important,0};
-    PyObject* values[5] = {0,0,0,0,0};
-    values[4] = ((PyObject *)((PyObject *)Py_False));
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_self,&__pyx_n_s_alpha,&__pyx_n_s_beta,&__pyx_n_s_ply,0};
+    PyObject* values[4] = {0,0,0,0};
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
       const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
       switch (pos_args) {
-        case  5: values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
-        CYTHON_FALLTHROUGH;
         case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
         CYTHON_FALLTHROUGH;
         case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
@@ -4120,91 +4085,80 @@ static PyObject *__pyx_pw_17socrates_ancientc_8Searcher_5quiescenceEval(PyObject
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_alpha)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("quiescenceEval", 0, 4, 5, 1); __PYX_ERR(0, 157, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("quiescenceEval", 1, 4, 4, 1); __PYX_ERR(0, 157, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_beta)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("quiescenceEval", 0, 4, 5, 2); __PYX_ERR(0, 157, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("quiescenceEval", 1, 4, 4, 2); __PYX_ERR(0, 157, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_ply)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("quiescenceEval", 0, 4, 5, 3); __PYX_ERR(0, 157, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  4:
-        if (kw_args > 0) {
-          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_important);
-          if (value) { values[4] = value; kw_args--; }
+          __Pyx_RaiseArgtupleInvalid("quiescenceEval", 1, 4, 4, 3); __PYX_ERR(0, 157, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "quiescenceEval") < 0)) __PYX_ERR(0, 157, __pyx_L3_error)
       }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 4) {
+      goto __pyx_L5_argtuple_error;
     } else {
-      switch (PyTuple_GET_SIZE(__pyx_args)) {
-        case  5: values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
-        CYTHON_FALLTHROUGH;
-        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
-        values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
-        values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-        values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-        break;
-        default: goto __pyx_L5_argtuple_error;
-      }
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+      values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
     }
     __pyx_v_self = values[0];
     __pyx_v_alpha = values[1];
     __pyx_v_beta = values[2];
     __pyx_v_ply = values[3];
-    __pyx_v_important = values[4];
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("quiescenceEval", 0, 4, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 157, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("quiescenceEval", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 157, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("socrates_ancientc.Searcher.quiescenceEval", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_17socrates_ancientc_8Searcher_4quiescenceEval(__pyx_self, __pyx_v_self, __pyx_v_alpha, __pyx_v_beta, __pyx_v_ply, __pyx_v_important);
+  __pyx_r = __pyx_pf_17socrates_ancientc_8Searcher_4quiescenceEval(__pyx_self, __pyx_v_self, __pyx_v_alpha, __pyx_v_beta, __pyx_v_ply);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_4quiescenceEval(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_alpha, PyObject *__pyx_v_beta, PyObject *__pyx_v_ply, PyObject *__pyx_v_important) {
+static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_4quiescenceEval(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_alpha, PyObject *__pyx_v_beta, PyObject *__pyx_v_ply) {
   PyObject *__pyx_v_bestScore = NULL;
+  PyObject *__pyx_v_staticScore = NULL;
   PyObject *__pyx_v_legalMoves = NULL;
-  PyObject *__pyx_v_score = NULL;
   PyObject *__pyx_v_move = NULL;
+  PyObject *__pyx_v_score = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
-  int __pyx_t_3;
+  PyObject *__pyx_t_3 = NULL;
   int __pyx_t_4;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  PyObject *__pyx_t_7 = NULL;
-  Py_ssize_t __pyx_t_8;
+  Py_ssize_t __pyx_t_7;
+  PyObject *__pyx_t_8 = NULL;
   PyObject *__pyx_t_9 = NULL;
-  PyObject *__pyx_t_10 = NULL;
-  int __pyx_t_11;
-  PyObject *__pyx_t_12 = NULL;
+  int __pyx_t_10;
+  PyObject *__pyx_t_11 = NULL;
   __Pyx_RefNannySetupContext("quiescenceEval", 0);
   __Pyx_INCREF(__pyx_v_alpha);
 
-  /* "socrates_ancient.pyx":158
+  /* "socrates_ancient.py":158
  * 
- *     def quiescenceEval(self, alpha, beta, ply, important=False):
+ *     def quiescenceEval(self, alpha, beta, ply):
  *         bestScore = -INFINITY             # <<<<<<<<<<<<<<
- *         if important or self.game.board.is_check():
- *             legalMoves = list(self.game.board.legal_moves)
+ *         if self.game.board.is_check():
+ *             staticScore = -INFINITY
  */
   __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -4214,40 +4168,34 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_4quiescenceEval(CYTHON_U
   __pyx_v_bestScore = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":159
- *     def quiescenceEval(self, alpha, beta, ply, important=False):
+  /* "socrates_ancient.py":159
+ *     def quiescenceEval(self, alpha, beta, ply):
  *         bestScore = -INFINITY
- *         if important or self.game.board.is_check():             # <<<<<<<<<<<<<<
+ *         if self.game.board.is_check():             # <<<<<<<<<<<<<<
+ *             staticScore = -INFINITY
  *             legalMoves = list(self.game.board.legal_moves)
- *             legalMoves.sort(key = self.sortKey, reverse = True)
  */
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_important); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 159, __pyx_L1_error)
-  if (!__pyx_t_4) {
-  } else {
-    __pyx_t_3 = __pyx_t_4;
-    goto __pyx_L4_bool_binop_done;
-  }
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 159, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_board); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 159, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_board); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_is_check); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_is_check); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 159, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = NULL;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
-    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_1);
-    if (likely(__pyx_t_5)) {
+    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_1);
+    if (likely(__pyx_t_3)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-      __Pyx_INCREF(__pyx_t_5);
+      __Pyx_INCREF(__pyx_t_3);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_1, function);
     }
   }
-  if (__pyx_t_5) {
-    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 159, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  if (__pyx_t_3) {
+    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 159, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   } else {
     __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 159, __pyx_L1_error)
   }
@@ -4255,570 +4203,543 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_4quiescenceEval(CYTHON_U
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 159, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_3 = __pyx_t_4;
-  __pyx_L4_bool_binop_done:;
-  if (__pyx_t_3) {
+  if (__pyx_t_4) {
 
-    /* "socrates_ancient.pyx":160
+    /* "socrates_ancient.py":160
  *         bestScore = -INFINITY
- *         if important or self.game.board.is_check():
+ *         if self.game.board.is_check():
+ *             staticScore = -INFINITY             # <<<<<<<<<<<<<<
+ *             legalMoves = list(self.game.board.legal_moves)
+ *             legalMoves.sort(key = self.sortKey, reverse = True)
+ */
+    __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 160, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_1 = PyNumber_Negative(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 160, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_v_staticScore = __pyx_t_1;
+    __pyx_t_1 = 0;
+
+    /* "socrates_ancient.py":161
+ *         if self.game.board.is_check():
+ *             staticScore = -INFINITY
  *             legalMoves = list(self.game.board.legal_moves)             # <<<<<<<<<<<<<<
  *             legalMoves.sort(key = self.sortKey, reverse = True)
  *         else:
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 160, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_board); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 160, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 161, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_legal_moves); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 160, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_board); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 161, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PySequence_List(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 160, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_legal_moves); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 161, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_v_legalMoves = ((PyObject*)__pyx_t_1);
-    __pyx_t_1 = 0;
+    __pyx_t_2 = PySequence_List(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 161, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_v_legalMoves = ((PyObject*)__pyx_t_2);
+    __pyx_t_2 = 0;
 
-    /* "socrates_ancient.pyx":161
- *         if important or self.game.board.is_check():
+    /* "socrates_ancient.py":162
+ *             staticScore = -INFINITY
  *             legalMoves = list(self.game.board.legal_moves)
  *             legalMoves.sort(key = self.sortKey, reverse = True)             # <<<<<<<<<<<<<<
  *         else:
- *             score = staticEval(self.game)
+ *             staticScore = staticEval(self.game)
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_legalMoves, __pyx_n_s_sort); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 161, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 161, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_legalMoves, __pyx_n_s_sort); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 162, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_sortKey); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 161, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_key, __pyx_t_5) < 0) __PYX_ERR(0, 161, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_reverse, Py_True) < 0) __PYX_ERR(0, 161, __pyx_L1_error)
-    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_empty_tuple, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 161, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 162, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_sortKey); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 162, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_key, __pyx_t_3) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_reverse, Py_True) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 162, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "socrates_ancient.pyx":159
- *     def quiescenceEval(self, alpha, beta, ply, important=False):
+    /* "socrates_ancient.py":159
+ *     def quiescenceEval(self, alpha, beta, ply):
  *         bestScore = -INFINITY
- *         if important or self.game.board.is_check():             # <<<<<<<<<<<<<<
+ *         if self.game.board.is_check():             # <<<<<<<<<<<<<<
+ *             staticScore = -INFINITY
  *             legalMoves = list(self.game.board.legal_moves)
- *             legalMoves.sort(key = self.sortKey, reverse = True)
  */
     goto __pyx_L3;
   }
 
-  /* "socrates_ancient.pyx":163
+  /* "socrates_ancient.py":164
  *             legalMoves.sort(key = self.sortKey, reverse = True)
  *         else:
- *             score = staticEval(self.game)             # <<<<<<<<<<<<<<
- *             if score >= beta:
- *                 return beta if self.failType == FailType.FAILHARD else score
+ *             staticScore = staticEval(self.game)             # <<<<<<<<<<<<<<
+ *             if staticScore >= beta:
+ *                 return beta if self.failType == FailType.FAILHARD else staticScore
  */
   /*else*/ {
-    __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_staticEval); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 163, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 163, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_staticEval); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 164, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_6 = NULL;
-    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
-      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
-      if (likely(__pyx_t_6)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-        __Pyx_INCREF(__pyx_t_6);
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 164, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_5 = NULL;
+    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
+      __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_1);
+      if (likely(__pyx_t_5)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+        __Pyx_INCREF(__pyx_t_5);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_2, function);
+        __Pyx_DECREF_SET(__pyx_t_1, function);
       }
     }
-    if (!__pyx_t_6) {
-      __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 163, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __Pyx_GOTREF(__pyx_t_5);
+    if (!__pyx_t_5) {
+      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 164, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_GOTREF(__pyx_t_3);
     } else {
       #if CYTHON_FAST_PYCALL
-      if (PyFunction_Check(__pyx_t_2)) {
-        PyObject *__pyx_temp[2] = {__pyx_t_6, __pyx_t_1};
-        __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 163, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __Pyx_GOTREF(__pyx_t_5);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      if (PyFunction_Check(__pyx_t_1)) {
+        PyObject *__pyx_temp[2] = {__pyx_t_5, __pyx_t_2};
+        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 164, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+        __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       } else
       #endif
       #if CYTHON_FAST_PYCCALL
-      if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
-        PyObject *__pyx_temp[2] = {__pyx_t_6, __pyx_t_1};
-        __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 163, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __Pyx_GOTREF(__pyx_t_5);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
+        PyObject *__pyx_temp[2] = {__pyx_t_5, __pyx_t_2};
+        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 164, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+        __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       } else
       #endif
       {
-        __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 163, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
-        __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_6); __pyx_t_6 = NULL;
-        __Pyx_GIVEREF(__pyx_t_1);
-        PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_t_1);
-        __pyx_t_1 = 0;
-        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_7, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 163, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 164, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_2);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_2);
+        __pyx_t_2 = 0;
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 164, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
     }
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_v_score = __pyx_t_5;
-    __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_v_staticScore = __pyx_t_3;
+    __pyx_t_3 = 0;
 
-    /* "socrates_ancient.pyx":164
+    /* "socrates_ancient.py":165
  *         else:
- *             score = staticEval(self.game)
- *             if score >= beta:             # <<<<<<<<<<<<<<
- *                 return beta if self.failType == FailType.FAILHARD else score
- *             elif score > alpha:
+ *             staticScore = staticEval(self.game)
+ *             if staticScore >= beta:             # <<<<<<<<<<<<<<
+ *                 return beta if self.failType == FailType.FAILHARD else staticScore
+ *             elif staticScore > alpha:
  */
-    __pyx_t_5 = PyObject_RichCompare(__pyx_v_score, __pyx_v_beta, Py_GE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 164, __pyx_L1_error)
-    __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 164, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (__pyx_t_3) {
+    __pyx_t_3 = PyObject_RichCompare(__pyx_v_staticScore, __pyx_v_beta, Py_GE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 165, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 165, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (__pyx_t_4) {
 
-      /* "socrates_ancient.pyx":165
- *             score = staticEval(self.game)
- *             if score >= beta:
- *                 return beta if self.failType == FailType.FAILHARD else score             # <<<<<<<<<<<<<<
- *             elif score > alpha:
- *                 alpha = score
+      /* "socrates_ancient.py":166
+ *             staticScore = staticEval(self.game)
+ *             if staticScore >= beta:
+ *                 return beta if self.failType == FailType.FAILHARD else staticScore             # <<<<<<<<<<<<<<
+ *             elif staticScore > alpha:
+ *                 alpha = staticScore
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_failType); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 165, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_FailType); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 165, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_FAILHARD); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 165, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_failType); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 166, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_7 = PyObject_RichCompare(__pyx_t_2, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 165, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_6 = __Pyx_GetModuleGlobalName(__pyx_n_s_FailType); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 166, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_FAILHARD); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 166, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __pyx_t_6 = PyObject_RichCompare(__pyx_t_1, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 166, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 165, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      if (__pyx_t_3) {
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 166, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      if (__pyx_t_4) {
         __Pyx_INCREF(__pyx_v_beta);
-        __pyx_t_5 = __pyx_v_beta;
+        __pyx_t_3 = __pyx_v_beta;
       } else {
-        __Pyx_INCREF(__pyx_v_score);
-        __pyx_t_5 = __pyx_v_score;
+        __Pyx_INCREF(__pyx_v_staticScore);
+        __pyx_t_3 = __pyx_v_staticScore;
       }
-      __pyx_r = __pyx_t_5;
-      __pyx_t_5 = 0;
+      __pyx_r = __pyx_t_3;
+      __pyx_t_3 = 0;
       goto __pyx_L0;
 
-      /* "socrates_ancient.pyx":164
+      /* "socrates_ancient.py":165
  *         else:
- *             score = staticEval(self.game)
- *             if score >= beta:             # <<<<<<<<<<<<<<
- *                 return beta if self.failType == FailType.FAILHARD else score
- *             elif score > alpha:
+ *             staticScore = staticEval(self.game)
+ *             if staticScore >= beta:             # <<<<<<<<<<<<<<
+ *                 return beta if self.failType == FailType.FAILHARD else staticScore
+ *             elif staticScore > alpha:
  */
     }
 
-    /* "socrates_ancient.pyx":166
- *             if score >= beta:
- *                 return beta if self.failType == FailType.FAILHARD else score
- *             elif score > alpha:             # <<<<<<<<<<<<<<
- *                 alpha = score
- *             bestScore = score
+    /* "socrates_ancient.py":167
+ *             if staticScore >= beta:
+ *                 return beta if self.failType == FailType.FAILHARD else staticScore
+ *             elif staticScore > alpha:             # <<<<<<<<<<<<<<
+ *                 alpha = staticScore
+ *             # bestScore = score
  */
-    __pyx_t_5 = PyObject_RichCompare(__pyx_v_score, __pyx_v_alpha, Py_GT); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 166, __pyx_L1_error)
-    __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 166, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (__pyx_t_3) {
+    __pyx_t_3 = PyObject_RichCompare(__pyx_v_staticScore, __pyx_v_alpha, Py_GT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 167, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 167, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (__pyx_t_4) {
 
-      /* "socrates_ancient.pyx":167
- *                 return beta if self.failType == FailType.FAILHARD else score
- *             elif score > alpha:
- *                 alpha = score             # <<<<<<<<<<<<<<
- *             bestScore = score
+      /* "socrates_ancient.py":168
+ *                 return beta if self.failType == FailType.FAILHARD else staticScore
+ *             elif staticScore > alpha:
+ *                 alpha = staticScore             # <<<<<<<<<<<<<<
+ *             # bestScore = score
  *             legalMoves = list(self.game.board.generate_legal_captures())
  */
-      __Pyx_INCREF(__pyx_v_score);
-      __Pyx_DECREF_SET(__pyx_v_alpha, __pyx_v_score);
+      __Pyx_INCREF(__pyx_v_staticScore);
+      __Pyx_DECREF_SET(__pyx_v_alpha, __pyx_v_staticScore);
 
-      /* "socrates_ancient.pyx":166
- *             if score >= beta:
- *                 return beta if self.failType == FailType.FAILHARD else score
- *             elif score > alpha:             # <<<<<<<<<<<<<<
- *                 alpha = score
- *             bestScore = score
+      /* "socrates_ancient.py":167
+ *             if staticScore >= beta:
+ *                 return beta if self.failType == FailType.FAILHARD else staticScore
+ *             elif staticScore > alpha:             # <<<<<<<<<<<<<<
+ *                 alpha = staticScore
+ *             # bestScore = score
  */
     }
 
-    /* "socrates_ancient.pyx":168
- *             elif score > alpha:
- *                 alpha = score
- *             bestScore = score             # <<<<<<<<<<<<<<
- *             legalMoves = list(self.game.board.generate_legal_captures())
- *             legalMoves.sort(key = self.mvvLva, reverse = True)
- */
-    __Pyx_INCREF(__pyx_v_score);
-    __Pyx_DECREF_SET(__pyx_v_bestScore, __pyx_v_score);
-
-    /* "socrates_ancient.pyx":169
- *                 alpha = score
- *             bestScore = score
+    /* "socrates_ancient.py":170
+ *                 alpha = staticScore
+ *             # bestScore = score
  *             legalMoves = list(self.game.board.generate_legal_captures())             # <<<<<<<<<<<<<<
  *             legalMoves.sort(key = self.mvvLva, reverse = True)
  * 
  */
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 169, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_board); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 169, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_generate_legal_captures); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 169, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = NULL;
-    if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
-      __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_7);
-      if (likely(__pyx_t_1)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-        __Pyx_INCREF(__pyx_t_1);
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 170, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_board); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 170, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_generate_legal_captures); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 170, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_2 = NULL;
+    if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
+      __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_6);
+      if (likely(__pyx_t_2)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
+        __Pyx_INCREF(__pyx_t_2);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_7, function);
+        __Pyx_DECREF_SET(__pyx_t_6, function);
       }
     }
-    if (__pyx_t_1) {
-      __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 169, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    if (__pyx_t_2) {
+      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 170, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     } else {
-      __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 169, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_CallNoArg(__pyx_t_6); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 170, __pyx_L1_error)
     }
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = PySequence_List(__pyx_t_5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 169, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_v_legalMoves = ((PyObject*)__pyx_t_7);
-    __pyx_t_7 = 0;
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __pyx_t_6 = PySequence_List(__pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 170, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_v_legalMoves = ((PyObject*)__pyx_t_6);
+    __pyx_t_6 = 0;
 
-    /* "socrates_ancient.pyx":170
- *             bestScore = score
+    /* "socrates_ancient.py":171
+ *             # bestScore = score
  *             legalMoves = list(self.game.board.generate_legal_captures())
  *             legalMoves.sort(key = self.mvvLva, reverse = True)             # <<<<<<<<<<<<<<
  * 
  *         for move in legalMoves:
  */
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_legalMoves, __pyx_n_s_sort); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 170, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 170, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_mvvLva); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 170, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_key, __pyx_t_1) < 0) __PYX_ERR(0, 170, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_reverse, Py_True) < 0) __PYX_ERR(0, 170, __pyx_L1_error)
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_empty_tuple, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 170, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_legalMoves, __pyx_n_s_sort); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 171, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __pyx_t_3 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 171, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_mvvLva); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 171, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_key, __pyx_t_2) < 0) __PYX_ERR(0, 171, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_reverse, Py_True) < 0) __PYX_ERR(0, 171, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_empty_tuple, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 171, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_L3:;
 
-  /* "socrates_ancient.pyx":172
+  /* "socrates_ancient.py":173
  *             legalMoves.sort(key = self.mvvLva, reverse = True)
  * 
  *         for move in legalMoves:             # <<<<<<<<<<<<<<
  *             self.game.board.push(move)
- *             score = -self.quiescenceEval(-beta, -alpha, not(move.promotion is None))
+ *             score = -self.quiescenceEval(-beta, -alpha, ply + 1)
  */
-  __pyx_t_1 = __pyx_v_legalMoves; __Pyx_INCREF(__pyx_t_1); __pyx_t_8 = 0;
+  __pyx_t_2 = __pyx_v_legalMoves; __Pyx_INCREF(__pyx_t_2); __pyx_t_7 = 0;
   for (;;) {
-    if (__pyx_t_8 >= PyList_GET_SIZE(__pyx_t_1)) break;
+    if (__pyx_t_7 >= PyList_GET_SIZE(__pyx_t_2)) break;
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-    __pyx_t_5 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_8); __Pyx_INCREF(__pyx_t_5); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 172, __pyx_L1_error)
+    __pyx_t_3 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_7); __Pyx_INCREF(__pyx_t_3); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 173, __pyx_L1_error)
     #else
-    __pyx_t_5 = PySequence_ITEM(__pyx_t_1, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 172, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_3 = PySequence_ITEM(__pyx_t_2, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 173, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
     #endif
-    __Pyx_XDECREF_SET(__pyx_v_move, __pyx_t_5);
-    __pyx_t_5 = 0;
+    __Pyx_XDECREF_SET(__pyx_v_move, __pyx_t_3);
+    __pyx_t_3 = 0;
 
-    /* "socrates_ancient.pyx":173
+    /* "socrates_ancient.py":174
  * 
  *         for move in legalMoves:
  *             self.game.board.push(move)             # <<<<<<<<<<<<<<
- *             score = -self.quiescenceEval(-beta, -alpha, not(move.promotion is None))
+ *             score = -self.quiescenceEval(-beta, -alpha, ply + 1)
  *             self.game.board.pop()
  */
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 173, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_board); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 173, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_push); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 173, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = NULL;
-    if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
-      __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_7);
-      if (likely(__pyx_t_2)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-        __Pyx_INCREF(__pyx_t_2);
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 174, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_board); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 174, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_push); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 174, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_1 = NULL;
+    if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
+      __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_6);
+      if (likely(__pyx_t_1)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
+        __Pyx_INCREF(__pyx_t_1);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_7, function);
+        __Pyx_DECREF_SET(__pyx_t_6, function);
       }
     }
-    if (!__pyx_t_2) {
-      __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_v_move); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 173, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_5);
+    if (!__pyx_t_1) {
+      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_v_move); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 174, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
     } else {
       #if CYTHON_FAST_PYCALL
-      if (PyFunction_Check(__pyx_t_7)) {
-        PyObject *__pyx_temp[2] = {__pyx_t_2, __pyx_v_move};
-        __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 173, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __Pyx_GOTREF(__pyx_t_5);
+      if (PyFunction_Check(__pyx_t_6)) {
+        PyObject *__pyx_temp[2] = {__pyx_t_1, __pyx_v_move};
+        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 174, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __Pyx_GOTREF(__pyx_t_3);
       } else
       #endif
       #if CYTHON_FAST_PYCCALL
-      if (__Pyx_PyFastCFunction_Check(__pyx_t_7)) {
-        PyObject *__pyx_temp[2] = {__pyx_t_2, __pyx_v_move};
-        __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 173, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __Pyx_GOTREF(__pyx_t_5);
+      if (__Pyx_PyFastCFunction_Check(__pyx_t_6)) {
+        PyObject *__pyx_temp[2] = {__pyx_t_1, __pyx_v_move};
+        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 174, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __Pyx_GOTREF(__pyx_t_3);
       } else
       #endif
       {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 173, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_2); __pyx_t_2 = NULL;
+        __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 174, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        __Pyx_GIVEREF(__pyx_t_1); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1); __pyx_t_1 = NULL;
         __Pyx_INCREF(__pyx_v_move);
         __Pyx_GIVEREF(__pyx_v_move);
-        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_v_move);
-        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_6, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 173, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_v_move);
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 174, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       }
     }
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "socrates_ancient.pyx":174
+    /* "socrates_ancient.py":175
  *         for move in legalMoves:
  *             self.game.board.push(move)
- *             score = -self.quiescenceEval(-beta, -alpha, not(move.promotion is None))             # <<<<<<<<<<<<<<
+ *             score = -self.quiescenceEval(-beta, -alpha, ply + 1)             # <<<<<<<<<<<<<<
  *             self.game.board.pop()
  * 
  */
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_quiescenceEval); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 174, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_6 = PyNumber_Negative(__pyx_v_beta); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 174, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_quiescenceEval); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 175, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_2 = PyNumber_Negative(__pyx_v_alpha); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 174, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_move, __pyx_n_s_promotion); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 174, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_3 = (__pyx_t_9 != Py_None);
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_9 = __Pyx_PyBool_FromLong(__pyx_t_3); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 174, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_10 = NULL;
-    __pyx_t_11 = 0;
-    if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
-      __pyx_t_10 = PyMethod_GET_SELF(__pyx_t_7);
-      if (likely(__pyx_t_10)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-        __Pyx_INCREF(__pyx_t_10);
+    __pyx_t_5 = PyNumber_Negative(__pyx_v_beta); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 175, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_1 = PyNumber_Negative(__pyx_v_alpha); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 175, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_8 = __Pyx_PyInt_AddObjC(__pyx_v_ply, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 175, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_8);
+    __pyx_t_9 = NULL;
+    __pyx_t_10 = 0;
+    if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
+      __pyx_t_9 = PyMethod_GET_SELF(__pyx_t_6);
+      if (likely(__pyx_t_9)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
+        __Pyx_INCREF(__pyx_t_9);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_7, function);
-        __pyx_t_11 = 1;
+        __Pyx_DECREF_SET(__pyx_t_6, function);
+        __pyx_t_10 = 1;
       }
     }
     #if CYTHON_FAST_PYCALL
-    if (PyFunction_Check(__pyx_t_7)) {
-      PyObject *__pyx_temp[4] = {__pyx_t_10, __pyx_t_6, __pyx_t_2, __pyx_t_9};
-      __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_11, 3+__pyx_t_11); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 174, __pyx_L1_error)
-      __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __Pyx_GOTREF(__pyx_t_5);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+    if (PyFunction_Check(__pyx_t_6)) {
+      PyObject *__pyx_temp[4] = {__pyx_t_9, __pyx_t_5, __pyx_t_1, __pyx_t_8};
+      __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_10, 3+__pyx_t_10); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 175, __pyx_L1_error)
+      __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     } else
     #endif
     #if CYTHON_FAST_PYCCALL
-    if (__Pyx_PyFastCFunction_Check(__pyx_t_7)) {
-      PyObject *__pyx_temp[4] = {__pyx_t_10, __pyx_t_6, __pyx_t_2, __pyx_t_9};
-      __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_11, 3+__pyx_t_11); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 174, __pyx_L1_error)
-      __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __Pyx_GOTREF(__pyx_t_5);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+    if (__Pyx_PyFastCFunction_Check(__pyx_t_6)) {
+      PyObject *__pyx_temp[4] = {__pyx_t_9, __pyx_t_5, __pyx_t_1, __pyx_t_8};
+      __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_10, 3+__pyx_t_10); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 175, __pyx_L1_error)
+      __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     } else
     #endif
     {
-      __pyx_t_12 = PyTuple_New(3+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 174, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_12);
-      if (__pyx_t_10) {
-        __Pyx_GIVEREF(__pyx_t_10); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_10); __pyx_t_10 = NULL;
+      __pyx_t_11 = PyTuple_New(3+__pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 175, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_11);
+      if (__pyx_t_9) {
+        __Pyx_GIVEREF(__pyx_t_9); PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_t_9); __pyx_t_9 = NULL;
       }
-      __Pyx_GIVEREF(__pyx_t_6);
-      PyTuple_SET_ITEM(__pyx_t_12, 0+__pyx_t_11, __pyx_t_6);
-      __Pyx_GIVEREF(__pyx_t_2);
-      PyTuple_SET_ITEM(__pyx_t_12, 1+__pyx_t_11, __pyx_t_2);
-      __Pyx_GIVEREF(__pyx_t_9);
-      PyTuple_SET_ITEM(__pyx_t_12, 2+__pyx_t_11, __pyx_t_9);
-      __pyx_t_6 = 0;
-      __pyx_t_2 = 0;
-      __pyx_t_9 = 0;
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_12, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 174, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_5);
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+      __Pyx_GIVEREF(__pyx_t_5);
+      PyTuple_SET_ITEM(__pyx_t_11, 0+__pyx_t_10, __pyx_t_5);
+      __Pyx_GIVEREF(__pyx_t_1);
+      PyTuple_SET_ITEM(__pyx_t_11, 1+__pyx_t_10, __pyx_t_1);
+      __Pyx_GIVEREF(__pyx_t_8);
+      PyTuple_SET_ITEM(__pyx_t_11, 2+__pyx_t_10, __pyx_t_8);
+      __pyx_t_5 = 0;
+      __pyx_t_1 = 0;
+      __pyx_t_8 = 0;
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_11, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 175, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
     }
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = PyNumber_Negative(__pyx_t_5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 174, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __Pyx_XDECREF_SET(__pyx_v_score, __pyx_t_7);
-    __pyx_t_7 = 0;
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __pyx_t_6 = PyNumber_Negative(__pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 175, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_XDECREF_SET(__pyx_v_score, __pyx_t_6);
+    __pyx_t_6 = 0;
 
-    /* "socrates_ancient.pyx":175
+    /* "socrates_ancient.py":176
  *             self.game.board.push(move)
- *             score = -self.quiescenceEval(-beta, -alpha, not(move.promotion is None))
+ *             score = -self.quiescenceEval(-beta, -alpha, ply + 1)
  *             self.game.board.pop()             # <<<<<<<<<<<<<<
  * 
  *             if score > bestScore:
  */
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 175, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_board); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 175, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyObject_Pop(__pyx_t_5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 175, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 176, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_board); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 176, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __pyx_t_6 = __Pyx_PyObject_Pop(__pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 176, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "socrates_ancient.pyx":177
+    /* "socrates_ancient.py":178
  *             self.game.board.pop()
  * 
  *             if score > bestScore:             # <<<<<<<<<<<<<<
  *                 bestScore = score
  *                 if score >= beta:
  */
-    __pyx_t_7 = PyObject_RichCompare(__pyx_v_score, __pyx_v_bestScore, Py_GT); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 177, __pyx_L1_error)
-    __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 177, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (__pyx_t_3) {
+    __pyx_t_6 = PyObject_RichCompare(__pyx_v_score, __pyx_v_bestScore, Py_GT); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 178, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 178, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    if (__pyx_t_4) {
 
-      /* "socrates_ancient.pyx":178
+      /* "socrates_ancient.py":179
  * 
  *             if score > bestScore:
  *                 bestScore = score             # <<<<<<<<<<<<<<
  *                 if score >= beta:
- *                     if self.failType == FailType.FAILHARD:
+ *                     return beta if self.failType == FailType.FAILHARD else score
  */
       __Pyx_INCREF(__pyx_v_score);
       __Pyx_DECREF_SET(__pyx_v_bestScore, __pyx_v_score);
 
-      /* "socrates_ancient.pyx":179
+      /* "socrates_ancient.py":180
  *             if score > bestScore:
  *                 bestScore = score
  *                 if score >= beta:             # <<<<<<<<<<<<<<
- *                     if self.failType == FailType.FAILHARD:
- *                         return beta
+ *                     return beta if self.failType == FailType.FAILHARD else score
+ *                 if score > alpha:
  */
-      __pyx_t_7 = PyObject_RichCompare(__pyx_v_score, __pyx_v_beta, Py_GE); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 179, __pyx_L1_error)
-      __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 179, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      if (__pyx_t_3) {
+      __pyx_t_6 = PyObject_RichCompare(__pyx_v_score, __pyx_v_beta, Py_GE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 180, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 180, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      if (__pyx_t_4) {
 
-        /* "socrates_ancient.pyx":180
+        /* "socrates_ancient.py":181
  *                 bestScore = score
  *                 if score >= beta:
- *                     if self.failType == FailType.FAILHARD:             # <<<<<<<<<<<<<<
- *                         return beta
- *                     else:
- */
-        __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_failType); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 180, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_FailType); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 180, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_FAILHARD); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 180, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_12);
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_5 = PyObject_RichCompare(__pyx_t_7, __pyx_t_12, Py_EQ); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 180, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-        __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 180, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        if (__pyx_t_3) {
-
-          /* "socrates_ancient.pyx":181
- *                 if score >= beta:
- *                     if self.failType == FailType.FAILHARD:
- *                         return beta             # <<<<<<<<<<<<<<
- *                     else:
- *                         return score
- */
-          __Pyx_XDECREF(__pyx_r);
-          __Pyx_INCREF(__pyx_v_beta);
-          __pyx_r = __pyx_v_beta;
-          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          goto __pyx_L0;
-
-          /* "socrates_ancient.pyx":180
- *                 bestScore = score
- *                 if score >= beta:
- *                     if self.failType == FailType.FAILHARD:             # <<<<<<<<<<<<<<
- *                         return beta
- *                     else:
- */
-        }
-
-        /* "socrates_ancient.pyx":183
- *                         return beta
- *                     else:
- *                         return score             # <<<<<<<<<<<<<<
+ *                     return beta if self.failType == FailType.FAILHARD else score             # <<<<<<<<<<<<<<
  *                 if score > alpha:
  *                     alpha = score
  */
-        /*else*/ {
-          __Pyx_XDECREF(__pyx_r);
+        __Pyx_XDECREF(__pyx_r);
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_failType); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 181, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __pyx_t_11 = __Pyx_GetModuleGlobalName(__pyx_n_s_FailType); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 181, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_11);
+        __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_FAILHARD); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 181, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_8);
+        __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+        __pyx_t_11 = PyObject_RichCompare(__pyx_t_3, __pyx_t_8, Py_EQ); __Pyx_XGOTREF(__pyx_t_11); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 181, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+        __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_11); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 181, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+        if (__pyx_t_4) {
+          __Pyx_INCREF(__pyx_v_beta);
+          __pyx_t_6 = __pyx_v_beta;
+        } else {
           __Pyx_INCREF(__pyx_v_score);
-          __pyx_r = __pyx_v_score;
-          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          goto __pyx_L0;
+          __pyx_t_6 = __pyx_v_score;
         }
+        __pyx_r = __pyx_t_6;
+        __pyx_t_6 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        goto __pyx_L0;
 
-        /* "socrates_ancient.pyx":179
+        /* "socrates_ancient.py":180
  *             if score > bestScore:
  *                 bestScore = score
  *                 if score >= beta:             # <<<<<<<<<<<<<<
- *                     if self.failType == FailType.FAILHARD:
- *                         return beta
+ *                     return beta if self.failType == FailType.FAILHARD else score
+ *                 if score > alpha:
  */
       }
 
-      /* "socrates_ancient.pyx":184
- *                     else:
- *                         return score
+      /* "socrates_ancient.py":182
+ *                 if score >= beta:
+ *                     return beta if self.failType == FailType.FAILHARD else score
  *                 if score > alpha:             # <<<<<<<<<<<<<<
  *                     alpha = score
  * 
  */
-      __pyx_t_5 = PyObject_RichCompare(__pyx_v_score, __pyx_v_alpha, Py_GT); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 184, __pyx_L1_error)
-      __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 184, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (__pyx_t_3) {
+      __pyx_t_6 = PyObject_RichCompare(__pyx_v_score, __pyx_v_alpha, Py_GT); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 182, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 182, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      if (__pyx_t_4) {
 
-        /* "socrates_ancient.pyx":185
- *                         return score
+        /* "socrates_ancient.py":183
+ *                     return beta if self.failType == FailType.FAILHARD else score
  *                 if score > alpha:
  *                     alpha = score             # <<<<<<<<<<<<<<
  * 
@@ -4827,16 +4748,16 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_4quiescenceEval(CYTHON_U
         __Pyx_INCREF(__pyx_v_score);
         __Pyx_DECREF_SET(__pyx_v_alpha, __pyx_v_score);
 
-        /* "socrates_ancient.pyx":184
- *                     else:
- *                         return score
+        /* "socrates_ancient.py":182
+ *                 if score >= beta:
+ *                     return beta if self.failType == FailType.FAILHARD else score
  *                 if score > alpha:             # <<<<<<<<<<<<<<
  *                     alpha = score
  * 
  */
       }
 
-      /* "socrates_ancient.pyx":177
+      /* "socrates_ancient.py":178
  *             self.game.board.pop()
  * 
  *             if score > bestScore:             # <<<<<<<<<<<<<<
@@ -4845,63 +4766,56 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_4quiescenceEval(CYTHON_U
  */
     }
 
-    /* "socrates_ancient.pyx":172
+    /* "socrates_ancient.py":173
  *             legalMoves.sort(key = self.mvvLva, reverse = True)
  * 
  *         for move in legalMoves:             # <<<<<<<<<<<<<<
  *             self.game.board.push(move)
- *             score = -self.quiescenceEval(-beta, -alpha, not(move.promotion is None))
+ *             score = -self.quiescenceEval(-beta, -alpha, ply + 1)
  */
   }
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":187
+  /* "socrates_ancient.py":185
  *                     alpha = score
  * 
  *         if bestScore == -INFINITY:             # <<<<<<<<<<<<<<
- *             #
- *             return ply - INFINITY
+ *             bestScore = staticScore
+ *         return bestScore
  */
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 187, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = PyNumber_Negative(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 187, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_bestScore, __pyx_t_5, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 187, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 187, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (__pyx_t_3) {
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_6 = PyNumber_Negative(__pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = PyObject_RichCompare(__pyx_v_bestScore, __pyx_t_6, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (__pyx_t_4) {
 
-    /* "socrates_ancient.pyx":189
+    /* "socrates_ancient.py":186
+ * 
  *         if bestScore == -INFINITY:
- *             #
- *             return ply - INFINITY             # <<<<<<<<<<<<<<
+ *             bestScore = staticScore             # <<<<<<<<<<<<<<
  *         return bestScore
  * 
  */
-    __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 189, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = PyNumber_Subtract(__pyx_v_ply, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 189, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_r = __pyx_t_5;
-    __pyx_t_5 = 0;
-    goto __pyx_L0;
+    __Pyx_INCREF(__pyx_v_staticScore);
+    __Pyx_DECREF_SET(__pyx_v_bestScore, __pyx_v_staticScore);
 
-    /* "socrates_ancient.pyx":187
+    /* "socrates_ancient.py":185
  *                     alpha = score
  * 
  *         if bestScore == -INFINITY:             # <<<<<<<<<<<<<<
- *             #
- *             return ply - INFINITY
+ *             bestScore = staticScore
+ *         return bestScore
  */
   }
 
-  /* "socrates_ancient.pyx":190
- *             #
- *             return ply - INFINITY
+  /* "socrates_ancient.py":187
+ *         if bestScore == -INFINITY:
+ *             bestScore = staticScore
  *         return bestScore             # <<<<<<<<<<<<<<
  * 
  *     def getBestMove(self):
@@ -4911,38 +4825,39 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_4quiescenceEval(CYTHON_U
   __pyx_r = __pyx_v_bestScore;
   goto __pyx_L0;
 
-  /* "socrates_ancient.pyx":157
+  /* "socrates_ancient.py":157
  *         return (piece[pieceAtTo.symbol().upper()] << 3) - piece[self.game.board.piece_at(move.from_square).symbol().upper()]
  * 
- *     def quiescenceEval(self, alpha, beta, ply, important=False):             # <<<<<<<<<<<<<<
+ *     def quiescenceEval(self, alpha, beta, ply):             # <<<<<<<<<<<<<<
  *         bestScore = -INFINITY
- *         if important or self.game.board.is_check():
+ *         if self.game.board.is_check():
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_XDECREF(__pyx_t_7);
+  __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_XDECREF(__pyx_t_10);
-  __Pyx_XDECREF(__pyx_t_12);
+  __Pyx_XDECREF(__pyx_t_11);
   __Pyx_AddTraceback("socrates_ancientc.Searcher.quiescenceEval", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_bestScore);
+  __Pyx_XDECREF(__pyx_v_staticScore);
   __Pyx_XDECREF(__pyx_v_legalMoves);
-  __Pyx_XDECREF(__pyx_v_score);
   __Pyx_XDECREF(__pyx_v_move);
+  __Pyx_XDECREF(__pyx_v_score);
   __Pyx_XDECREF(__pyx_v_alpha);
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "socrates_ancient.pyx":192
+/* "socrates_ancient.py":189
  *         return bestScore
  * 
  *     def getBestMove(self):             # <<<<<<<<<<<<<<
@@ -4985,38 +4900,38 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
   PyObject *(*__pyx_t_11)(PyObject *);
   __Pyx_RefNannySetupContext("getBestMove", 0);
 
-  /* "socrates_ancient.pyx":193
+  /* "socrates_ancient.py":190
  * 
  *     def getBestMove(self):
  *         eprint("<Socrates Ancient %s> " % ("BLACK", "WHITE")[self.game.board.turn] + os.path.basename(__file__))             # <<<<<<<<<<<<<<
  *         self.moveRatings = dict()
  *         self.moveSequence = []
  */
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_eprint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_eprint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_board); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_board); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_turn); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_turn); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_tuple__3, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_tuple__3, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyString_Format(__pyx_kp_s_Socrates_Ancient_s, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyString_Format(__pyx_kp_s_Socrates_Ancient_s, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_os); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_os); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_path); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_path); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_basename); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_basename); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_GetModuleGlobalName(__pyx_n_s_file); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_GetModuleGlobalName(__pyx_n_s_file); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_7 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -5029,14 +4944,14 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
     }
   }
   if (!__pyx_t_7) {
-    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 193, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 190, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_GOTREF(__pyx_t_4);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_5)) {
       PyObject *__pyx_temp[2] = {__pyx_t_7, __pyx_t_6};
-      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 193, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 190, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -5045,26 +4960,26 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
       PyObject *__pyx_temp[2] = {__pyx_t_7, __pyx_t_6};
-      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 193, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 190, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     } else
     #endif
     {
-      __pyx_t_8 = PyTuple_New(1+1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 193, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(1+1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 190, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_7); __pyx_t_7 = NULL;
       __Pyx_GIVEREF(__pyx_t_6);
       PyTuple_SET_ITEM(__pyx_t_8, 0+1, __pyx_t_6);
       __pyx_t_6 = 0;
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 193, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 190, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
   }
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = PyNumber_Add(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_t_5 = PyNumber_Add(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -5079,14 +4994,14 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
     }
   }
   if (!__pyx_t_4) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 193, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 190, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[2] = {__pyx_t_4, __pyx_t_5};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 193, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 190, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -5095,20 +5010,20 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[2] = {__pyx_t_4, __pyx_t_5};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 193, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 190, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     } else
     #endif
     {
-      __pyx_t_3 = PyTuple_New(1+1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 193, __pyx_L1_error)
+      __pyx_t_3 = PyTuple_New(1+1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 190, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_4); __pyx_t_4 = NULL;
       __Pyx_GIVEREF(__pyx_t_5);
       PyTuple_SET_ITEM(__pyx_t_3, 0+1, __pyx_t_5);
       __pyx_t_5 = 0;
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 193, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 190, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
@@ -5116,52 +5031,52 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":194
+  /* "socrates_ancient.py":191
  *     def getBestMove(self):
  *         eprint("<Socrates Ancient %s> " % ("BLACK", "WHITE")[self.game.board.turn] + os.path.basename(__file__))
  *         self.moveRatings = dict()             # <<<<<<<<<<<<<<
  *         self.moveSequence = []
  *         self.transpositionTable = dict()
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 194, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 191, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_moveRatings, __pyx_t_1) < 0) __PYX_ERR(0, 194, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_moveRatings, __pyx_t_1) < 0) __PYX_ERR(0, 191, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":195
+  /* "socrates_ancient.py":192
  *         eprint("<Socrates Ancient %s> " % ("BLACK", "WHITE")[self.game.board.turn] + os.path.basename(__file__))
  *         self.moveRatings = dict()
  *         self.moveSequence = []             # <<<<<<<<<<<<<<
  *         self.transpositionTable = dict()
  *         # self.killerMoves = [[None, None]] * MAX_MOVES
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 195, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 192, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_moveSequence, __pyx_t_1) < 0) __PYX_ERR(0, 195, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_moveSequence, __pyx_t_1) < 0) __PYX_ERR(0, 192, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":196
+  /* "socrates_ancient.py":193
  *         self.moveRatings = dict()
  *         self.moveSequence = []
  *         self.transpositionTable = dict()             # <<<<<<<<<<<<<<
  *         # self.killerMoves = [[None, None]] * MAX_MOVES
  *         self.currTime = time.time()
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 196, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 193, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_transpositionTable, __pyx_t_1) < 0) __PYX_ERR(0, 196, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_transpositionTable, __pyx_t_1) < 0) __PYX_ERR(0, 193, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":198
+  /* "socrates_ancient.py":195
  *         self.transpositionTable = dict()
  *         # self.killerMoves = [[None, None]] * MAX_MOVES
  *         self.currTime = time.time()             # <<<<<<<<<<<<<<
  *         if(self.totalTime < 300):
  *             timeGap = self.usualTime
  */
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_time); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 198, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_time); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 198, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -5175,44 +5090,44 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
     }
   }
   if (__pyx_t_2) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 198, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 195, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 198, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 195, __pyx_L1_error)
   }
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_currTime, __pyx_t_1) < 0) __PYX_ERR(0, 198, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_currTime, __pyx_t_1) < 0) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":199
+  /* "socrates_ancient.py":196
  *         # self.killerMoves = [[None, None]] * MAX_MOVES
  *         self.currTime = time.time()
  *         if(self.totalTime < 300):             # <<<<<<<<<<<<<<
  *             timeGap = self.usualTime
  *         elif (self.totalTime < 500):
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_totalTime); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 199, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_totalTime); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 196, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyObject_RichCompare(__pyx_t_1, __pyx_int_300, Py_LT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 199, __pyx_L1_error)
+  __pyx_t_3 = PyObject_RichCompare(__pyx_t_1, __pyx_int_300, Py_LT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 196, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 199, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 196, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (__pyx_t_9) {
 
-    /* "socrates_ancient.pyx":200
+    /* "socrates_ancient.py":197
  *         self.currTime = time.time()
  *         if(self.totalTime < 300):
  *             timeGap = self.usualTime             # <<<<<<<<<<<<<<
  *         elif (self.totalTime < 500):
  *             timeGap = 12
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_usualTime); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_usualTime); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 197, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_v_timeGap = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "socrates_ancient.pyx":199
+    /* "socrates_ancient.py":196
  *         # self.killerMoves = [[None, None]] * MAX_MOVES
  *         self.currTime = time.time()
  *         if(self.totalTime < 300):             # <<<<<<<<<<<<<<
@@ -5222,22 +5137,22 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
     goto __pyx_L3;
   }
 
-  /* "socrates_ancient.pyx":201
+  /* "socrates_ancient.py":198
  *         if(self.totalTime < 300):
  *             timeGap = self.usualTime
  *         elif (self.totalTime < 500):             # <<<<<<<<<<<<<<
  *             timeGap = 12
  *         elif (self.totalTime < 570):
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_totalTime); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 201, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_totalTime); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 198, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = PyObject_RichCompare(__pyx_t_3, __pyx_int_500, Py_LT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 201, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_t_3, __pyx_int_500, Py_LT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 198, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 201, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 198, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_9) {
 
-    /* "socrates_ancient.pyx":202
+    /* "socrates_ancient.py":199
  *             timeGap = self.usualTime
  *         elif (self.totalTime < 500):
  *             timeGap = 12             # <<<<<<<<<<<<<<
@@ -5247,7 +5162,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
     __Pyx_INCREF(__pyx_int_12);
     __pyx_v_timeGap = __pyx_int_12;
 
-    /* "socrates_ancient.pyx":201
+    /* "socrates_ancient.py":198
  *         if(self.totalTime < 300):
  *             timeGap = self.usualTime
  *         elif (self.totalTime < 500):             # <<<<<<<<<<<<<<
@@ -5257,22 +5172,22 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
     goto __pyx_L3;
   }
 
-  /* "socrates_ancient.pyx":203
+  /* "socrates_ancient.py":200
  *         elif (self.totalTime < 500):
  *             timeGap = 12
  *         elif (self.totalTime < 570):             # <<<<<<<<<<<<<<
  *             timeGap = 7
  *         else:
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_totalTime); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 203, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_totalTime); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 200, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyObject_RichCompare(__pyx_t_1, __pyx_int_570, Py_LT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 203, __pyx_L1_error)
+  __pyx_t_3 = PyObject_RichCompare(__pyx_t_1, __pyx_int_570, Py_LT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 200, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 203, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 200, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (__pyx_t_9) {
 
-    /* "socrates_ancient.pyx":204
+    /* "socrates_ancient.py":201
  *             timeGap = 12
  *         elif (self.totalTime < 570):
  *             timeGap = 7             # <<<<<<<<<<<<<<
@@ -5282,7 +5197,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
     __Pyx_INCREF(__pyx_int_7);
     __pyx_v_timeGap = __pyx_int_7;
 
-    /* "socrates_ancient.pyx":203
+    /* "socrates_ancient.py":200
  *         elif (self.totalTime < 500):
  *             timeGap = 12
  *         elif (self.totalTime < 570):             # <<<<<<<<<<<<<<
@@ -5292,7 +5207,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
     goto __pyx_L3;
   }
 
-  /* "socrates_ancient.pyx":206
+  /* "socrates_ancient.py":203
  *             timeGap = 7
  *         else:
  *             timeGap = 2             # <<<<<<<<<<<<<<
@@ -5305,22 +5220,22 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
   }
   __pyx_L3:;
 
-  /* "socrates_ancient.pyx":207
+  /* "socrates_ancient.py":204
  *         else:
  *             timeGap = 2
  *         self.futureTime = self.currTime + timeGap             # <<<<<<<<<<<<<<
  * 
  *         depth = 0
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_currTime); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 207, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_currTime); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 204, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = PyNumber_Add(__pyx_t_3, __pyx_v_timeGap); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 207, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_Add(__pyx_t_3, __pyx_v_timeGap); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 204, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_futureTime, __pyx_t_1) < 0) __PYX_ERR(0, 207, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_futureTime, __pyx_t_1) < 0) __PYX_ERR(0, 204, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":209
+  /* "socrates_ancient.py":206
  *         self.futureTime = self.currTime + timeGap
  * 
  *         depth = 0             # <<<<<<<<<<<<<<
@@ -5330,7 +5245,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
   __Pyx_INCREF(__pyx_int_0);
   __pyx_v_depth = __pyx_int_0;
 
-  /* "socrates_ancient.pyx":210
+  /* "socrates_ancient.py":207
  * 
  *         depth = 0
  *         bestMove = None             # <<<<<<<<<<<<<<
@@ -5340,32 +5255,32 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
   __Pyx_INCREF(Py_None);
   __pyx_v_bestMove = Py_None;
 
-  /* "socrates_ancient.pyx":211
+  /* "socrates_ancient.py":208
  *         depth = 0
  *         bestMove = None
  *         bestScore = -INFINITY             # <<<<<<<<<<<<<<
  * 
  *         while time.time() <= self.futureTime:
  */
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 211, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 208, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyNumber_Negative(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 211, __pyx_L1_error)
+  __pyx_t_3 = PyNumber_Negative(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 208, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_bestScore = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "socrates_ancient.pyx":213
+  /* "socrates_ancient.py":210
  *         bestScore = -INFINITY
  * 
  *         while time.time() <= self.futureTime:             # <<<<<<<<<<<<<<
  *             depth += 1
- *             thisMove, bestScore = self.pvSearch(-INFINITY + 1, INFINITY - 1, depth << 3, True)
+ *             thisMove, bestScore = self.pvSearch(-INFINITY + 3, INFINITY - 3, depth << 3, True)
  */
   while (1) {
-    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_time); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 213, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_time); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 210, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_time); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 213, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_time); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 210, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_1 = NULL;
@@ -5379,57 +5294,57 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
       }
     }
     if (__pyx_t_1) {
-      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 213, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 210, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     } else {
-      __pyx_t_3 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 213, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 210, __pyx_L1_error)
     }
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_futureTime); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 213, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_futureTime); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 210, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = PyObject_RichCompare(__pyx_t_3, __pyx_t_2, Py_LE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 213, __pyx_L1_error)
+    __pyx_t_1 = PyObject_RichCompare(__pyx_t_3, __pyx_t_2, Py_LE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 210, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 213, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 210, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (!__pyx_t_9) break;
 
-    /* "socrates_ancient.pyx":214
+    /* "socrates_ancient.py":211
  * 
  *         while time.time() <= self.futureTime:
  *             depth += 1             # <<<<<<<<<<<<<<
- *             thisMove, bestScore = self.pvSearch(-INFINITY + 1, INFINITY - 1, depth << 3, True)
+ *             thisMove, bestScore = self.pvSearch(-INFINITY + 3, INFINITY - 3, depth << 3, True)
  *             if thisMove != chess.Move.null():
  */
-    __pyx_t_1 = __Pyx_PyInt_AddObjC(__pyx_v_depth, __pyx_int_1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 214, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_AddObjC(__pyx_v_depth, __pyx_int_1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 211, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF_SET(__pyx_v_depth, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "socrates_ancient.pyx":215
+    /* "socrates_ancient.py":212
  *         while time.time() <= self.futureTime:
  *             depth += 1
- *             thisMove, bestScore = self.pvSearch(-INFINITY + 1, INFINITY - 1, depth << 3, True)             # <<<<<<<<<<<<<<
+ *             thisMove, bestScore = self.pvSearch(-INFINITY + 3, INFINITY - 3, depth << 3, True)             # <<<<<<<<<<<<<<
  *             if thisMove != chess.Move.null():
  *                 bestMove = thisMove
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_pvSearch); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 215, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_pvSearch); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 212, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 215, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 212, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = PyNumber_Negative(__pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 215, __pyx_L1_error)
+    __pyx_t_5 = PyNumber_Negative(__pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 212, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyInt_AddObjC(__pyx_t_5, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 215, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyInt_AddObjC(__pyx_t_5, __pyx_int_3, 3, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 212, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 215, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 212, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_4 = __Pyx_PyInt_SubtractObjC(__pyx_t_5, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 215, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_SubtractObjC(__pyx_t_5, __pyx_int_3, 3, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 212, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyInt_LshiftObjC(__pyx_v_depth, __pyx_int_3, 3, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 215, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_LshiftObjC(__pyx_v_depth, __pyx_int_3, 3, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 212, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_8 = NULL;
     __pyx_t_10 = 0;
@@ -5446,7 +5361,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[5] = {__pyx_t_8, __pyx_t_3, __pyx_t_4, __pyx_t_5, Py_True};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_10, 4+__pyx_t_10); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 215, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_10, 4+__pyx_t_10); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 212, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -5457,7 +5372,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[5] = {__pyx_t_8, __pyx_t_3, __pyx_t_4, __pyx_t_5, Py_True};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_10, 4+__pyx_t_10); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 215, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_10, 4+__pyx_t_10); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 212, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -5466,7 +5381,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
     } else
     #endif
     {
-      __pyx_t_6 = PyTuple_New(4+__pyx_t_10); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 215, __pyx_L1_error)
+      __pyx_t_6 = PyTuple_New(4+__pyx_t_10); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 212, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       if (__pyx_t_8) {
         __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_8); __pyx_t_8 = NULL;
@@ -5483,7 +5398,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
       __pyx_t_3 = 0;
       __pyx_t_4 = 0;
       __pyx_t_5 = 0;
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 215, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 212, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     }
@@ -5494,7 +5409,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 215, __pyx_L1_error)
+        __PYX_ERR(0, 212, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -5507,15 +5422,15 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
       __Pyx_INCREF(__pyx_t_2);
       __Pyx_INCREF(__pyx_t_6);
       #else
-      __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 215, __pyx_L1_error)
+      __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 212, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_6 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 215, __pyx_L1_error)
+      __pyx_t_6 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 212, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       #endif
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_5 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 215, __pyx_L1_error)
+      __pyx_t_5 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 212, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_t_11 = Py_TYPE(__pyx_t_5)->tp_iternext;
@@ -5523,7 +5438,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
       __Pyx_GOTREF(__pyx_t_2);
       index = 1; __pyx_t_6 = __pyx_t_11(__pyx_t_5); if (unlikely(!__pyx_t_6)) goto __pyx_L6_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_6);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_11(__pyx_t_5), 2) < 0) __PYX_ERR(0, 215, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_11(__pyx_t_5), 2) < 0) __PYX_ERR(0, 212, __pyx_L1_error)
       __pyx_t_11 = NULL;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       goto __pyx_L7_unpacking_done;
@@ -5531,7 +5446,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_11 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 215, __pyx_L1_error)
+      __PYX_ERR(0, 212, __pyx_L1_error)
       __pyx_L7_unpacking_done:;
     }
     __Pyx_XDECREF_SET(__pyx_v_thisMove, __pyx_t_2);
@@ -5539,19 +5454,19 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
     __Pyx_DECREF_SET(__pyx_v_bestScore, __pyx_t_6);
     __pyx_t_6 = 0;
 
-    /* "socrates_ancient.pyx":216
+    /* "socrates_ancient.py":213
  *             depth += 1
- *             thisMove, bestScore = self.pvSearch(-INFINITY + 1, INFINITY - 1, depth << 3, True)
+ *             thisMove, bestScore = self.pvSearch(-INFINITY + 3, INFINITY - 3, depth << 3, True)
  *             if thisMove != chess.Move.null():             # <<<<<<<<<<<<<<
  *                 bestMove = thisMove
- *             else:
+ *                 pass
  */
-    __pyx_t_6 = __Pyx_GetModuleGlobalName(__pyx_n_s_chess); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 216, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_GetModuleGlobalName(__pyx_n_s_chess); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 213, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_Move); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 216, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_Move); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 213, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_null); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 216, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_null); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 213, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_2 = NULL;
@@ -5565,41 +5480,41 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
       }
     }
     if (__pyx_t_2) {
-      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 216, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 213, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     } else {
-      __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 216, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 213, __pyx_L1_error)
     }
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = PyObject_RichCompare(__pyx_v_thisMove, __pyx_t_1, Py_NE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 216, __pyx_L1_error)
+    __pyx_t_6 = PyObject_RichCompare(__pyx_v_thisMove, __pyx_t_1, Py_NE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 213, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 216, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 213, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     if (__pyx_t_9) {
 
-      /* "socrates_ancient.pyx":217
- *             thisMove, bestScore = self.pvSearch(-INFINITY + 1, INFINITY - 1, depth << 3, True)
+      /* "socrates_ancient.py":214
+ *             thisMove, bestScore = self.pvSearch(-INFINITY + 3, INFINITY - 3, depth << 3, True)
  *             if thisMove != chess.Move.null():
  *                 bestMove = thisMove             # <<<<<<<<<<<<<<
+ *                 pass
  *             else:
- *                 break
  */
       __Pyx_INCREF(__pyx_v_thisMove);
       __Pyx_DECREF_SET(__pyx_v_bestMove, __pyx_v_thisMove);
 
-      /* "socrates_ancient.pyx":216
+      /* "socrates_ancient.py":213
  *             depth += 1
- *             thisMove, bestScore = self.pvSearch(-INFINITY + 1, INFINITY - 1, depth << 3, True)
+ *             thisMove, bestScore = self.pvSearch(-INFINITY + 3, INFINITY - 3, depth << 3, True)
  *             if thisMove != chess.Move.null():             # <<<<<<<<<<<<<<
  *                 bestMove = thisMove
- *             else:
+ *                 pass
  */
       goto __pyx_L8;
     }
 
-    /* "socrates_ancient.pyx":219
- *                 bestMove = thisMove
+    /* "socrates_ancient.py":217
+ *                 pass
  *             else:
  *                 break             # <<<<<<<<<<<<<<
  *             eprint(str(time.time() - self.currTime) + " - Depth : " + str(depth) , "Best Move", str(bestMove), ", Best Score", str(bestScore))
@@ -5610,18 +5525,18 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
     }
     __pyx_L8:;
 
-    /* "socrates_ancient.pyx":220
+    /* "socrates_ancient.py":218
  *             else:
  *                 break
  *             eprint(str(time.time() - self.currTime) + " - Depth : " + str(depth) , "Best Move", str(bestMove), ", Best Score", str(bestScore))             # <<<<<<<<<<<<<<
  *             if time.time() - self.currTime > timeGap * self.stopRatio:
  *                 break
  */
-    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_eprint); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 220, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_eprint); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_time); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 220, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_time); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_time); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 220, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_time); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_5 = NULL;
@@ -5635,34 +5550,34 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
       }
     }
     if (__pyx_t_5) {
-      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 220, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 218, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     } else {
-      __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 220, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 218, __pyx_L1_error)
     }
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_currTime); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 220, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_currTime); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = PyNumber_Subtract(__pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 220, __pyx_L1_error)
+    __pyx_t_5 = PyNumber_Subtract(__pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 220, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = PyNumber_Add(__pyx_t_4, __pyx_kp_s_Depth); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 220, __pyx_L1_error)
+    __pyx_t_5 = PyNumber_Add(__pyx_t_4, __pyx_kp_s_Depth); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_v_depth); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 220, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_v_depth); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_2 = PyNumber_Add(__pyx_t_5, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 220, __pyx_L1_error)
+    __pyx_t_2 = PyNumber_Add(__pyx_t_5, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_v_bestMove); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 220, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_v_bestMove); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_v_bestScore); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 220, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_v_bestScore); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_3 = NULL;
     __pyx_t_10 = 0;
@@ -5679,7 +5594,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[6] = {__pyx_t_3, __pyx_t_2, __pyx_kp_s_Best_Move, __pyx_t_4, __pyx_kp_s_Best_Score, __pyx_t_5};
-      __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_10, 5+__pyx_t_10); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 220, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_10, 5+__pyx_t_10); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 218, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -5690,7 +5605,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[6] = {__pyx_t_3, __pyx_t_2, __pyx_kp_s_Best_Move, __pyx_t_4, __pyx_kp_s_Best_Score, __pyx_t_5};
-      __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_10, 5+__pyx_t_10); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 220, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_10, 5+__pyx_t_10); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 218, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -5699,7 +5614,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
     } else
     #endif
     {
-      __pyx_t_8 = PyTuple_New(5+__pyx_t_10); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 220, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(5+__pyx_t_10); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 218, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       if (__pyx_t_3) {
         __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -5719,23 +5634,23 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
       __pyx_t_2 = 0;
       __pyx_t_4 = 0;
       __pyx_t_5 = 0;
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_8, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 220, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_8, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 218, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "socrates_ancient.pyx":221
+    /* "socrates_ancient.py":219
  *                 break
  *             eprint(str(time.time() - self.currTime) + " - Depth : " + str(depth) , "Best Move", str(bestMove), ", Best Score", str(bestScore))
  *             if time.time() - self.currTime > timeGap * self.stopRatio:             # <<<<<<<<<<<<<<
  *                 break
  *         self.totalTime += time.time() - self.currTime
  */
-    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_time); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 221, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_time); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 219, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_time); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 221, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_time); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 219, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_1 = NULL;
@@ -5749,32 +5664,32 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
       }
     }
     if (__pyx_t_1) {
-      __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 221, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 219, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     } else {
-      __pyx_t_6 = __Pyx_PyObject_CallNoArg(__pyx_t_8); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 221, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_CallNoArg(__pyx_t_8); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 219, __pyx_L1_error)
     }
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_currTime); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 221, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_currTime); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 219, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_1 = PyNumber_Subtract(__pyx_t_6, __pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 221, __pyx_L1_error)
+    __pyx_t_1 = PyNumber_Subtract(__pyx_t_6, __pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 219, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_stopRatio); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 221, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_stopRatio); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 219, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_6 = PyNumber_Multiply(__pyx_v_timeGap, __pyx_t_8); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 221, __pyx_L1_error)
+    __pyx_t_6 = PyNumber_Multiply(__pyx_v_timeGap, __pyx_t_8); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 219, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __pyx_t_8 = PyObject_RichCompare(__pyx_t_1, __pyx_t_6, Py_GT); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 221, __pyx_L1_error)
+    __pyx_t_8 = PyObject_RichCompare(__pyx_t_1, __pyx_t_6, Py_GT); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 219, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 221, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 219, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     if (__pyx_t_9) {
 
-      /* "socrates_ancient.pyx":222
+      /* "socrates_ancient.py":220
  *             eprint(str(time.time() - self.currTime) + " - Depth : " + str(depth) , "Best Move", str(bestMove), ", Best Score", str(bestScore))
  *             if time.time() - self.currTime > timeGap * self.stopRatio:
  *                 break             # <<<<<<<<<<<<<<
@@ -5783,7 +5698,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
  */
       goto __pyx_L5_break;
 
-      /* "socrates_ancient.pyx":221
+      /* "socrates_ancient.py":219
  *                 break
  *             eprint(str(time.time() - self.currTime) + " - Depth : " + str(depth) , "Best Move", str(bestMove), ", Best Score", str(bestScore))
  *             if time.time() - self.currTime > timeGap * self.stopRatio:             # <<<<<<<<<<<<<<
@@ -5794,18 +5709,18 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
   }
   __pyx_L5_break:;
 
-  /* "socrates_ancient.pyx":223
+  /* "socrates_ancient.py":221
  *             if time.time() - self.currTime > timeGap * self.stopRatio:
  *                 break
  *         self.totalTime += time.time() - self.currTime             # <<<<<<<<<<<<<<
  *         eprint("Total time :",self.totalTime)
  *         return bestMove
  */
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_totalTime); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 223, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_totalTime); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 221, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_time); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 223, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_time); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 221, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_time); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 223, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_time); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 221, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = NULL;
@@ -5819,36 +5734,36 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
     }
   }
   if (__pyx_t_1) {
-    __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 223, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 221, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   } else {
-    __pyx_t_6 = __Pyx_PyObject_CallNoArg(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 223, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_CallNoArg(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 221, __pyx_L1_error)
   }
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_currTime); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 223, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_currTime); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 221, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_1 = PyNumber_Subtract(__pyx_t_6, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 223, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_Subtract(__pyx_t_6, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 221, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = PyNumber_InPlaceAdd(__pyx_t_8, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 223, __pyx_L1_error)
+  __pyx_t_5 = PyNumber_InPlaceAdd(__pyx_t_8, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 221, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_totalTime, __pyx_t_5) < 0) __PYX_ERR(0, 223, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_totalTime, __pyx_t_5) < 0) __PYX_ERR(0, 221, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "socrates_ancient.pyx":224
+  /* "socrates_ancient.py":222
  *                 break
  *         self.totalTime += time.time() - self.currTime
  *         eprint("Total time :",self.totalTime)             # <<<<<<<<<<<<<<
  *         return bestMove
  * 
  */
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_eprint); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 224, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_eprint); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_totalTime); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 224, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_totalTime); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_t_6 = NULL;
   __pyx_t_10 = 0;
@@ -5865,7 +5780,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_1)) {
     PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_kp_s_Total_time, __pyx_t_8};
-    __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_10, 2+__pyx_t_10); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 224, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_10, 2+__pyx_t_10); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 222, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -5874,14 +5789,14 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
     PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_kp_s_Total_time, __pyx_t_8};
-    __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_10, 2+__pyx_t_10); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 224, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_10, 2+__pyx_t_10); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 222, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   } else
   #endif
   {
-    __pyx_t_4 = PyTuple_New(2+__pyx_t_10); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 224, __pyx_L1_error)
+    __pyx_t_4 = PyTuple_New(2+__pyx_t_10); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 222, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     if (__pyx_t_6) {
       __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -5892,14 +5807,14 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
     __Pyx_GIVEREF(__pyx_t_8);
     PyTuple_SET_ITEM(__pyx_t_4, 1+__pyx_t_10, __pyx_t_8);
     __pyx_t_8 = 0;
-    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_4, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 224, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_4, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 222, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "socrates_ancient.pyx":225
+  /* "socrates_ancient.py":223
  *         self.totalTime += time.time() - self.currTime
  *         eprint("Total time :",self.totalTime)
  *         return bestMove             # <<<<<<<<<<<<<<
@@ -5911,7 +5826,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
   __pyx_r = __pyx_v_bestMove;
   goto __pyx_L0;
 
-  /* "socrates_ancient.pyx":192
+  /* "socrates_ancient.py":189
  *         return bestScore
  * 
  *     def getBestMove(self):             # <<<<<<<<<<<<<<
@@ -5942,7 +5857,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_6getBestMove(CYTHON_UNUS
   return __pyx_r;
 }
 
-/* "socrates_ancient.pyx":227
+/* "socrates_ancient.py":225
  *         return bestMove
  * 
  *     def storeTranspositionTable(self, thisHash, depthLeft, score, nodeType, bestMove):             # <<<<<<<<<<<<<<
@@ -5994,35 +5909,35 @@ static PyObject *__pyx_pw_17socrates_ancientc_8Searcher_9storeTranspositionTable
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_thisHash)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("storeTranspositionTable", 1, 6, 6, 1); __PYX_ERR(0, 227, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("storeTranspositionTable", 1, 6, 6, 1); __PYX_ERR(0, 225, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_depthLeft)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("storeTranspositionTable", 1, 6, 6, 2); __PYX_ERR(0, 227, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("storeTranspositionTable", 1, 6, 6, 2); __PYX_ERR(0, 225, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_score)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("storeTranspositionTable", 1, 6, 6, 3); __PYX_ERR(0, 227, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("storeTranspositionTable", 1, 6, 6, 3); __PYX_ERR(0, 225, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_nodeType)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("storeTranspositionTable", 1, 6, 6, 4); __PYX_ERR(0, 227, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("storeTranspositionTable", 1, 6, 6, 4); __PYX_ERR(0, 225, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (likely((values[5] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_bestMove)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("storeTranspositionTable", 1, 6, 6, 5); __PYX_ERR(0, 227, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("storeTranspositionTable", 1, 6, 6, 5); __PYX_ERR(0, 225, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "storeTranspositionTable") < 0)) __PYX_ERR(0, 227, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "storeTranspositionTable") < 0)) __PYX_ERR(0, 225, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 6) {
       goto __pyx_L5_argtuple_error;
@@ -6043,7 +5958,7 @@ static PyObject *__pyx_pw_17socrates_ancientc_8Searcher_9storeTranspositionTable
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("storeTranspositionTable", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 227, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("storeTranspositionTable", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 225, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("socrates_ancientc.Searcher.storeTranspositionTable", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -6068,16 +5983,16 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_8storeTranspositionTable
   PyObject *__pyx_t_6 = NULL;
   __Pyx_RefNannySetupContext("storeTranspositionTable", 0);
 
-  /* "socrates_ancient.pyx":228
+  /* "socrates_ancient.py":226
  * 
  *     def storeTranspositionTable(self, thisHash, depthLeft, score, nodeType, bestMove):
  *         t = Transposition(thisHash, self.game, depthLeft, score, nodeType, bestMove)             # <<<<<<<<<<<<<<
  *         self.transpositionTable[thisHash] = t
  * 
  */
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Transposition); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 228, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Transposition); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 226, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 228, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 226, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -6094,7 +6009,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_8storeTranspositionTable
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[7] = {__pyx_t_4, __pyx_v_thisHash, __pyx_t_3, __pyx_v_depthLeft, __pyx_v_score, __pyx_v_nodeType, __pyx_v_bestMove};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 6+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 228, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 6+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 226, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -6103,14 +6018,14 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_8storeTranspositionTable
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[7] = {__pyx_t_4, __pyx_v_thisHash, __pyx_t_3, __pyx_v_depthLeft, __pyx_v_score, __pyx_v_nodeType, __pyx_v_bestMove};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 6+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 228, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 6+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 226, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   } else
   #endif
   {
-    __pyx_t_6 = PyTuple_New(6+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 228, __pyx_L1_error)
+    __pyx_t_6 = PyTuple_New(6+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 226, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     if (__pyx_t_4) {
       __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_4); __pyx_t_4 = NULL;
@@ -6133,7 +6048,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_8storeTranspositionTable
     __Pyx_GIVEREF(__pyx_v_bestMove);
     PyTuple_SET_ITEM(__pyx_t_6, 5+__pyx_t_5, __pyx_v_bestMove);
     __pyx_t_3 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 228, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 226, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
@@ -6141,19 +6056,19 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_8storeTranspositionTable
   __pyx_v_t = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":229
+  /* "socrates_ancient.py":227
  *     def storeTranspositionTable(self, thisHash, depthLeft, score, nodeType, bestMove):
  *         t = Transposition(thisHash, self.game, depthLeft, score, nodeType, bestMove)
  *         self.transpositionTable[thisHash] = t             # <<<<<<<<<<<<<<
  * 
  *     def lookupTranspositionTable(self, thisHash, alpha, beta, depthLeft):
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_transpositionTable); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 229, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_transpositionTable); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 227, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (unlikely(PyObject_SetItem(__pyx_t_1, __pyx_v_thisHash, __pyx_v_t) < 0)) __PYX_ERR(0, 229, __pyx_L1_error)
+  if (unlikely(PyObject_SetItem(__pyx_t_1, __pyx_v_thisHash, __pyx_v_t) < 0)) __PYX_ERR(0, 227, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":227
+  /* "socrates_ancient.py":225
  *         return bestMove
  * 
  *     def storeTranspositionTable(self, thisHash, depthLeft, score, nodeType, bestMove):             # <<<<<<<<<<<<<<
@@ -6179,7 +6094,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_8storeTranspositionTable
   return __pyx_r;
 }
 
-/* "socrates_ancient.pyx":231
+/* "socrates_ancient.py":229
  *         self.transpositionTable[thisHash] = t
  * 
  *     def lookupTranspositionTable(self, thisHash, alpha, beta, depthLeft):             # <<<<<<<<<<<<<<
@@ -6228,29 +6143,29 @@ static PyObject *__pyx_pw_17socrates_ancientc_8Searcher_11lookupTranspositionTab
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_thisHash)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("lookupTranspositionTable", 1, 5, 5, 1); __PYX_ERR(0, 231, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("lookupTranspositionTable", 1, 5, 5, 1); __PYX_ERR(0, 229, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_alpha)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("lookupTranspositionTable", 1, 5, 5, 2); __PYX_ERR(0, 231, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("lookupTranspositionTable", 1, 5, 5, 2); __PYX_ERR(0, 229, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_beta)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("lookupTranspositionTable", 1, 5, 5, 3); __PYX_ERR(0, 231, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("lookupTranspositionTable", 1, 5, 5, 3); __PYX_ERR(0, 229, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_depthLeft)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("lookupTranspositionTable", 1, 5, 5, 4); __PYX_ERR(0, 231, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("lookupTranspositionTable", 1, 5, 5, 4); __PYX_ERR(0, 229, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "lookupTranspositionTable") < 0)) __PYX_ERR(0, 231, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "lookupTranspositionTable") < 0)) __PYX_ERR(0, 229, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 5) {
       goto __pyx_L5_argtuple_error;
@@ -6269,7 +6184,7 @@ static PyObject *__pyx_pw_17socrates_ancientc_8Searcher_11lookupTranspositionTab
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("lookupTranspositionTable", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 231, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("lookupTranspositionTable", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 229, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("socrates_ancientc.Searcher.lookupTranspositionTable", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -6296,7 +6211,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
   int __pyx_t_6;
   __Pyx_RefNannySetupContext("lookupTranspositionTable", 0);
 
-  /* "socrates_ancient.pyx":232
+  /* "socrates_ancient.py":230
  * 
  *     def lookupTranspositionTable(self, thisHash, alpha, beta, depthLeft):
  *         iCanReplaceThisTransposition = True             # <<<<<<<<<<<<<<
@@ -6306,16 +6221,16 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
   __Pyx_INCREF(Py_True);
   __pyx_v_iCanReplaceThisTransposition = Py_True;
 
-  /* "socrates_ancient.pyx":234
+  /* "socrates_ancient.py":232
  *         iCanReplaceThisTransposition = True
  * 
  *         thisTransposition = self.transpositionTable.get(thisHash)             # <<<<<<<<<<<<<<
  * 
  *         if thisTransposition is not None:
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_transpositionTable); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 234, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_transpositionTable); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 232, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 234, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 232, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -6329,13 +6244,13 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
     }
   }
   if (!__pyx_t_2) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_thisHash); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 234, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_thisHash); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 232, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[2] = {__pyx_t_2, __pyx_v_thisHash};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 234, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 232, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_GOTREF(__pyx_t_1);
     } else
@@ -6343,19 +6258,19 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[2] = {__pyx_t_2, __pyx_v_thisHash};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 234, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 232, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_GOTREF(__pyx_t_1);
     } else
     #endif
     {
-      __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 234, __pyx_L1_error)
+      __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 232, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2); __pyx_t_2 = NULL;
       __Pyx_INCREF(__pyx_v_thisHash);
       __Pyx_GIVEREF(__pyx_v_thisHash);
       PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_v_thisHash);
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 234, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 232, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
@@ -6364,7 +6279,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
   __pyx_v_thisTransposition = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":236
+  /* "socrates_ancient.py":234
  *         thisTransposition = self.transpositionTable.get(thisHash)
  * 
  *         if thisTransposition is not None:             # <<<<<<<<<<<<<<
@@ -6375,35 +6290,35 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
   __pyx_t_6 = (__pyx_t_5 != 0);
   if (__pyx_t_6) {
 
-    /* "socrates_ancient.pyx":237
+    /* "socrates_ancient.py":235
  * 
  *         if thisTransposition is not None:
  *             iCanReplaceThisTransposition = thisTransposition.depthLeft <= depthLeft             # <<<<<<<<<<<<<<
  *             isCheckmateMove = thisTransposition.score >= WINNING_SCORE or thisTransposition.score <= -WINNING_SCORE
  * 
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_depthLeft); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 237, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_depthLeft); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 235, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = PyObject_RichCompare(__pyx_t_1, __pyx_v_depthLeft, Py_LE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 237, __pyx_L1_error)
+    __pyx_t_3 = PyObject_RichCompare(__pyx_t_1, __pyx_v_depthLeft, Py_LE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 235, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF_SET(__pyx_v_iCanReplaceThisTransposition, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "socrates_ancient.pyx":238
+    /* "socrates_ancient.py":236
  *         if thisTransposition is not None:
  *             iCanReplaceThisTransposition = thisTransposition.depthLeft <= depthLeft
  *             isCheckmateMove = thisTransposition.score >= WINNING_SCORE or thisTransposition.score <= -WINNING_SCORE             # <<<<<<<<<<<<<<
  * 
  *             #
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_score); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 238, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_score); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 236, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_WINNING_SCORE); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 238, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_WINNING_SCORE); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 236, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_GE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 238, __pyx_L1_error)
+    __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_GE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 236, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 238, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 236, __pyx_L1_error)
     if (!__pyx_t_6) {
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     } else {
@@ -6412,14 +6327,14 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       goto __pyx_L4_bool_binop_done;
     }
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_score); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 238, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_score); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 236, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_WINNING_SCORE); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 238, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_WINNING_SCORE); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 236, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_1 = PyNumber_Negative(__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 238, __pyx_L1_error)
+    __pyx_t_1 = PyNumber_Negative(__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 236, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = PyObject_RichCompare(__pyx_t_2, __pyx_t_1, Py_LE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 238, __pyx_L1_error)
+    __pyx_t_4 = PyObject_RichCompare(__pyx_t_2, __pyx_t_1, Py_LE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 236, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_INCREF(__pyx_t_4);
@@ -6429,51 +6344,51 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
     __pyx_v_isCheckmateMove = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "socrates_ancient.pyx":241
+    /* "socrates_ancient.py":239
  * 
  *             #
  *             if thisTransposition.depthLeft >= depthLeft or isCheckmateMove:             # <<<<<<<<<<<<<<
  *                 if thisTransposition.nodeType == NodeType.EXACT:
  *                     #
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_depthLeft); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 241, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_depthLeft); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 239, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = PyObject_RichCompare(__pyx_t_3, __pyx_v_depthLeft, Py_GE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 241, __pyx_L1_error)
+    __pyx_t_4 = PyObject_RichCompare(__pyx_t_3, __pyx_v_depthLeft, Py_GE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 239, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 241, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 239, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     if (!__pyx_t_5) {
     } else {
       __pyx_t_6 = __pyx_t_5;
       goto __pyx_L7_bool_binop_done;
     }
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_isCheckmateMove); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 241, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_isCheckmateMove); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 239, __pyx_L1_error)
     __pyx_t_6 = __pyx_t_5;
     __pyx_L7_bool_binop_done:;
     if (__pyx_t_6) {
 
-      /* "socrates_ancient.pyx":242
+      /* "socrates_ancient.py":240
  *             #
  *             if thisTransposition.depthLeft >= depthLeft or isCheckmateMove:
  *                 if thisTransposition.nodeType == NodeType.EXACT:             # <<<<<<<<<<<<<<
  *                     #
  *                     return thisTransposition.score, iCanReplaceThisTransposition, thisTransposition
  */
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_nodeType); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 242, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_nodeType); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 240, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_NodeType); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 242, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_NodeType); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 240, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_EXACT); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 242, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_EXACT); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 240, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = PyObject_RichCompare(__pyx_t_4, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 242, __pyx_L1_error)
+      __pyx_t_3 = PyObject_RichCompare(__pyx_t_4, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 240, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 242, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 240, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       if (__pyx_t_6) {
 
-        /* "socrates_ancient.pyx":244
+        /* "socrates_ancient.py":242
  *                 if thisTransposition.nodeType == NodeType.EXACT:
  *                     #
  *                     return thisTransposition.score, iCanReplaceThisTransposition, thisTransposition             # <<<<<<<<<<<<<<
@@ -6481,9 +6396,9 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
  *                     #  Beta- Beta
  */
         __Pyx_XDECREF(__pyx_r);
-        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_score); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 244, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_score); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 242, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 244, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 242, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_3);
@@ -6498,7 +6413,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
         __pyx_t_1 = 0;
         goto __pyx_L0;
 
-        /* "socrates_ancient.pyx":242
+        /* "socrates_ancient.py":240
  *             #
  *             if thisTransposition.depthLeft >= depthLeft or isCheckmateMove:
  *                 if thisTransposition.nodeType == NodeType.EXACT:             # <<<<<<<<<<<<<<
@@ -6507,43 +6422,43 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
  */
       }
 
-      /* "socrates_ancient.pyx":245
+      /* "socrates_ancient.py":243
  *                     #
  *                     return thisTransposition.score, iCanReplaceThisTransposition, thisTransposition
  *                 elif thisTransposition.nodeType == NodeType.LOWER_BOUND:             # <<<<<<<<<<<<<<
  *                     #  Beta- Beta
  *                     if thisTransposition.score >= beta:
  */
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_nodeType); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 245, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_nodeType); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 243, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_NodeType); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 245, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_NodeType); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 243, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_LOWER_BOUND); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 245, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_LOWER_BOUND); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 243, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 245, __pyx_L1_error)
+      __pyx_t_3 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 243, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 245, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 243, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       if (__pyx_t_6) {
 
-        /* "socrates_ancient.pyx":247
+        /* "socrates_ancient.py":245
  *                 elif thisTransposition.nodeType == NodeType.LOWER_BOUND:
  *                     #  Beta- Beta
  *                     if thisTransposition.score >= beta:             # <<<<<<<<<<<<<<
  *                         #  Beta Beta
  *                         return beta if self.failType == FailType.FAILHARD else thisTransposition.score, iCanReplaceThisTransposition, thisTransposition
  */
-        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_score); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 247, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_score); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 245, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_4 = PyObject_RichCompare(__pyx_t_3, __pyx_v_beta, Py_GE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 247, __pyx_L1_error)
+        __pyx_t_4 = PyObject_RichCompare(__pyx_t_3, __pyx_v_beta, Py_GE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 245, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 247, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 245, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         if (__pyx_t_6) {
 
-          /* "socrates_ancient.pyx":249
+          /* "socrates_ancient.py":247
  *                     if thisTransposition.score >= beta:
  *                         #  Beta Beta
  *                         return beta if self.failType == FailType.FAILHARD else thisTransposition.score, iCanReplaceThisTransposition, thisTransposition             # <<<<<<<<<<<<<<
@@ -6551,28 +6466,28 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
  *                         #  Beta
  */
           __Pyx_XDECREF(__pyx_r);
-          __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_failType); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 249, __pyx_L1_error)
+          __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_failType); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 247, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
-          __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_FailType); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 249, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_FailType); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 247, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
-          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_FAILHARD); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 249, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_FAILHARD); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 247, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __pyx_t_1 = PyObject_RichCompare(__pyx_t_3, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 249, __pyx_L1_error)
+          __pyx_t_1 = PyObject_RichCompare(__pyx_t_3, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 247, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 249, __pyx_L1_error)
+          __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 247, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           if (__pyx_t_6) {
             __Pyx_INCREF(__pyx_v_beta);
             __pyx_t_4 = __pyx_v_beta;
           } else {
-            __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_score); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 249, __pyx_L1_error)
+            __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_score); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 247, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_1);
             __pyx_t_4 = __pyx_t_1;
             __pyx_t_1 = 0;
           }
-          __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 249, __pyx_L1_error)
+          __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 247, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_GIVEREF(__pyx_t_4);
           PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_4);
@@ -6587,7 +6502,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
           __pyx_t_1 = 0;
           goto __pyx_L0;
 
-          /* "socrates_ancient.pyx":247
+          /* "socrates_ancient.py":245
  *                 elif thisTransposition.nodeType == NodeType.LOWER_BOUND:
  *                     #  Beta- Beta
  *                     if thisTransposition.score >= beta:             # <<<<<<<<<<<<<<
@@ -6596,7 +6511,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
  */
         }
 
-        /* "socrates_ancient.pyx":252
+        /* "socrates_ancient.py":250
  *                     else:
  *                         #  Beta
  *                         return None, iCanReplaceThisTransposition, None             # <<<<<<<<<<<<<<
@@ -6605,7 +6520,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
  */
         /*else*/ {
           __Pyx_XDECREF(__pyx_r);
-          __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 252, __pyx_L1_error)
+          __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 250, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_INCREF(Py_None);
           __Pyx_GIVEREF(Py_None);
@@ -6621,7 +6536,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
           goto __pyx_L0;
         }
 
-        /* "socrates_ancient.pyx":245
+        /* "socrates_ancient.py":243
  *                     #
  *                     return thisTransposition.score, iCanReplaceThisTransposition, thisTransposition
  *                 elif thisTransposition.nodeType == NodeType.LOWER_BOUND:             # <<<<<<<<<<<<<<
@@ -6630,7 +6545,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
  */
       }
 
-      /* "socrates_ancient.pyx":255
+      /* "socrates_ancient.py":253
  *                 else: # thisTransposition.nodeType == NodeType.UPPER_BOUND:
  *                     #  Move  Alpha
  *                     if thisTransposition.score <= alpha:             # <<<<<<<<<<<<<<
@@ -6638,15 +6553,15 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
  *                         return alpha if self.failType == FailType.FAILHARD else thisTransposition.score, iCanReplaceThisTransposition, thisTransposition
  */
       /*else*/ {
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_score); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 255, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_score); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 253, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_4 = PyObject_RichCompare(__pyx_t_1, __pyx_v_alpha, Py_LE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 255, __pyx_L1_error)
+        __pyx_t_4 = PyObject_RichCompare(__pyx_t_1, __pyx_v_alpha, Py_LE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 253, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 255, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 253, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         if (__pyx_t_6) {
 
-          /* "socrates_ancient.pyx":257
+          /* "socrates_ancient.py":255
  *                     if thisTransposition.score <= alpha:
  *                         #  Alpha
  *                         return alpha if self.failType == FailType.FAILHARD else thisTransposition.score, iCanReplaceThisTransposition, thisTransposition             # <<<<<<<<<<<<<<
@@ -6654,28 +6569,28 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
  *                         #
  */
           __Pyx_XDECREF(__pyx_r);
-          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_failType); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 257, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_failType); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 255, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
-          __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_FailType); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 257, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_FailType); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 255, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_FAILHARD); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 257, __pyx_L1_error)
+          __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_FAILHARD); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 255, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 257, __pyx_L1_error)
+          __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 255, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 257, __pyx_L1_error)
+          __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 255, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
           if (__pyx_t_6) {
             __Pyx_INCREF(__pyx_v_alpha);
             __pyx_t_4 = __pyx_v_alpha;
           } else {
-            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_score); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 257, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_score); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 255, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
             __pyx_t_4 = __pyx_t_2;
             __pyx_t_2 = 0;
           }
-          __pyx_t_2 = PyTuple_New(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 257, __pyx_L1_error)
+          __pyx_t_2 = PyTuple_New(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 255, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_GIVEREF(__pyx_t_4);
           PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_4);
@@ -6690,7 +6605,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
           __pyx_t_2 = 0;
           goto __pyx_L0;
 
-          /* "socrates_ancient.pyx":255
+          /* "socrates_ancient.py":253
  *                 else: # thisTransposition.nodeType == NodeType.UPPER_BOUND:
  *                     #  Move  Alpha
  *                     if thisTransposition.score <= alpha:             # <<<<<<<<<<<<<<
@@ -6699,7 +6614,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
  */
         }
 
-        /* "socrates_ancient.pyx":260
+        /* "socrates_ancient.py":258
  *                     else:
  *                         #
  *                         return None if self.failType == FailType.FAILHARD else thisTransposition.score, iCanReplaceThisTransposition, thisTransposition             # <<<<<<<<<<<<<<
@@ -6708,28 +6623,28 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
  */
         /*else*/ {
           __Pyx_XDECREF(__pyx_r);
-          __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_failType); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 260, __pyx_L1_error)
+          __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_failType); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 258, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_4);
-          __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_FailType); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 260, __pyx_L1_error)
+          __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_FailType); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 258, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
-          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_FAILHARD); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 260, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_FAILHARD); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 258, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __pyx_t_3 = PyObject_RichCompare(__pyx_t_4, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 260, __pyx_L1_error)
+          __pyx_t_3 = PyObject_RichCompare(__pyx_t_4, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 258, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 260, __pyx_L1_error)
+          __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 258, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           if (__pyx_t_6) {
             __Pyx_INCREF(Py_None);
             __pyx_t_2 = Py_None;
           } else {
-            __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_score); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 260, __pyx_L1_error)
+            __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_thisTransposition, __pyx_n_s_score); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 258, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_3);
             __pyx_t_2 = __pyx_t_3;
             __pyx_t_3 = 0;
           }
-          __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 260, __pyx_L1_error)
+          __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 258, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
           __Pyx_GIVEREF(__pyx_t_2);
           PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2);
@@ -6746,7 +6661,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
         }
       }
 
-      /* "socrates_ancient.pyx":241
+      /* "socrates_ancient.py":239
  * 
  *             #
  *             if thisTransposition.depthLeft >= depthLeft or isCheckmateMove:             # <<<<<<<<<<<<<<
@@ -6755,7 +6670,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
  */
     }
 
-    /* "socrates_ancient.pyx":263
+    /* "socrates_ancient.py":261
  *             else:
  *                 #
  *                 return None, iCanReplaceThisTransposition, thisTransposition             # <<<<<<<<<<<<<<
@@ -6764,7 +6679,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
  */
     /*else*/ {
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 263, __pyx_L1_error)
+      __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 261, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(Py_None);
       __Pyx_GIVEREF(Py_None);
@@ -6780,7 +6695,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
       goto __pyx_L0;
     }
 
-    /* "socrates_ancient.pyx":236
+    /* "socrates_ancient.py":234
  *         thisTransposition = self.transpositionTable.get(thisHash)
  * 
  *         if thisTransposition is not None:             # <<<<<<<<<<<<<<
@@ -6789,7 +6704,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
  */
   }
 
-  /* "socrates_ancient.pyx":266
+  /* "socrates_ancient.py":264
  *         else:
  *             #
  *             return None, iCanReplaceThisTransposition, None             # <<<<<<<<<<<<<<
@@ -6798,7 +6713,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
  */
   /*else*/ {
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 266, __pyx_L1_error)
+    __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 264, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_INCREF(Py_None);
     __Pyx_GIVEREF(Py_None);
@@ -6814,7 +6729,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
     goto __pyx_L0;
   }
 
-  /* "socrates_ancient.pyx":231
+  /* "socrates_ancient.py":229
  *         self.transpositionTable[thisHash] = t
  * 
  *     def lookupTranspositionTable(self, thisHash, alpha, beta, depthLeft):             # <<<<<<<<<<<<<<
@@ -6839,7 +6754,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_10lookupTranspositionTab
   return __pyx_r;
 }
 
-/* "socrates_ancient.pyx":268
+/* "socrates_ancient.py":266
  *             return None, iCanReplaceThisTransposition, None
  * 
  *     def sortKey(self, m):             # <<<<<<<<<<<<<<
@@ -6879,11 +6794,11 @@ static PyObject *__pyx_pw_17socrates_ancientc_8Searcher_13sortKey(PyObject *__py
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_m)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("sortKey", 1, 2, 2, 1); __PYX_ERR(0, 268, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("sortKey", 1, 2, 2, 1); __PYX_ERR(0, 266, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "sortKey") < 0)) __PYX_ERR(0, 268, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "sortKey") < 0)) __PYX_ERR(0, 266, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -6896,7 +6811,7 @@ static PyObject *__pyx_pw_17socrates_ancientc_8Searcher_13sortKey(PyObject *__py
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("sortKey", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 268, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("sortKey", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 266, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("socrates_ancientc.Searcher.sortKey", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -6919,7 +6834,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_12sortKey(CYTHON_UNUSED 
   PyObject *__pyx_t_5 = NULL;
   __Pyx_RefNannySetupContext("sortKey", 0);
 
-  /* "socrates_ancient.pyx":269
+  /* "socrates_ancient.py":267
  * 
  *     def sortKey(self, m):
  *         return self.moveRatings.get(m, 0)             # <<<<<<<<<<<<<<
@@ -6927,9 +6842,9 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_12sortKey(CYTHON_UNUSED 
  *     def moveIter(self, transposition, legalMoves, ply):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_moveRatings); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 269, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_moveRatings); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 267, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 269, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 267, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -6947,7 +6862,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_12sortKey(CYTHON_UNUSED 
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_v_m, __pyx_int_0};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 269, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 267, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
@@ -6955,13 +6870,13 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_12sortKey(CYTHON_UNUSED 
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_v_m, __pyx_int_0};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 269, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 267, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
   #endif
   {
-    __pyx_t_5 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 269, __pyx_L1_error)
+    __pyx_t_5 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 267, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     if (__pyx_t_2) {
       __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2); __pyx_t_2 = NULL;
@@ -6972,7 +6887,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_12sortKey(CYTHON_UNUSED 
     __Pyx_INCREF(__pyx_int_0);
     __Pyx_GIVEREF(__pyx_int_0);
     PyTuple_SET_ITEM(__pyx_t_5, 1+__pyx_t_4, __pyx_int_0);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 269, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 267, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
@@ -6981,7 +6896,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_12sortKey(CYTHON_UNUSED 
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "socrates_ancient.pyx":268
+  /* "socrates_ancient.py":266
  *             return None, iCanReplaceThisTransposition, None
  * 
  *     def sortKey(self, m):             # <<<<<<<<<<<<<<
@@ -7004,7 +6919,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_12sortKey(CYTHON_UNUSED 
 }
 static PyObject *__pyx_gb_17socrates_ancientc_8Searcher_16generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "socrates_ancient.pyx":271
+/* "socrates_ancient.py":269
  *         return self.moveRatings.get(m, 0)
  * 
  *     def moveIter(self, transposition, legalMoves, ply):             # <<<<<<<<<<<<<<
@@ -7050,23 +6965,23 @@ static PyObject *__pyx_pw_17socrates_ancientc_8Searcher_15moveIter(PyObject *__p
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_transposition)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("moveIter", 1, 4, 4, 1); __PYX_ERR(0, 271, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("moveIter", 1, 4, 4, 1); __PYX_ERR(0, 269, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_legalMoves)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("moveIter", 1, 4, 4, 2); __PYX_ERR(0, 271, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("moveIter", 1, 4, 4, 2); __PYX_ERR(0, 269, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_ply)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("moveIter", 1, 4, 4, 3); __PYX_ERR(0, 271, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("moveIter", 1, 4, 4, 3); __PYX_ERR(0, 269, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "moveIter") < 0)) __PYX_ERR(0, 271, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "moveIter") < 0)) __PYX_ERR(0, 269, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 4) {
       goto __pyx_L5_argtuple_error;
@@ -7083,7 +6998,7 @@ static PyObject *__pyx_pw_17socrates_ancientc_8Searcher_15moveIter(PyObject *__p
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("moveIter", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 271, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("moveIter", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 269, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("socrates_ancientc.Searcher.moveIter", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -7105,7 +7020,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_14moveIter(CYTHON_UNUSED
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_17socrates_ancientc___pyx_scope_struct__moveIter *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 271, __pyx_L1_error)
+    __PYX_ERR(0, 269, __pyx_L1_error)
   } else {
     __Pyx_GOTREF(__pyx_cur_scope);
   }
@@ -7122,7 +7037,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_14moveIter(CYTHON_UNUSED
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_ply);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_ply);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_17socrates_ancientc_8Searcher_16generator, __pyx_codeobj__4, (PyObject *) __pyx_cur_scope, __pyx_n_s_moveIter, __pyx_n_s_Searcher_moveIter, __pyx_n_s_socrates_ancientc); if (unlikely(!gen)) __PYX_ERR(0, 271, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_17socrates_ancientc_8Searcher_16generator, __pyx_codeobj__4, (PyObject *) __pyx_cur_scope, __pyx_n_s_moveIter, __pyx_n_s_Searcher_moveIter, __pyx_n_s_socrates_ancientc); if (unlikely(!gen)) __PYX_ERR(0, 269, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -7163,9 +7078,9 @@ static PyObject *__pyx_gb_17socrates_ancientc_8Searcher_16generator(__pyx_Corout
     return NULL;
   }
   __pyx_L3_first_run:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 271, __pyx_L1_error)
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 269, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":272
+  /* "socrates_ancient.py":270
  * 
  *     def moveIter(self, transposition, legalMoves, ply):
  *         if transposition is not None and self.game.board.is_legal(transposition.bestMove):             # <<<<<<<<<<<<<<
@@ -7179,15 +7094,15 @@ static PyObject *__pyx_gb_17socrates_ancientc_8Searcher_16generator(__pyx_Corout
     __pyx_t_1 = __pyx_t_3;
     goto __pyx_L5_bool_binop_done;
   }
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 272, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 270, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_board); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 272, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_board); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 270, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_is_legal); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 272, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_is_legal); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 270, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_transposition, __pyx_n_s_bestMove); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 272, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_transposition, __pyx_n_s_bestMove); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 270, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_7 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -7200,14 +7115,14 @@ static PyObject *__pyx_gb_17socrates_ancientc_8Searcher_16generator(__pyx_Corout
     }
   }
   if (!__pyx_t_7) {
-    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 272, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 270, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_GOTREF(__pyx_t_4);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_5)) {
       PyObject *__pyx_temp[2] = {__pyx_t_7, __pyx_t_6};
-      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 272, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 270, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -7216,39 +7131,39 @@ static PyObject *__pyx_gb_17socrates_ancientc_8Searcher_16generator(__pyx_Corout
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
       PyObject *__pyx_temp[2] = {__pyx_t_7, __pyx_t_6};
-      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 272, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 270, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     } else
     #endif
     {
-      __pyx_t_8 = PyTuple_New(1+1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 272, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(1+1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 270, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_7); __pyx_t_7 = NULL;
       __Pyx_GIVEREF(__pyx_t_6);
       PyTuple_SET_ITEM(__pyx_t_8, 0+1, __pyx_t_6);
       __pyx_t_6 = 0;
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 272, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 270, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
   }
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 272, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 270, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_1 = __pyx_t_3;
   __pyx_L5_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "socrates_ancient.pyx":273
+    /* "socrates_ancient.py":271
  *     def moveIter(self, transposition, legalMoves, ply):
  *         if transposition is not None and self.game.board.is_legal(transposition.bestMove):
  *             yield transposition.bestMove             # <<<<<<<<<<<<<<
  *         currKillerMoves = self.killerMoves[ply]
  *         if currKillerMoves[1] is not None and self.game.board.is_legal(currKillerMoves[1]):
  */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_transposition, __pyx_n_s_bestMove); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 273, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_transposition, __pyx_n_s_bestMove); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 271, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_r = __pyx_t_4;
     __pyx_t_4 = 0;
@@ -7259,9 +7174,9 @@ static PyObject *__pyx_gb_17socrates_ancientc_8Searcher_16generator(__pyx_Corout
     __pyx_generator->resume_label = 1;
     return __pyx_r;
     __pyx_L7_resume_from_yield:;
-    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 273, __pyx_L1_error)
+    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 271, __pyx_L1_error)
 
-    /* "socrates_ancient.pyx":272
+    /* "socrates_ancient.py":270
  * 
  *     def moveIter(self, transposition, legalMoves, ply):
  *         if transposition is not None and self.game.board.is_legal(transposition.bestMove):             # <<<<<<<<<<<<<<
@@ -7270,30 +7185,30 @@ static PyObject *__pyx_gb_17socrates_ancientc_8Searcher_16generator(__pyx_Corout
  */
   }
 
-  /* "socrates_ancient.pyx":274
+  /* "socrates_ancient.py":272
  *         if transposition is not None and self.game.board.is_legal(transposition.bestMove):
  *             yield transposition.bestMove
  *         currKillerMoves = self.killerMoves[ply]             # <<<<<<<<<<<<<<
  *         if currKillerMoves[1] is not None and self.game.board.is_legal(currKillerMoves[1]):
  *             yield currKillerMoves[1]
  */
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_killerMoves); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 274, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_killerMoves); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 272, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_4, __pyx_cur_scope->__pyx_v_ply); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 274, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_4, __pyx_cur_scope->__pyx_v_ply); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 272, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_GIVEREF(__pyx_t_5);
   __pyx_cur_scope->__pyx_v_currKillerMoves = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "socrates_ancient.pyx":275
+  /* "socrates_ancient.py":273
  *             yield transposition.bestMove
  *         currKillerMoves = self.killerMoves[ply]
  *         if currKillerMoves[1] is not None and self.game.board.is_legal(currKillerMoves[1]):             # <<<<<<<<<<<<<<
  *             yield currKillerMoves[1]
  * 
  */
-  __pyx_t_5 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_currKillerMoves, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 275, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_currKillerMoves, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 273, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_3 = (__pyx_t_5 != Py_None);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -7303,15 +7218,15 @@ static PyObject *__pyx_gb_17socrates_ancientc_8Searcher_16generator(__pyx_Corout
     __pyx_t_1 = __pyx_t_2;
     goto __pyx_L9_bool_binop_done;
   }
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 275, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 273, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_board); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 275, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_board); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 273, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_is_legal); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 275, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_is_legal); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 273, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-  __pyx_t_8 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_currKillerMoves, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 275, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_currKillerMoves, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 273, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_t_6 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
@@ -7324,14 +7239,14 @@ static PyObject *__pyx_gb_17socrates_ancientc_8Searcher_16generator(__pyx_Corout
     }
   }
   if (!__pyx_t_6) {
-    __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_8); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 275, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_8); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 273, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_GOTREF(__pyx_t_5);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_4)) {
       PyObject *__pyx_temp[2] = {__pyx_t_6, __pyx_t_8};
-      __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 275, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 273, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -7340,39 +7255,39 @@ static PyObject *__pyx_gb_17socrates_ancientc_8Searcher_16generator(__pyx_Corout
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_4)) {
       PyObject *__pyx_temp[2] = {__pyx_t_6, __pyx_t_8};
-      __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 275, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 273, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     } else
     #endif
     {
-      __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 275, __pyx_L1_error)
+      __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 273, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_6); __pyx_t_6 = NULL;
       __Pyx_GIVEREF(__pyx_t_8);
       PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_t_8);
       __pyx_t_8 = 0;
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_7, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 275, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_7, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 273, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 275, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 273, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_1 = __pyx_t_2;
   __pyx_L9_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "socrates_ancient.pyx":276
+    /* "socrates_ancient.py":274
  *         currKillerMoves = self.killerMoves[ply]
  *         if currKillerMoves[1] is not None and self.game.board.is_legal(currKillerMoves[1]):
  *             yield currKillerMoves[1]             # <<<<<<<<<<<<<<
  * 
  *         if currKillerMoves[0] is not None and self.game.board.is_legal(currKillerMoves[0]):
  */
-    __pyx_t_5 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_currKillerMoves, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 276, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_currKillerMoves, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 274, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_r = __pyx_t_5;
     __pyx_t_5 = 0;
@@ -7383,9 +7298,9 @@ static PyObject *__pyx_gb_17socrates_ancientc_8Searcher_16generator(__pyx_Corout
     __pyx_generator->resume_label = 2;
     return __pyx_r;
     __pyx_L11_resume_from_yield:;
-    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 276, __pyx_L1_error)
+    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 274, __pyx_L1_error)
 
-    /* "socrates_ancient.pyx":275
+    /* "socrates_ancient.py":273
  *             yield transposition.bestMove
  *         currKillerMoves = self.killerMoves[ply]
  *         if currKillerMoves[1] is not None and self.game.board.is_legal(currKillerMoves[1]):             # <<<<<<<<<<<<<<
@@ -7394,14 +7309,14 @@ static PyObject *__pyx_gb_17socrates_ancientc_8Searcher_16generator(__pyx_Corout
  */
   }
 
-  /* "socrates_ancient.pyx":278
+  /* "socrates_ancient.py":276
  *             yield currKillerMoves[1]
  * 
  *         if currKillerMoves[0] is not None and self.game.board.is_legal(currKillerMoves[0]):             # <<<<<<<<<<<<<<
  *             yield currKillerMoves[0]
  * 
  */
-  __pyx_t_5 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_currKillerMoves, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 278, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_currKillerMoves, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 276, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_2 = (__pyx_t_5 != Py_None);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -7411,15 +7326,15 @@ static PyObject *__pyx_gb_17socrates_ancientc_8Searcher_16generator(__pyx_Corout
     __pyx_t_1 = __pyx_t_3;
     goto __pyx_L13_bool_binop_done;
   }
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 278, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 276, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_board); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 278, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_board); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 276, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_is_legal); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 278, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_is_legal); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 276, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_7 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_currKillerMoves, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 278, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_currKillerMoves, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 276, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __pyx_t_8 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
@@ -7432,14 +7347,14 @@ static PyObject *__pyx_gb_17socrates_ancientc_8Searcher_16generator(__pyx_Corout
     }
   }
   if (!__pyx_t_8) {
-    __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 278, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 276, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_GOTREF(__pyx_t_5);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_4)) {
       PyObject *__pyx_temp[2] = {__pyx_t_8, __pyx_t_7};
-      __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 278, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 276, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
@@ -7448,39 +7363,39 @@ static PyObject *__pyx_gb_17socrates_ancientc_8Searcher_16generator(__pyx_Corout
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_4)) {
       PyObject *__pyx_temp[2] = {__pyx_t_8, __pyx_t_7};
-      __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 278, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 276, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     } else
     #endif
     {
-      __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 278, __pyx_L1_error)
+      __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 276, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_8); __pyx_t_8 = NULL;
       __Pyx_GIVEREF(__pyx_t_7);
       PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_7);
       __pyx_t_7 = 0;
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 278, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 276, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     }
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 278, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 276, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_1 = __pyx_t_3;
   __pyx_L13_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "socrates_ancient.pyx":279
+    /* "socrates_ancient.py":277
  * 
  *         if currKillerMoves[0] is not None and self.game.board.is_legal(currKillerMoves[0]):
  *             yield currKillerMoves[0]             # <<<<<<<<<<<<<<
  * 
  *         legalMoves = list(legalMoves)
  */
-    __pyx_t_5 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_currKillerMoves, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 279, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_currKillerMoves, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 277, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_r = __pyx_t_5;
     __pyx_t_5 = 0;
@@ -7491,9 +7406,9 @@ static PyObject *__pyx_gb_17socrates_ancientc_8Searcher_16generator(__pyx_Corout
     __pyx_generator->resume_label = 3;
     return __pyx_r;
     __pyx_L15_resume_from_yield:;
-    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 279, __pyx_L1_error)
+    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 277, __pyx_L1_error)
 
-    /* "socrates_ancient.pyx":278
+    /* "socrates_ancient.py":276
  *             yield currKillerMoves[1]
  * 
  *         if currKillerMoves[0] is not None and self.game.board.is_legal(currKillerMoves[0]):             # <<<<<<<<<<<<<<
@@ -7502,57 +7417,57 @@ static PyObject *__pyx_gb_17socrates_ancientc_8Searcher_16generator(__pyx_Corout
  */
   }
 
-  /* "socrates_ancient.pyx":281
+  /* "socrates_ancient.py":279
  *             yield currKillerMoves[0]
  * 
  *         legalMoves = list(legalMoves)             # <<<<<<<<<<<<<<
  * #       try:
  * #           legalMoves.remove(transpositionBestMove)
  */
-  __pyx_t_5 = PySequence_List(__pyx_cur_scope->__pyx_v_legalMoves); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 281, __pyx_L1_error)
+  __pyx_t_5 = PySequence_List(__pyx_cur_scope->__pyx_v_legalMoves); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 279, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GOTREF(__pyx_cur_scope->__pyx_v_legalMoves);
   __Pyx_DECREF_SET(__pyx_cur_scope->__pyx_v_legalMoves, __pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "socrates_ancient.pyx":295
+  /* "socrates_ancient.py":293
  * #           pass
  * 
  *         legalMoves.sort(key = self.sortKey, reverse = True)             # <<<<<<<<<<<<<<
  *         legalMoves = iter(legalMoves)
  *         while True:
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_legalMoves, __pyx_n_s_sort); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 295, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_legalMoves, __pyx_n_s_sort); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 295, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_sortKey); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 295, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_sortKey); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_key, __pyx_t_6) < 0) __PYX_ERR(0, 295, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_key, __pyx_t_6) < 0) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_reverse, Py_True) < 0) __PYX_ERR(0, 295, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_empty_tuple, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 295, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_reverse, Py_True) < 0) __PYX_ERR(0, 293, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_empty_tuple, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "socrates_ancient.pyx":296
+  /* "socrates_ancient.py":294
  * 
  *         legalMoves.sort(key = self.sortKey, reverse = True)
  *         legalMoves = iter(legalMoves)             # <<<<<<<<<<<<<<
  *         while True:
  *             yield next(legalMoves)
  */
-  __pyx_t_6 = PyObject_GetIter(__pyx_cur_scope->__pyx_v_legalMoves); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 296, __pyx_L1_error)
+  __pyx_t_6 = PyObject_GetIter(__pyx_cur_scope->__pyx_v_legalMoves); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 294, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_GOTREF(__pyx_cur_scope->__pyx_v_legalMoves);
   __Pyx_DECREF_SET(__pyx_cur_scope->__pyx_v_legalMoves, __pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_6);
   __pyx_t_6 = 0;
 
-  /* "socrates_ancient.pyx":297
+  /* "socrates_ancient.py":295
  *         legalMoves.sort(key = self.sortKey, reverse = True)
  *         legalMoves = iter(legalMoves)
  *         while True:             # <<<<<<<<<<<<<<
@@ -7561,14 +7476,14 @@ static PyObject *__pyx_gb_17socrates_ancientc_8Searcher_16generator(__pyx_Corout
  */
   while (1) {
 
-    /* "socrates_ancient.pyx":298
+    /* "socrates_ancient.py":296
  *         legalMoves = iter(legalMoves)
  *         while True:
  *             yield next(legalMoves)             # <<<<<<<<<<<<<<
  * 
  *     def pvSearch(self, alpha, beta, depthLeft, root = False):
  */
-    __pyx_t_6 = __Pyx_PyIter_Next(__pyx_cur_scope->__pyx_v_legalMoves); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 298, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyIter_Next(__pyx_cur_scope->__pyx_v_legalMoves); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 296, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __pyx_r = __pyx_t_6;
     __pyx_t_6 = 0;
@@ -7579,11 +7494,11 @@ static PyObject *__pyx_gb_17socrates_ancientc_8Searcher_16generator(__pyx_Corout
     __pyx_generator->resume_label = 4;
     return __pyx_r;
     __pyx_L18_resume_from_yield:;
-    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 298, __pyx_L1_error)
+    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 296, __pyx_L1_error)
   }
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
 
-  /* "socrates_ancient.pyx":271
+  /* "socrates_ancient.py":269
  *         return self.moveRatings.get(m, 0)
  * 
  *     def moveIter(self, transposition, legalMoves, ply):             # <<<<<<<<<<<<<<
@@ -7610,7 +7525,7 @@ static PyObject *__pyx_gb_17socrates_ancientc_8Searcher_16generator(__pyx_Corout
   return __pyx_r;
 }
 
-/* "socrates_ancient.pyx":300
+/* "socrates_ancient.py":298
  *             yield next(legalMoves)
  * 
  *     def pvSearch(self, alpha, beta, depthLeft, root = False):             # <<<<<<<<<<<<<<
@@ -7660,19 +7575,19 @@ static PyObject *__pyx_pw_17socrates_ancientc_8Searcher_18pvSearch(PyObject *__p
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_alpha)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("pvSearch", 0, 4, 5, 1); __PYX_ERR(0, 300, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("pvSearch", 0, 4, 5, 1); __PYX_ERR(0, 298, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_beta)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("pvSearch", 0, 4, 5, 2); __PYX_ERR(0, 300, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("pvSearch", 0, 4, 5, 2); __PYX_ERR(0, 298, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_depthLeft)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("pvSearch", 0, 4, 5, 3); __PYX_ERR(0, 300, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("pvSearch", 0, 4, 5, 3); __PYX_ERR(0, 298, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
@@ -7682,7 +7597,7 @@ static PyObject *__pyx_pw_17socrates_ancientc_8Searcher_18pvSearch(PyObject *__p
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "pvSearch") < 0)) __PYX_ERR(0, 300, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "pvSearch") < 0)) __PYX_ERR(0, 298, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -7704,7 +7619,7 @@ static PyObject *__pyx_pw_17socrates_ancientc_8Searcher_18pvSearch(PyObject *__p
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("pvSearch", 0, 4, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 300, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("pvSearch", 0, 4, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 298, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("socrates_ancientc.Searcher.pvSearch", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -7734,7 +7649,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
   PyObject *__pyx_v_thisBestMove = NULL;
   PyObject *__pyx_v_counter = NULL;
   PyObject *__pyx_v_move = NULL;
-  CYTHON_UNUSED PyObject *__pyx_v_nextDepth = NULL;
+  PyObject *__pyx_v_nextDepth = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -7750,46 +7665,45 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
   PyObject *(*__pyx_t_11)(PyObject *);
   PyObject *__pyx_t_12 = NULL;
   PyObject *__pyx_t_13 = NULL;
-  PyObject *__pyx_t_14 = NULL;
-  int __pyx_t_15;
+  int __pyx_t_14;
   __Pyx_RefNannySetupContext("pvSearch", 0);
   __Pyx_INCREF(__pyx_v_alpha);
 
-  /* "socrates_ancient.pyx":301
+  /* "socrates_ancient.py":299
  * 
  *     def pvSearch(self, alpha, beta, depthLeft, root = False):
  *         ply = len(self.game.board.move_stack)             # <<<<<<<<<<<<<<
  *         if depthLeft <= 0:
  *             return self.quiescenceEval(alpha, beta, ply)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 301, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 299, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_board); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 301, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_board); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 299, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_move_stack); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 301, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_move_stack); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 299, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_3 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 301, __pyx_L1_error)
+  __pyx_t_3 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 299, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyInt_FromSsize_t(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 301, __pyx_L1_error)
+  __pyx_t_1 = PyInt_FromSsize_t(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 299, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_ply = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":302
+  /* "socrates_ancient.py":300
  *     def pvSearch(self, alpha, beta, depthLeft, root = False):
  *         ply = len(self.game.board.move_stack)
  *         if depthLeft <= 0:             # <<<<<<<<<<<<<<
  *             return self.quiescenceEval(alpha, beta, ply)
  * 
  */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_depthLeft, __pyx_int_0, Py_LE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 302, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 302, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_depthLeft, __pyx_int_0, Py_LE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 300, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 300, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_4) {
 
-    /* "socrates_ancient.pyx":303
+    /* "socrates_ancient.py":301
  *         ply = len(self.game.board.move_stack)
  *         if depthLeft <= 0:
  *             return self.quiescenceEval(alpha, beta, ply)             # <<<<<<<<<<<<<<
@@ -7797,7 +7711,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  *         thisHash = self.game.hash()
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_quiescenceEval); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 303, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_quiescenceEval); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 301, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_5 = NULL;
     __pyx_t_6 = 0;
@@ -7814,7 +7728,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[4] = {__pyx_t_5, __pyx_v_alpha, __pyx_v_beta, __pyx_v_ply};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 303, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 301, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_GOTREF(__pyx_t_1);
     } else
@@ -7822,13 +7736,13 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[4] = {__pyx_t_5, __pyx_v_alpha, __pyx_v_beta, __pyx_v_ply};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 303, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 301, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_GOTREF(__pyx_t_1);
     } else
     #endif
     {
-      __pyx_t_7 = PyTuple_New(3+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 303, __pyx_L1_error)
+      __pyx_t_7 = PyTuple_New(3+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 301, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       if (__pyx_t_5) {
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -7842,7 +7756,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       __Pyx_INCREF(__pyx_v_ply);
       __Pyx_GIVEREF(__pyx_v_ply);
       PyTuple_SET_ITEM(__pyx_t_7, 2+__pyx_t_6, __pyx_v_ply);
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 303, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 301, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
@@ -7851,7 +7765,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "socrates_ancient.pyx":302
+    /* "socrates_ancient.py":300
  *     def pvSearch(self, alpha, beta, depthLeft, root = False):
  *         ply = len(self.game.board.move_stack)
  *         if depthLeft <= 0:             # <<<<<<<<<<<<<<
@@ -7860,16 +7774,16 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
   }
 
-  /* "socrates_ancient.pyx":305
+  /* "socrates_ancient.py":303
  *             return self.quiescenceEval(alpha, beta, ply)
  * 
  *         thisHash = self.game.hash()             # <<<<<<<<<<<<<<
  * 
  *         if not root:
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 303, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_hash); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_hash); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 303, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -7883,40 +7797,40 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     }
   }
   if (__pyx_t_2) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 305, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 303, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 305, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 303, __pyx_L1_error)
   }
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __pyx_v_thisHash = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":307
+  /* "socrates_ancient.py":305
  *         thisHash = self.game.hash()
  * 
  *         if not root:             # <<<<<<<<<<<<<<
  *             history = self.game.historyBoard.get(thisHash)
  *             if history is not None:
  */
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_root); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 307, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_root); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 305, __pyx_L1_error)
   __pyx_t_8 = ((!__pyx_t_4) != 0);
   if (__pyx_t_8) {
 
-    /* "socrates_ancient.pyx":308
+    /* "socrates_ancient.py":306
  * 
  *         if not root:
  *             history = self.game.historyBoard.get(thisHash)             # <<<<<<<<<<<<<<
  *             if history is not None:
  *                 if len(history) >= 2:
  */
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 308, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 306, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_historyBoard); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 308, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_historyBoard); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 306, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 308, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 306, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_2 = NULL;
@@ -7930,13 +7844,13 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       }
     }
     if (!__pyx_t_2) {
-      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_v_thisHash); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 308, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_v_thisHash); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 306, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     } else {
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_7)) {
         PyObject *__pyx_temp[2] = {__pyx_t_2, __pyx_v_thisHash};
-        __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 308, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 306, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_GOTREF(__pyx_t_1);
       } else
@@ -7944,19 +7858,19 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_7)) {
         PyObject *__pyx_temp[2] = {__pyx_t_2, __pyx_v_thisHash};
-        __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 308, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 306, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_GOTREF(__pyx_t_1);
       } else
       #endif
       {
-        __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 308, __pyx_L1_error)
+        __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 306, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2); __pyx_t_2 = NULL;
         __Pyx_INCREF(__pyx_v_thisHash);
         __Pyx_GIVEREF(__pyx_v_thisHash);
         PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_v_thisHash);
-        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 308, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 306, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       }
@@ -7965,61 +7879,59 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     __pyx_v_history = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "socrates_ancient.pyx":309
+    /* "socrates_ancient.py":307
  *         if not root:
  *             history = self.game.historyBoard.get(thisHash)
  *             if history is not None:             # <<<<<<<<<<<<<<
  *                 if len(history) >= 2:
- *                     return INFINITY
+ *                     return 0
  */
     __pyx_t_8 = (__pyx_v_history != Py_None);
     __pyx_t_4 = (__pyx_t_8 != 0);
     if (__pyx_t_4) {
 
-      /* "socrates_ancient.pyx":310
+      /* "socrates_ancient.py":308
  *             history = self.game.historyBoard.get(thisHash)
  *             if history is not None:
  *                 if len(history) >= 2:             # <<<<<<<<<<<<<<
- *                     return INFINITY
+ *                     return 0
  * 
  */
-      __pyx_t_3 = PyObject_Length(__pyx_v_history); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 310, __pyx_L1_error)
+      __pyx_t_3 = PyObject_Length(__pyx_v_history); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 308, __pyx_L1_error)
       __pyx_t_4 = ((__pyx_t_3 >= 2) != 0);
       if (__pyx_t_4) {
 
-        /* "socrates_ancient.pyx":311
+        /* "socrates_ancient.py":309
  *             if history is not None:
  *                 if len(history) >= 2:
- *                     return INFINITY             # <<<<<<<<<<<<<<
+ *                     return 0             # <<<<<<<<<<<<<<
  * 
  *         transpositionScore, iCanReplaceThisTransposition, transposition = self.lookupTranspositionTable(thisHash, alpha, beta, depthLeft)
  */
         __Pyx_XDECREF(__pyx_r);
-        __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 311, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __pyx_r = __pyx_t_1;
-        __pyx_t_1 = 0;
+        __Pyx_INCREF(__pyx_int_0);
+        __pyx_r = __pyx_int_0;
         goto __pyx_L0;
 
-        /* "socrates_ancient.pyx":310
+        /* "socrates_ancient.py":308
  *             history = self.game.historyBoard.get(thisHash)
  *             if history is not None:
  *                 if len(history) >= 2:             # <<<<<<<<<<<<<<
- *                     return INFINITY
+ *                     return 0
  * 
  */
       }
 
-      /* "socrates_ancient.pyx":309
+      /* "socrates_ancient.py":307
  *         if not root:
  *             history = self.game.historyBoard.get(thisHash)
  *             if history is not None:             # <<<<<<<<<<<<<<
  *                 if len(history) >= 2:
- *                     return INFINITY
+ *                     return 0
  */
     }
 
-    /* "socrates_ancient.pyx":307
+    /* "socrates_ancient.py":305
  *         thisHash = self.game.hash()
  * 
  *         if not root:             # <<<<<<<<<<<<<<
@@ -8028,14 +7940,14 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
   }
 
-  /* "socrates_ancient.pyx":313
- *                     return INFINITY
+  /* "socrates_ancient.py":311
+ *                     return 0
  * 
  *         transpositionScore, iCanReplaceThisTransposition, transposition = self.lookupTranspositionTable(thisHash, alpha, beta, depthLeft)             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_lookupTranspositionTable); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 313, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_lookupTranspositionTable); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 311, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __pyx_t_5 = NULL;
   __pyx_t_6 = 0;
@@ -8052,7 +7964,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_7)) {
     PyObject *__pyx_temp[5] = {__pyx_t_5, __pyx_v_thisHash, __pyx_v_alpha, __pyx_v_beta, __pyx_v_depthLeft};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_6, 4+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 313, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_6, 4+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 311, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
@@ -8060,13 +7972,13 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_7)) {
     PyObject *__pyx_temp[5] = {__pyx_t_5, __pyx_v_thisHash, __pyx_v_alpha, __pyx_v_beta, __pyx_v_depthLeft};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_6, 4+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 313, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_6, 4+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 311, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
   #endif
   {
-    __pyx_t_2 = PyTuple_New(4+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 313, __pyx_L1_error)
+    __pyx_t_2 = PyTuple_New(4+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 311, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     if (__pyx_t_5) {
       __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -8083,7 +7995,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     __Pyx_INCREF(__pyx_v_depthLeft);
     __Pyx_GIVEREF(__pyx_v_depthLeft);
     PyTuple_SET_ITEM(__pyx_t_2, 3+__pyx_t_6, __pyx_v_depthLeft);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 313, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 311, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -8094,7 +8006,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     if (unlikely(size != 3)) {
       if (size > 3) __Pyx_RaiseTooManyValuesError(3);
       else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-      __PYX_ERR(0, 313, __pyx_L1_error)
+      __PYX_ERR(0, 311, __pyx_L1_error)
     }
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
     if (likely(PyTuple_CheckExact(sequence))) {
@@ -8110,17 +8022,17 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     __Pyx_INCREF(__pyx_t_2);
     __Pyx_INCREF(__pyx_t_5);
     #else
-    __pyx_t_7 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 313, __pyx_L1_error)
+    __pyx_t_7 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 311, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_2 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 313, __pyx_L1_error)
+    __pyx_t_2 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 311, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_5 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 313, __pyx_L1_error)
+    __pyx_t_5 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 311, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     #endif
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   } else {
     Py_ssize_t index = -1;
-    __pyx_t_9 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 313, __pyx_L1_error)
+    __pyx_t_9 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 311, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_10 = Py_TYPE(__pyx_t_9)->tp_iternext;
@@ -8130,7 +8042,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     __Pyx_GOTREF(__pyx_t_2);
     index = 2; __pyx_t_5 = __pyx_t_10(__pyx_t_9); if (unlikely(!__pyx_t_5)) goto __pyx_L7_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_5);
-    if (__Pyx_IternextUnpackEndCheck(__pyx_t_10(__pyx_t_9), 3) < 0) __PYX_ERR(0, 313, __pyx_L1_error)
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_10(__pyx_t_9), 3) < 0) __PYX_ERR(0, 311, __pyx_L1_error)
     __pyx_t_10 = NULL;
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     goto __pyx_L8_unpacking_done;
@@ -8138,7 +8050,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     __pyx_t_10 = NULL;
     if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-    __PYX_ERR(0, 313, __pyx_L1_error)
+    __PYX_ERR(0, 311, __pyx_L1_error)
     __pyx_L8_unpacking_done:;
   }
   __pyx_v_transpositionScore = __pyx_t_7;
@@ -8148,29 +8060,29 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
   __pyx_v_transposition = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "socrates_ancient.pyx":316
+  /* "socrates_ancient.py":314
  * 
  * 
  *         if transpositionScore != None:             # <<<<<<<<<<<<<<
  *             if root:
  *                 return transposition.bestMove, transpositionScore
  */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_transpositionScore, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 316, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 316, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_transpositionScore, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 314, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 314, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_4) {
 
-    /* "socrates_ancient.pyx":317
+    /* "socrates_ancient.py":315
  * 
  *         if transpositionScore != None:
  *             if root:             # <<<<<<<<<<<<<<
  *                 return transposition.bestMove, transpositionScore
  *             else:
  */
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_root); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 317, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_root); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 315, __pyx_L1_error)
     if (__pyx_t_4) {
 
-      /* "socrates_ancient.pyx":318
+      /* "socrates_ancient.py":316
  *         if transpositionScore != None:
  *             if root:
  *                 return transposition.bestMove, transpositionScore             # <<<<<<<<<<<<<<
@@ -8178,9 +8090,9 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  *                 return transpositionScore
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_transposition, __pyx_n_s_bestMove); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 318, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_transposition, __pyx_n_s_bestMove); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 316, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 318, __pyx_L1_error)
+      __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 316, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_GIVEREF(__pyx_t_1);
       PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -8192,7 +8104,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       __pyx_t_5 = 0;
       goto __pyx_L0;
 
-      /* "socrates_ancient.pyx":317
+      /* "socrates_ancient.py":315
  * 
  *         if transpositionScore != None:
  *             if root:             # <<<<<<<<<<<<<<
@@ -8201,7 +8113,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
     }
 
-    /* "socrates_ancient.pyx":320
+    /* "socrates_ancient.py":318
  *                 return transposition.bestMove, transpositionScore
  *             else:
  *                 return transpositionScore             # <<<<<<<<<<<<<<
@@ -8215,7 +8127,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       goto __pyx_L0;
     }
 
-    /* "socrates_ancient.pyx":316
+    /* "socrates_ancient.py":314
  * 
  * 
  *         if transpositionScore != None:             # <<<<<<<<<<<<<<
@@ -8224,37 +8136,37 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
   }
 
-  /* "socrates_ancient.pyx":322
+  /* "socrates_ancient.py":320
  *                 return transpositionScore
  * 
  *         legalMoves = iter(self.game.board.legal_moves)             # <<<<<<<<<<<<<<
  *         legalMoves, legalMoves_check = itertools.tee(legalMoves)
  * 
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 322, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 320, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_board); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 322, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_board); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 320, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_legal_moves); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 322, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_legal_moves); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 320, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 322, __pyx_L1_error)
+  __pyx_t_1 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 320, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_legalMoves = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":323
+  /* "socrates_ancient.py":321
  * 
  *         legalMoves = iter(self.game.board.legal_moves)
  *         legalMoves, legalMoves_check = itertools.tee(legalMoves)             # <<<<<<<<<<<<<<
  * 
  *         if next(legalMoves_check, None) == None:
  */
-  __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_itertools); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 323, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_itertools); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 321, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_tee); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 323, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_tee); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 321, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -8268,13 +8180,13 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     }
   }
   if (!__pyx_t_5) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_legalMoves); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 323, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_legalMoves); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 321, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[2] = {__pyx_t_5, __pyx_v_legalMoves};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 323, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 321, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_GOTREF(__pyx_t_1);
     } else
@@ -8282,19 +8194,19 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[2] = {__pyx_t_5, __pyx_v_legalMoves};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 323, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 321, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_GOTREF(__pyx_t_1);
     } else
     #endif
     {
-      __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 323, __pyx_L1_error)
+      __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 321, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_5); __pyx_t_5 = NULL;
       __Pyx_INCREF(__pyx_v_legalMoves);
       __Pyx_GIVEREF(__pyx_v_legalMoves);
       PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_v_legalMoves);
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 323, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 321, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
@@ -8306,7 +8218,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     if (unlikely(size != 2)) {
       if (size > 2) __Pyx_RaiseTooManyValuesError(2);
       else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-      __PYX_ERR(0, 323, __pyx_L1_error)
+      __PYX_ERR(0, 321, __pyx_L1_error)
     }
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
     if (likely(PyTuple_CheckExact(sequence))) {
@@ -8319,15 +8231,15 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     __Pyx_INCREF(__pyx_t_2);
     __Pyx_INCREF(__pyx_t_7);
     #else
-    __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 323, __pyx_L1_error)
+    __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 321, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_7 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 323, __pyx_L1_error)
+    __pyx_t_7 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 321, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     #endif
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   } else {
     Py_ssize_t index = -1;
-    __pyx_t_5 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 323, __pyx_L1_error)
+    __pyx_t_5 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 321, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_10 = Py_TYPE(__pyx_t_5)->tp_iternext;
@@ -8335,7 +8247,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     __Pyx_GOTREF(__pyx_t_2);
     index = 1; __pyx_t_7 = __pyx_t_10(__pyx_t_5); if (unlikely(!__pyx_t_7)) goto __pyx_L11_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_7);
-    if (__Pyx_IternextUnpackEndCheck(__pyx_t_10(__pyx_t_5), 2) < 0) __PYX_ERR(0, 323, __pyx_L1_error)
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_10(__pyx_t_5), 2) < 0) __PYX_ERR(0, 321, __pyx_L1_error)
     __pyx_t_10 = NULL;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     goto __pyx_L12_unpacking_done;
@@ -8343,7 +8255,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_10 = NULL;
     if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-    __PYX_ERR(0, 323, __pyx_L1_error)
+    __PYX_ERR(0, 321, __pyx_L1_error)
     __pyx_L12_unpacking_done:;
   }
   __Pyx_DECREF_SET(__pyx_v_legalMoves, __pyx_t_2);
@@ -8351,34 +8263,34 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
   __pyx_v_legalMoves_check = __pyx_t_7;
   __pyx_t_7 = 0;
 
-  /* "socrates_ancient.pyx":325
+  /* "socrates_ancient.py":323
  *         legalMoves, legalMoves_check = itertools.tee(legalMoves)
  * 
  *         if next(legalMoves_check, None) == None:             # <<<<<<<<<<<<<<
  *             if self.game.board.is_checkmate():
  *                 #
  */
-  __pyx_t_1 = __Pyx_PyIter_Next2(__pyx_v_legalMoves_check, Py_None); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 325, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyIter_Next2(__pyx_v_legalMoves_check, Py_None); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 323, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_7 = PyObject_RichCompare(__pyx_t_1, Py_None, Py_EQ); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 325, __pyx_L1_error)
+  __pyx_t_7 = PyObject_RichCompare(__pyx_t_1, Py_None, Py_EQ); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 323, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 325, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 323, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   if (__pyx_t_4) {
 
-    /* "socrates_ancient.pyx":326
+    /* "socrates_ancient.py":324
  * 
  *         if next(legalMoves_check, None) == None:
  *             if self.game.board.is_checkmate():             # <<<<<<<<<<<<<<
  *                 #
  *                 score = ply - INFINITY
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 326, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 324, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_board); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 326, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_board); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 324, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_is_checkmate); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 326, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_is_checkmate); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 324, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_2 = NULL;
@@ -8392,43 +8304,43 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       }
     }
     if (__pyx_t_2) {
-      __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 326, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 324, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     } else {
-      __pyx_t_7 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 326, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 324, __pyx_L1_error)
     }
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 326, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 324, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     if (__pyx_t_4) {
 
-      /* "socrates_ancient.pyx":328
+      /* "socrates_ancient.py":326
  *             if self.game.board.is_checkmate():
  *                 #
  *                 score = ply - INFINITY             # <<<<<<<<<<<<<<
  *                 if root:
  *                     return None, score
  */
-      __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 328, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 326, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_1 = PyNumber_Subtract(__pyx_v_ply, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 328, __pyx_L1_error)
+      __pyx_t_1 = PyNumber_Subtract(__pyx_v_ply, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 326, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __pyx_v_score = __pyx_t_1;
       __pyx_t_1 = 0;
 
-      /* "socrates_ancient.pyx":329
+      /* "socrates_ancient.py":327
  *                 #
  *                 score = ply - INFINITY
  *                 if root:             # <<<<<<<<<<<<<<
  *                     return None, score
  *                 else:
  */
-      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_root); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 329, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_root); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 327, __pyx_L1_error)
       if (__pyx_t_4) {
 
-        /* "socrates_ancient.pyx":330
+        /* "socrates_ancient.py":328
  *                 score = ply - INFINITY
  *                 if root:
  *                     return None, score             # <<<<<<<<<<<<<<
@@ -8436,7 +8348,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  *                     return score
  */
         __Pyx_XDECREF(__pyx_r);
-        __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 330, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 328, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_INCREF(Py_None);
         __Pyx_GIVEREF(Py_None);
@@ -8448,7 +8360,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
         __pyx_t_1 = 0;
         goto __pyx_L0;
 
-        /* "socrates_ancient.pyx":329
+        /* "socrates_ancient.py":327
  *                 #
  *                 score = ply - INFINITY
  *                 if root:             # <<<<<<<<<<<<<<
@@ -8457,7 +8369,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
       }
 
-      /* "socrates_ancient.pyx":332
+      /* "socrates_ancient.py":330
  *                     return None, score
  *                 else:
  *                     return score             # <<<<<<<<<<<<<<
@@ -8471,7 +8383,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
         goto __pyx_L0;
       }
 
-      /* "socrates_ancient.pyx":326
+      /* "socrates_ancient.py":324
  * 
  *         if next(legalMoves_check, None) == None:
  *             if self.game.board.is_checkmate():             # <<<<<<<<<<<<<<
@@ -8480,16 +8392,16 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
     }
 
-    /* "socrates_ancient.pyx":334
+    /* "socrates_ancient.py":332
  *                     return score
  *             #
  *             val = staticEval(self.game)             # <<<<<<<<<<<<<<
  *             if root:
  *                 if val > NOMOVESTHRESHOLD:
  */
-    __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_staticEval); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 334, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_staticEval); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 332, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 334, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 332, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_5 = NULL;
     if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_7))) {
@@ -8502,14 +8414,14 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       }
     }
     if (!__pyx_t_5) {
-      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 334, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 332, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_GOTREF(__pyx_t_1);
     } else {
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_7)) {
         PyObject *__pyx_temp[2] = {__pyx_t_5, __pyx_t_2};
-        __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 334, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 332, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -8518,20 +8430,20 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_7)) {
         PyObject *__pyx_temp[2] = {__pyx_t_5, __pyx_t_2};
-        __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 334, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 332, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       } else
       #endif
       {
-        __pyx_t_9 = PyTuple_New(1+1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 334, __pyx_L1_error)
+        __pyx_t_9 = PyTuple_New(1+1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 332, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_2);
         PyTuple_SET_ITEM(__pyx_t_9, 0+1, __pyx_t_2);
         __pyx_t_2 = 0;
-        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 334, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 332, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       }
@@ -8540,47 +8452,47 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     __pyx_v_val = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "socrates_ancient.pyx":335
+    /* "socrates_ancient.py":333
  *             #
  *             val = staticEval(self.game)
  *             if root:             # <<<<<<<<<<<<<<
  *                 if val > NOMOVESTHRESHOLD:
  *                     score = ply - INFINITY
  */
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_root); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 335, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_root); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 333, __pyx_L1_error)
     if (__pyx_t_4) {
 
-      /* "socrates_ancient.pyx":336
+      /* "socrates_ancient.py":334
  *             val = staticEval(self.game)
  *             if root:
  *                 if val > NOMOVESTHRESHOLD:             # <<<<<<<<<<<<<<
  *                     score = ply - INFINITY
  *                     return None, score
  */
-      __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_NOMOVESTHRESHOLD); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 336, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_NOMOVESTHRESHOLD); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 334, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_7 = PyObject_RichCompare(__pyx_v_val, __pyx_t_1, Py_GT); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 336, __pyx_L1_error)
+      __pyx_t_7 = PyObject_RichCompare(__pyx_v_val, __pyx_t_1, Py_GT); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 334, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 336, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 334, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       if (__pyx_t_4) {
 
-        /* "socrates_ancient.pyx":337
+        /* "socrates_ancient.py":335
  *             if root:
  *                 if val > NOMOVESTHRESHOLD:
  *                     score = ply - INFINITY             # <<<<<<<<<<<<<<
  *                     return None, score
  *                 else:
  */
-        __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 337, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 335, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_1 = PyNumber_Subtract(__pyx_v_ply, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 337, __pyx_L1_error)
+        __pyx_t_1 = PyNumber_Subtract(__pyx_v_ply, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 335, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         __pyx_v_score = __pyx_t_1;
         __pyx_t_1 = 0;
 
-        /* "socrates_ancient.pyx":338
+        /* "socrates_ancient.py":336
  *                 if val > NOMOVESTHRESHOLD:
  *                     score = ply - INFINITY
  *                     return None, score             # <<<<<<<<<<<<<<
@@ -8588,7 +8500,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  *                     score = -ply + INFINITY
  */
         __Pyx_XDECREF(__pyx_r);
-        __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 338, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 336, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_INCREF(Py_None);
         __Pyx_GIVEREF(Py_None);
@@ -8600,7 +8512,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
         __pyx_t_1 = 0;
         goto __pyx_L0;
 
-        /* "socrates_ancient.pyx":336
+        /* "socrates_ancient.py":334
  *             val = staticEval(self.game)
  *             if root:
  *                 if val > NOMOVESTHRESHOLD:             # <<<<<<<<<<<<<<
@@ -8609,7 +8521,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
       }
 
-      /* "socrates_ancient.pyx":340
+      /* "socrates_ancient.py":338
  *                     return None, score
  *                 else:
  *                     score = -ply + INFINITY             # <<<<<<<<<<<<<<
@@ -8617,18 +8529,18 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  *             else:
  */
       /*else*/ {
-        __pyx_t_1 = PyNumber_Negative(__pyx_v_ply); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 340, __pyx_L1_error)
+        __pyx_t_1 = PyNumber_Negative(__pyx_v_ply); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 338, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 340, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 338, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_9 = PyNumber_Add(__pyx_t_1, __pyx_t_7); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 340, __pyx_L1_error)
+        __pyx_t_9 = PyNumber_Add(__pyx_t_1, __pyx_t_7); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 338, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         __pyx_v_score = __pyx_t_9;
         __pyx_t_9 = 0;
 
-        /* "socrates_ancient.pyx":341
+        /* "socrates_ancient.py":339
  *                 else:
  *                     score = -ply + INFINITY
  *                     return None, score             # <<<<<<<<<<<<<<
@@ -8636,7 +8548,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  *                 if val > NOMOVESTHRESHOLD:
  */
         __Pyx_XDECREF(__pyx_r);
-        __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 341, __pyx_L1_error)
+        __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 339, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_INCREF(Py_None);
         __Pyx_GIVEREF(Py_None);
@@ -8649,7 +8561,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
         goto __pyx_L0;
       }
 
-      /* "socrates_ancient.pyx":335
+      /* "socrates_ancient.py":333
  *             #
  *             val = staticEval(self.game)
  *             if root:             # <<<<<<<<<<<<<<
@@ -8658,7 +8570,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
     }
 
-    /* "socrates_ancient.pyx":343
+    /* "socrates_ancient.py":341
  *                     return None, score
  *             else:
  *                 if val > NOMOVESTHRESHOLD:             # <<<<<<<<<<<<<<
@@ -8666,30 +8578,30 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  *                     return score
  */
     /*else*/ {
-      __pyx_t_9 = __Pyx_GetModuleGlobalName(__pyx_n_s_NOMOVESTHRESHOLD); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 343, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_GetModuleGlobalName(__pyx_n_s_NOMOVESTHRESHOLD); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 341, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_7 = PyObject_RichCompare(__pyx_v_val, __pyx_t_9, Py_GT); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 343, __pyx_L1_error)
+      __pyx_t_7 = PyObject_RichCompare(__pyx_v_val, __pyx_t_9, Py_GT); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 341, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 343, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 341, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       if (__pyx_t_4) {
 
-        /* "socrates_ancient.pyx":344
+        /* "socrates_ancient.py":342
  *             else:
  *                 if val > NOMOVESTHRESHOLD:
  *                     score = ply - INFINITY             # <<<<<<<<<<<<<<
  *                     return score
  *                 else:
  */
-        __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 344, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 342, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_9 = PyNumber_Subtract(__pyx_v_ply, __pyx_t_7); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 344, __pyx_L1_error)
+        __pyx_t_9 = PyNumber_Subtract(__pyx_v_ply, __pyx_t_7); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 342, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         __pyx_v_score = __pyx_t_9;
         __pyx_t_9 = 0;
 
-        /* "socrates_ancient.pyx":345
+        /* "socrates_ancient.py":343
  *                 if val > NOMOVESTHRESHOLD:
  *                     score = ply - INFINITY
  *                     return score             # <<<<<<<<<<<<<<
@@ -8701,7 +8613,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
         __pyx_r = __pyx_v_score;
         goto __pyx_L0;
 
-        /* "socrates_ancient.pyx":343
+        /* "socrates_ancient.py":341
  *                     return None, score
  *             else:
  *                 if val > NOMOVESTHRESHOLD:             # <<<<<<<<<<<<<<
@@ -8710,7 +8622,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
       }
 
-      /* "socrates_ancient.pyx":347
+      /* "socrates_ancient.py":345
  *                     return score
  *                 else:
  *                     score = -ply + INFINITY             # <<<<<<<<<<<<<<
@@ -8718,18 +8630,18 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  * 
  */
       /*else*/ {
-        __pyx_t_9 = PyNumber_Negative(__pyx_v_ply); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 347, __pyx_L1_error)
+        __pyx_t_9 = PyNumber_Negative(__pyx_v_ply); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 345, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
-        __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 347, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 345, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_1 = PyNumber_Add(__pyx_t_9, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 347, __pyx_L1_error)
+        __pyx_t_1 = PyNumber_Add(__pyx_t_9, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 345, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         __pyx_v_score = __pyx_t_1;
         __pyx_t_1 = 0;
 
-        /* "socrates_ancient.pyx":348
+        /* "socrates_ancient.py":346
  *                 else:
  *                     score = -ply + INFINITY
  *                     return score             # <<<<<<<<<<<<<<
@@ -8743,7 +8655,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       }
     }
 
-    /* "socrates_ancient.pyx":325
+    /* "socrates_ancient.py":323
  *         legalMoves, legalMoves_check = itertools.tee(legalMoves)
  * 
  *         if next(legalMoves_check, None) == None:             # <<<<<<<<<<<<<<
@@ -8752,14 +8664,14 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
   }
 
-  /* "socrates_ancient.pyx":351
+  /* "socrates_ancient.py":349
  * 
  * 
  *         moves = self.moveIter(transposition, legalMoves, ply)             # <<<<<<<<<<<<<<
  * 
  *         thisNodeType = NodeType.UPPER_BOUND
  */
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_moveIter); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 351, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_moveIter); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 349, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __pyx_t_9 = NULL;
   __pyx_t_6 = 0;
@@ -8776,7 +8688,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_7)) {
     PyObject *__pyx_temp[4] = {__pyx_t_9, __pyx_v_transposition, __pyx_v_legalMoves, __pyx_v_ply};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 351, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 349, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
@@ -8784,13 +8696,13 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_7)) {
     PyObject *__pyx_temp[4] = {__pyx_t_9, __pyx_v_transposition, __pyx_v_legalMoves, __pyx_v_ply};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 351, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 349, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
   #endif
   {
-    __pyx_t_2 = PyTuple_New(3+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 351, __pyx_L1_error)
+    __pyx_t_2 = PyTuple_New(3+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 349, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     if (__pyx_t_9) {
       __Pyx_GIVEREF(__pyx_t_9); PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_9); __pyx_t_9 = NULL;
@@ -8804,7 +8716,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     __Pyx_INCREF(__pyx_v_ply);
     __Pyx_GIVEREF(__pyx_v_ply);
     PyTuple_SET_ITEM(__pyx_t_2, 2+__pyx_t_6, __pyx_v_ply);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 351, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 349, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -8812,37 +8724,37 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
   __pyx_v_moves = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":353
+  /* "socrates_ancient.py":351
  *         moves = self.moveIter(transposition, legalMoves, ply)
  * 
  *         thisNodeType = NodeType.UPPER_BOUND             # <<<<<<<<<<<<<<
  *         thisBestScore = -INFINITY
  * 
  */
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_NodeType); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 353, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_NodeType); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 351, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_UPPER_BOUND); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 353, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_UPPER_BOUND); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 351, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_thisNodeType = __pyx_t_7;
   __pyx_t_7 = 0;
 
-  /* "socrates_ancient.pyx":354
+  /* "socrates_ancient.py":352
  * 
  *         thisNodeType = NodeType.UPPER_BOUND
  *         thisBestScore = -INFINITY             # <<<<<<<<<<<<<<
  * 
  *         thisBestMove = None
  */
-  __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 354, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 352, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_1 = PyNumber_Negative(__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 354, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_Negative(__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 352, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __pyx_v_thisBestScore = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":356
+  /* "socrates_ancient.py":354
  *         thisBestScore = -INFINITY
  * 
  *         thisBestMove = None             # <<<<<<<<<<<<<<
@@ -8852,7 +8764,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
   __Pyx_INCREF(Py_None);
   __pyx_v_thisBestMove = Py_None;
 
-  /* "socrates_ancient.pyx":357
+  /* "socrates_ancient.py":355
  * 
  *         thisBestMove = None
  *         counter = 0             # <<<<<<<<<<<<<<
@@ -8862,7 +8774,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
   __Pyx_INCREF(__pyx_int_0);
   __pyx_v_counter = __pyx_int_0;
 
-  /* "socrates_ancient.pyx":360
+  /* "socrates_ancient.py":358
  * 
  *         #logPrint(depthLeft, "", "alpha", alpha, "beta", beta)
  *         for move in moves:             # <<<<<<<<<<<<<<
@@ -8873,26 +8785,26 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     __pyx_t_1 = __pyx_v_moves; __Pyx_INCREF(__pyx_t_1); __pyx_t_3 = 0;
     __pyx_t_11 = NULL;
   } else {
-    __pyx_t_3 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_moves); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 360, __pyx_L1_error)
+    __pyx_t_3 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_moves); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 358, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_11 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 360, __pyx_L1_error)
+    __pyx_t_11 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 358, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_11)) {
       if (likely(PyList_CheckExact(__pyx_t_1))) {
         if (__pyx_t_3 >= PyList_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_7 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_7); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 360, __pyx_L1_error)
+        __pyx_t_7 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_7); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 358, __pyx_L1_error)
         #else
-        __pyx_t_7 = PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 360, __pyx_L1_error)
+        __pyx_t_7 = PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 358, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         #endif
       } else {
         if (__pyx_t_3 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_7); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 360, __pyx_L1_error)
+        __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_7); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 358, __pyx_L1_error)
         #else
-        __pyx_t_7 = PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 360, __pyx_L1_error)
+        __pyx_t_7 = PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 358, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         #endif
       }
@@ -8902,7 +8814,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 360, __pyx_L1_error)
+          else __PYX_ERR(0, 358, __pyx_L1_error)
         }
         break;
       }
@@ -8911,31 +8823,31 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     __Pyx_XDECREF_SET(__pyx_v_move, __pyx_t_7);
     __pyx_t_7 = 0;
 
-    /* "socrates_ancient.pyx":361
+    /* "socrates_ancient.py":359
  *         #logPrint(depthLeft, "", "alpha", alpha, "beta", beta)
  *         for move in moves:
  *             counter += 1             # <<<<<<<<<<<<<<
  *             #logPrint(depthLeft, "", move)
  * 
  */
-    __pyx_t_7 = __Pyx_PyInt_AddObjC(__pyx_v_counter, __pyx_int_1, 1, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 361, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyInt_AddObjC(__pyx_v_counter, __pyx_int_1, 1, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 359, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF_SET(__pyx_v_counter, __pyx_t_7);
     __pyx_t_7 = 0;
 
-    /* "socrates_ancient.pyx":364
+    /* "socrates_ancient.py":362
  *             #logPrint(depthLeft, "", move)
  * 
  *             self.game.board.push(move)             # <<<<<<<<<<<<<<
  * 
  *             if self.game.board.is_check():
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 364, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 362, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_board); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 364, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_board); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 362, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_push); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 364, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_push); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 362, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     __pyx_t_9 = NULL;
@@ -8949,13 +8861,13 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       }
     }
     if (!__pyx_t_9) {
-      __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_move); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 364, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_move); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 362, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
     } else {
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_2)) {
         PyObject *__pyx_temp[2] = {__pyx_t_9, __pyx_v_move};
-        __pyx_t_7 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 364, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 362, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_GOTREF(__pyx_t_7);
       } else
@@ -8963,19 +8875,19 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
         PyObject *__pyx_temp[2] = {__pyx_t_9, __pyx_v_move};
-        __pyx_t_7 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 364, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 362, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_GOTREF(__pyx_t_7);
       } else
       #endif
       {
-        __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 364, __pyx_L1_error)
+        __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 362, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_GIVEREF(__pyx_t_9); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_9); __pyx_t_9 = NULL;
         __Pyx_INCREF(__pyx_v_move);
         __Pyx_GIVEREF(__pyx_v_move);
         PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_v_move);
-        __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 364, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 362, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       }
@@ -8983,19 +8895,19 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "socrates_ancient.pyx":366
+    /* "socrates_ancient.py":364
  *             self.game.board.push(move)
  * 
  *             if self.game.board.is_check():             # <<<<<<<<<<<<<<
  *                 nextDepth = depthLeft - 2
  *             else:
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 366, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 364, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_board); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 366, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_board); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 364, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_is_check); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 366, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_is_check); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 364, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_5 = NULL;
@@ -9009,30 +8921,30 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       }
     }
     if (__pyx_t_5) {
-      __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 366, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 364, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     } else {
-      __pyx_t_7 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 366, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 364, __pyx_L1_error)
     }
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 366, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 364, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     if (__pyx_t_4) {
 
-      /* "socrates_ancient.pyx":367
+      /* "socrates_ancient.py":365
  * 
  *             if self.game.board.is_check():
  *                 nextDepth = depthLeft - 2             # <<<<<<<<<<<<<<
  *             else:
  *                 nextDepth = depthLeft - 8
  */
-      __pyx_t_7 = __Pyx_PyInt_SubtractObjC(__pyx_v_depthLeft, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 367, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyInt_SubtractObjC(__pyx_v_depthLeft, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 365, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_XDECREF_SET(__pyx_v_nextDepth, __pyx_t_7);
       __pyx_t_7 = 0;
 
-      /* "socrates_ancient.pyx":366
+      /* "socrates_ancient.py":364
  *             self.game.board.push(move)
  * 
  *             if self.game.board.is_check():             # <<<<<<<<<<<<<<
@@ -9042,7 +8954,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       goto __pyx_L21;
     }
 
-    /* "socrates_ancient.pyx":369
+    /* "socrates_ancient.py":367
  *                 nextDepth = depthLeft - 2
  *             else:
  *                 nextDepth = depthLeft - 8             # <<<<<<<<<<<<<<
@@ -9050,56 +8962,54 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  *                 #logPrint(depthLeft, "PVMove", move, "", -alpha - 1, -alpha)
  */
     /*else*/ {
-      __pyx_t_7 = __Pyx_PyInt_SubtractObjC(__pyx_v_depthLeft, __pyx_int_8, 8, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 369, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyInt_SubtractObjC(__pyx_v_depthLeft, __pyx_int_8, 8, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 367, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_XDECREF_SET(__pyx_v_nextDepth, __pyx_t_7);
       __pyx_t_7 = 0;
     }
     __pyx_L21:;
 
-    /* "socrates_ancient.pyx":370
+    /* "socrates_ancient.py":368
  *             else:
  *                 nextDepth = depthLeft - 8
  *             if thisNodeType == NodeType.EXACT:             # <<<<<<<<<<<<<<
  *                 #logPrint(depthLeft, "PVMove", move, "", -alpha - 1, -alpha)
- *                 score = -self.pvSearch(-alpha - 1, -alpha, depthLeft - 8)
+ *                 score = -self.pvSearch(-alpha - 1, -alpha, nextDepth)
  */
-    __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_NodeType); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 370, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_NodeType); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 368, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_EXACT); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 370, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_EXACT); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 368, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = PyObject_RichCompare(__pyx_v_thisNodeType, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 370, __pyx_L1_error)
+    __pyx_t_7 = PyObject_RichCompare(__pyx_v_thisNodeType, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 368, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 370, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 368, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     if (__pyx_t_4) {
 
-      /* "socrates_ancient.pyx":372
+      /* "socrates_ancient.py":370
  *             if thisNodeType == NodeType.EXACT:
  *                 #logPrint(depthLeft, "PVMove", move, "", -alpha - 1, -alpha)
- *                 score = -self.pvSearch(-alpha - 1, -alpha, depthLeft - 8)             # <<<<<<<<<<<<<<
+ *                 score = -self.pvSearch(-alpha - 1, -alpha, nextDepth)             # <<<<<<<<<<<<<<
  *                 if score > alpha and score < beta:
  *                     #logPrint(depthLeft, move, "", score, "", -beta, -alpha)
  */
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_pvSearch); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 372, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_pvSearch); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 370, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_5 = PyNumber_Negative(__pyx_v_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 372, __pyx_L1_error)
+      __pyx_t_5 = PyNumber_Negative(__pyx_v_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 370, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_9 = __Pyx_PyInt_SubtractObjC(__pyx_t_5, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 372, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyInt_SubtractObjC(__pyx_t_5, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 370, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = PyNumber_Negative(__pyx_v_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 372, __pyx_L1_error)
+      __pyx_t_5 = PyNumber_Negative(__pyx_v_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 370, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_12 = __Pyx_PyInt_SubtractObjC(__pyx_v_depthLeft, __pyx_int_8, 8, 0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 372, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_12);
-      __pyx_t_13 = NULL;
+      __pyx_t_12 = NULL;
       __pyx_t_6 = 0;
       if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
-        __pyx_t_13 = PyMethod_GET_SELF(__pyx_t_2);
-        if (likely(__pyx_t_13)) {
+        __pyx_t_12 = PyMethod_GET_SELF(__pyx_t_2);
+        if (likely(__pyx_t_12)) {
           PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-          __Pyx_INCREF(__pyx_t_13);
+          __Pyx_INCREF(__pyx_t_12);
           __Pyx_INCREF(function);
           __Pyx_DECREF_SET(__pyx_t_2, function);
           __pyx_t_6 = 1;
@@ -9107,88 +9017,84 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       }
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_2)) {
-        PyObject *__pyx_temp[4] = {__pyx_t_13, __pyx_t_9, __pyx_t_5, __pyx_t_12};
-        __pyx_t_7 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 372, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
+        PyObject *__pyx_temp[4] = {__pyx_t_12, __pyx_t_9, __pyx_t_5, __pyx_v_nextDepth};
+        __pyx_t_7 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 370, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       } else
       #endif
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
-        PyObject *__pyx_temp[4] = {__pyx_t_13, __pyx_t_9, __pyx_t_5, __pyx_t_12};
-        __pyx_t_7 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 372, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
+        PyObject *__pyx_temp[4] = {__pyx_t_12, __pyx_t_9, __pyx_t_5, __pyx_v_nextDepth};
+        __pyx_t_7 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 370, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       } else
       #endif
       {
-        __pyx_t_14 = PyTuple_New(3+__pyx_t_6); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 372, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_14);
-        if (__pyx_t_13) {
-          __Pyx_GIVEREF(__pyx_t_13); PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_13); __pyx_t_13 = NULL;
+        __pyx_t_13 = PyTuple_New(3+__pyx_t_6); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 370, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_13);
+        if (__pyx_t_12) {
+          __Pyx_GIVEREF(__pyx_t_12); PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_12); __pyx_t_12 = NULL;
         }
         __Pyx_GIVEREF(__pyx_t_9);
-        PyTuple_SET_ITEM(__pyx_t_14, 0+__pyx_t_6, __pyx_t_9);
+        PyTuple_SET_ITEM(__pyx_t_13, 0+__pyx_t_6, __pyx_t_9);
         __Pyx_GIVEREF(__pyx_t_5);
-        PyTuple_SET_ITEM(__pyx_t_14, 1+__pyx_t_6, __pyx_t_5);
-        __Pyx_GIVEREF(__pyx_t_12);
-        PyTuple_SET_ITEM(__pyx_t_14, 2+__pyx_t_6, __pyx_t_12);
+        PyTuple_SET_ITEM(__pyx_t_13, 1+__pyx_t_6, __pyx_t_5);
+        __Pyx_INCREF(__pyx_v_nextDepth);
+        __Pyx_GIVEREF(__pyx_v_nextDepth);
+        PyTuple_SET_ITEM(__pyx_t_13, 2+__pyx_t_6, __pyx_v_nextDepth);
         __pyx_t_9 = 0;
         __pyx_t_5 = 0;
-        __pyx_t_12 = 0;
-        __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_14, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 372, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_13, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 370, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
-        __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+        __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
       }
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = PyNumber_Negative(__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 372, __pyx_L1_error)
+      __pyx_t_2 = PyNumber_Negative(__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 370, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_XDECREF_SET(__pyx_v_score, __pyx_t_2);
       __pyx_t_2 = 0;
 
-      /* "socrates_ancient.pyx":373
+      /* "socrates_ancient.py":371
  *                 #logPrint(depthLeft, "PVMove", move, "", -alpha - 1, -alpha)
- *                 score = -self.pvSearch(-alpha - 1, -alpha, depthLeft - 8)
+ *                 score = -self.pvSearch(-alpha - 1, -alpha, nextDepth)
  *                 if score > alpha and score < beta:             # <<<<<<<<<<<<<<
  *                     #logPrint(depthLeft, move, "", score, "", -beta, -alpha)
  *                     # score  Alpha  Beta
  */
-      __pyx_t_2 = PyObject_RichCompare(__pyx_v_score, __pyx_v_alpha, Py_GT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 373, __pyx_L1_error)
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 373, __pyx_L1_error)
+      __pyx_t_2 = PyObject_RichCompare(__pyx_v_score, __pyx_v_alpha, Py_GT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 371, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 371, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       if (__pyx_t_8) {
       } else {
         __pyx_t_4 = __pyx_t_8;
         goto __pyx_L24_bool_binop_done;
       }
-      __pyx_t_2 = PyObject_RichCompare(__pyx_v_score, __pyx_v_beta, Py_LT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 373, __pyx_L1_error)
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 373, __pyx_L1_error)
+      __pyx_t_2 = PyObject_RichCompare(__pyx_v_score, __pyx_v_beta, Py_LT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 371, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 371, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_t_4 = __pyx_t_8;
       __pyx_L24_bool_binop_done:;
       if (__pyx_t_4) {
 
-        /* "socrates_ancient.pyx":376
+        /* "socrates_ancient.py":374
  *                     #logPrint(depthLeft, move, "", score, "", -beta, -alpha)
  *                     # score  Alpha  Beta
- *                     score = -self.pvSearch(-beta, -alpha, depthLeft - 8)             # <<<<<<<<<<<<<<
+ *                     score = -self.pvSearch(-beta, -alpha, nextDepth)             # <<<<<<<<<<<<<<
  * 
  *                 elif score >= beta:
  */
-        __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_pvSearch); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 376, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_pvSearch); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 374, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_14 = PyNumber_Negative(__pyx_v_beta); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 376, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_14);
-        __pyx_t_12 = PyNumber_Negative(__pyx_v_alpha); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 376, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_12);
-        __pyx_t_5 = __Pyx_PyInt_SubtractObjC(__pyx_v_depthLeft, __pyx_int_8, 8, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 376, __pyx_L1_error)
+        __pyx_t_13 = PyNumber_Negative(__pyx_v_beta); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 374, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_13);
+        __pyx_t_5 = PyNumber_Negative(__pyx_v_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 374, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __pyx_t_9 = NULL;
         __pyx_t_6 = 0;
@@ -9204,55 +9110,53 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
         }
         #if CYTHON_FAST_PYCALL
         if (PyFunction_Check(__pyx_t_7)) {
-          PyObject *__pyx_temp[4] = {__pyx_t_9, __pyx_t_14, __pyx_t_12, __pyx_t_5};
-          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 376, __pyx_L1_error)
+          PyObject *__pyx_temp[4] = {__pyx_t_9, __pyx_t_13, __pyx_t_5, __pyx_v_nextDepth};
+          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 374, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
           __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-          __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+          __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         } else
         #endif
         #if CYTHON_FAST_PYCCALL
         if (__Pyx_PyFastCFunction_Check(__pyx_t_7)) {
-          PyObject *__pyx_temp[4] = {__pyx_t_9, __pyx_t_14, __pyx_t_12, __pyx_t_5};
-          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 376, __pyx_L1_error)
+          PyObject *__pyx_temp[4] = {__pyx_t_9, __pyx_t_13, __pyx_t_5, __pyx_v_nextDepth};
+          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 374, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
           __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-          __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+          __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         } else
         #endif
         {
-          __pyx_t_13 = PyTuple_New(3+__pyx_t_6); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 376, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_13);
+          __pyx_t_12 = PyTuple_New(3+__pyx_t_6); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 374, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_12);
           if (__pyx_t_9) {
-            __Pyx_GIVEREF(__pyx_t_9); PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_9); __pyx_t_9 = NULL;
+            __Pyx_GIVEREF(__pyx_t_9); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_9); __pyx_t_9 = NULL;
           }
-          __Pyx_GIVEREF(__pyx_t_14);
-          PyTuple_SET_ITEM(__pyx_t_13, 0+__pyx_t_6, __pyx_t_14);
-          __Pyx_GIVEREF(__pyx_t_12);
-          PyTuple_SET_ITEM(__pyx_t_13, 1+__pyx_t_6, __pyx_t_12);
+          __Pyx_GIVEREF(__pyx_t_13);
+          PyTuple_SET_ITEM(__pyx_t_12, 0+__pyx_t_6, __pyx_t_13);
           __Pyx_GIVEREF(__pyx_t_5);
-          PyTuple_SET_ITEM(__pyx_t_13, 2+__pyx_t_6, __pyx_t_5);
-          __pyx_t_14 = 0;
-          __pyx_t_12 = 0;
+          PyTuple_SET_ITEM(__pyx_t_12, 1+__pyx_t_6, __pyx_t_5);
+          __Pyx_INCREF(__pyx_v_nextDepth);
+          __Pyx_GIVEREF(__pyx_v_nextDepth);
+          PyTuple_SET_ITEM(__pyx_t_12, 2+__pyx_t_6, __pyx_v_nextDepth);
+          __pyx_t_13 = 0;
           __pyx_t_5 = 0;
-          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_13, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 376, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_12, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 374, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
+          __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         }
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        __pyx_t_7 = PyNumber_Negative(__pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 376, __pyx_L1_error)
+        __pyx_t_7 = PyNumber_Negative(__pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 374, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF_SET(__pyx_v_score, __pyx_t_7);
         __pyx_t_7 = 0;
 
-        /* "socrates_ancient.pyx":373
+        /* "socrates_ancient.py":371
  *                 #logPrint(depthLeft, "PVMove", move, "", -alpha - 1, -alpha)
- *                 score = -self.pvSearch(-alpha - 1, -alpha, depthLeft - 8)
+ *                 score = -self.pvSearch(-alpha - 1, -alpha, nextDepth)
  *                 if score > alpha and score < beta:             # <<<<<<<<<<<<<<
  *                     #logPrint(depthLeft, move, "", score, "", -beta, -alpha)
  *                     # score  Alpha  Beta
@@ -9260,53 +9164,51 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
         goto __pyx_L23;
       }
 
-      /* "socrates_ancient.pyx":378
- *                     score = -self.pvSearch(-beta, -alpha, depthLeft - 8)
+      /* "socrates_ancient.py":376
+ *                     score = -self.pvSearch(-beta, -alpha, nextDepth)
  * 
  *                 elif score >= beta:             # <<<<<<<<<<<<<<
  *                     pass
  *             else:
  */
-      __pyx_t_7 = PyObject_RichCompare(__pyx_v_score, __pyx_v_beta, Py_GE); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 378, __pyx_L1_error)
-      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 378, __pyx_L1_error)
+      __pyx_t_7 = PyObject_RichCompare(__pyx_v_score, __pyx_v_beta, Py_GE); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 376, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 376, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       if (__pyx_t_4) {
       }
       __pyx_L23:;
 
-      /* "socrates_ancient.pyx":370
+      /* "socrates_ancient.py":368
  *             else:
  *                 nextDepth = depthLeft - 8
  *             if thisNodeType == NodeType.EXACT:             # <<<<<<<<<<<<<<
  *                 #logPrint(depthLeft, "PVMove", move, "", -alpha - 1, -alpha)
- *                 score = -self.pvSearch(-alpha - 1, -alpha, depthLeft - 8)
+ *                 score = -self.pvSearch(-alpha - 1, -alpha, nextDepth)
  */
       goto __pyx_L22;
     }
 
-    /* "socrates_ancient.pyx":382
+    /* "socrates_ancient.py":380
  *             else:
  *                 #logPrint(depthLeft, "PVMove", move, "", -beta, -alpha)
- *                 score = -self.pvSearch(-beta, -alpha, depthLeft - 10)             # <<<<<<<<<<<<<<
+ *                 score = -self.pvSearch(-beta, -alpha, nextDepth)             # <<<<<<<<<<<<<<
  * 
  *             #
  */
     /*else*/ {
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_pvSearch); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 382, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_pvSearch); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 380, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_13 = PyNumber_Negative(__pyx_v_beta); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 382, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_13);
-      __pyx_t_5 = PyNumber_Negative(__pyx_v_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 382, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_12 = __Pyx_PyInt_SubtractObjC(__pyx_v_depthLeft, __pyx_int_10, 10, 0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 382, __pyx_L1_error)
+      __pyx_t_12 = PyNumber_Negative(__pyx_v_beta); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 380, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
-      __pyx_t_14 = NULL;
+      __pyx_t_5 = PyNumber_Negative(__pyx_v_alpha); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 380, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_13 = NULL;
       __pyx_t_6 = 0;
       if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
-        __pyx_t_14 = PyMethod_GET_SELF(__pyx_t_2);
-        if (likely(__pyx_t_14)) {
+        __pyx_t_13 = PyMethod_GET_SELF(__pyx_t_2);
+        if (likely(__pyx_t_13)) {
           PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-          __Pyx_INCREF(__pyx_t_14);
+          __Pyx_INCREF(__pyx_t_13);
           __Pyx_INCREF(function);
           __Pyx_DECREF_SET(__pyx_t_2, function);
           __pyx_t_6 = 1;
@@ -9314,47 +9216,45 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       }
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_2)) {
-        PyObject *__pyx_temp[4] = {__pyx_t_14, __pyx_t_13, __pyx_t_5, __pyx_t_12};
-        __pyx_t_7 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 382, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
+        PyObject *__pyx_temp[4] = {__pyx_t_13, __pyx_t_12, __pyx_t_5, __pyx_v_nextDepth};
+        __pyx_t_7 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 380, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
         __Pyx_GOTREF(__pyx_t_7);
-        __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       } else
       #endif
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
-        PyObject *__pyx_temp[4] = {__pyx_t_14, __pyx_t_13, __pyx_t_5, __pyx_t_12};
-        __pyx_t_7 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 382, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
+        PyObject *__pyx_temp[4] = {__pyx_t_13, __pyx_t_12, __pyx_t_5, __pyx_v_nextDepth};
+        __pyx_t_7 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 380, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
         __Pyx_GOTREF(__pyx_t_7);
-        __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       } else
       #endif
       {
-        __pyx_t_9 = PyTuple_New(3+__pyx_t_6); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 382, __pyx_L1_error)
+        __pyx_t_9 = PyTuple_New(3+__pyx_t_6); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 380, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
-        if (__pyx_t_14) {
-          __Pyx_GIVEREF(__pyx_t_14); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_14); __pyx_t_14 = NULL;
+        if (__pyx_t_13) {
+          __Pyx_GIVEREF(__pyx_t_13); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_13); __pyx_t_13 = NULL;
         }
-        __Pyx_GIVEREF(__pyx_t_13);
-        PyTuple_SET_ITEM(__pyx_t_9, 0+__pyx_t_6, __pyx_t_13);
+        __Pyx_GIVEREF(__pyx_t_12);
+        PyTuple_SET_ITEM(__pyx_t_9, 0+__pyx_t_6, __pyx_t_12);
         __Pyx_GIVEREF(__pyx_t_5);
         PyTuple_SET_ITEM(__pyx_t_9, 1+__pyx_t_6, __pyx_t_5);
-        __Pyx_GIVEREF(__pyx_t_12);
-        PyTuple_SET_ITEM(__pyx_t_9, 2+__pyx_t_6, __pyx_t_12);
-        __pyx_t_13 = 0;
-        __pyx_t_5 = 0;
+        __Pyx_INCREF(__pyx_v_nextDepth);
+        __Pyx_GIVEREF(__pyx_v_nextDepth);
+        PyTuple_SET_ITEM(__pyx_t_9, 2+__pyx_t_6, __pyx_v_nextDepth);
         __pyx_t_12 = 0;
-        __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_9, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 382, __pyx_L1_error)
+        __pyx_t_5 = 0;
+        __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_9, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 380, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       }
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = PyNumber_Negative(__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 382, __pyx_L1_error)
+      __pyx_t_2 = PyNumber_Negative(__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 380, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_XDECREF_SET(__pyx_v_score, __pyx_t_2);
@@ -9362,89 +9262,92 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     }
     __pyx_L22:;
 
-    /* "socrates_ancient.pyx":385
+    /* "socrates_ancient.py":383
  * 
  *             #
  *             self.game.board.pop()             # <<<<<<<<<<<<<<
  * 
- *             if score == INFINITY + 1 or score == INFINITY - 1:
+ *             if score == INFINITY + 1 or score == -INFINITY - 1:
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 385, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_game); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 383, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_board); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 385, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_board); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 383, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_Pop(__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 385, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Pop(__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 383, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "socrates_ancient.pyx":387
+    /* "socrates_ancient.py":385
  *             self.game.board.pop()
  * 
- *             if score == INFINITY + 1 or score == INFINITY - 1:             # <<<<<<<<<<<<<<
+ *             if score == INFINITY + 1 or score == -INFINITY - 1:             # <<<<<<<<<<<<<<
  *                 if root:
  *                     if thisBestMove != None:
  */
-    __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 387, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 385, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_7 = __Pyx_PyInt_AddObjC(__pyx_t_2, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 387, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyInt_AddObjC(__pyx_t_2, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 385, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = PyObject_RichCompare(__pyx_v_score, __pyx_t_7, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 387, __pyx_L1_error)
+    __pyx_t_2 = PyObject_RichCompare(__pyx_v_score, __pyx_t_7, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 385, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 387, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 385, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (!__pyx_t_8) {
     } else {
       __pyx_t_4 = __pyx_t_8;
       goto __pyx_L27_bool_binop_done;
     }
-    __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 387, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 385, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_7 = __Pyx_PyInt_SubtractObjC(__pyx_t_2, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 387, __pyx_L1_error)
+    __pyx_t_7 = PyNumber_Negative(__pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 385, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = PyObject_RichCompare(__pyx_v_score, __pyx_t_7, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 387, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_SubtractObjC(__pyx_t_7, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 385, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 387, __pyx_L1_error)
+    __pyx_t_7 = PyObject_RichCompare(__pyx_v_score, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 385, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 385, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_t_4 = __pyx_t_8;
     __pyx_L27_bool_binop_done:;
     if (__pyx_t_4) {
 
-      /* "socrates_ancient.pyx":388
+      /* "socrates_ancient.py":386
  * 
- *             if score == INFINITY + 1 or score == INFINITY - 1:
+ *             if score == INFINITY + 1 or score == -INFINITY - 1:
  *                 if root:             # <<<<<<<<<<<<<<
  *                     if thisBestMove != None:
  *                         eprint("[INTERRUPT ROOT] %s %d @ Move %d" % (thisBestMove, thisBestScore, counter))
  */
-      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_root); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 388, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_root); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 386, __pyx_L1_error)
       if (__pyx_t_4) {
 
-        /* "socrates_ancient.pyx":389
- *             if score == INFINITY + 1 or score == INFINITY - 1:
+        /* "socrates_ancient.py":387
+ *             if score == INFINITY + 1 or score == -INFINITY - 1:
  *                 if root:
  *                     if thisBestMove != None:             # <<<<<<<<<<<<<<
  *                         eprint("[INTERRUPT ROOT] %s %d @ Move %d" % (thisBestMove, thisBestScore, counter))
- *                         return thisBestMove, thisBestScore
+ *                         # return thisBestMove, thisBestScore
  */
-        __pyx_t_2 = PyObject_RichCompare(__pyx_v_thisBestMove, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 389, __pyx_L1_error)
-        __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 389, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __pyx_t_7 = PyObject_RichCompare(__pyx_v_thisBestMove, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 387, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 387, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         if (__pyx_t_4) {
 
-          /* "socrates_ancient.pyx":390
+          /* "socrates_ancient.py":388
  *                 if root:
  *                     if thisBestMove != None:
  *                         eprint("[INTERRUPT ROOT] %s %d @ Move %d" % (thisBestMove, thisBestScore, counter))             # <<<<<<<<<<<<<<
- *                         return thisBestMove, thisBestScore
- *                     else:
+ *                         # return thisBestMove, thisBestScore
+ *                         return chess.Move.null(), -INFINITY - 1
  */
-          __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_eprint); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 390, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_7);
-          __pyx_t_9 = PyTuple_New(3); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 390, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_eprint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 388, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_2);
+          __pyx_t_9 = PyTuple_New(3); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 388, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_9);
           __Pyx_INCREF(__pyx_v_thisBestMove);
           __Pyx_GIVEREF(__pyx_v_thisBestMove);
@@ -9455,160 +9358,194 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
           __Pyx_INCREF(__pyx_v_counter);
           __Pyx_GIVEREF(__pyx_v_counter);
           PyTuple_SET_ITEM(__pyx_t_9, 2, __pyx_v_counter);
-          __pyx_t_12 = __Pyx_PyString_Format(__pyx_kp_s_INTERRUPT_ROOT_s_d_Move_d, __pyx_t_9); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 390, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_12);
+          __pyx_t_5 = __Pyx_PyString_Format(__pyx_kp_s_INTERRUPT_ROOT_s_d_Move_d, __pyx_t_9); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 388, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_5);
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
           __pyx_t_9 = NULL;
-          if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_7))) {
-            __pyx_t_9 = PyMethod_GET_SELF(__pyx_t_7);
+          if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
+            __pyx_t_9 = PyMethod_GET_SELF(__pyx_t_2);
             if (likely(__pyx_t_9)) {
-              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
               __Pyx_INCREF(__pyx_t_9);
               __Pyx_INCREF(function);
-              __Pyx_DECREF_SET(__pyx_t_7, function);
+              __Pyx_DECREF_SET(__pyx_t_2, function);
             }
           }
           if (!__pyx_t_9) {
-            __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_12); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 390, __pyx_L1_error)
-            __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-            __Pyx_GOTREF(__pyx_t_2);
+            __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 388, __pyx_L1_error)
+            __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+            __Pyx_GOTREF(__pyx_t_7);
           } else {
             #if CYTHON_FAST_PYCALL
-            if (PyFunction_Check(__pyx_t_7)) {
-              PyObject *__pyx_temp[2] = {__pyx_t_9, __pyx_t_12};
-              __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 390, __pyx_L1_error)
+            if (PyFunction_Check(__pyx_t_2)) {
+              PyObject *__pyx_temp[2] = {__pyx_t_9, __pyx_t_5};
+              __pyx_t_7 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 388, __pyx_L1_error)
               __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-              __Pyx_GOTREF(__pyx_t_2);
-              __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+              __Pyx_GOTREF(__pyx_t_7);
+              __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
             } else
             #endif
             #if CYTHON_FAST_PYCCALL
-            if (__Pyx_PyFastCFunction_Check(__pyx_t_7)) {
-              PyObject *__pyx_temp[2] = {__pyx_t_9, __pyx_t_12};
-              __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 390, __pyx_L1_error)
+            if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
+              PyObject *__pyx_temp[2] = {__pyx_t_9, __pyx_t_5};
+              __pyx_t_7 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 388, __pyx_L1_error)
               __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-              __Pyx_GOTREF(__pyx_t_2);
-              __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+              __Pyx_GOTREF(__pyx_t_7);
+              __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
             } else
             #endif
             {
-              __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 390, __pyx_L1_error)
-              __Pyx_GOTREF(__pyx_t_5);
-              __Pyx_GIVEREF(__pyx_t_9); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_9); __pyx_t_9 = NULL;
-              __Pyx_GIVEREF(__pyx_t_12);
-              PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_t_12);
-              __pyx_t_12 = 0;
-              __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_5, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 390, __pyx_L1_error)
-              __Pyx_GOTREF(__pyx_t_2);
-              __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+              __pyx_t_12 = PyTuple_New(1+1); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 388, __pyx_L1_error)
+              __Pyx_GOTREF(__pyx_t_12);
+              __Pyx_GIVEREF(__pyx_t_9); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_9); __pyx_t_9 = NULL;
+              __Pyx_GIVEREF(__pyx_t_5);
+              PyTuple_SET_ITEM(__pyx_t_12, 0+1, __pyx_t_5);
+              __pyx_t_5 = 0;
+              __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_12, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 388, __pyx_L1_error)
+              __Pyx_GOTREF(__pyx_t_7);
+              __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
             }
           }
-          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-          /* "socrates_ancient.pyx":391
- *                     if thisBestMove != None:
+          /* "socrates_ancient.py":390
  *                         eprint("[INTERRUPT ROOT] %s %d @ Move %d" % (thisBestMove, thisBestScore, counter))
- *                         return thisBestMove, thisBestScore             # <<<<<<<<<<<<<<
+ *                         # return thisBestMove, thisBestScore
+ *                         return chess.Move.null(), -INFINITY - 1             # <<<<<<<<<<<<<<
  *                     else:
  *                         eprint("[INTERRUPT ROOT] %s %d @ Move %d" % (thisBestMove, thisBestScore, counter))
  */
           __Pyx_XDECREF(__pyx_r);
-          __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 391, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_chess); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 390, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_INCREF(__pyx_v_thisBestMove);
-          __Pyx_GIVEREF(__pyx_v_thisBestMove);
-          PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_thisBestMove);
-          __Pyx_INCREF(__pyx_v_thisBestScore);
-          __Pyx_GIVEREF(__pyx_v_thisBestScore);
-          PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_v_thisBestScore);
-          __pyx_r = __pyx_t_2;
+          __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Move); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 390, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_12);
+          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_null); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 390, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_2);
+          __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+          __pyx_t_12 = NULL;
+          if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
+            __pyx_t_12 = PyMethod_GET_SELF(__pyx_t_2);
+            if (likely(__pyx_t_12)) {
+              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+              __Pyx_INCREF(__pyx_t_12);
+              __Pyx_INCREF(function);
+              __Pyx_DECREF_SET(__pyx_t_2, function);
+            }
+          }
+          if (__pyx_t_12) {
+            __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_12); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 390, __pyx_L1_error)
+            __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+          } else {
+            __pyx_t_7 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 390, __pyx_L1_error)
+          }
+          __Pyx_GOTREF(__pyx_t_7);
+          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+          __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 390, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_2);
+          __pyx_t_12 = PyNumber_Negative(__pyx_t_2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 390, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_12);
+          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+          __pyx_t_2 = __Pyx_PyInt_SubtractObjC(__pyx_t_12, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 390, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_2);
+          __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+          __pyx_t_12 = PyTuple_New(2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 390, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_12);
+          __Pyx_GIVEREF(__pyx_t_7);
+          PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_7);
+          __Pyx_GIVEREF(__pyx_t_2);
+          PyTuple_SET_ITEM(__pyx_t_12, 1, __pyx_t_2);
+          __pyx_t_7 = 0;
           __pyx_t_2 = 0;
+          __pyx_r = __pyx_t_12;
+          __pyx_t_12 = 0;
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           goto __pyx_L0;
 
-          /* "socrates_ancient.pyx":389
- *             if score == INFINITY + 1 or score == INFINITY - 1:
+          /* "socrates_ancient.py":387
+ *             if score == INFINITY + 1 or score == -INFINITY - 1:
  *                 if root:
  *                     if thisBestMove != None:             # <<<<<<<<<<<<<<
  *                         eprint("[INTERRUPT ROOT] %s %d @ Move %d" % (thisBestMove, thisBestScore, counter))
- *                         return thisBestMove, thisBestScore
+ *                         # return thisBestMove, thisBestScore
  */
         }
 
-        /* "socrates_ancient.pyx":393
- *                         return thisBestMove, thisBestScore
+        /* "socrates_ancient.py":392
+ *                         return chess.Move.null(), -INFINITY - 1
  *                     else:
  *                         eprint("[INTERRUPT ROOT] %s %d @ Move %d" % (thisBestMove, thisBestScore, counter))             # <<<<<<<<<<<<<<
  *                         return chess.Move.null(), -INFINITY - 1
  *                 else:
  */
         /*else*/ {
-          __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_eprint); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 393, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_eprint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 392, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_2);
+          __pyx_t_7 = PyTuple_New(3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 392, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_7);
-          __pyx_t_5 = PyTuple_New(3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 393, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_5);
           __Pyx_INCREF(__pyx_v_thisBestMove);
           __Pyx_GIVEREF(__pyx_v_thisBestMove);
-          PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_v_thisBestMove);
+          PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_v_thisBestMove);
           __Pyx_INCREF(__pyx_v_thisBestScore);
           __Pyx_GIVEREF(__pyx_v_thisBestScore);
-          PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_v_thisBestScore);
+          PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_v_thisBestScore);
           __Pyx_INCREF(__pyx_v_counter);
           __Pyx_GIVEREF(__pyx_v_counter);
-          PyTuple_SET_ITEM(__pyx_t_5, 2, __pyx_v_counter);
-          __pyx_t_12 = __Pyx_PyString_Format(__pyx_kp_s_INTERRUPT_ROOT_s_d_Move_d, __pyx_t_5); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 393, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_12);
-          __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-          __pyx_t_5 = NULL;
-          if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_7))) {
-            __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_7);
-            if (likely(__pyx_t_5)) {
-              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-              __Pyx_INCREF(__pyx_t_5);
+          PyTuple_SET_ITEM(__pyx_t_7, 2, __pyx_v_counter);
+          __pyx_t_5 = __Pyx_PyString_Format(__pyx_kp_s_INTERRUPT_ROOT_s_d_Move_d, __pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 392, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_5);
+          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+          __pyx_t_7 = NULL;
+          if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
+            __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_2);
+            if (likely(__pyx_t_7)) {
+              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+              __Pyx_INCREF(__pyx_t_7);
               __Pyx_INCREF(function);
-              __Pyx_DECREF_SET(__pyx_t_7, function);
+              __Pyx_DECREF_SET(__pyx_t_2, function);
             }
           }
-          if (!__pyx_t_5) {
-            __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_12); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 393, __pyx_L1_error)
-            __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-            __Pyx_GOTREF(__pyx_t_2);
+          if (!__pyx_t_7) {
+            __pyx_t_12 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 392, __pyx_L1_error)
+            __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+            __Pyx_GOTREF(__pyx_t_12);
           } else {
             #if CYTHON_FAST_PYCALL
-            if (PyFunction_Check(__pyx_t_7)) {
-              PyObject *__pyx_temp[2] = {__pyx_t_5, __pyx_t_12};
-              __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 393, __pyx_L1_error)
-              __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-              __Pyx_GOTREF(__pyx_t_2);
-              __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+            if (PyFunction_Check(__pyx_t_2)) {
+              PyObject *__pyx_temp[2] = {__pyx_t_7, __pyx_t_5};
+              __pyx_t_12 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 392, __pyx_L1_error)
+              __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+              __Pyx_GOTREF(__pyx_t_12);
+              __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
             } else
             #endif
             #if CYTHON_FAST_PYCCALL
-            if (__Pyx_PyFastCFunction_Check(__pyx_t_7)) {
-              PyObject *__pyx_temp[2] = {__pyx_t_5, __pyx_t_12};
-              __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 393, __pyx_L1_error)
-              __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-              __Pyx_GOTREF(__pyx_t_2);
-              __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+            if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
+              PyObject *__pyx_temp[2] = {__pyx_t_7, __pyx_t_5};
+              __pyx_t_12 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 392, __pyx_L1_error)
+              __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+              __Pyx_GOTREF(__pyx_t_12);
+              __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
             } else
             #endif
             {
-              __pyx_t_9 = PyTuple_New(1+1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 393, __pyx_L1_error)
+              __pyx_t_9 = PyTuple_New(1+1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 392, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_9);
-              __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_5); __pyx_t_5 = NULL;
-              __Pyx_GIVEREF(__pyx_t_12);
-              PyTuple_SET_ITEM(__pyx_t_9, 0+1, __pyx_t_12);
-              __pyx_t_12 = 0;
-              __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_9, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 393, __pyx_L1_error)
-              __Pyx_GOTREF(__pyx_t_2);
+              __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_7); __pyx_t_7 = NULL;
+              __Pyx_GIVEREF(__pyx_t_5);
+              PyTuple_SET_ITEM(__pyx_t_9, 0+1, __pyx_t_5);
+              __pyx_t_5 = 0;
+              __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_9, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 392, __pyx_L1_error)
+              __Pyx_GOTREF(__pyx_t_12);
               __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
             }
           }
-          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+          __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-          /* "socrates_ancient.pyx":394
+          /* "socrates_ancient.py":393
  *                     else:
  *                         eprint("[INTERRUPT ROOT] %s %d @ Move %d" % (thisBestMove, thisBestScore, counter))
  *                         return chess.Move.null(), -INFINITY - 1             # <<<<<<<<<<<<<<
@@ -9616,64 +9553,64 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  *                     eprint("[INTERRUPT] %s %d @ Move %d" % (thisBestMove, thisBestScore, counter))
  */
           __Pyx_XDECREF(__pyx_r);
-          __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_chess); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 394, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_7);
-          __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_Move); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 394, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_chess); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 393, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_2);
+          __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Move); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 393, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_9);
-          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-          __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_null); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 394, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_7);
+          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_null); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 393, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
           __pyx_t_9 = NULL;
-          if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
-            __pyx_t_9 = PyMethod_GET_SELF(__pyx_t_7);
+          if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
+            __pyx_t_9 = PyMethod_GET_SELF(__pyx_t_2);
             if (likely(__pyx_t_9)) {
-              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
               __Pyx_INCREF(__pyx_t_9);
               __Pyx_INCREF(function);
-              __Pyx_DECREF_SET(__pyx_t_7, function);
+              __Pyx_DECREF_SET(__pyx_t_2, function);
             }
           }
           if (__pyx_t_9) {
-            __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 394, __pyx_L1_error)
+            __pyx_t_12 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_9); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 393, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
           } else {
-            __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 394, __pyx_L1_error)
+            __pyx_t_12 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 393, __pyx_L1_error)
           }
+          __Pyx_GOTREF(__pyx_t_12);
+          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+          __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 393, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-          __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 394, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_7);
-          __pyx_t_9 = PyNumber_Negative(__pyx_t_7); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 394, __pyx_L1_error)
+          __pyx_t_9 = PyNumber_Negative(__pyx_t_2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 393, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_9);
-          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-          __pyx_t_7 = __Pyx_PyInt_SubtractObjC(__pyx_t_9, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 394, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_7);
+          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+          __pyx_t_2 = __Pyx_PyInt_SubtractObjC(__pyx_t_9, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 393, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-          __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 394, __pyx_L1_error)
+          __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 393, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_9);
+          __Pyx_GIVEREF(__pyx_t_12);
+          PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_12);
           __Pyx_GIVEREF(__pyx_t_2);
-          PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_2);
-          __Pyx_GIVEREF(__pyx_t_7);
-          PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_7);
+          PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_2);
+          __pyx_t_12 = 0;
           __pyx_t_2 = 0;
-          __pyx_t_7 = 0;
           __pyx_r = __pyx_t_9;
           __pyx_t_9 = 0;
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           goto __pyx_L0;
         }
 
-        /* "socrates_ancient.pyx":388
+        /* "socrates_ancient.py":386
  * 
- *             if score == INFINITY + 1 or score == INFINITY - 1:
+ *             if score == INFINITY + 1 or score == -INFINITY - 1:
  *                 if root:             # <<<<<<<<<<<<<<
  *                     if thisBestMove != None:
  *                         eprint("[INTERRUPT ROOT] %s %d @ Move %d" % (thisBestMove, thisBestScore, counter))
  */
       }
 
-      /* "socrates_ancient.pyx":396
+      /* "socrates_ancient.py":395
  *                         return chess.Move.null(), -INFINITY - 1
  *                 else:
  *                     eprint("[INTERRUPT] %s %d @ Move %d" % (thisBestMove, thisBestScore, counter))             # <<<<<<<<<<<<<<
@@ -9681,71 +9618,71 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  * 
  */
       /*else*/ {
-        __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_eprint); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 396, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_2 = PyTuple_New(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 396, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_eprint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 395, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
+        __pyx_t_12 = PyTuple_New(3); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 395, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_12);
         __Pyx_INCREF(__pyx_v_thisBestMove);
         __Pyx_GIVEREF(__pyx_v_thisBestMove);
-        PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_thisBestMove);
+        PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_v_thisBestMove);
         __Pyx_INCREF(__pyx_v_thisBestScore);
         __Pyx_GIVEREF(__pyx_v_thisBestScore);
-        PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_v_thisBestScore);
+        PyTuple_SET_ITEM(__pyx_t_12, 1, __pyx_v_thisBestScore);
         __Pyx_INCREF(__pyx_v_counter);
         __Pyx_GIVEREF(__pyx_v_counter);
-        PyTuple_SET_ITEM(__pyx_t_2, 2, __pyx_v_counter);
-        __pyx_t_12 = __Pyx_PyString_Format(__pyx_kp_s_INTERRUPT_s_d_Move_d, __pyx_t_2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 396, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_12);
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __pyx_t_2 = NULL;
-        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_7))) {
-          __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_7);
-          if (likely(__pyx_t_2)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-            __Pyx_INCREF(__pyx_t_2);
+        PyTuple_SET_ITEM(__pyx_t_12, 2, __pyx_v_counter);
+        __pyx_t_5 = __Pyx_PyString_Format(__pyx_kp_s_INTERRUPT_s_d_Move_d, __pyx_t_12); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 395, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+        __pyx_t_12 = NULL;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
+          __pyx_t_12 = PyMethod_GET_SELF(__pyx_t_2);
+          if (likely(__pyx_t_12)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+            __Pyx_INCREF(__pyx_t_12);
             __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_7, function);
+            __Pyx_DECREF_SET(__pyx_t_2, function);
           }
         }
-        if (!__pyx_t_2) {
-          __pyx_t_9 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_12); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 396, __pyx_L1_error)
-          __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+        if (!__pyx_t_12) {
+          __pyx_t_9 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 395, __pyx_L1_error)
+          __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
           __Pyx_GOTREF(__pyx_t_9);
         } else {
           #if CYTHON_FAST_PYCALL
-          if (PyFunction_Check(__pyx_t_7)) {
-            PyObject *__pyx_temp[2] = {__pyx_t_2, __pyx_t_12};
-            __pyx_t_9 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 396, __pyx_L1_error)
-            __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+          if (PyFunction_Check(__pyx_t_2)) {
+            PyObject *__pyx_temp[2] = {__pyx_t_12, __pyx_t_5};
+            __pyx_t_9 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 395, __pyx_L1_error)
+            __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
             __Pyx_GOTREF(__pyx_t_9);
-            __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+            __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
           } else
           #endif
           #if CYTHON_FAST_PYCCALL
-          if (__Pyx_PyFastCFunction_Check(__pyx_t_7)) {
-            PyObject *__pyx_temp[2] = {__pyx_t_2, __pyx_t_12};
-            __pyx_t_9 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 396, __pyx_L1_error)
-            __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+          if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
+            PyObject *__pyx_temp[2] = {__pyx_t_12, __pyx_t_5};
+            __pyx_t_9 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 395, __pyx_L1_error)
+            __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
             __Pyx_GOTREF(__pyx_t_9);
-            __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+            __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
           } else
           #endif
           {
-            __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 396, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_5);
-            __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2); __pyx_t_2 = NULL;
-            __Pyx_GIVEREF(__pyx_t_12);
-            PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_t_12);
-            __pyx_t_12 = 0;
-            __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_5, NULL); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 396, __pyx_L1_error)
+            __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 395, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_7);
+            __Pyx_GIVEREF(__pyx_t_12); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_12); __pyx_t_12 = NULL;
+            __Pyx_GIVEREF(__pyx_t_5);
+            PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_t_5);
+            __pyx_t_5 = 0;
+            __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_7, NULL); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 395, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_9);
-            __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+            __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
           }
         }
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-        /* "socrates_ancient.pyx":397
+        /* "socrates_ancient.py":396
  *                 else:
  *                     eprint("[INTERRUPT] %s %d @ Move %d" % (thisBestMove, thisBestScore, counter))
  *                     return -INFINITY - 1             # <<<<<<<<<<<<<<
@@ -9753,78 +9690,78 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  *             if not root and time.time() > self.futureTime:
  */
         __Pyx_XDECREF(__pyx_r);
-        __pyx_t_9 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 397, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 396, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
-        __pyx_t_7 = PyNumber_Negative(__pyx_t_9); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 397, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
+        __pyx_t_2 = PyNumber_Negative(__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 396, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_9 = __Pyx_PyInt_SubtractObjC(__pyx_t_7, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 397, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyInt_SubtractObjC(__pyx_t_2, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 396, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_r = __pyx_t_9;
         __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         goto __pyx_L0;
       }
 
-      /* "socrates_ancient.pyx":387
+      /* "socrates_ancient.py":385
  *             self.game.board.pop()
  * 
- *             if score == INFINITY + 1 or score == INFINITY - 1:             # <<<<<<<<<<<<<<
+ *             if score == INFINITY + 1 or score == -INFINITY - 1:             # <<<<<<<<<<<<<<
  *                 if root:
  *                     if thisBestMove != None:
  */
     }
 
-    /* "socrates_ancient.pyx":399
+    /* "socrates_ancient.py":398
  *                     return -INFINITY - 1
  * 
  *             if not root and time.time() > self.futureTime:             # <<<<<<<<<<<<<<
  *                 return - INFINITY - 1
  * 
  */
-    __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_v_root); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 399, __pyx_L1_error)
-    __pyx_t_15 = ((!__pyx_t_8) != 0);
-    if (__pyx_t_15) {
+    __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_v_root); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 398, __pyx_L1_error)
+    __pyx_t_14 = ((!__pyx_t_8) != 0);
+    if (__pyx_t_14) {
     } else {
-      __pyx_t_4 = __pyx_t_15;
+      __pyx_t_4 = __pyx_t_14;
       goto __pyx_L32_bool_binop_done;
     }
-    __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_time); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 399, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_time); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 398, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_time); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 398, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_time); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 399, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = NULL;
-    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_5))) {
-      __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_5);
-      if (likely(__pyx_t_7)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
-        __Pyx_INCREF(__pyx_t_7);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_2 = NULL;
+    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_7))) {
+      __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_7);
+      if (likely(__pyx_t_2)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+        __Pyx_INCREF(__pyx_t_2);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_5, function);
+        __Pyx_DECREF_SET(__pyx_t_7, function);
       }
     }
-    if (__pyx_t_7) {
-      __pyx_t_9 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_7); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 399, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    if (__pyx_t_2) {
+      __pyx_t_9 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 398, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     } else {
-      __pyx_t_9 = __Pyx_PyObject_CallNoArg(__pyx_t_5); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 399, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyObject_CallNoArg(__pyx_t_7); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 398, __pyx_L1_error)
     }
     __Pyx_GOTREF(__pyx_t_9);
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_futureTime); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 399, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_7 = PyObject_RichCompare(__pyx_t_9, __pyx_t_5, Py_GT); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 399, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 399, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_4 = __pyx_t_15;
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_futureTime); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 398, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
+    __pyx_t_2 = PyObject_RichCompare(__pyx_t_9, __pyx_t_7, Py_GT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 398, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_14 < 0)) __PYX_ERR(0, 398, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_4 = __pyx_t_14;
     __pyx_L32_bool_binop_done:;
     if (__pyx_t_4) {
 
-      /* "socrates_ancient.pyx":400
+      /* "socrates_ancient.py":399
  * 
  *             if not root and time.time() > self.futureTime:
  *                 return - INFINITY - 1             # <<<<<<<<<<<<<<
@@ -9832,20 +9769,20 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  *             #logPrint(depthLeft, move, "", score)
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 400, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_INFINITY); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 399, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_7 = PyNumber_Negative(__pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 399, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_5 = PyNumber_Negative(__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 400, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_5);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_2 = __Pyx_PyInt_SubtractObjC(__pyx_t_7, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 399, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_7 = __Pyx_PyInt_SubtractObjC(__pyx_t_5, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 400, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_r = __pyx_t_7;
-      __pyx_t_7 = 0;
+      __pyx_r = __pyx_t_2;
+      __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       goto __pyx_L0;
 
-      /* "socrates_ancient.pyx":399
+      /* "socrates_ancient.py":398
  *                     return -INFINITY - 1
  * 
  *             if not root and time.time() > self.futureTime:             # <<<<<<<<<<<<<<
@@ -9854,34 +9791,34 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
     }
 
-    /* "socrates_ancient.pyx":403
- * 
+    /* "socrates_ancient.py":403
  *             #logPrint(depthLeft, move, "", score)
+ *             # >= ?
  *             if score > beta:             # <<<<<<<<<<<<<<
  *                 #  Beta-
  *                 #logPrint(depthLeft, move, " Beta ", beta)
  */
-    __pyx_t_7 = PyObject_RichCompare(__pyx_v_score, __pyx_v_beta, Py_GT); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 403, __pyx_L1_error)
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 403, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __pyx_t_2 = PyObject_RichCompare(__pyx_v_score, __pyx_v_beta, Py_GT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 403, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 403, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (__pyx_t_4) {
 
-      /* "socrates_ancient.pyx":406
+      /* "socrates_ancient.py":406
  *                 #  Beta-
  *                 #logPrint(depthLeft, move, " Beta ", beta)
  *                 thisNodeType = NodeType.LOWER_BOUND             # <<<<<<<<<<<<<<
  *                 thisBestScore = score
  *                 thisBestMove = move
  */
-      __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_NodeType); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 406, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_NodeType); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 406, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_LOWER_BOUND); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 406, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_LOWER_BOUND); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 406, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_5);
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_DECREF_SET(__pyx_v_thisNodeType, __pyx_t_5);
-      __pyx_t_5 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_DECREF_SET(__pyx_v_thisNodeType, __pyx_t_7);
+      __pyx_t_7 = 0;
 
-      /* "socrates_ancient.pyx":407
+      /* "socrates_ancient.py":407
  *                 #logPrint(depthLeft, move, " Beta ", beta)
  *                 thisNodeType = NodeType.LOWER_BOUND
  *                 thisBestScore = score             # <<<<<<<<<<<<<<
@@ -9891,7 +9828,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       __Pyx_INCREF(__pyx_v_score);
       __Pyx_DECREF_SET(__pyx_v_thisBestScore, __pyx_v_score);
 
-      /* "socrates_ancient.pyx":408
+      /* "socrates_ancient.py":408
  *                 thisNodeType = NodeType.LOWER_BOUND
  *                 thisBestScore = score
  *                 thisBestMove = move             # <<<<<<<<<<<<<<
@@ -9901,7 +9838,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       __Pyx_INCREF(__pyx_v_move);
       __Pyx_DECREF_SET(__pyx_v_thisBestMove, __pyx_v_move);
 
-      /* "socrates_ancient.pyx":409
+      /* "socrates_ancient.py":409
  *                 thisBestScore = score
  *                 thisBestMove = move
  *                 break             # <<<<<<<<<<<<<<
@@ -9910,28 +9847,28 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
       goto __pyx_L20_break;
 
-      /* "socrates_ancient.pyx":403
- * 
+      /* "socrates_ancient.py":403
  *             #logPrint(depthLeft, move, "", score)
+ *             # >= ?
  *             if score > beta:             # <<<<<<<<<<<<<<
  *                 #  Beta-
  *                 #logPrint(depthLeft, move, " Beta ", beta)
  */
     }
 
-    /* "socrates_ancient.pyx":411
+    /* "socrates_ancient.py":411
  *                 break
  * 
  *             if score > thisBestScore:             # <<<<<<<<<<<<<<
  *                 #logPrint(depthLeft, move, " thisBestScore", thisBestScore, "", score)
  *                 thisBestScore = score
  */
-    __pyx_t_5 = PyObject_RichCompare(__pyx_v_score, __pyx_v_thisBestScore, Py_GT); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 411, __pyx_L1_error)
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 411, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_7 = PyObject_RichCompare(__pyx_v_score, __pyx_v_thisBestScore, Py_GT); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 411, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 411, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     if (__pyx_t_4) {
 
-      /* "socrates_ancient.pyx":413
+      /* "socrates_ancient.py":413
  *             if score > thisBestScore:
  *                 #logPrint(depthLeft, move, " thisBestScore", thisBestScore, "", score)
  *                 thisBestScore = score             # <<<<<<<<<<<<<<
@@ -9941,7 +9878,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       __Pyx_INCREF(__pyx_v_score);
       __Pyx_DECREF_SET(__pyx_v_thisBestScore, __pyx_v_score);
 
-      /* "socrates_ancient.pyx":414
+      /* "socrates_ancient.py":414
  *                 #logPrint(depthLeft, move, " thisBestScore", thisBestScore, "", score)
  *                 thisBestScore = score
  *                 thisBestMove = move             # <<<<<<<<<<<<<<
@@ -9951,7 +9888,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       __Pyx_INCREF(__pyx_v_move);
       __Pyx_DECREF_SET(__pyx_v_thisBestMove, __pyx_v_move);
 
-      /* "socrates_ancient.pyx":411
+      /* "socrates_ancient.py":411
  *                 break
  * 
  *             if score > thisBestScore:             # <<<<<<<<<<<<<<
@@ -9960,21 +9897,21 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
     }
 
-    /* "socrates_ancient.pyx":416
+    /* "socrates_ancient.py":416
  *                 thisBestMove = move
  * 
  *             if score <= alpha:             # <<<<<<<<<<<<<<
  *                 #  Alpha
  *                 pass
  */
-    __pyx_t_5 = PyObject_RichCompare(__pyx_v_score, __pyx_v_alpha, Py_LE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 416, __pyx_L1_error)
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 416, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_7 = PyObject_RichCompare(__pyx_v_score, __pyx_v_alpha, Py_LE); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 416, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 416, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     if (__pyx_t_4) {
       goto __pyx_L36;
     }
 
-    /* "socrates_ancient.pyx":421
+    /* "socrates_ancient.py":421
  *             else:
  *                 #  Alpha [Alpha, Beta]  PV Move
  *                 thisNodeType = NodeType.EXACT             # <<<<<<<<<<<<<<
@@ -9982,15 +9919,15 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  *                 alpha = score
  */
     /*else*/ {
-      __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_NodeType); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 421, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_EXACT); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 421, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_NodeType); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 421, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __Pyx_DECREF_SET(__pyx_v_thisNodeType, __pyx_t_7);
-      __pyx_t_7 = 0;
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_EXACT); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 421, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __Pyx_DECREF_SET(__pyx_v_thisNodeType, __pyx_t_2);
+      __pyx_t_2 = 0;
 
-      /* "socrates_ancient.pyx":423
+      /* "socrates_ancient.py":423
  *                 thisNodeType = NodeType.EXACT
  *                 #logPrint(depthLeft, move, " alpha", alpha, "", score)
  *                 alpha = score             # <<<<<<<<<<<<<<
@@ -10002,7 +9939,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     }
     __pyx_L36:;
 
-    /* "socrates_ancient.pyx":360
+    /* "socrates_ancient.py":358
  * 
  *         #logPrint(depthLeft, "", "alpha", alpha, "beta", beta)
  *         for move in moves:             # <<<<<<<<<<<<<<
@@ -10013,7 +9950,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
   __pyx_L20_break:;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":428
+  /* "socrates_ancient.py":428
  *         #assert(thisBestScore != -INFINITY)
  * 
  *         if iCanReplaceThisTransposition:             # <<<<<<<<<<<<<<
@@ -10023,109 +9960,109 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
   __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_iCanReplaceThisTransposition); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 428, __pyx_L1_error)
   if (__pyx_t_4) {
 
-    /* "socrates_ancient.pyx":429
+    /* "socrates_ancient.py":429
  * 
  *         if iCanReplaceThisTransposition:
  *             self.storeTranspositionTable(thisHash, depthLeft, thisBestScore if self.failType == FailType.FAILSOFT else (beta if thisNodeType == NodeType.LOWER_BOUND else alpha), thisNodeType, thisBestMove)             # <<<<<<<<<<<<<<
  * 
  *         if thisNodeType == NodeType.LOWER_BOUND:
  */
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_storeTranspositionTable); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 429, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_storeTranspositionTable); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 429, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_failType); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 429, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_12 = __Pyx_GetModuleGlobalName(__pyx_n_s_FailType); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 429, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_FailType); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 429, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_FAILSOFT); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 429, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_12);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_FAILSOFT); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 429, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-    __pyx_t_12 = PyObject_RichCompare(__pyx_t_9, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_12); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 429, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_5 = PyObject_RichCompare(__pyx_t_9, __pyx_t_12, Py_EQ); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 429, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 429, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 429, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     if (__pyx_t_4) {
       __Pyx_INCREF(__pyx_v_thisBestScore);
-      __pyx_t_5 = __pyx_v_thisBestScore;
+      __pyx_t_7 = __pyx_v_thisBestScore;
     } else {
-      __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_NodeType); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 429, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_LOWER_BOUND); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 429, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_GetModuleGlobalName(__pyx_n_s_NodeType); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 429, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
+      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_LOWER_BOUND); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 429, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = PyObject_RichCompare(__pyx_v_thisNodeType, __pyx_t_9, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 429, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+      __pyx_t_12 = PyObject_RichCompare(__pyx_v_thisNodeType, __pyx_t_9, Py_EQ); __Pyx_XGOTREF(__pyx_t_12); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 429, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 429, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      if (__pyx_t_15) {
+      __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_14 < 0)) __PYX_ERR(0, 429, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+      if (__pyx_t_14) {
         __Pyx_INCREF(__pyx_v_beta);
-        __pyx_t_12 = __pyx_v_beta;
+        __pyx_t_5 = __pyx_v_beta;
       } else {
         __Pyx_INCREF(__pyx_v_alpha);
-        __pyx_t_12 = __pyx_v_alpha;
+        __pyx_t_5 = __pyx_v_alpha;
       }
-      __pyx_t_5 = __pyx_t_12;
-      __pyx_t_12 = 0;
+      __pyx_t_7 = __pyx_t_5;
+      __pyx_t_5 = 0;
     }
-    __pyx_t_12 = NULL;
+    __pyx_t_5 = NULL;
     __pyx_t_6 = 0;
-    if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
-      __pyx_t_12 = PyMethod_GET_SELF(__pyx_t_7);
-      if (likely(__pyx_t_12)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-        __Pyx_INCREF(__pyx_t_12);
+    if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
+      __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_2);
+      if (likely(__pyx_t_5)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+        __Pyx_INCREF(__pyx_t_5);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_7, function);
+        __Pyx_DECREF_SET(__pyx_t_2, function);
         __pyx_t_6 = 1;
       }
     }
     #if CYTHON_FAST_PYCALL
-    if (PyFunction_Check(__pyx_t_7)) {
-      PyObject *__pyx_temp[6] = {__pyx_t_12, __pyx_v_thisHash, __pyx_v_depthLeft, __pyx_t_5, __pyx_v_thisNodeType, __pyx_v_thisBestMove};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_6, 5+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 429, __pyx_L1_error)
-      __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
+    if (PyFunction_Check(__pyx_t_2)) {
+      PyObject *__pyx_temp[6] = {__pyx_t_5, __pyx_v_thisHash, __pyx_v_depthLeft, __pyx_t_7, __pyx_v_thisNodeType, __pyx_v_thisBestMove};
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 5+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 429, __pyx_L1_error)
+      __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     } else
     #endif
     #if CYTHON_FAST_PYCCALL
-    if (__Pyx_PyFastCFunction_Check(__pyx_t_7)) {
-      PyObject *__pyx_temp[6] = {__pyx_t_12, __pyx_v_thisHash, __pyx_v_depthLeft, __pyx_t_5, __pyx_v_thisNodeType, __pyx_v_thisBestMove};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_6, 5+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 429, __pyx_L1_error)
-      __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
+    if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
+      PyObject *__pyx_temp[6] = {__pyx_t_5, __pyx_v_thisHash, __pyx_v_depthLeft, __pyx_t_7, __pyx_v_thisNodeType, __pyx_v_thisBestMove};
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 5+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 429, __pyx_L1_error)
+      __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     } else
     #endif
     {
-      __pyx_t_2 = PyTuple_New(5+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 429, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
-      if (__pyx_t_12) {
-        __Pyx_GIVEREF(__pyx_t_12); PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_12); __pyx_t_12 = NULL;
+      __pyx_t_12 = PyTuple_New(5+__pyx_t_6); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 429, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
+      if (__pyx_t_5) {
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_5); __pyx_t_5 = NULL;
       }
       __Pyx_INCREF(__pyx_v_thisHash);
       __Pyx_GIVEREF(__pyx_v_thisHash);
-      PyTuple_SET_ITEM(__pyx_t_2, 0+__pyx_t_6, __pyx_v_thisHash);
+      PyTuple_SET_ITEM(__pyx_t_12, 0+__pyx_t_6, __pyx_v_thisHash);
       __Pyx_INCREF(__pyx_v_depthLeft);
       __Pyx_GIVEREF(__pyx_v_depthLeft);
-      PyTuple_SET_ITEM(__pyx_t_2, 1+__pyx_t_6, __pyx_v_depthLeft);
-      __Pyx_GIVEREF(__pyx_t_5);
-      PyTuple_SET_ITEM(__pyx_t_2, 2+__pyx_t_6, __pyx_t_5);
+      PyTuple_SET_ITEM(__pyx_t_12, 1+__pyx_t_6, __pyx_v_depthLeft);
+      __Pyx_GIVEREF(__pyx_t_7);
+      PyTuple_SET_ITEM(__pyx_t_12, 2+__pyx_t_6, __pyx_t_7);
       __Pyx_INCREF(__pyx_v_thisNodeType);
       __Pyx_GIVEREF(__pyx_v_thisNodeType);
-      PyTuple_SET_ITEM(__pyx_t_2, 3+__pyx_t_6, __pyx_v_thisNodeType);
+      PyTuple_SET_ITEM(__pyx_t_12, 3+__pyx_t_6, __pyx_v_thisNodeType);
       __Pyx_INCREF(__pyx_v_thisBestMove);
       __Pyx_GIVEREF(__pyx_v_thisBestMove);
-      PyTuple_SET_ITEM(__pyx_t_2, 4+__pyx_t_6, __pyx_v_thisBestMove);
-      __pyx_t_5 = 0;
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 429, __pyx_L1_error)
+      PyTuple_SET_ITEM(__pyx_t_12, 4+__pyx_t_6, __pyx_v_thisBestMove);
+      __pyx_t_7 = 0;
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_12, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 429, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
     }
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "socrates_ancient.pyx":428
+    /* "socrates_ancient.py":428
  *         #assert(thisBestScore != -INFINITY)
  * 
  *         if iCanReplaceThisTransposition:             # <<<<<<<<<<<<<<
@@ -10134,7 +10071,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
   }
 
-  /* "socrates_ancient.pyx":431
+  /* "socrates_ancient.py":431
  *             self.storeTranspositionTable(thisHash, depthLeft, thisBestScore if self.failType == FailType.FAILSOFT else (beta if thisNodeType == NodeType.LOWER_BOUND else alpha), thisNodeType, thisBestMove)
  * 
  *         if thisNodeType == NodeType.LOWER_BOUND:             # <<<<<<<<<<<<<<
@@ -10143,16 +10080,16 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
   __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_NodeType); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 431, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_LOWER_BOUND); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 431, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_7);
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_LOWER_BOUND); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 431, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_thisNodeType, __pyx_t_7, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 431, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_thisNodeType, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 431, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 431, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_4) {
 
-    /* "socrates_ancient.pyx":432
+    /* "socrates_ancient.py":432
  * 
  *         if thisNodeType == NodeType.LOWER_BOUND:
  *             if thisBestMove in self.moveRatings:             # <<<<<<<<<<<<<<
@@ -10163,10 +10100,10 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_4 = (__Pyx_PySequence_ContainsTF(__pyx_v_thisBestMove, __pyx_t_1, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 432, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_15 = (__pyx_t_4 != 0);
-    if (__pyx_t_15) {
+    __pyx_t_14 = (__pyx_t_4 != 0);
+    if (__pyx_t_14) {
 
-      /* "socrates_ancient.pyx":433
+      /* "socrates_ancient.py":433
  *         if thisNodeType == NodeType.LOWER_BOUND:
  *             if thisBestMove in self.moveRatings:
  *                 self.moveRatings[thisBestMove] += 2 << (depthLeft >> 3)             # <<<<<<<<<<<<<<
@@ -10176,24 +10113,24 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_moveRatings); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 433, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_INCREF(__pyx_v_thisBestMove);
-      __pyx_t_7 = __pyx_v_thisBestMove;
-      __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 433, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_5 = __Pyx_PyInt_RshiftObjC(__pyx_v_depthLeft, __pyx_int_3, 3, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 433, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_12 = PyNumber_Lshift(__pyx_int_2, __pyx_t_5); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 433, __pyx_L1_error)
+      __pyx_t_2 = __pyx_v_thisBestMove;
+      __pyx_t_12 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 433, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = PyNumber_InPlaceAdd(__pyx_t_2, __pyx_t_12); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 433, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyInt_RshiftObjC(__pyx_v_depthLeft, __pyx_int_3, 3, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 433, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_7);
+      __pyx_t_5 = PyNumber_Lshift(__pyx_int_2, __pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 433, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      if (unlikely(PyObject_SetItem(__pyx_t_1, __pyx_t_7, __pyx_t_5) < 0)) __PYX_ERR(0, 433, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __pyx_t_7 = PyNumber_InPlaceAdd(__pyx_t_12, __pyx_t_5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 433, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_7);
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      if (unlikely(PyObject_SetItem(__pyx_t_1, __pyx_t_2, __pyx_t_7) < 0)) __PYX_ERR(0, 433, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "socrates_ancient.pyx":432
+      /* "socrates_ancient.py":432
  * 
  *         if thisNodeType == NodeType.LOWER_BOUND:
  *             if thisBestMove in self.moveRatings:             # <<<<<<<<<<<<<<
@@ -10203,7 +10140,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       goto __pyx_L39;
     }
 
-    /* "socrates_ancient.pyx":435
+    /* "socrates_ancient.py":435
  *                 self.moveRatings[thisBestMove] += 2 << (depthLeft >> 3)
  *             else:
  *                 self.moveRatings[thisBestMove] = 2 << (depthLeft >> 3)             # <<<<<<<<<<<<<<
@@ -10213,97 +10150,97 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     /*else*/ {
       __pyx_t_1 = __Pyx_PyInt_RshiftObjC(__pyx_v_depthLeft, __pyx_int_3, 3, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 435, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_7 = PyNumber_Lshift(__pyx_int_2, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 435, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
+      __pyx_t_2 = PyNumber_Lshift(__pyx_int_2, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 435, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_moveRatings); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 435, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (unlikely(PyObject_SetItem(__pyx_t_1, __pyx_v_thisBestMove, __pyx_t_7) < 0)) __PYX_ERR(0, 435, __pyx_L1_error)
+      if (unlikely(PyObject_SetItem(__pyx_t_1, __pyx_v_thisBestMove, __pyx_t_2) < 0)) __PYX_ERR(0, 435, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     }
     __pyx_L39:;
 
-    /* "socrates_ancient.pyx":437
+    /* "socrates_ancient.py":437
  *                 self.moveRatings[thisBestMove] = 2 << (depthLeft >> 3)
  * 
  *             if self.killerMoves[ply][0] != thisBestMove and self.killerMoves[ply][1] != thisBestMove:             # <<<<<<<<<<<<<<
  *                 self.killerMoves[ply][0] = self.killerMoves[ply][1]
  *                 self.killerMoves[ply][1] = thisBestMove
  */
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_killerMoves); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 437, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_7, __pyx_v_ply); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 437, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_killerMoves); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 437, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_ply); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 437, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 437, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 437, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyObject_RichCompare(__pyx_t_7, __pyx_v_thisBestMove, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 437, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __pyx_t_1 = PyObject_RichCompare(__pyx_t_2, __pyx_v_thisBestMove, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 437, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 437, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (__pyx_t_4) {
     } else {
-      __pyx_t_15 = __pyx_t_4;
+      __pyx_t_14 = __pyx_t_4;
       goto __pyx_L41_bool_binop_done;
     }
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_killerMoves); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 437, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_ply); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 437, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
+    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_ply); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 437, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_7, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 437, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 437, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = PyObject_RichCompare(__pyx_t_1, __pyx_v_thisBestMove, Py_NE); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 437, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_v_thisBestMove, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 437, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 437, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_15 = __pyx_t_4;
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 437, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_14 = __pyx_t_4;
     __pyx_L41_bool_binop_done:;
-    if (__pyx_t_15) {
+    if (__pyx_t_14) {
 
-      /* "socrates_ancient.pyx":438
+      /* "socrates_ancient.py":438
  * 
  *             if self.killerMoves[ply][0] != thisBestMove and self.killerMoves[ply][1] != thisBestMove:
  *                 self.killerMoves[ply][0] = self.killerMoves[ply][1]             # <<<<<<<<<<<<<<
  *                 self.killerMoves[ply][1] = thisBestMove
  * 
  */
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_killerMoves); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 438, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_7, __pyx_v_ply); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 438, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_killerMoves); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 438, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_ply); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 438, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_7 = __Pyx_GetItemInt(__pyx_t_1, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 438, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 438, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_killerMoves); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 438, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_ply); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 438, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_ply); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 438, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      if (unlikely(__Pyx_SetItemInt(__pyx_t_5, 0, __pyx_t_7, long, 1, __Pyx_PyInt_From_long, 0, 0, 1) < 0)) __PYX_ERR(0, 438, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      if (unlikely(__Pyx_SetItemInt(__pyx_t_7, 0, __pyx_t_2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1) < 0)) __PYX_ERR(0, 438, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "socrates_ancient.pyx":439
+      /* "socrates_ancient.py":439
  *             if self.killerMoves[ply][0] != thisBestMove and self.killerMoves[ply][1] != thisBestMove:
  *                 self.killerMoves[ply][0] = self.killerMoves[ply][1]
  *                 self.killerMoves[ply][1] = thisBestMove             # <<<<<<<<<<<<<<
  * 
  *             if root:
  */
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_killerMoves); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 439, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_killerMoves); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 439, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_ply); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 439, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_7, __pyx_v_ply); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 439, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_5);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      if (unlikely(__Pyx_SetItemInt(__pyx_t_7, 1, __pyx_v_thisBestMove, long, 1, __Pyx_PyInt_From_long, 0, 0, 1) < 0)) __PYX_ERR(0, 439, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      if (unlikely(__Pyx_SetItemInt(__pyx_t_5, 1, __pyx_v_thisBestMove, long, 1, __Pyx_PyInt_From_long, 0, 0, 1) < 0)) __PYX_ERR(0, 439, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "socrates_ancient.pyx":437
+      /* "socrates_ancient.py":437
  *                 self.moveRatings[thisBestMove] = 2 << (depthLeft >> 3)
  * 
  *             if self.killerMoves[ply][0] != thisBestMove and self.killerMoves[ply][1] != thisBestMove:             # <<<<<<<<<<<<<<
@@ -10312,17 +10249,17 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
     }
 
-    /* "socrates_ancient.pyx":441
+    /* "socrates_ancient.py":441
  *                 self.killerMoves[ply][1] = thisBestMove
  * 
  *             if root:             # <<<<<<<<<<<<<<
  *                 return thisBestMove, beta if self.failType == FailType.FAILHARD else thisBestScore
  *             else:
  */
-    __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_v_root); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 441, __pyx_L1_error)
-    if (__pyx_t_15) {
+    __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_v_root); if (unlikely(__pyx_t_14 < 0)) __PYX_ERR(0, 441, __pyx_L1_error)
+    if (__pyx_t_14) {
 
-      /* "socrates_ancient.pyx":442
+      /* "socrates_ancient.py":442
  * 
  *             if root:
  *                 return thisBestMove, beta if self.failType == FailType.FAILHARD else thisBestScore             # <<<<<<<<<<<<<<
@@ -10330,38 +10267,38 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  *                 return beta if self.failType == FailType.FAILHARD else thisBestScore
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_failType); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 442, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_failType); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 442, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
       __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_FailType); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 442, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_FAILHARD); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 442, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_12);
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_FAILHARD); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 442, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = PyObject_RichCompare(__pyx_t_7, __pyx_t_12, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 442, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 442, __pyx_L1_error)
+      __pyx_t_1 = PyObject_RichCompare(__pyx_t_2, __pyx_t_5, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 442, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_14 < 0)) __PYX_ERR(0, 442, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      if (__pyx_t_15) {
+      if (__pyx_t_14) {
         __Pyx_INCREF(__pyx_v_beta);
-        __pyx_t_5 = __pyx_v_beta;
+        __pyx_t_7 = __pyx_v_beta;
       } else {
         __Pyx_INCREF(__pyx_v_thisBestScore);
-        __pyx_t_5 = __pyx_v_thisBestScore;
+        __pyx_t_7 = __pyx_v_thisBestScore;
       }
       __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 442, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_INCREF(__pyx_v_thisBestMove);
       __Pyx_GIVEREF(__pyx_v_thisBestMove);
       PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_thisBestMove);
-      __Pyx_GIVEREF(__pyx_t_5);
-      PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_5);
-      __pyx_t_5 = 0;
+      __Pyx_GIVEREF(__pyx_t_7);
+      PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_7);
+      __pyx_t_7 = 0;
       __pyx_r = __pyx_t_1;
       __pyx_t_1 = 0;
       goto __pyx_L0;
 
-      /* "socrates_ancient.pyx":441
+      /* "socrates_ancient.py":441
  *                 self.killerMoves[ply][1] = thisBestMove
  * 
  *             if root:             # <<<<<<<<<<<<<<
@@ -10370,7 +10307,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
     }
 
-    /* "socrates_ancient.pyx":444
+    /* "socrates_ancient.py":444
  *                 return thisBestMove, beta if self.failType == FailType.FAILHARD else thisBestScore
  *             else:
  *                 return beta if self.failType == FailType.FAILHARD else thisBestScore             # <<<<<<<<<<<<<<
@@ -10379,19 +10316,19 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
     /*else*/ {
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_failType); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 444, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_12 = __Pyx_GetModuleGlobalName(__pyx_n_s_FailType); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 444, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_12);
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_FAILHARD); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 444, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_failType); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 444, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      __pyx_t_12 = PyObject_RichCompare(__pyx_t_5, __pyx_t_7, Py_EQ); __Pyx_XGOTREF(__pyx_t_12); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 444, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_FailType); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 444, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_FAILHARD); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 444, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __pyx_t_5 = PyObject_RichCompare(__pyx_t_7, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 444, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 444, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      if (__pyx_t_15) {
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_14 < 0)) __PYX_ERR(0, 444, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      if (__pyx_t_14) {
         __Pyx_INCREF(__pyx_v_beta);
         __pyx_t_1 = __pyx_v_beta;
       } else {
@@ -10403,7 +10340,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       goto __pyx_L0;
     }
 
-    /* "socrates_ancient.pyx":431
+    /* "socrates_ancient.py":431
  *             self.storeTranspositionTable(thisHash, depthLeft, thisBestScore if self.failType == FailType.FAILSOFT else (beta if thisNodeType == NodeType.LOWER_BOUND else alpha), thisNodeType, thisBestMove)
  * 
  *         if thisNodeType == NodeType.LOWER_BOUND:             # <<<<<<<<<<<<<<
@@ -10412,7 +10349,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
   }
 
-  /* "socrates_ancient.pyx":446
+  /* "socrates_ancient.py":446
  *                 return beta if self.failType == FailType.FAILHARD else thisBestScore
  * 
  *         elif thisNodeType == NodeType.EXACT:             # <<<<<<<<<<<<<<
@@ -10421,16 +10358,16 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
   __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_NodeType); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 446, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_EXACT); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 446, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_12);
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_EXACT); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 446, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_thisNodeType, __pyx_t_12, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 446, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-  __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 446, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_thisNodeType, __pyx_t_5, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 446, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_14 < 0)) __PYX_ERR(0, 446, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (__pyx_t_15) {
+  if (__pyx_t_14) {
 
-    /* "socrates_ancient.pyx":447
+    /* "socrates_ancient.py":447
  * 
  *         elif thisNodeType == NodeType.EXACT:
  *             if thisBestMove in self.moveRatings:             # <<<<<<<<<<<<<<
@@ -10439,12 +10376,12 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_moveRatings); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 447, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_15 = (__Pyx_PySequence_ContainsTF(__pyx_v_thisBestMove, __pyx_t_1, Py_EQ)); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 447, __pyx_L1_error)
+    __pyx_t_14 = (__Pyx_PySequence_ContainsTF(__pyx_v_thisBestMove, __pyx_t_1, Py_EQ)); if (unlikely(__pyx_t_14 < 0)) __PYX_ERR(0, 447, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_4 = (__pyx_t_15 != 0);
+    __pyx_t_4 = (__pyx_t_14 != 0);
     if (__pyx_t_4) {
 
-      /* "socrates_ancient.pyx":448
+      /* "socrates_ancient.py":448
  *         elif thisNodeType == NodeType.EXACT:
  *             if thisBestMove in self.moveRatings:
  *                 self.moveRatings[thisBestMove] += 2 << (depthLeft >> 3)             # <<<<<<<<<<<<<<
@@ -10454,24 +10391,24 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_moveRatings); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 448, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_INCREF(__pyx_v_thisBestMove);
-      __pyx_t_12 = __pyx_v_thisBestMove;
-      __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_12); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 448, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_5 = __Pyx_PyInt_RshiftObjC(__pyx_v_depthLeft, __pyx_int_3, 3, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 448, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_2 = PyNumber_Lshift(__pyx_int_2, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 448, __pyx_L1_error)
+      __pyx_t_5 = __pyx_v_thisBestMove;
+      __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 448, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = PyNumber_InPlaceAdd(__pyx_t_7, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 448, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_7 = __Pyx_PyInt_RshiftObjC(__pyx_v_depthLeft, __pyx_int_3, 3, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 448, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_7);
+      __pyx_t_12 = PyNumber_Lshift(__pyx_int_2, __pyx_t_7); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 448, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __pyx_t_7 = PyNumber_InPlaceAdd(__pyx_t_2, __pyx_t_12); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 448, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      if (unlikely(PyObject_SetItem(__pyx_t_1, __pyx_t_12, __pyx_t_5) < 0)) __PYX_ERR(0, 448, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+      if (unlikely(PyObject_SetItem(__pyx_t_1, __pyx_t_5, __pyx_t_7) < 0)) __PYX_ERR(0, 448, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "socrates_ancient.pyx":447
+      /* "socrates_ancient.py":447
  * 
  *         elif thisNodeType == NodeType.EXACT:
  *             if thisBestMove in self.moveRatings:             # <<<<<<<<<<<<<<
@@ -10481,7 +10418,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
       goto __pyx_L44;
     }
 
-    /* "socrates_ancient.pyx":450
+    /* "socrates_ancient.py":450
  *                 self.moveRatings[thisBestMove] += 2 << (depthLeft >> 3)
  *             else:
  *                 self.moveRatings[thisBestMove] = 2 << (depthLeft >> 3)             # <<<<<<<<<<<<<<
@@ -10491,97 +10428,97 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     /*else*/ {
       __pyx_t_1 = __Pyx_PyInt_RshiftObjC(__pyx_v_depthLeft, __pyx_int_3, 3, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 450, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_12 = PyNumber_Lshift(__pyx_int_2, __pyx_t_1); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 450, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_12);
+      __pyx_t_5 = PyNumber_Lshift(__pyx_int_2, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 450, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_moveRatings); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 450, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (unlikely(PyObject_SetItem(__pyx_t_1, __pyx_v_thisBestMove, __pyx_t_12) < 0)) __PYX_ERR(0, 450, __pyx_L1_error)
+      if (unlikely(PyObject_SetItem(__pyx_t_1, __pyx_v_thisBestMove, __pyx_t_5) < 0)) __PYX_ERR(0, 450, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
     __pyx_L44:;
 
-    /* "socrates_ancient.pyx":452
+    /* "socrates_ancient.py":452
  *                 self.moveRatings[thisBestMove] = 2 << (depthLeft >> 3)
  * 
  *             if self.killerMoves[ply][0] != thisBestMove and self.killerMoves[ply][1] != thisBestMove:             # <<<<<<<<<<<<<<
  *                 self.killerMoves[ply][0] = self.killerMoves[ply][1]
  *                 self.killerMoves[ply][1] = thisBestMove
  */
-    __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_killerMoves); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 452, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_12);
-    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_12, __pyx_v_ply); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 452, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_killerMoves); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 452, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_ply); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 452, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-    __pyx_t_12 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 452, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_12);
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 452, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyObject_RichCompare(__pyx_t_12, __pyx_v_thisBestMove, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 452, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-    __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 452, __pyx_L1_error)
+    __pyx_t_1 = PyObject_RichCompare(__pyx_t_5, __pyx_v_thisBestMove, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 452, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_14 < 0)) __PYX_ERR(0, 452, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (__pyx_t_15) {
+    if (__pyx_t_14) {
     } else {
-      __pyx_t_4 = __pyx_t_15;
+      __pyx_t_4 = __pyx_t_14;
       goto __pyx_L46_bool_binop_done;
     }
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_killerMoves); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 452, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_12 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_ply); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 452, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_12);
+    __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_ply); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 452, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_12, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 452, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_5, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 452, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-    __pyx_t_12 = PyObject_RichCompare(__pyx_t_1, __pyx_v_thisBestMove, Py_NE); __Pyx_XGOTREF(__pyx_t_12); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 452, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_5 = PyObject_RichCompare(__pyx_t_1, __pyx_v_thisBestMove, Py_NE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 452, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 452, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-    __pyx_t_4 = __pyx_t_15;
+    __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_14 < 0)) __PYX_ERR(0, 452, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_4 = __pyx_t_14;
     __pyx_L46_bool_binop_done:;
     if (__pyx_t_4) {
 
-      /* "socrates_ancient.pyx":453
+      /* "socrates_ancient.py":453
  * 
  *             if self.killerMoves[ply][0] != thisBestMove and self.killerMoves[ply][1] != thisBestMove:
  *                 self.killerMoves[ply][0] = self.killerMoves[ply][1]             # <<<<<<<<<<<<<<
  *                 self.killerMoves[ply][1] = thisBestMove
  * 
  */
-      __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_killerMoves); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 453, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_12);
-      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_12, __pyx_v_ply); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 453, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_killerMoves); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 453, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_ply); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 453, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      __pyx_t_12 = __Pyx_GetItemInt(__pyx_t_1, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 453, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_12);
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_1, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 453, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_killerMoves); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 453, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_ply); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 453, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_ply); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 453, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      if (unlikely(__Pyx_SetItemInt(__pyx_t_5, 0, __pyx_t_12, long, 1, __Pyx_PyInt_From_long, 0, 0, 1) < 0)) __PYX_ERR(0, 453, __pyx_L1_error)
+      if (unlikely(__Pyx_SetItemInt(__pyx_t_7, 0, __pyx_t_5, long, 1, __Pyx_PyInt_From_long, 0, 0, 1) < 0)) __PYX_ERR(0, 453, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-      /* "socrates_ancient.pyx":454
+      /* "socrates_ancient.py":454
  *             if self.killerMoves[ply][0] != thisBestMove and self.killerMoves[ply][1] != thisBestMove:
  *                 self.killerMoves[ply][0] = self.killerMoves[ply][1]
  *                 self.killerMoves[ply][1] = thisBestMove             # <<<<<<<<<<<<<<
  * 
  *         if root:
  */
-      __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_killerMoves); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 454, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_12);
-      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_12, __pyx_v_ply); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 454, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_killerMoves); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 454, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      if (unlikely(__Pyx_SetItemInt(__pyx_t_5, 1, __pyx_v_thisBestMove, long, 1, __Pyx_PyInt_From_long, 0, 0, 1) < 0)) __PYX_ERR(0, 454, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_ply); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 454, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      if (unlikely(__Pyx_SetItemInt(__pyx_t_7, 1, __pyx_v_thisBestMove, long, 1, __Pyx_PyInt_From_long, 0, 0, 1) < 0)) __PYX_ERR(0, 454, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-      /* "socrates_ancient.pyx":452
+      /* "socrates_ancient.py":452
  *                 self.moveRatings[thisBestMove] = 2 << (depthLeft >> 3)
  * 
  *             if self.killerMoves[ply][0] != thisBestMove and self.killerMoves[ply][1] != thisBestMove:             # <<<<<<<<<<<<<<
@@ -10590,7 +10527,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
     }
 
-    /* "socrates_ancient.pyx":446
+    /* "socrates_ancient.py":446
  *                 return beta if self.failType == FailType.FAILHARD else thisBestScore
  * 
  *         elif thisNodeType == NodeType.EXACT:             # <<<<<<<<<<<<<<
@@ -10599,7 +10536,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
   }
 
-  /* "socrates_ancient.pyx":456
+  /* "socrates_ancient.py":456
  *                 self.killerMoves[ply][1] = thisBestMove
  * 
  *         if root:             # <<<<<<<<<<<<<<
@@ -10609,7 +10546,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
   __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_root); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 456, __pyx_L1_error)
   if (__pyx_t_4) {
 
-    /* "socrates_ancient.pyx":457
+    /* "socrates_ancient.py":457
  * 
  *         if root:
  *             return thisBestMove, alpha             # <<<<<<<<<<<<<<
@@ -10617,19 +10554,19 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  *             return alpha
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 457, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 457, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
     __Pyx_INCREF(__pyx_v_thisBestMove);
     __Pyx_GIVEREF(__pyx_v_thisBestMove);
-    PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_v_thisBestMove);
+    PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_v_thisBestMove);
     __Pyx_INCREF(__pyx_v_alpha);
     __Pyx_GIVEREF(__pyx_v_alpha);
-    PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_v_alpha);
-    __pyx_r = __pyx_t_5;
-    __pyx_t_5 = 0;
+    PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_v_alpha);
+    __pyx_r = __pyx_t_7;
+    __pyx_t_7 = 0;
     goto __pyx_L0;
 
-    /* "socrates_ancient.pyx":456
+    /* "socrates_ancient.py":456
  *                 self.killerMoves[ply][1] = thisBestMove
  * 
  *         if root:             # <<<<<<<<<<<<<<
@@ -10638,7 +10575,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
  */
   }
 
-  /* "socrates_ancient.pyx":459
+  /* "socrates_ancient.py":459
  *             return thisBestMove, alpha
  *         else:
  *             return alpha             # <<<<<<<<<<<<<<
@@ -10652,7 +10589,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
     goto __pyx_L0;
   }
 
-  /* "socrates_ancient.pyx":300
+  /* "socrates_ancient.py":298
  *             yield next(legalMoves)
  * 
  *     def pvSearch(self, alpha, beta, depthLeft, root = False):             # <<<<<<<<<<<<<<
@@ -10669,7 +10606,6 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
   __Pyx_XDECREF(__pyx_t_9);
   __Pyx_XDECREF(__pyx_t_12);
   __Pyx_XDECREF(__pyx_t_13);
-  __Pyx_XDECREF(__pyx_t_14);
   __Pyx_AddTraceback("socrates_ancientc.Searcher.pvSearch", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -10696,7 +10632,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_8Searcher_17pvSearch(CYTHON_UNUSED
   return __pyx_r;
 }
 
-/* "socrates_ancient.pyx":463
+/* "socrates_ancient.py":463
  * 
  * class SocratesGame(object):
  *     def __init__(self, usualTime, stopRatio, fenStr = ""):             # <<<<<<<<<<<<<<
@@ -10803,7 +10739,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame___init__(CYTHON_UNU
   int __pyx_t_6;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "socrates_ancient.pyx":464
+  /* "socrates_ancient.py":464
  * class SocratesGame(object):
  *     def __init__(self, usualTime, stopRatio, fenStr = ""):
  *         if fenStr != "":             # <<<<<<<<<<<<<<
@@ -10813,7 +10749,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame___init__(CYTHON_UNU
   __pyx_t_1 = (__Pyx_PyString_Equals(__pyx_v_fenStr, __pyx_kp_s_, Py_NE)); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 464, __pyx_L1_error)
   if (__pyx_t_1) {
 
-    /* "socrates_ancient.pyx":465
+    /* "socrates_ancient.py":465
  *     def __init__(self, usualTime, stopRatio, fenStr = ""):
  *         if fenStr != "":
  *             self.board = chess.Board(fenStr)             # <<<<<<<<<<<<<<
@@ -10871,7 +10807,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame___init__(CYTHON_UNU
     if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_board, __pyx_t_2) < 0) __PYX_ERR(0, 465, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "socrates_ancient.pyx":464
+    /* "socrates_ancient.py":464
  * class SocratesGame(object):
  *     def __init__(self, usualTime, stopRatio, fenStr = ""):
  *         if fenStr != "":             # <<<<<<<<<<<<<<
@@ -10881,7 +10817,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame___init__(CYTHON_UNU
     goto __pyx_L3;
   }
 
-  /* "socrates_ancient.pyx":467
+  /* "socrates_ancient.py":467
  *             self.board = chess.Board(fenStr)
  *         else:
  *             self.board = chess.Board()             # <<<<<<<<<<<<<<
@@ -10917,7 +10853,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame___init__(CYTHON_UNU
   }
   __pyx_L3:;
 
-  /* "socrates_ancient.pyx":468
+  /* "socrates_ancient.py":468
  *         else:
  *             self.board = chess.Board()
  *         self.searcher = Searcher(self, usualTime, stopRatio)             # <<<<<<<<<<<<<<
@@ -10977,7 +10913,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame___init__(CYTHON_UNU
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_searcher, __pyx_t_2) < 0) __PYX_ERR(0, 468, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":469
+  /* "socrates_ancient.py":469
  *             self.board = chess.Board()
  *         self.searcher = Searcher(self, usualTime, stopRatio)
  *         self.historyBoard = dict()             # <<<<<<<<<<<<<<
@@ -10989,7 +10925,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame___init__(CYTHON_UNU
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_historyBoard, __pyx_t_2) < 0) __PYX_ERR(0, 469, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":463
+  /* "socrates_ancient.py":463
  * 
  * class SocratesGame(object):
  *     def __init__(self, usualTime, stopRatio, fenStr = ""):             # <<<<<<<<<<<<<<
@@ -11013,11 +10949,11 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame___init__(CYTHON_UNU
   return __pyx_r;
 }
 
-/* "socrates_ancient.pyx":471
+/* "socrates_ancient.py":471
  *         self.historyBoard = dict()
  * 
  *     def hash(self):             # <<<<<<<<<<<<<<
- *         return (self.board.pawns, self.board.knights, self.board.bishops, self.board.rooks, self.board.queens, self.board.kings, self.board.occupied_co[True])
+ *         return (self.board.pawns, self.board.knights, self.board.bishops, self.board.rooks, self.board.queens, self.board.kings, self.board.occupied_co[True], self.board.turn)
  * 
  */
 
@@ -11046,12 +10982,13 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_2hash(CYTHON_UNUSED
   PyObject *__pyx_t_6 = NULL;
   PyObject *__pyx_t_7 = NULL;
   PyObject *__pyx_t_8 = NULL;
+  PyObject *__pyx_t_9 = NULL;
   __Pyx_RefNannySetupContext("hash", 0);
 
-  /* "socrates_ancient.pyx":472
+  /* "socrates_ancient.py":472
  * 
  *     def hash(self):
- *         return (self.board.pawns, self.board.knights, self.board.bishops, self.board.rooks, self.board.queens, self.board.kings, self.board.occupied_co[True])             # <<<<<<<<<<<<<<
+ *         return (self.board.pawns, self.board.knights, self.board.bishops, self.board.rooks, self.board.queens, self.board.kings, self.board.occupied_co[True], self.board.turn)             # <<<<<<<<<<<<<<
  * 
  *     def moveAndReturnsSAN(self):
  */
@@ -11094,7 +11031,12 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_2hash(CYTHON_UNUSED
   __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_8, 1, int, 1, __Pyx_PyBool_FromLong, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 472, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-  __pyx_t_8 = PyTuple_New(7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 472, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_board); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 472, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_turn); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 472, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+  __pyx_t_8 = PyTuple_New(8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 472, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_2);
@@ -11110,6 +11052,8 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_2hash(CYTHON_UNUSED
   PyTuple_SET_ITEM(__pyx_t_8, 5, __pyx_t_7);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_8, 6, __pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_9);
+  PyTuple_SET_ITEM(__pyx_t_8, 7, __pyx_t_9);
   __pyx_t_2 = 0;
   __pyx_t_3 = 0;
   __pyx_t_4 = 0;
@@ -11117,15 +11061,16 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_2hash(CYTHON_UNUSED
   __pyx_t_6 = 0;
   __pyx_t_7 = 0;
   __pyx_t_1 = 0;
+  __pyx_t_9 = 0;
   __pyx_r = __pyx_t_8;
   __pyx_t_8 = 0;
   goto __pyx_L0;
 
-  /* "socrates_ancient.pyx":471
+  /* "socrates_ancient.py":471
  *         self.historyBoard = dict()
  * 
  *     def hash(self):             # <<<<<<<<<<<<<<
- *         return (self.board.pawns, self.board.knights, self.board.bishops, self.board.rooks, self.board.queens, self.board.kings, self.board.occupied_co[True])
+ *         return (self.board.pawns, self.board.knights, self.board.bishops, self.board.rooks, self.board.queens, self.board.kings, self.board.occupied_co[True], self.board.turn)
  * 
  */
 
@@ -11139,6 +11084,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_2hash(CYTHON_UNUSED
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_9);
   __Pyx_AddTraceback("socrates_ancientc.SocratesGame.hash", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -11147,8 +11093,8 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_2hash(CYTHON_UNUSED
   return __pyx_r;
 }
 
-/* "socrates_ancient.pyx":474
- *         return (self.board.pawns, self.board.knights, self.board.bishops, self.board.rooks, self.board.queens, self.board.kings, self.board.occupied_co[True])
+/* "socrates_ancient.py":474
+ *         return (self.board.pawns, self.board.knights, self.board.bishops, self.board.rooks, self.board.queens, self.board.kings, self.board.occupied_co[True], self.board.turn)
  * 
  *     def moveAndReturnsSAN(self):             # <<<<<<<<<<<<<<
  *         myMove = self.searcher.getBestMove()
@@ -11185,7 +11131,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_4moveAndReturnsSAN(
   Py_ssize_t __pyx_t_8;
   __Pyx_RefNannySetupContext("moveAndReturnsSAN", 0);
 
-  /* "socrates_ancient.pyx":475
+  /* "socrates_ancient.py":475
  * 
  *     def moveAndReturnsSAN(self):
  *         myMove = self.searcher.getBestMove()             # <<<<<<<<<<<<<<
@@ -11218,7 +11164,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_4moveAndReturnsSAN(
   __pyx_v_myMove = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":476
+  /* "socrates_ancient.py":476
  *     def moveAndReturnsSAN(self):
  *         myMove = self.searcher.getBestMove()
  *         sanOutStr = self.board.san(myMove)             # <<<<<<<<<<<<<<
@@ -11276,7 +11222,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_4moveAndReturnsSAN(
   __pyx_v_sanOutStr = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":477
+  /* "socrates_ancient.py":477
  *         myMove = self.searcher.getBestMove()
  *         sanOutStr = self.board.san(myMove)
  *         self.board.push(myMove)             # <<<<<<<<<<<<<<
@@ -11333,7 +11279,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_4moveAndReturnsSAN(
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":478
+  /* "socrates_ancient.py":478
  *         sanOutStr = self.board.san(myMove)
  *         self.board.push(myMove)
  *         thisHash = self.hash()             # <<<<<<<<<<<<<<
@@ -11363,7 +11309,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_4moveAndReturnsSAN(
   __pyx_v_thisHash = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":479
+  /* "socrates_ancient.py":479
  *         self.board.push(myMove)
  *         thisHash = self.hash()
  *         if thisHash in self.historyBoard:             # <<<<<<<<<<<<<<
@@ -11377,7 +11323,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_4moveAndReturnsSAN(
   __pyx_t_6 = (__pyx_t_5 != 0);
   if (__pyx_t_6) {
 
-    /* "socrates_ancient.pyx":480
+    /* "socrates_ancient.py":480
  *         thisHash = self.hash()
  *         if thisHash in self.historyBoard:
  *             self.historyBoard[self.hash()] += [len(self.board.move_stack)]             # <<<<<<<<<<<<<<
@@ -11431,7 +11377,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_4moveAndReturnsSAN(
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "socrates_ancient.pyx":479
+    /* "socrates_ancient.py":479
  *         self.board.push(myMove)
  *         thisHash = self.hash()
  *         if thisHash in self.historyBoard:             # <<<<<<<<<<<<<<
@@ -11441,7 +11387,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_4moveAndReturnsSAN(
     goto __pyx_L3;
   }
 
-  /* "socrates_ancient.pyx":482
+  /* "socrates_ancient.py":482
  *             self.historyBoard[self.hash()] += [len(self.board.move_stack)]
  *         else:
  *             self.historyBoard[self.hash()] = [len(self.board.move_stack)]             # <<<<<<<<<<<<<<
@@ -11492,7 +11438,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_4moveAndReturnsSAN(
   }
   __pyx_L3:;
 
-  /* "socrates_ancient.pyx":483
+  /* "socrates_ancient.py":483
  *         else:
  *             self.historyBoard[self.hash()] = [len(self.board.move_stack)]
  *         return sanOutStr             # <<<<<<<<<<<<<<
@@ -11504,8 +11450,8 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_4moveAndReturnsSAN(
   __pyx_r = __pyx_v_sanOutStr;
   goto __pyx_L0;
 
-  /* "socrates_ancient.pyx":474
- *         return (self.board.pawns, self.board.knights, self.board.bishops, self.board.rooks, self.board.queens, self.board.kings, self.board.occupied_co[True])
+  /* "socrates_ancient.py":474
+ *         return (self.board.pawns, self.board.knights, self.board.bishops, self.board.rooks, self.board.queens, self.board.kings, self.board.occupied_co[True], self.board.turn)
  * 
  *     def moveAndReturnsSAN(self):             # <<<<<<<<<<<<<<
  *         myMove = self.searcher.getBestMove()
@@ -11530,7 +11476,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_4moveAndReturnsSAN(
   return __pyx_r;
 }
 
-/* "socrates_ancient.pyx":485
+/* "socrates_ancient.py":485
  *         return sanOutStr
  * 
  *     def readInAndReturnsSAN(self):             # <<<<<<<<<<<<<<
@@ -11567,7 +11513,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_6readInAndReturnsSA
   Py_ssize_t __pyx_t_8;
   __Pyx_RefNannySetupContext("readInAndReturnsSAN", 0);
 
-  /* "socrates_ancient.pyx":486
+  /* "socrates_ancient.py":486
  * 
  *     def readInAndReturnsSAN(self):
  *         sanInStr = raw_input().strip()             # <<<<<<<<<<<<<<
@@ -11600,7 +11546,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_6readInAndReturnsSA
   __pyx_v_sanInStr = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":487
+  /* "socrates_ancient.py":487
  *     def readInAndReturnsSAN(self):
  *         sanInStr = raw_input().strip()
  *         self.board.push_san(sanInStr)             # <<<<<<<<<<<<<<
@@ -11657,7 +11603,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_6readInAndReturnsSA
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":488
+  /* "socrates_ancient.py":488
  *         sanInStr = raw_input().strip()
  *         self.board.push_san(sanInStr)
  *         thisHash = self.hash()             # <<<<<<<<<<<<<<
@@ -11687,7 +11633,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_6readInAndReturnsSA
   __pyx_v_thisHash = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":489
+  /* "socrates_ancient.py":489
  *         self.board.push_san(sanInStr)
  *         thisHash = self.hash()
  *         if thisHash in self.historyBoard:             # <<<<<<<<<<<<<<
@@ -11701,7 +11647,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_6readInAndReturnsSA
   __pyx_t_6 = (__pyx_t_5 != 0);
   if (__pyx_t_6) {
 
-    /* "socrates_ancient.pyx":490
+    /* "socrates_ancient.py":490
  *         thisHash = self.hash()
  *         if thisHash in self.historyBoard:
  *             self.historyBoard[self.hash()] += [len(self.board.move_stack)]             # <<<<<<<<<<<<<<
@@ -11755,7 +11701,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_6readInAndReturnsSA
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "socrates_ancient.pyx":489
+    /* "socrates_ancient.py":489
  *         self.board.push_san(sanInStr)
  *         thisHash = self.hash()
  *         if thisHash in self.historyBoard:             # <<<<<<<<<<<<<<
@@ -11765,7 +11711,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_6readInAndReturnsSA
     goto __pyx_L3;
   }
 
-  /* "socrates_ancient.pyx":492
+  /* "socrates_ancient.py":492
  *             self.historyBoard[self.hash()] += [len(self.board.move_stack)]
  *         else:
  *             self.historyBoard[self.hash()] = [len(self.board.move_stack)]             # <<<<<<<<<<<<<<
@@ -11816,7 +11762,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_6readInAndReturnsSA
   }
   __pyx_L3:;
 
-  /* "socrates_ancient.pyx":493
+  /* "socrates_ancient.py":493
  *         else:
  *             self.historyBoard[self.hash()] = [len(self.board.move_stack)]
  *         return sanInStr             # <<<<<<<<<<<<<<
@@ -11828,7 +11774,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_6readInAndReturnsSA
   __pyx_r = __pyx_v_sanInStr;
   goto __pyx_L0;
 
-  /* "socrates_ancient.pyx":485
+  /* "socrates_ancient.py":485
  *         return sanOutStr
  * 
  *     def readInAndReturnsSAN(self):             # <<<<<<<<<<<<<<
@@ -11853,7 +11799,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_6readInAndReturnsSA
   return __pyx_r;
 }
 
-/* "socrates_ancient.pyx":495
+/* "socrates_ancient.py":495
  *         return sanInStr
  * 
  *     def run(self):             # <<<<<<<<<<<<<<
@@ -11889,7 +11835,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_8run(CYTHON_UNUSED 
   PyObject *__pyx_t_6 = NULL;
   __Pyx_RefNannySetupContext("run", 0);
 
-  /* "socrates_ancient.pyx":496
+  /* "socrates_ancient.py":496
  * 
  *     def run(self):
  *         myPlayer = raw_input().strip()             # <<<<<<<<<<<<<<
@@ -11922,7 +11868,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_8run(CYTHON_UNUSED 
   __pyx_v_myPlayer = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":497
+  /* "socrates_ancient.py":497
  *     def run(self):
  *         myPlayer = raw_input().strip()
  *         if(myPlayer == "white"):             # <<<<<<<<<<<<<<
@@ -11932,7 +11878,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_8run(CYTHON_UNUSED 
   __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_v_myPlayer, __pyx_n_s_white, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 497, __pyx_L1_error)
   if (__pyx_t_4) {
 
-    /* "socrates_ancient.pyx":498
+    /* "socrates_ancient.py":498
  *         myPlayer = raw_input().strip()
  *         if(myPlayer == "white"):
  *             sanOutStr = self.moveAndReturnsSAN()             # <<<<<<<<<<<<<<
@@ -11962,7 +11908,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_8run(CYTHON_UNUSED 
     __pyx_v_sanOutStr = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "socrates_ancient.pyx":499
+    /* "socrates_ancient.py":499
  *         if(myPlayer == "white"):
  *             sanOutStr = self.moveAndReturnsSAN()
  *             eprint("Write to output : " + sanOutStr)             # <<<<<<<<<<<<<<
@@ -12021,7 +11967,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_8run(CYTHON_UNUSED 
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "socrates_ancient.pyx":500
+    /* "socrates_ancient.py":500
  *             sanOutStr = self.moveAndReturnsSAN()
  *             eprint("Write to output : " + sanOutStr)
  *             print(sanOutStr)             # <<<<<<<<<<<<<<
@@ -12032,7 +11978,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_8run(CYTHON_UNUSED 
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "socrates_ancient.pyx":501
+    /* "socrates_ancient.py":501
  *             eprint("Write to output : " + sanOutStr)
  *             print(sanOutStr)
  *             eprint("Current board\n" + str(self.board))             # <<<<<<<<<<<<<<
@@ -12097,7 +12043,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_8run(CYTHON_UNUSED 
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "socrates_ancient.pyx":497
+    /* "socrates_ancient.py":497
  *     def run(self):
  *         myPlayer = raw_input().strip()
  *         if(myPlayer == "white"):             # <<<<<<<<<<<<<<
@@ -12107,7 +12053,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_8run(CYTHON_UNUSED 
     goto __pyx_L3;
   }
 
-  /* "socrates_ancient.pyx":502
+  /* "socrates_ancient.py":502
  *             print(sanOutStr)
  *             eprint("Current board\n" + str(self.board))
  *         elif myPlayer == "black":             # <<<<<<<<<<<<<<
@@ -12119,7 +12065,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_8run(CYTHON_UNUSED 
     goto __pyx_L3;
   }
 
-  /* "socrates_ancient.pyx":505
+  /* "socrates_ancient.py":505
  *             pass
  *         else:
  *             raise ValueError("The player string must be `white` or `black`", myPlayer, "received")             # <<<<<<<<<<<<<<
@@ -12147,7 +12093,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_8run(CYTHON_UNUSED 
   }
   __pyx_L3:;
 
-  /* "socrates_ancient.pyx":507
+  /* "socrates_ancient.py":507
  *             raise ValueError("The player string must be `white` or `black`", myPlayer, "received")
  * 
  *         while True:             # <<<<<<<<<<<<<<
@@ -12156,7 +12102,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_8run(CYTHON_UNUSED 
  */
   while (1) {
 
-    /* "socrates_ancient.pyx":508
+    /* "socrates_ancient.py":508
  * 
  *         while True:
  *             sanInStr = self.readInAndReturnsSAN()             # <<<<<<<<<<<<<<
@@ -12186,7 +12132,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_8run(CYTHON_UNUSED 
     __Pyx_XDECREF_SET(__pyx_v_sanInStr, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "socrates_ancient.pyx":510
+    /* "socrates_ancient.py":510
  *             sanInStr = self.readInAndReturnsSAN()
  * 
  *             eprint("Read from outside : " + sanInStr)             # <<<<<<<<<<<<<<
@@ -12245,7 +12191,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_8run(CYTHON_UNUSED 
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "socrates_ancient.pyx":511
+    /* "socrates_ancient.py":511
  * 
  *             eprint("Read from outside : " + sanInStr)
  *             eprint("Current board\n" + str(self.board))             # <<<<<<<<<<<<<<
@@ -12310,7 +12256,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_8run(CYTHON_UNUSED 
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "socrates_ancient.pyx":513
+    /* "socrates_ancient.py":513
  *             eprint("Current board\n" + str(self.board))
  * 
  *             sanOutStr = self.moveAndReturnsSAN()             # <<<<<<<<<<<<<<
@@ -12340,7 +12286,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_8run(CYTHON_UNUSED 
     __Pyx_XDECREF_SET(__pyx_v_sanOutStr, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "socrates_ancient.pyx":515
+    /* "socrates_ancient.py":515
  *             sanOutStr = self.moveAndReturnsSAN()
  * 
  *             eprint("Write to output : " + sanOutStr)             # <<<<<<<<<<<<<<
@@ -12399,7 +12345,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_8run(CYTHON_UNUSED 
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "socrates_ancient.pyx":516
+    /* "socrates_ancient.py":516
  * 
  *             eprint("Write to output : " + sanOutStr)
  *             print(sanOutStr)             # <<<<<<<<<<<<<<
@@ -12410,7 +12356,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_8run(CYTHON_UNUSED 
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "socrates_ancient.pyx":517
+    /* "socrates_ancient.py":517
  *             eprint("Write to output : " + sanOutStr)
  *             print(sanOutStr)
  *             eprint("Current board\n" + str(self.board))             # <<<<<<<<<<<<<<
@@ -12476,7 +12422,7 @@ static PyObject *__pyx_pf_17socrates_ancientc_12SocratesGame_8run(CYTHON_UNUSED 
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
 
-  /* "socrates_ancient.pyx":495
+  /* "socrates_ancient.py":495
  *         return sanInStr
  * 
  *     def run(self):             # <<<<<<<<<<<<<<
@@ -12751,7 +12697,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_i, __pyx_k_i, sizeof(__pyx_k_i), 0, 0, 1, 1},
   {&__pyx_n_s_iCanReplaceThisTransposition, __pyx_k_iCanReplaceThisTransposition, sizeof(__pyx_k_iCanReplaceThisTransposition), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
-  {&__pyx_n_s_important, __pyx_k_important, sizeof(__pyx_k_important), 0, 0, 1, 1},
   {&__pyx_n_s_init, __pyx_k_init, sizeof(__pyx_k_init), 0, 0, 1, 1},
   {&__pyx_n_s_input, __pyx_k_input, sizeof(__pyx_k_input), 0, 0, 1, 1},
   {&__pyx_n_s_isCheckmateMove, __pyx_k_isCheckmateMove, sizeof(__pyx_k_isCheckmateMove), 0, 0, 1, 1},
@@ -12806,7 +12751,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_pop, __pyx_k_pop, sizeof(__pyx_k_pop), 0, 0, 1, 1},
   {&__pyx_n_s_prepare, __pyx_k_prepare, sizeof(__pyx_k_prepare), 0, 0, 1, 1},
   {&__pyx_n_s_print, __pyx_k_print, sizeof(__pyx_k_print), 0, 0, 1, 1},
-  {&__pyx_n_s_promotion, __pyx_k_promotion, sizeof(__pyx_k_promotion), 0, 0, 1, 1},
   {&__pyx_n_s_pst, __pyx_k_pst, sizeof(__pyx_k_pst), 0, 0, 1, 1},
   {&__pyx_n_s_push, __pyx_k_push, sizeof(__pyx_k_push), 0, 0, 1, 1},
   {&__pyx_n_s_push_san, __pyx_k_push_san, sizeof(__pyx_k_push_san), 0, 0, 1, 1},
@@ -12833,12 +12777,13 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_searcher, __pyx_k_searcher, sizeof(__pyx_k_searcher), 0, 0, 1, 1},
   {&__pyx_n_s_self, __pyx_k_self, sizeof(__pyx_k_self), 0, 0, 1, 1},
   {&__pyx_n_s_send, __pyx_k_send, sizeof(__pyx_k_send), 0, 0, 1, 1},
-  {&__pyx_kp_s_socrates_ancient_pyx, __pyx_k_socrates_ancient_pyx, sizeof(__pyx_k_socrates_ancient_pyx), 0, 0, 1, 0},
+  {&__pyx_kp_s_socrates_ancient_py, __pyx_k_socrates_ancient_py, sizeof(__pyx_k_socrates_ancient_py), 0, 0, 1, 0},
   {&__pyx_n_s_socrates_ancientc, __pyx_k_socrates_ancientc, sizeof(__pyx_k_socrates_ancientc), 0, 0, 1, 1},
   {&__pyx_n_s_sort, __pyx_k_sort, sizeof(__pyx_k_sort), 0, 0, 1, 1},
   {&__pyx_n_s_sortKey, __pyx_k_sortKey, sizeof(__pyx_k_sortKey), 0, 0, 1, 1},
   {&__pyx_n_s_sq, __pyx_k_sq, sizeof(__pyx_k_sq), 0, 0, 1, 1},
   {&__pyx_n_s_staticEval, __pyx_k_staticEval, sizeof(__pyx_k_staticEval), 0, 0, 1, 1},
+  {&__pyx_n_s_staticScore, __pyx_k_staticScore, sizeof(__pyx_k_staticScore), 0, 0, 1, 1},
   {&__pyx_n_s_stopRatio, __pyx_k_stopRatio, sizeof(__pyx_k_stopRatio), 0, 0, 1, 1},
   {&__pyx_n_s_storeTranspositionTable, __pyx_k_storeTranspositionTable, sizeof(__pyx_k_storeTranspositionTable), 0, 0, 1, 1},
   {&__pyx_n_s_string, __pyx_k_string, sizeof(__pyx_k_string), 0, 0, 1, 1},
@@ -12891,7 +12836,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "socrates_ancient.pyx":154
+  /* "socrates_ancient.py":154
  *         pieceAtTo = self.game.board.piece_at(move.to_square)
  *         if pieceAtTo == None:
  *             pieceAtTo = chess.Piece.from_symbol('P')             # <<<<<<<<<<<<<<
@@ -12902,18 +12847,18 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "socrates_ancient.pyx":193
+  /* "socrates_ancient.py":190
  * 
  *     def getBestMove(self):
  *         eprint("<Socrates Ancient %s> " % ("BLACK", "WHITE")[self.game.board.turn] + os.path.basename(__file__))             # <<<<<<<<<<<<<<
  *         self.moveRatings = dict()
  *         self.moveSequence = []
  */
-  __pyx_tuple__3 = PyTuple_Pack(2, __pyx_n_s_BLACK, __pyx_n_s_WHITE); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_tuple__3 = PyTuple_Pack(2, __pyx_n_s_BLACK, __pyx_n_s_WHITE); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
-  /* "socrates_ancient.pyx":22
+  /* "socrates_ancient.py":22
  *     FAILHARD = 1
  * 
  * class Transposition(object):             # <<<<<<<<<<<<<<
@@ -12924,7 +12869,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
 
-  /* "socrates_ancient.pyx":23
+  /* "socrates_ancient.py":23
  * 
  * class Transposition(object):
  *     def __init__(self, thisHash, game, depthLeft, score, nodeType, bestMove):             # <<<<<<<<<<<<<<
@@ -12934,9 +12879,9 @@ static int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__6 = PyTuple_Pack(7, __pyx_n_s_self, __pyx_n_s_thisHash, __pyx_n_s_game, __pyx_n_s_depthLeft, __pyx_n_s_score, __pyx_n_s_nodeType, __pyx_n_s_bestMove); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__6);
   __Pyx_GIVEREF(__pyx_tuple__6);
-  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(7, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_pyx, __pyx_n_s_init, 23, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(7, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_py, __pyx_n_s_init, 23, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 23, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":30
+  /* "socrates_ancient.py":30
  *         self.bestMove = bestMove
  * 
  * def logPrint(*args, **kwargs):             # <<<<<<<<<<<<<<
@@ -12946,9 +12891,9 @@ static int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__8 = PyTuple_Pack(2, __pyx_n_s_args, __pyx_n_s_kwargs); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 30, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__8);
   __Pyx_GIVEREF(__pyx_tuple__8);
-  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_VARARGS|CO_VARKEYWORDS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_pyx, __pyx_n_s_logPrint, 30, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_VARARGS|CO_VARKEYWORDS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_py, __pyx_n_s_logPrint, 30, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 30, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":34
+  /* "socrates_ancient.py":34
  *     fprint(*args, **kwargs)
  * 
  * def cut(string):             # <<<<<<<<<<<<<<
@@ -12958,9 +12903,9 @@ static int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__10 = PyTuple_Pack(2, __pyx_n_s_string, __pyx_n_s_i); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__10);
   __Pyx_GIVEREF(__pyx_tuple__10);
-  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_pyx, __pyx_n_s_cut, 34, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_py, __pyx_n_s_cut, 34, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 34, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":41
+  /* "socrates_ancient.py":41
  * 
  * pst = {
  *     'P': (   0,   0,   0,   0,   0,   0,   0,   0,             # <<<<<<<<<<<<<<
@@ -12971,7 +12916,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__12);
   __Pyx_GIVEREF(__pyx_tuple__12);
 
-  /* "socrates_ancient.pyx":49
+  /* "socrates_ancient.py":49
  *            -31,   8,  -7, -37, -36, -14,   3, -31,
  *              0,   0,   0,   0,   0,   0,   0,   0),
  *     'N': ( -66, -53, -75, -75, -10, -55, -58, -70,             # <<<<<<<<<<<<<<
@@ -12982,7 +12927,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__13);
   __Pyx_GIVEREF(__pyx_tuple__13);
 
-  /* "socrates_ancient.pyx":57
+  /* "socrates_ancient.py":57
  *            -23, -15,   2,   0,   2,   0, -23, -20,
  *            -74, -23, -26, -24, -19, -35, -22, -69),
  *     'B': ( -59, -78, -82, -76, -23,-107, -37, -50,             # <<<<<<<<<<<<<<
@@ -12993,7 +12938,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__14);
   __Pyx_GIVEREF(__pyx_tuple__14);
 
-  /* "socrates_ancient.pyx":65
+  /* "socrates_ancient.py":65
  *             19,  20,  11,   6,   7,   6,  20,  16,
  *             -7,   2, -15, -12, -14, -15, -10, -10),
  *     'R': (  35,  29,  33,   4,  37,  33,  56,  50,             # <<<<<<<<<<<<<<
@@ -13004,7 +12949,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__15);
   __Pyx_GIVEREF(__pyx_tuple__15);
 
-  /* "socrates_ancient.pyx":73
+  /* "socrates_ancient.py":73
  *            -53, -38, -31, -26, -29, -43, -44, -53,
  *            -30, -24, -18,   5,  -2, -18, -31, -32),
  *     'Q': (   6,   1,  -8,-104,  69,  24,  88,  26,             # <<<<<<<<<<<<<<
@@ -13015,7 +12960,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__16);
   __Pyx_GIVEREF(__pyx_tuple__16);
 
-  /* "socrates_ancient.pyx":81
+  /* "socrates_ancient.py":81
  *            -36, -18,   0, -19, -15, -15, -21, -38,
  *            -39, -30, -31, -13, -31, -36, -34, -42),
  *     'K': (   4,  54,  47, -99, -99,  60,  83, -62,             # <<<<<<<<<<<<<<
@@ -13026,7 +12971,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__17);
   __Pyx_GIVEREF(__pyx_tuple__17);
 
-  /* "socrates_ancient.pyx":100
+  /* "socrates_ancient.py":100
  * 
  * 
  * def staticEval(game):    # Standing Pat             # <<<<<<<<<<<<<<
@@ -13036,9 +12981,9 @@ static int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__18 = PyTuple_Pack(13, __pyx_n_s_game, __pyx_n_s_currTurn, __pyx_n_s_whiteMap, __pyx_n_s_blackMap, __pyx_n_s_pawnMap, __pyx_n_s_knightMap, __pyx_n_s_bishopMap, __pyx_n_s_rookMap, __pyx_n_s_queenMap, __pyx_n_s_kingMap, __pyx_n_s_counter, __pyx_n_s_score, __pyx_n_s_sq); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(0, 100, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__18);
   __Pyx_GIVEREF(__pyx_tuple__18);
-  __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(1, 0, 13, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_pyx, __pyx_n_s_staticEval, 100, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(1, 0, 13, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_py, __pyx_n_s_staticEval, 100, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(0, 100, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":126
+  /* "socrates_ancient.py":126
  * 
  * class CheckmatedException(Exception):
  *     def __init__(self, message = ""):             # <<<<<<<<<<<<<<
@@ -13048,12 +12993,12 @@ static int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__20 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_message); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 126, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__20);
   __Pyx_GIVEREF(__pyx_tuple__20);
-  __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_pyx, __pyx_n_s_init, 126, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 126, __pyx_L1_error)
+  __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_py, __pyx_n_s_init, 126, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 126, __pyx_L1_error)
   __pyx_tuple__22 = PyTuple_Pack(1, ((PyObject*)__pyx_kp_s_)); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 126, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__22);
   __Pyx_GIVEREF(__pyx_tuple__22);
 
-  /* "socrates_ancient.pyx":135
+  /* "socrates_ancient.py":135
  * 
  * 
  * class Searcher(object):             # <<<<<<<<<<<<<<
@@ -13064,7 +13009,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__23);
   __Pyx_GIVEREF(__pyx_tuple__23);
 
-  /* "socrates_ancient.pyx":136
+  /* "socrates_ancient.py":136
  * 
  * class Searcher(object):
  *     def __init__(self, game, usualTime, stopRatio):             # <<<<<<<<<<<<<<
@@ -13074,9 +13019,9 @@ static int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__24 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_game, __pyx_n_s_usualTime, __pyx_n_s_stopRatio); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(0, 136, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__24);
   __Pyx_GIVEREF(__pyx_tuple__24);
-  __pyx_codeobj__25 = (PyObject*)__Pyx_PyCode_New(4, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__24, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_pyx, __pyx_n_s_init, 136, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__25)) __PYX_ERR(0, 136, __pyx_L1_error)
+  __pyx_codeobj__25 = (PyObject*)__Pyx_PyCode_New(4, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__24, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_py, __pyx_n_s_init, 136, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__25)) __PYX_ERR(0, 136, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":151
+  /* "socrates_ancient.py":151
  *         self.stopRatio = stopRatio
  * 
  *     def mvvLva(self, move):             # <<<<<<<<<<<<<<
@@ -13086,171 +13031,168 @@ static int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__26 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_move, __pyx_n_s_pieceAtTo); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(0, 151, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__26);
   __Pyx_GIVEREF(__pyx_tuple__26);
-  __pyx_codeobj__27 = (PyObject*)__Pyx_PyCode_New(2, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__26, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_pyx, __pyx_n_s_mvvLva, 151, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__27)) __PYX_ERR(0, 151, __pyx_L1_error)
+  __pyx_codeobj__27 = (PyObject*)__Pyx_PyCode_New(2, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__26, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_py, __pyx_n_s_mvvLva, 151, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__27)) __PYX_ERR(0, 151, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":157
+  /* "socrates_ancient.py":157
  *         return (piece[pieceAtTo.symbol().upper()] << 3) - piece[self.game.board.piece_at(move.from_square).symbol().upper()]
  * 
- *     def quiescenceEval(self, alpha, beta, ply, important=False):             # <<<<<<<<<<<<<<
+ *     def quiescenceEval(self, alpha, beta, ply):             # <<<<<<<<<<<<<<
  *         bestScore = -INFINITY
- *         if important or self.game.board.is_check():
+ *         if self.game.board.is_check():
  */
-  __pyx_tuple__28 = PyTuple_Pack(9, __pyx_n_s_self, __pyx_n_s_alpha, __pyx_n_s_beta, __pyx_n_s_ply, __pyx_n_s_important, __pyx_n_s_bestScore, __pyx_n_s_legalMoves, __pyx_n_s_score, __pyx_n_s_move); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __pyx_tuple__28 = PyTuple_Pack(9, __pyx_n_s_self, __pyx_n_s_alpha, __pyx_n_s_beta, __pyx_n_s_ply, __pyx_n_s_bestScore, __pyx_n_s_staticScore, __pyx_n_s_legalMoves, __pyx_n_s_move, __pyx_n_s_score); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__28);
   __Pyx_GIVEREF(__pyx_tuple__28);
-  __pyx_codeobj__29 = (PyObject*)__Pyx_PyCode_New(5, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_pyx, __pyx_n_s_quiescenceEval, 157, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__29)) __PYX_ERR(0, 157, __pyx_L1_error)
-  __pyx_tuple__30 = PyTuple_Pack(1, ((PyObject *)Py_False)); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(0, 157, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__30);
-  __Pyx_GIVEREF(__pyx_tuple__30);
+  __pyx_codeobj__29 = (PyObject*)__Pyx_PyCode_New(4, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_py, __pyx_n_s_quiescenceEval, 157, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__29)) __PYX_ERR(0, 157, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":192
+  /* "socrates_ancient.py":189
  *         return bestScore
  * 
  *     def getBestMove(self):             # <<<<<<<<<<<<<<
  *         eprint("<Socrates Ancient %s> " % ("BLACK", "WHITE")[self.game.board.turn] + os.path.basename(__file__))
  *         self.moveRatings = dict()
  */
-  __pyx_tuple__31 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_timeGap, __pyx_n_s_depth, __pyx_n_s_bestMove, __pyx_n_s_bestScore, __pyx_n_s_thisMove); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(0, 192, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__31);
-  __Pyx_GIVEREF(__pyx_tuple__31);
-  __pyx_codeobj__32 = (PyObject*)__Pyx_PyCode_New(1, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__31, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_pyx, __pyx_n_s_getBestMove, 192, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__32)) __PYX_ERR(0, 192, __pyx_L1_error)
+  __pyx_tuple__30 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_timeGap, __pyx_n_s_depth, __pyx_n_s_bestMove, __pyx_n_s_bestScore, __pyx_n_s_thisMove); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(0, 189, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__30);
+  __Pyx_GIVEREF(__pyx_tuple__30);
+  __pyx_codeobj__31 = (PyObject*)__Pyx_PyCode_New(1, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__30, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_py, __pyx_n_s_getBestMove, 189, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__31)) __PYX_ERR(0, 189, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":227
+  /* "socrates_ancient.py":225
  *         return bestMove
  * 
  *     def storeTranspositionTable(self, thisHash, depthLeft, score, nodeType, bestMove):             # <<<<<<<<<<<<<<
  *         t = Transposition(thisHash, self.game, depthLeft, score, nodeType, bestMove)
  *         self.transpositionTable[thisHash] = t
  */
-  __pyx_tuple__33 = PyTuple_Pack(7, __pyx_n_s_self, __pyx_n_s_thisHash, __pyx_n_s_depthLeft, __pyx_n_s_score, __pyx_n_s_nodeType, __pyx_n_s_bestMove, __pyx_n_s_t); if (unlikely(!__pyx_tuple__33)) __PYX_ERR(0, 227, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__33);
-  __Pyx_GIVEREF(__pyx_tuple__33);
-  __pyx_codeobj__34 = (PyObject*)__Pyx_PyCode_New(6, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__33, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_pyx, __pyx_n_s_storeTranspositionTable, 227, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__34)) __PYX_ERR(0, 227, __pyx_L1_error)
+  __pyx_tuple__32 = PyTuple_Pack(7, __pyx_n_s_self, __pyx_n_s_thisHash, __pyx_n_s_depthLeft, __pyx_n_s_score, __pyx_n_s_nodeType, __pyx_n_s_bestMove, __pyx_n_s_t); if (unlikely(!__pyx_tuple__32)) __PYX_ERR(0, 225, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__32);
+  __Pyx_GIVEREF(__pyx_tuple__32);
+  __pyx_codeobj__33 = (PyObject*)__Pyx_PyCode_New(6, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__32, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_py, __pyx_n_s_storeTranspositionTable, 225, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__33)) __PYX_ERR(0, 225, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":231
+  /* "socrates_ancient.py":229
  *         self.transpositionTable[thisHash] = t
  * 
  *     def lookupTranspositionTable(self, thisHash, alpha, beta, depthLeft):             # <<<<<<<<<<<<<<
  *         iCanReplaceThisTransposition = True
  * 
  */
-  __pyx_tuple__35 = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_thisHash, __pyx_n_s_alpha, __pyx_n_s_beta, __pyx_n_s_depthLeft, __pyx_n_s_iCanReplaceThisTransposition, __pyx_n_s_thisTransposition, __pyx_n_s_isCheckmateMove); if (unlikely(!__pyx_tuple__35)) __PYX_ERR(0, 231, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__35);
-  __Pyx_GIVEREF(__pyx_tuple__35);
-  __pyx_codeobj__36 = (PyObject*)__Pyx_PyCode_New(5, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__35, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_pyx, __pyx_n_s_lookupTranspositionTable, 231, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__36)) __PYX_ERR(0, 231, __pyx_L1_error)
+  __pyx_tuple__34 = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_thisHash, __pyx_n_s_alpha, __pyx_n_s_beta, __pyx_n_s_depthLeft, __pyx_n_s_iCanReplaceThisTransposition, __pyx_n_s_thisTransposition, __pyx_n_s_isCheckmateMove); if (unlikely(!__pyx_tuple__34)) __PYX_ERR(0, 229, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__34);
+  __Pyx_GIVEREF(__pyx_tuple__34);
+  __pyx_codeobj__35 = (PyObject*)__Pyx_PyCode_New(5, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__34, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_py, __pyx_n_s_lookupTranspositionTable, 229, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__35)) __PYX_ERR(0, 229, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":268
+  /* "socrates_ancient.py":266
  *             return None, iCanReplaceThisTransposition, None
  * 
  *     def sortKey(self, m):             # <<<<<<<<<<<<<<
  *         return self.moveRatings.get(m, 0)
  * 
  */
-  __pyx_tuple__37 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_m); if (unlikely(!__pyx_tuple__37)) __PYX_ERR(0, 268, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__37);
-  __Pyx_GIVEREF(__pyx_tuple__37);
-  __pyx_codeobj__38 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__37, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_pyx, __pyx_n_s_sortKey, 268, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__38)) __PYX_ERR(0, 268, __pyx_L1_error)
+  __pyx_tuple__36 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_m); if (unlikely(!__pyx_tuple__36)) __PYX_ERR(0, 266, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__36);
+  __Pyx_GIVEREF(__pyx_tuple__36);
+  __pyx_codeobj__37 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__36, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_py, __pyx_n_s_sortKey, 266, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__37)) __PYX_ERR(0, 266, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":271
+  /* "socrates_ancient.py":269
  *         return self.moveRatings.get(m, 0)
  * 
  *     def moveIter(self, transposition, legalMoves, ply):             # <<<<<<<<<<<<<<
  *         if transposition is not None and self.game.board.is_legal(transposition.bestMove):
  *             yield transposition.bestMove
  */
-  __pyx_tuple__39 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_transposition, __pyx_n_s_legalMoves, __pyx_n_s_ply, __pyx_n_s_currKillerMoves); if (unlikely(!__pyx_tuple__39)) __PYX_ERR(0, 271, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__39);
-  __Pyx_GIVEREF(__pyx_tuple__39);
-  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(4, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__39, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_pyx, __pyx_n_s_moveIter, 271, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 271, __pyx_L1_error)
+  __pyx_tuple__38 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_transposition, __pyx_n_s_legalMoves, __pyx_n_s_ply, __pyx_n_s_currKillerMoves); if (unlikely(!__pyx_tuple__38)) __PYX_ERR(0, 269, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__38);
+  __Pyx_GIVEREF(__pyx_tuple__38);
+  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(4, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__38, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_py, __pyx_n_s_moveIter, 269, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 269, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":300
+  /* "socrates_ancient.py":298
  *             yield next(legalMoves)
  * 
  *     def pvSearch(self, alpha, beta, depthLeft, root = False):             # <<<<<<<<<<<<<<
  *         ply = len(self.game.board.move_stack)
  *         if depthLeft <= 0:
  */
-  __pyx_tuple__40 = PyTuple_Pack(22, __pyx_n_s_self, __pyx_n_s_alpha, __pyx_n_s_beta, __pyx_n_s_depthLeft, __pyx_n_s_root, __pyx_n_s_ply, __pyx_n_s_thisHash, __pyx_n_s_history, __pyx_n_s_transpositionScore, __pyx_n_s_iCanReplaceThisTransposition, __pyx_n_s_transposition, __pyx_n_s_legalMoves, __pyx_n_s_legalMoves_check, __pyx_n_s_score, __pyx_n_s_val, __pyx_n_s_moves, __pyx_n_s_thisNodeType, __pyx_n_s_thisBestScore, __pyx_n_s_thisBestMove, __pyx_n_s_counter, __pyx_n_s_move, __pyx_n_s_nextDepth); if (unlikely(!__pyx_tuple__40)) __PYX_ERR(0, 300, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__40);
-  __Pyx_GIVEREF(__pyx_tuple__40);
-  __pyx_codeobj__41 = (PyObject*)__Pyx_PyCode_New(5, 0, 22, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__40, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_pyx, __pyx_n_s_pvSearch, 300, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__41)) __PYX_ERR(0, 300, __pyx_L1_error)
-  __pyx_tuple__42 = PyTuple_Pack(1, ((PyObject *)Py_False)); if (unlikely(!__pyx_tuple__42)) __PYX_ERR(0, 300, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__42);
-  __Pyx_GIVEREF(__pyx_tuple__42);
+  __pyx_tuple__39 = PyTuple_Pack(22, __pyx_n_s_self, __pyx_n_s_alpha, __pyx_n_s_beta, __pyx_n_s_depthLeft, __pyx_n_s_root, __pyx_n_s_ply, __pyx_n_s_thisHash, __pyx_n_s_history, __pyx_n_s_transpositionScore, __pyx_n_s_iCanReplaceThisTransposition, __pyx_n_s_transposition, __pyx_n_s_legalMoves, __pyx_n_s_legalMoves_check, __pyx_n_s_score, __pyx_n_s_val, __pyx_n_s_moves, __pyx_n_s_thisNodeType, __pyx_n_s_thisBestScore, __pyx_n_s_thisBestMove, __pyx_n_s_counter, __pyx_n_s_move, __pyx_n_s_nextDepth); if (unlikely(!__pyx_tuple__39)) __PYX_ERR(0, 298, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__39);
+  __Pyx_GIVEREF(__pyx_tuple__39);
+  __pyx_codeobj__40 = (PyObject*)__Pyx_PyCode_New(5, 0, 22, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__39, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_py, __pyx_n_s_pvSearch, 298, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__40)) __PYX_ERR(0, 298, __pyx_L1_error)
+  __pyx_tuple__41 = PyTuple_Pack(1, ((PyObject *)Py_False)); if (unlikely(!__pyx_tuple__41)) __PYX_ERR(0, 298, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__41);
+  __Pyx_GIVEREF(__pyx_tuple__41);
 
-  /* "socrates_ancient.pyx":462
+  /* "socrates_ancient.py":462
  * 
  * 
  * class SocratesGame(object):             # <<<<<<<<<<<<<<
  *     def __init__(self, usualTime, stopRatio, fenStr = ""):
  *         if fenStr != "":
  */
-  __pyx_tuple__43 = PyTuple_Pack(1, __pyx_builtin_object); if (unlikely(!__pyx_tuple__43)) __PYX_ERR(0, 462, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__43);
-  __Pyx_GIVEREF(__pyx_tuple__43);
+  __pyx_tuple__42 = PyTuple_Pack(1, __pyx_builtin_object); if (unlikely(!__pyx_tuple__42)) __PYX_ERR(0, 462, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__42);
+  __Pyx_GIVEREF(__pyx_tuple__42);
 
-  /* "socrates_ancient.pyx":463
+  /* "socrates_ancient.py":463
  * 
  * class SocratesGame(object):
  *     def __init__(self, usualTime, stopRatio, fenStr = ""):             # <<<<<<<<<<<<<<
  *         if fenStr != "":
  *             self.board = chess.Board(fenStr)
  */
-  __pyx_tuple__44 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_usualTime, __pyx_n_s_stopRatio, __pyx_n_s_fenStr); if (unlikely(!__pyx_tuple__44)) __PYX_ERR(0, 463, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__44);
-  __Pyx_GIVEREF(__pyx_tuple__44);
-  __pyx_codeobj__45 = (PyObject*)__Pyx_PyCode_New(4, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__44, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_pyx, __pyx_n_s_init, 463, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__45)) __PYX_ERR(0, 463, __pyx_L1_error)
-  __pyx_tuple__46 = PyTuple_Pack(1, ((PyObject*)__pyx_kp_s_)); if (unlikely(!__pyx_tuple__46)) __PYX_ERR(0, 463, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__46);
-  __Pyx_GIVEREF(__pyx_tuple__46);
+  __pyx_tuple__43 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_usualTime, __pyx_n_s_stopRatio, __pyx_n_s_fenStr); if (unlikely(!__pyx_tuple__43)) __PYX_ERR(0, 463, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__43);
+  __Pyx_GIVEREF(__pyx_tuple__43);
+  __pyx_codeobj__44 = (PyObject*)__Pyx_PyCode_New(4, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__43, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_py, __pyx_n_s_init, 463, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__44)) __PYX_ERR(0, 463, __pyx_L1_error)
+  __pyx_tuple__45 = PyTuple_Pack(1, ((PyObject*)__pyx_kp_s_)); if (unlikely(!__pyx_tuple__45)) __PYX_ERR(0, 463, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__45);
+  __Pyx_GIVEREF(__pyx_tuple__45);
 
-  /* "socrates_ancient.pyx":471
+  /* "socrates_ancient.py":471
  *         self.historyBoard = dict()
  * 
  *     def hash(self):             # <<<<<<<<<<<<<<
- *         return (self.board.pawns, self.board.knights, self.board.bishops, self.board.rooks, self.board.queens, self.board.kings, self.board.occupied_co[True])
+ *         return (self.board.pawns, self.board.knights, self.board.bishops, self.board.rooks, self.board.queens, self.board.kings, self.board.occupied_co[True], self.board.turn)
  * 
  */
-  __pyx_tuple__47 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__47)) __PYX_ERR(0, 471, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__47);
-  __Pyx_GIVEREF(__pyx_tuple__47);
-  __pyx_codeobj__48 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__47, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_pyx, __pyx_n_s_hash, 471, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__48)) __PYX_ERR(0, 471, __pyx_L1_error)
+  __pyx_tuple__46 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__46)) __PYX_ERR(0, 471, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__46);
+  __Pyx_GIVEREF(__pyx_tuple__46);
+  __pyx_codeobj__47 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__46, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_py, __pyx_n_s_hash, 471, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__47)) __PYX_ERR(0, 471, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":474
- *         return (self.board.pawns, self.board.knights, self.board.bishops, self.board.rooks, self.board.queens, self.board.kings, self.board.occupied_co[True])
+  /* "socrates_ancient.py":474
+ *         return (self.board.pawns, self.board.knights, self.board.bishops, self.board.rooks, self.board.queens, self.board.kings, self.board.occupied_co[True], self.board.turn)
  * 
  *     def moveAndReturnsSAN(self):             # <<<<<<<<<<<<<<
  *         myMove = self.searcher.getBestMove()
  *         sanOutStr = self.board.san(myMove)
  */
-  __pyx_tuple__49 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_myMove, __pyx_n_s_sanOutStr, __pyx_n_s_thisHash); if (unlikely(!__pyx_tuple__49)) __PYX_ERR(0, 474, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__49);
-  __Pyx_GIVEREF(__pyx_tuple__49);
-  __pyx_codeobj__50 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_pyx, __pyx_n_s_moveAndReturnsSAN, 474, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__50)) __PYX_ERR(0, 474, __pyx_L1_error)
+  __pyx_tuple__48 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_myMove, __pyx_n_s_sanOutStr, __pyx_n_s_thisHash); if (unlikely(!__pyx_tuple__48)) __PYX_ERR(0, 474, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__48);
+  __Pyx_GIVEREF(__pyx_tuple__48);
+  __pyx_codeobj__49 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__48, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_py, __pyx_n_s_moveAndReturnsSAN, 474, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__49)) __PYX_ERR(0, 474, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":485
+  /* "socrates_ancient.py":485
  *         return sanOutStr
  * 
  *     def readInAndReturnsSAN(self):             # <<<<<<<<<<<<<<
  *         sanInStr = raw_input().strip()
  *         self.board.push_san(sanInStr)
  */
-  __pyx_tuple__51 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_sanInStr, __pyx_n_s_thisHash); if (unlikely(!__pyx_tuple__51)) __PYX_ERR(0, 485, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__51);
-  __Pyx_GIVEREF(__pyx_tuple__51);
-  __pyx_codeobj__52 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__51, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_pyx, __pyx_n_s_readInAndReturnsSAN, 485, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__52)) __PYX_ERR(0, 485, __pyx_L1_error)
+  __pyx_tuple__50 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_sanInStr, __pyx_n_s_thisHash); if (unlikely(!__pyx_tuple__50)) __PYX_ERR(0, 485, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__50);
+  __Pyx_GIVEREF(__pyx_tuple__50);
+  __pyx_codeobj__51 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_py, __pyx_n_s_readInAndReturnsSAN, 485, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__51)) __PYX_ERR(0, 485, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":495
+  /* "socrates_ancient.py":495
  *         return sanInStr
  * 
  *     def run(self):             # <<<<<<<<<<<<<<
  *         myPlayer = raw_input().strip()
  *         if(myPlayer == "white"):
  */
-  __pyx_tuple__53 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_myPlayer, __pyx_n_s_sanOutStr, __pyx_n_s_sanInStr); if (unlikely(!__pyx_tuple__53)) __PYX_ERR(0, 495, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__53);
-  __Pyx_GIVEREF(__pyx_tuple__53);
-  __pyx_codeobj__54 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__53, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_pyx, __pyx_n_s_run, 495, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__54)) __PYX_ERR(0, 495, __pyx_L1_error)
+  __pyx_tuple__52 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_myPlayer, __pyx_n_s_sanOutStr, __pyx_n_s_sanInStr); if (unlikely(!__pyx_tuple__52)) __PYX_ERR(0, 495, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__52);
+  __Pyx_GIVEREF(__pyx_tuple__52);
+  __pyx_codeobj__53 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__52, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_socrates_ancient_py, __pyx_n_s_run, 495, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__53)) __PYX_ERR(0, 495, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -13329,7 +13271,6 @@ static int __Pyx_InitGlobals(void) {
   __pyx_int_90 = PyInt_FromLong(90); if (unlikely(!__pyx_int_90)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_100 = PyInt_FromLong(100); if (unlikely(!__pyx_int_100)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_102 = PyInt_FromLong(102); if (unlikely(!__pyx_int_102)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_int_200 = PyInt_FromLong(200); if (unlikely(!__pyx_int_200)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_280 = PyInt_FromLong(280); if (unlikely(!__pyx_int_280)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_300 = PyInt_FromLong(300); if (unlikely(!__pyx_int_300)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_320 = PyInt_FromLong(320); if (unlikely(!__pyx_int_320)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -13448,7 +13389,7 @@ static int __Pyx_modinit_type_init_code(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
-  if (PyType_Ready(&__pyx_type_17socrates_ancientc___pyx_scope_struct__moveIter) < 0) __PYX_ERR(0, 271, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_17socrates_ancientc___pyx_scope_struct__moveIter) < 0) __PYX_ERR(0, 269, __pyx_L1_error)
   __pyx_type_17socrates_ancientc___pyx_scope_struct__moveIter.tp_print = 0;
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_17socrates_ancientc___pyx_scope_struct__moveIter.tp_dictoffset && __pyx_type_17socrates_ancientc___pyx_scope_struct__moveIter.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_17socrates_ancientc___pyx_scope_struct__moveIter.tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
@@ -13669,7 +13610,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "socrates_ancient.pyx":3
+  /* "socrates_ancient.py":3
  * # coding=utf-8
  * from __future__ import print_function
  * import chessmodc as chess             # <<<<<<<<<<<<<<
@@ -13681,7 +13622,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_chess, __pyx_t_1) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":4
+  /* "socrates_ancient.py":4
  * from __future__ import print_function
  * import chessmodc as chess
  * import random             # <<<<<<<<<<<<<<
@@ -13693,7 +13634,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_random, __pyx_t_1) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "socrates_ancient.pyx":5
+  /* "socrates_ancient.py":5
  * import chessmodc as chess
  * import random
  * from utils import eprint, fprint             # <<<<<<<<<<<<<<
@@ -13721,7 +13662,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":6
+  /* "socrates_ancient.py":6
  * import random
  * from utils import eprint, fprint
  * import enum             # <<<<<<<<<<<<<<
@@ -13733,7 +13674,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_enum, __pyx_t_2) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":7
+  /* "socrates_ancient.py":7
  * from utils import eprint, fprint
  * import enum
  * import time             # <<<<<<<<<<<<<<
@@ -13745,7 +13686,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_time, __pyx_t_2) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":8
+  /* "socrates_ancient.py":8
  * import enum
  * import time
  * import itertools             # <<<<<<<<<<<<<<
@@ -13757,7 +13698,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_itertools, __pyx_t_2) < 0) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":9
+  /* "socrates_ancient.py":9
  * import time
  * import itertools
  * import os             # <<<<<<<<<<<<<<
@@ -13769,7 +13710,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_os, __pyx_t_2) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":11
+  /* "socrates_ancient.py":11
  * import os
  * 
  * INFINITY = 999999             # <<<<<<<<<<<<<<
@@ -13778,7 +13719,7 @@ if (!__Pyx_RefNanny) {
  */
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_INFINITY, __pyx_int_999999) < 0) __PYX_ERR(0, 11, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":13
+  /* "socrates_ancient.py":13
  * INFINITY = 999999
  * 
  * class NodeType(enum.Enum):             # <<<<<<<<<<<<<<
@@ -13800,7 +13741,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_1, __pyx_t_2, __pyx_n_s_NodeType, __pyx_n_s_NodeType, (PyObject *) NULL, __pyx_n_s_socrates_ancientc, (PyObject *) NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "socrates_ancient.pyx":14
+  /* "socrates_ancient.py":14
  * 
  * class NodeType(enum.Enum):
  *     EXACT = 0             # <<<<<<<<<<<<<<
@@ -13809,7 +13750,7 @@ if (!__Pyx_RefNanny) {
  */
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_EXACT, __pyx_int_0) < 0) __PYX_ERR(0, 14, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":15
+  /* "socrates_ancient.py":15
  * class NodeType(enum.Enum):
  *     EXACT = 0
  *     LOWER_BOUND = 1   #  Beta- Beta             # <<<<<<<<<<<<<<
@@ -13818,7 +13759,7 @@ if (!__Pyx_RefNanny) {
  */
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_LOWER_BOUND, __pyx_int_1) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":16
+  /* "socrates_ancient.py":16
  *     EXACT = 0
  *     LOWER_BOUND = 1   #  Beta- Beta
  *     UPPER_BOUND = 2   #  Move  Alpha  Alpha             # <<<<<<<<<<<<<<
@@ -13827,7 +13768,7 @@ if (!__Pyx_RefNanny) {
  */
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_UPPER_BOUND, __pyx_int_2) < 0) __PYX_ERR(0, 16, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":13
+  /* "socrates_ancient.py":13
  * INFINITY = 999999
  * 
  * class NodeType(enum.Enum):             # <<<<<<<<<<<<<<
@@ -13842,7 +13783,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":18
+  /* "socrates_ancient.py":18
  *     UPPER_BOUND = 2   #  Move  Alpha  Alpha
  * 
  * class FailType(enum.Enum):             # <<<<<<<<<<<<<<
@@ -13864,7 +13805,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_1, __pyx_t_2, __pyx_n_s_FailType, __pyx_n_s_FailType, (PyObject *) NULL, __pyx_n_s_socrates_ancientc, (PyObject *) NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "socrates_ancient.pyx":19
+  /* "socrates_ancient.py":19
  * 
  * class FailType(enum.Enum):
  *     FAILSOFT = 0             # <<<<<<<<<<<<<<
@@ -13873,7 +13814,7 @@ if (!__Pyx_RefNanny) {
  */
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_FAILSOFT, __pyx_int_0) < 0) __PYX_ERR(0, 19, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":20
+  /* "socrates_ancient.py":20
  * class FailType(enum.Enum):
  *     FAILSOFT = 0
  *     FAILHARD = 1             # <<<<<<<<<<<<<<
@@ -13882,7 +13823,7 @@ if (!__Pyx_RefNanny) {
  */
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_FAILHARD, __pyx_int_1) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":18
+  /* "socrates_ancient.py":18
  *     UPPER_BOUND = 2   #  Move  Alpha  Alpha
  * 
  * class FailType(enum.Enum):             # <<<<<<<<<<<<<<
@@ -13897,7 +13838,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":22
+  /* "socrates_ancient.py":22
  *     FAILHARD = 1
  * 
  * class Transposition(object):             # <<<<<<<<<<<<<<
@@ -13909,7 +13850,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_1 = __Pyx_Py3MetaclassPrepare(__pyx_t_2, __pyx_tuple__5, __pyx_n_s_Transposition, __pyx_n_s_Transposition, (PyObject *) NULL, __pyx_n_s_socrates_ancientc, (PyObject *) NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "socrates_ancient.pyx":23
+  /* "socrates_ancient.py":23
  * 
  * class Transposition(object):
  *     def __init__(self, thisHash, game, depthLeft, score, nodeType, bestMove):             # <<<<<<<<<<<<<<
@@ -13921,7 +13862,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_SetNameInClass(__pyx_t_1, __pyx_n_s_init, __pyx_t_3) < 0) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "socrates_ancient.pyx":22
+  /* "socrates_ancient.py":22
  *     FAILHARD = 1
  * 
  * class Transposition(object):             # <<<<<<<<<<<<<<
@@ -13935,31 +13876,31 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":30
+  /* "socrates_ancient.py":30
  *         self.bestMove = bestMove
  * 
  * def logPrint(*args, **kwargs):             # <<<<<<<<<<<<<<
  *     return
  *     fprint(*args, **kwargs)
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_17socrates_ancientc_1logPrint, NULL, __pyx_n_s_socrates_ancientc); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_1logPrint, 0, __pyx_n_s_logPrint, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 30, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_logPrint, __pyx_t_2) < 0) __PYX_ERR(0, 30, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":34
+  /* "socrates_ancient.py":34
  *     fprint(*args, **kwargs)
  * 
  * def cut(string):             # <<<<<<<<<<<<<<
  *     return [string[i*8:i*8+8] for i in range(8)]
  * 
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_17socrates_ancientc_3cut, NULL, __pyx_n_s_socrates_ancientc); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_3cut, 0, __pyx_n_s_cut, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__11)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_cut, __pyx_t_2) < 0) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":38
+  /* "socrates_ancient.py":38
  * 
  * 
  * piece = { 'P': 100, 'N': 280, 'B': 320, 'R': 479, 'Q': 929, 'K': 60000 }             # <<<<<<<<<<<<<<
@@ -13977,7 +13918,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_piece, __pyx_t_2) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":41
+  /* "socrates_ancient.py":41
  * 
  * pst = {
  *     'P': (   0,   0,   0,   0,   0,   0,   0,   0,             # <<<<<<<<<<<<<<
@@ -13988,7 +13929,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_P, __pyx_tuple__12) < 0) __PYX_ERR(0, 41, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":49
+  /* "socrates_ancient.py":49
  *            -31,   8,  -7, -37, -36, -14,   3, -31,
  *              0,   0,   0,   0,   0,   0,   0,   0),
  *     'N': ( -66, -53, -75, -75, -10, -55, -58, -70,             # <<<<<<<<<<<<<<
@@ -13997,7 +13938,7 @@ if (!__Pyx_RefNanny) {
  */
   if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_N, __pyx_tuple__13) < 0) __PYX_ERR(0, 41, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":57
+  /* "socrates_ancient.py":57
  *            -23, -15,   2,   0,   2,   0, -23, -20,
  *            -74, -23, -26, -24, -19, -35, -22, -69),
  *     'B': ( -59, -78, -82, -76, -23,-107, -37, -50,             # <<<<<<<<<<<<<<
@@ -14006,7 +13947,7 @@ if (!__Pyx_RefNanny) {
  */
   if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_B, __pyx_tuple__14) < 0) __PYX_ERR(0, 41, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":65
+  /* "socrates_ancient.py":65
  *             19,  20,  11,   6,   7,   6,  20,  16,
  *             -7,   2, -15, -12, -14, -15, -10, -10),
  *     'R': (  35,  29,  33,   4,  37,  33,  56,  50,             # <<<<<<<<<<<<<<
@@ -14015,7 +13956,7 @@ if (!__Pyx_RefNanny) {
  */
   if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_R, __pyx_tuple__15) < 0) __PYX_ERR(0, 41, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":73
+  /* "socrates_ancient.py":73
  *            -53, -38, -31, -26, -29, -43, -44, -53,
  *            -30, -24, -18,   5,  -2, -18, -31, -32),
  *     'Q': (   6,   1,  -8,-104,  69,  24,  88,  26,             # <<<<<<<<<<<<<<
@@ -14024,7 +13965,7 @@ if (!__Pyx_RefNanny) {
  */
   if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_Q, __pyx_tuple__16) < 0) __PYX_ERR(0, 41, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":81
+  /* "socrates_ancient.py":81
  *            -36, -18,   0, -19, -15, -15, -21, -38,
  *            -39, -30, -31, -13, -31, -36, -34, -42),
  *     'K': (   4,  54,  47, -99, -99,  60,  83, -62,             # <<<<<<<<<<<<<<
@@ -14035,7 +13976,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pst, __pyx_t_2) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":91
+  /* "socrates_ancient.py":91
  * }
  * 
  * reversePst = {}             # <<<<<<<<<<<<<<
@@ -14047,7 +13988,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_reversePst, __pyx_t_2) < 0) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":92
+  /* "socrates_ancient.py":92
  * 
  * reversePst = {}
  * for pi, val in pst.iteritems():             # <<<<<<<<<<<<<<
@@ -14078,7 +14019,7 @@ if (!__Pyx_RefNanny) {
     if (PyDict_SetItem(__pyx_d, __pyx_n_s_val, __pyx_t_1) < 0) __PYX_ERR(0, 92, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "socrates_ancient.pyx":93
+    /* "socrates_ancient.py":93
  * reversePst = {}
  * for pi, val in pst.iteritems():
  *     val = list(val)             # <<<<<<<<<<<<<<
@@ -14093,7 +14034,7 @@ if (!__Pyx_RefNanny) {
     if (PyDict_SetItem(__pyx_d, __pyx_n_s_val, __pyx_t_3) < 0) __PYX_ERR(0, 93, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "socrates_ancient.pyx":94
+    /* "socrates_ancient.py":94
  * for pi, val in pst.iteritems():
  *     val = list(val)
  *     newVal = []             # <<<<<<<<<<<<<<
@@ -14105,7 +14046,7 @@ if (!__Pyx_RefNanny) {
     if (PyDict_SetItem(__pyx_d, __pyx_n_s_newVal, __pyx_t_3) < 0) __PYX_ERR(0, 94, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "socrates_ancient.pyx":95
+    /* "socrates_ancient.py":95
  *     val = list(val)
  *     newVal = []
  *     for i in range(0, 8):             # <<<<<<<<<<<<<<
@@ -14118,7 +14059,7 @@ if (!__Pyx_RefNanny) {
       if (PyDict_SetItem(__pyx_d, __pyx_n_s_i, __pyx_t_3) < 0) __PYX_ERR(0, 95, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-      /* "socrates_ancient.pyx":96
+      /* "socrates_ancient.py":96
  *     newVal = []
  *     for i in range(0, 8):
  *         newVal += val[(7-i)*8 : (7-i)*8+8]             # <<<<<<<<<<<<<<
@@ -14161,7 +14102,7 @@ if (!__Pyx_RefNanny) {
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
     }
 
-    /* "socrates_ancient.pyx":97
+    /* "socrates_ancient.py":97
  *     for i in range(0, 8):
  *         newVal += val[(7-i)*8 : (7-i)*8+8]
  *     reversePst[pi] = tuple(newVal)             # <<<<<<<<<<<<<<
@@ -14184,19 +14125,19 @@ if (!__Pyx_RefNanny) {
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":100
+  /* "socrates_ancient.py":100
  * 
  * 
  * def staticEval(game):    # Standing Pat             # <<<<<<<<<<<<<<
  *     #  Alpha-beta  Negamax
  *     currTurn = game.board.turn
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_17socrates_ancientc_5staticEval, NULL, __pyx_n_s_socrates_ancientc); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_5staticEval, 0, __pyx_n_s_staticEval, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__19)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 100, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_staticEval, __pyx_t_2) < 0) __PYX_ERR(0, 100, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":125
+  /* "socrates_ancient.py":125
  * 
  * 
  * class CheckmatedException(Exception):             # <<<<<<<<<<<<<<
@@ -14215,7 +14156,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_11 = PyList_New(0); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 125, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
 
-  /* "socrates_ancient.pyx":126
+  /* "socrates_ancient.py":126
  * 
  * class CheckmatedException(Exception):
  *     def __init__(self, message = ""):             # <<<<<<<<<<<<<<
@@ -14231,7 +14172,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_init, __pyx_t_4) < 0) __PYX_ERR(0, 126, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "socrates_ancient.pyx":125
+  /* "socrates_ancient.py":125
  * 
  * 
  * class CheckmatedException(Exception):             # <<<<<<<<<<<<<<
@@ -14248,34 +14189,34 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":130
+  /* "socrates_ancient.py":130
  * 
  * 
  * WINNING_SCORE = 50000             # <<<<<<<<<<<<<<
  * NOMOVESTHRESHOLD = 0
- * MAX_MOVES = 200
+ * MAX_MOVES = 500
  */
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_WINNING_SCORE, __pyx_int_50000) < 0) __PYX_ERR(0, 130, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":131
+  /* "socrates_ancient.py":131
  * 
  * WINNING_SCORE = 50000
  * NOMOVESTHRESHOLD = 0             # <<<<<<<<<<<<<<
- * MAX_MOVES = 200
+ * MAX_MOVES = 500
  * 
  */
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_NOMOVESTHRESHOLD, __pyx_int_0) < 0) __PYX_ERR(0, 131, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":132
+  /* "socrates_ancient.py":132
  * WINNING_SCORE = 50000
  * NOMOVESTHRESHOLD = 0
- * MAX_MOVES = 200             # <<<<<<<<<<<<<<
+ * MAX_MOVES = 500             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_MAX_MOVES, __pyx_int_200) < 0) __PYX_ERR(0, 132, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_MAX_MOVES, __pyx_int_500) < 0) __PYX_ERR(0, 132, __pyx_L1_error)
 
-  /* "socrates_ancient.pyx":135
+  /* "socrates_ancient.py":135
  * 
  * 
  * class Searcher(object):             # <<<<<<<<<<<<<<
@@ -14287,7 +14228,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_10 = __Pyx_Py3MetaclassPrepare(__pyx_t_2, __pyx_tuple__23, __pyx_n_s_Searcher, __pyx_n_s_Searcher, (PyObject *) NULL, __pyx_n_s_socrates_ancientc, (PyObject *) NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 135, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
 
-  /* "socrates_ancient.pyx":136
+  /* "socrates_ancient.py":136
  * 
  * class Searcher(object):
  *     def __init__(self, game, usualTime, stopRatio):             # <<<<<<<<<<<<<<
@@ -14299,7 +14240,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_SetNameInClass(__pyx_t_10, __pyx_n_s_init, __pyx_t_3) < 0) __PYX_ERR(0, 136, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "socrates_ancient.pyx":151
+  /* "socrates_ancient.py":151
  *         self.stopRatio = stopRatio
  * 
  *     def mvvLva(self, move):             # <<<<<<<<<<<<<<
@@ -14311,93 +14252,92 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_SetNameInClass(__pyx_t_10, __pyx_n_s_mvvLva, __pyx_t_3) < 0) __PYX_ERR(0, 151, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "socrates_ancient.pyx":157
+  /* "socrates_ancient.py":157
  *         return (piece[pieceAtTo.symbol().upper()] << 3) - piece[self.game.board.piece_at(move.from_square).symbol().upper()]
  * 
- *     def quiescenceEval(self, alpha, beta, ply, important=False):             # <<<<<<<<<<<<<<
+ *     def quiescenceEval(self, alpha, beta, ply):             # <<<<<<<<<<<<<<
  *         bestScore = -INFINITY
- *         if important or self.game.board.is_check():
+ *         if self.game.board.is_check():
  */
   __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_8Searcher_5quiescenceEval, 0, __pyx_n_s_Searcher_quiescenceEval, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__29)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__30);
   if (__Pyx_SetNameInClass(__pyx_t_10, __pyx_n_s_quiescenceEval, __pyx_t_3) < 0) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "socrates_ancient.pyx":192
+  /* "socrates_ancient.py":189
  *         return bestScore
  * 
  *     def getBestMove(self):             # <<<<<<<<<<<<<<
  *         eprint("<Socrates Ancient %s> " % ("BLACK", "WHITE")[self.game.board.turn] + os.path.basename(__file__))
  *         self.moveRatings = dict()
  */
-  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_8Searcher_7getBestMove, 0, __pyx_n_s_Searcher_getBestMove, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__32)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 192, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_8Searcher_7getBestMove, 0, __pyx_n_s_Searcher_getBestMove, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__31)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 189, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (__Pyx_SetNameInClass(__pyx_t_10, __pyx_n_s_getBestMove, __pyx_t_3) < 0) __PYX_ERR(0, 192, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_10, __pyx_n_s_getBestMove, __pyx_t_3) < 0) __PYX_ERR(0, 189, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "socrates_ancient.pyx":227
+  /* "socrates_ancient.py":225
  *         return bestMove
  * 
  *     def storeTranspositionTable(self, thisHash, depthLeft, score, nodeType, bestMove):             # <<<<<<<<<<<<<<
  *         t = Transposition(thisHash, self.game, depthLeft, score, nodeType, bestMove)
  *         self.transpositionTable[thisHash] = t
  */
-  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_8Searcher_9storeTranspositionTable, 0, __pyx_n_s_Searcher_storeTranspositionTable, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__34)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 227, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_8Searcher_9storeTranspositionTable, 0, __pyx_n_s_Searcher_storeTranspositionTable, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__33)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 225, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (__Pyx_SetNameInClass(__pyx_t_10, __pyx_n_s_storeTranspositionTable, __pyx_t_3) < 0) __PYX_ERR(0, 227, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_10, __pyx_n_s_storeTranspositionTable, __pyx_t_3) < 0) __PYX_ERR(0, 225, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "socrates_ancient.pyx":231
+  /* "socrates_ancient.py":229
  *         self.transpositionTable[thisHash] = t
  * 
  *     def lookupTranspositionTable(self, thisHash, alpha, beta, depthLeft):             # <<<<<<<<<<<<<<
  *         iCanReplaceThisTransposition = True
  * 
  */
-  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_8Searcher_11lookupTranspositionTable, 0, __pyx_n_s_Searcher_lookupTranspositionTabl, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__36)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 231, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_8Searcher_11lookupTranspositionTable, 0, __pyx_n_s_Searcher_lookupTranspositionTabl, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__35)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (__Pyx_SetNameInClass(__pyx_t_10, __pyx_n_s_lookupTranspositionTable, __pyx_t_3) < 0) __PYX_ERR(0, 231, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_10, __pyx_n_s_lookupTranspositionTable, __pyx_t_3) < 0) __PYX_ERR(0, 229, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "socrates_ancient.pyx":268
+  /* "socrates_ancient.py":266
  *             return None, iCanReplaceThisTransposition, None
  * 
  *     def sortKey(self, m):             # <<<<<<<<<<<<<<
  *         return self.moveRatings.get(m, 0)
  * 
  */
-  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_8Searcher_13sortKey, 0, __pyx_n_s_Searcher_sortKey, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__38)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 268, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_8Searcher_13sortKey, 0, __pyx_n_s_Searcher_sortKey, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__37)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 266, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (__Pyx_SetNameInClass(__pyx_t_10, __pyx_n_s_sortKey, __pyx_t_3) < 0) __PYX_ERR(0, 268, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_10, __pyx_n_s_sortKey, __pyx_t_3) < 0) __PYX_ERR(0, 266, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "socrates_ancient.pyx":271
+  /* "socrates_ancient.py":269
  *         return self.moveRatings.get(m, 0)
  * 
  *     def moveIter(self, transposition, legalMoves, ply):             # <<<<<<<<<<<<<<
  *         if transposition is not None and self.game.board.is_legal(transposition.bestMove):
  *             yield transposition.bestMove
  */
-  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_8Searcher_15moveIter, 0, __pyx_n_s_Searcher_moveIter, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__4)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 271, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_8Searcher_15moveIter, 0, __pyx_n_s_Searcher_moveIter, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__4)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 269, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (__Pyx_SetNameInClass(__pyx_t_10, __pyx_n_s_moveIter, __pyx_t_3) < 0) __PYX_ERR(0, 271, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_10, __pyx_n_s_moveIter, __pyx_t_3) < 0) __PYX_ERR(0, 269, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "socrates_ancient.pyx":300
+  /* "socrates_ancient.py":298
  *             yield next(legalMoves)
  * 
  *     def pvSearch(self, alpha, beta, depthLeft, root = False):             # <<<<<<<<<<<<<<
  *         ply = len(self.game.board.move_stack)
  *         if depthLeft <= 0:
  */
-  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_8Searcher_18pvSearch, 0, __pyx_n_s_Searcher_pvSearch, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__41)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 300, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_8Searcher_18pvSearch, 0, __pyx_n_s_Searcher_pvSearch, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__40)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 298, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__42);
-  if (__Pyx_SetNameInClass(__pyx_t_10, __pyx_n_s_pvSearch, __pyx_t_3) < 0) __PYX_ERR(0, 300, __pyx_L1_error)
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__41);
+  if (__Pyx_SetNameInClass(__pyx_t_10, __pyx_n_s_pvSearch, __pyx_t_3) < 0) __PYX_ERR(0, 298, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "socrates_ancient.pyx":135
+  /* "socrates_ancient.py":135
  * 
  * 
  * class Searcher(object):             # <<<<<<<<<<<<<<
@@ -14411,98 +14351,98 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":462
+  /* "socrates_ancient.py":462
  * 
  * 
  * class SocratesGame(object):             # <<<<<<<<<<<<<<
  *     def __init__(self, usualTime, stopRatio, fenStr = ""):
  *         if fenStr != "":
  */
-  __pyx_t_2 = __Pyx_CalculateMetaclass(NULL, __pyx_tuple__43); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 462, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CalculateMetaclass(NULL, __pyx_tuple__42); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 462, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_10 = __Pyx_Py3MetaclassPrepare(__pyx_t_2, __pyx_tuple__43, __pyx_n_s_SocratesGame, __pyx_n_s_SocratesGame, (PyObject *) NULL, __pyx_n_s_socrates_ancientc, (PyObject *) NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 462, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_Py3MetaclassPrepare(__pyx_t_2, __pyx_tuple__42, __pyx_n_s_SocratesGame, __pyx_n_s_SocratesGame, (PyObject *) NULL, __pyx_n_s_socrates_ancientc, (PyObject *) NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 462, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
 
-  /* "socrates_ancient.pyx":463
+  /* "socrates_ancient.py":463
  * 
  * class SocratesGame(object):
  *     def __init__(self, usualTime, stopRatio, fenStr = ""):             # <<<<<<<<<<<<<<
  *         if fenStr != "":
  *             self.board = chess.Board(fenStr)
  */
-  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_12SocratesGame_1__init__, 0, __pyx_n_s_SocratesGame___init, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__45)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 463, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_12SocratesGame_1__init__, 0, __pyx_n_s_SocratesGame___init, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__44)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 463, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__46);
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__45);
   if (__Pyx_SetNameInClass(__pyx_t_10, __pyx_n_s_init, __pyx_t_3) < 0) __PYX_ERR(0, 463, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "socrates_ancient.pyx":471
+  /* "socrates_ancient.py":471
  *         self.historyBoard = dict()
  * 
  *     def hash(self):             # <<<<<<<<<<<<<<
- *         return (self.board.pawns, self.board.knights, self.board.bishops, self.board.rooks, self.board.queens, self.board.kings, self.board.occupied_co[True])
+ *         return (self.board.pawns, self.board.knights, self.board.bishops, self.board.rooks, self.board.queens, self.board.kings, self.board.occupied_co[True], self.board.turn)
  * 
  */
-  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_12SocratesGame_3hash, 0, __pyx_n_s_SocratesGame_hash, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__48)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 471, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_12SocratesGame_3hash, 0, __pyx_n_s_SocratesGame_hash, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__47)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_10, __pyx_n_s_hash, __pyx_t_3) < 0) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "socrates_ancient.pyx":474
- *         return (self.board.pawns, self.board.knights, self.board.bishops, self.board.rooks, self.board.queens, self.board.kings, self.board.occupied_co[True])
+  /* "socrates_ancient.py":474
+ *         return (self.board.pawns, self.board.knights, self.board.bishops, self.board.rooks, self.board.queens, self.board.kings, self.board.occupied_co[True], self.board.turn)
  * 
  *     def moveAndReturnsSAN(self):             # <<<<<<<<<<<<<<
  *         myMove = self.searcher.getBestMove()
  *         sanOutStr = self.board.san(myMove)
  */
-  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_12SocratesGame_5moveAndReturnsSAN, 0, __pyx_n_s_SocratesGame_moveAndReturnsSAN, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__50)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 474, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_12SocratesGame_5moveAndReturnsSAN, 0, __pyx_n_s_SocratesGame_moveAndReturnsSAN, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__49)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 474, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_10, __pyx_n_s_moveAndReturnsSAN, __pyx_t_3) < 0) __PYX_ERR(0, 474, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "socrates_ancient.pyx":485
+  /* "socrates_ancient.py":485
  *         return sanOutStr
  * 
  *     def readInAndReturnsSAN(self):             # <<<<<<<<<<<<<<
  *         sanInStr = raw_input().strip()
  *         self.board.push_san(sanInStr)
  */
-  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_12SocratesGame_7readInAndReturnsSAN, 0, __pyx_n_s_SocratesGame_readInAndReturnsSAN, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__52)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 485, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_12SocratesGame_7readInAndReturnsSAN, 0, __pyx_n_s_SocratesGame_readInAndReturnsSAN, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__51)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 485, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_10, __pyx_n_s_readInAndReturnsSAN, __pyx_t_3) < 0) __PYX_ERR(0, 485, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "socrates_ancient.pyx":495
+  /* "socrates_ancient.py":495
  *         return sanInStr
  * 
  *     def run(self):             # <<<<<<<<<<<<<<
  *         myPlayer = raw_input().strip()
  *         if(myPlayer == "white"):
  */
-  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_12SocratesGame_9run, 0, __pyx_n_s_SocratesGame_run, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__54)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 495, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_17socrates_ancientc_12SocratesGame_9run, 0, __pyx_n_s_SocratesGame_run, NULL, __pyx_n_s_socrates_ancientc, __pyx_d, ((PyObject *)__pyx_codeobj__53)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 495, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_10, __pyx_n_s_run, __pyx_t_3) < 0) __PYX_ERR(0, 495, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "socrates_ancient.pyx":462
+  /* "socrates_ancient.py":462
  * 
  * 
  * class SocratesGame(object):             # <<<<<<<<<<<<<<
  *     def __init__(self, usualTime, stopRatio, fenStr = ""):
  *         if fenStr != "":
  */
-  __pyx_t_3 = __Pyx_Py3ClassCreate(__pyx_t_2, __pyx_n_s_SocratesGame, __pyx_tuple__43, __pyx_t_10, NULL, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 462, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Py3ClassCreate(__pyx_t_2, __pyx_n_s_SocratesGame, __pyx_tuple__42, __pyx_t_10, NULL, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 462, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_SocratesGame, __pyx_t_3) < 0) __PYX_ERR(0, 462, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "socrates_ancient.pyx":519
+  /* "socrates_ancient.py":519
  *             eprint("Current board\n" + str(self.board))
  * 
  * if __name__ == "__main__":             # <<<<<<<<<<<<<<
- *     game = SocratesGame()
+ *     game = SocratesGame(15, 1./10)
  *     game.run()
  */
   __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_name); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 519, __pyx_L1_error)
@@ -14511,45 +14451,56 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_12) {
 
-    /* "socrates_ancient.pyx":520
+    /* "socrates_ancient.py":520
  * 
  * if __name__ == "__main__":
- *     game = SocratesGame()             # <<<<<<<<<<<<<<
+ *     game = SocratesGame(15, 1./10)             # <<<<<<<<<<<<<<
  *     game.run()
  */
     __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_SocratesGame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 520, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_10 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 520, __pyx_L1_error)
+    __pyx_t_10 = PyFloat_FromDouble((1. / 10.0)); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 520, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_10);
+    __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 520, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_INCREF(__pyx_int_15);
+    __Pyx_GIVEREF(__pyx_int_15);
+    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_int_15);
+    __Pyx_GIVEREF(__pyx_t_10);
+    PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_10);
+    __pyx_t_10 = 0;
+    __pyx_t_10 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 520, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_10);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     if (PyDict_SetItem(__pyx_d, __pyx_n_s_game, __pyx_t_10) < 0) __PYX_ERR(0, 520, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-    /* "socrates_ancient.pyx":521
+    /* "socrates_ancient.py":521
  * if __name__ == "__main__":
- *     game = SocratesGame()
+ *     game = SocratesGame(15, 1./10)
  *     game.run()             # <<<<<<<<<<<<<<
  */
     __pyx_t_10 = __Pyx_GetModuleGlobalName(__pyx_n_s_game); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 521, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_10);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_run); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 521, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_run); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 521, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-    __pyx_t_10 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 521, __pyx_L1_error)
+    __pyx_t_10 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 521, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_10);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-    /* "socrates_ancient.pyx":519
+    /* "socrates_ancient.py":519
  *             eprint("Current board\n" + str(self.board))
  * 
  * if __name__ == "__main__":             # <<<<<<<<<<<<<<
- *     game = SocratesGame()
+ *     game = SocratesGame(15, 1./10)
  *     game.run()
  */
   }
 
-  /* "socrates_ancient.pyx":1
+  /* "socrates_ancient.py":1
  * # coding=utf-8             # <<<<<<<<<<<<<<
  * from __future__ import print_function
  * import chessmodc as chess

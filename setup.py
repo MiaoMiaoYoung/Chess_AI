@@ -2,7 +2,7 @@ from distutils.core import setup
 from distutils.extension import Extension
 from Cython.Distutils import build_ext
 
-ext_modules = [Extension('socrates_ancientc', ['socrates_ancient.pyx',],),]
+ext_modules = [Extension('socrates_ancientc', ['socrates_ancient.py',],),]
 
 setup(
     name="socrates_ancientc",
